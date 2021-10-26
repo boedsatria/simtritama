@@ -22,5 +22,12 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/data_project');
 		$this->load->view('footer');
 	}
+	public function media_order()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('admin/media_order');
+		$this->load->view('footer');
+	}
 
 }
