@@ -1,65 +1,8 @@
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; SatriaCorp 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url(); ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url(); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?= base_url(); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?= base_url(); ?>js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="<?= base_url(); ?>vendor/chart.js/Chart.min.js"></script>
-    <script src="<?= base_url(); ?>vendor/chart.js/chartjs-plugin-datalabels.js"></script>
-
-    <!-- Page level custom scripts -->
-    <!-- <script src="<?= base_url(); ?>js/demo/chart-bar-demo.js"></script> -->
-    <!--<script src="<?= base_url(); ?>js/demo/chart-pie-demo.js"></script> -->
-
-
-    <script src="<?= base_url(); ?>vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url(); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>vendor/daterangepicker/moment.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>vendor/datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="<?php echo base_url(); ?>vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script src="<?php echo base_url(); ?>vendor/owlcarousel/dist/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>vendor/dropzone/dropzone.js"></script>
-    <script src="<?= base_url(); ?>js/script.js"></script>
-
-
-</body>
-<?php 
-if($this->session->flashdata('swal')):
-    echo '<script>';
-    echo $this->session->flashdata('swal');
-    echo '</script>';
-endif; 
-?>
-
+</div>
+        <!-- BEGIN: JS Assets-->
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG7gNHAhDzgYmq4-EHvM4bqW1DNj2UCuk&libraries=places"></script>
+        <script src="dist/js/app.js"></script>
+        <!-- END: JS Assets-->
+    </body>
 </html>
