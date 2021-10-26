@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/u4814692/public_html/git/simtritama
-    - /bin/cp -R . $DEPLOYPATH
