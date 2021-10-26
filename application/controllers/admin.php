@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 	//   $this->load->model('LaporanModel');
 	}
 
-	public function index()
+	public function index() 
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
