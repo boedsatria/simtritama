@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Produksi extends CI_Controller {
+class Placement extends CI_Controller {
 	public function __construct()
 	{
 	  parent::__construct();
@@ -12,35 +12,35 @@ class Produksi extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('produksi/dashboard_produksi');
+		$this->load->view('placement/dashboard_placement');
 		$this->load->view('footer');
 	}
-	public function job_order()
+	public function job_order_placement()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('produksi/job_order_produksi');
+		$this->load->view('placement/job_order_placement');
 		$this->load->view('footer');
 	}
-	public function kirim_hps()
+	public function kirim_hps_placement()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('produksi/hps_produksi');
+		$this->load->view('placement/hps_placement');
 		$this->load->view('footer');
 	}
-	public function kirim_hasil_produksi()
+	public function kirim_hasil_placement()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('produksi/hasil_produksi');
+		$this->load->view('placement/hasil_placement');
 		$this->load->view('footer');
 	}
-	public function keuangan_produksi()
+	public function keuangan_placement()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('produksi/keuangan_produksi');
+		$this->load->view('placement/keuangan_placement');
 		$this->load->view('footer');
 	}
 
