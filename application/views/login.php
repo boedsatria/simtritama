@@ -44,8 +44,8 @@
                     </h2>
                     <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
                     <div class="intro-x mt-8">
-                        <input type="text" class="intro-x login__input form-control py-3 px-4 border-gray-300 block" placeholder="Email">
-                        <input type="password" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Password">
+                        <input type="text" name="email" class="intro-x login__input form-control py-3 px-4 border-gray-300 block" placeholder="Email">
+                        <input type="password" name="password" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Password">
                     </div>
                     <div class="intro-x flex text-gray-700 dark:text-gray-600 text-xs sm:text-sm mt-4">
                         <div class="flex items-center mr-auto">
