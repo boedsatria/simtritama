@@ -530,7 +530,7 @@
 
                         <?php if($mv['nama_menu'] != "divider"): ?>
                             <li>
-                                <a href="<?= base_url().$mv['slug_menu']; ?>" class="side-menu <?= $active; ?>">
+                                <a href="<?= base_url().$mv['slug_menu']; ?>" class="side-menu <?= $active; ?> <?= ($this->uri->segment('1') == "" && $mv['slug_menu'] == "dashboard" ? "side-menu--active" : "") ?>">
                                     <div class="side-menu__icon"> <i data-feather="<?= $mv['icon_menu']; ?>"></i></div>
                                     <div class="side-menu__title">
                                         <?= $mv['nama_menu']; ?>
