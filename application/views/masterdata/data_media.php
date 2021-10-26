@@ -240,16 +240,16 @@
                                                             <label for="crud-form-1" class="form-label">Alamat Media</label>
                                                             <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
                                                             <div class="preview">
-                                    <form data-single="true" action="/file-upload" class="dropzone">
-                                        <div class="fallback">
-                                            <input name="file" type="file" />
-                                        </div>
-                                        <div class="dz-message" data-dz-message>
-                                            <div class="text-lg font-medium">Seret file disini atau click untuk membuka file explorer</div>
-                                            <div class="text-gray-600"> Unggah berkas format PDF dan satu file <span class="font-medium">not</span> lengkap seluruh halaman SPK </div>
-                                        </div>
-                                    </form>
-                                </div>
+                                                            <label for="crud-form-1" class="form-label">Upload Foto Media</label>
+                                                                <form data-single="true" action="/file-upload" class="dropzone">
+                                                                    <div class="fallback">
+                                                                        <input name="file" type="file" />
+                                                                    </div>
+                                                                    <div class="dz-message" data-dz-message>
+                                                                        <div class="text-lg font-medium">Seret file disini atau click untuk membuka file explorer</div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="px-5 pb-8 text-center">
