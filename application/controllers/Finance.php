@@ -15,11 +15,18 @@ class Finance extends CI_Controller {
 		$this->load->view('finance/dashboard_finance');
 		$this->load->view('footer');
 	}
-	public function data()
+	public function diagram()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/dashboard_finance');
+		$this->load->view('finance/diagram_monitoring');
+		$this->load->view('footer');
+	}
+	public function efaktur()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('faktur');
 		$this->load->view('footer');
 	}
 
