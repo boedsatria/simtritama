@@ -526,11 +526,12 @@
                             else:
                                 $active = '';
                             endif;
+
                         ?>
 
                         <?php if($mv['nama_menu'] != "divider"): ?>
                             <li>
-                                <a href="<?= base_url().$mv['slug_menu']; ?>" class="side-menu <?= $active; ?>">
+                                <a <?= ($mv['slug_menu'] == "#" ? '' : 'href="'.base_url().$mv['slug_menu'].'"') ?> class="side-menu cursor-pointer <?= $active; ?> <?= ($this->uri->segment('1') == "" && $mv['slug_menu'] == "dashboard" ? "side-menu--active" : "") ?>">
                                     <div class="side-menu__icon"> <i data-feather="<?= $mv['icon_menu']; ?>"></i></div>
                                     <div class="side-menu__title">
                                         <?= $mv['nama_menu']; ?>
@@ -561,7 +562,15 @@
                         <?php endif; ?>
 
                     <?php endforeach; ?>
+                    <li class="side-nav__devider my-6"></li>
                 </ul>
+                
+                <a href="" class="intro-x flex items-center pl-5 pt-4">
+                    <img alt="Satriacorp.id" class="w-6" src="dist/images/logo.svg">
+                    <span class="hidden xl:block text-white text-lg ml-3">MENU STATIC</span> </span>
+                </a>
+                <div class="side-nav__devider my-6"></div>
+
                 <ul>
                     <li>
                         <a href="" class="side-menu side-menu--active">
@@ -585,7 +594,7 @@
                     </li>
                     <li class="side-nav__devider my-6"></li>
                     <li>
-                        <a href="#" class="side-menu">
+                        <a class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="edit"></i> </div>
                             <div class="side-menu__title">
                                 Master Data 

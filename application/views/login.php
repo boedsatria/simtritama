@@ -1,122 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<!-- BEGIN: Head -->
 
-<div class="container">
+<head>
+    <meta charset="utf-8">
+    <link href="dist/images/logo.svg" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rubick admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Rubick Admin Template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="LEFT4CODE">
+    <title>Login SIMTRITAMA</title>
+    <!-- BEGIN: CSS Assets-->
+    <link rel="stylesheet" href="dist/css/app.css" />
+    <!-- END: CSS Assets-->
+</head>
+<!-- END: Head -->
 
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-        <div class="col-xl-10 col-lg-12 col-md-9">
-
-            <div class="card mt-5 border-0 shadow-lg my-3">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 left-login text-center">
-                            <h4>Selamat Datang</h4>
-                            <img src="<?= base_Url(); ?>img/logo-sitambel.png">
-                            <span>Silahkan Login untuk melanjutkan</span>
+<body class="login">
+    <div class="container sm:px-10">
+        <div class="block xl:grid grid-cols-2 gap-4">
+            <!-- BEGIN: Login Info -->
+            <div class="hidden xl:flex flex-col min-h-screen">
+                <a href="" class="-intro-x flex items-center pt-5">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="w-6" src="dist/images/logo.svg">
+                    <span class="text-white text-lg ml-3"> SIM<span class="font-medium">TRITAMA</span> </span>
+                </a>
+                <div class="my-auto">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="dist/images/illustration.svg">
+                    <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
+                        Khusus Internal
+                        <br>
+                        Private Confidential
+                    </div>
+                    <div class="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-gray-500">Harap jaga kerahasiaan data</div>
+                </div>
+            </div>
+            <!-- END: Login Info -->
+            <!-- BEGIN: Login Form -->
+            <div class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">
+                <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-dark-1 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
+                    <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
+                        Login
+                    </h2>
+                    <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
+                    <div class="intro-x mt-8">
+                        <input type="text" name="email" class="intro-x login__input form-control py-3 px-4 border-gray-300 block" placeholder="Email">
+                        <input type="password" name="password" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Password">
+                    </div>
+                    <div class="intro-x flex text-gray-700 dark:text-gray-600 text-xs sm:text-sm mt-4">
+                        <div class="flex items-center mr-auto">
+                            <input id="remember-me" type="checkbox" class="form-check-input border mr-2">
+                            <label class="cursor-pointer select-none" for="remember-me">Ingat saya</label>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="p-5">
-                                <div class="pb-2 text-center">
-                                    <a href="<?= $login_button; ?>" class="btn btn-dark btn-icon-split">
-                                        <span class="icon text-gray-600">
-                                            <img src="<?= base_url('img/logo_google.svg'); ?>">
-                                        </span>
-                                        <span class="text">Login dengan Google</span>
-                                    </a>
-                                </div>
-                                <div class="divider-login"><span>atau</span></div>
-                                <form class="user py-2" method="POST" action="<?php echo base_url();?>login/action">
-                                    <div class="form-group">
-                                        <input required type="text" name="nip" class="form-control form-control-user" placeholder="Enter Email or NIP">
-                                    </div>
-                                    <div class="form-group">
-                                        <input required type="password" name="password" class="form-control form-control-user" placeholder="Password">
-                                    </div>
-                                    <?php if($this->session->flashdata('error_login') != ''): ?>
-                                    <div class="mt-3 alert alert-danger">
-                                        <?php echo $this->session->flashdata('error_login'); ?>
-                                    </div>
-                                    <?php endif; ?>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <button type="submit" class="btn btn-primary btn-user btn-block">
-                                                Login
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="text-forgot">
-                                    <a class="pointer" data-toggle="modal" data-target="#daftar">DAFTAR SEKARANG</a>
-                                 
-                                    atau 
+                        <a href="">Lupa Password?</a>
+                    </div>
+                    <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
+                        <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top" onclick="window.location.href='index.html'">Masuk</button>
 
-                                    <a data-toggle="modal" data-target="#lupa">LUPA PASSWORD?</a>
-                                </div>
-
-                                
-
-
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-
+            <!-- END: Login Form -->
         </div>
-
     </div>
+    <!-- BEGIN: JS Assets-->
+    <script src="dist/js/app.js"></script>
+    <!-- END: JS Assets-->
+</body>
 
-</div>
-
-
-<div class="modal fade" id="daftar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding:0 17px;">
-    <div class="modal-dialog" role="document">
-    
-        <form action="<?= base_url().'login/add_action'; ?>" method="POST" enctype="multipart/form-data" class="row">
-        
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pendaftaran User SITAMBEL</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="text-gray-600">Nama</label>
-                        <input required class="form-control" name="nama_user" placeholder="Nama Lengkap">
-                    </div>
-                    <div class="form-group">
-                        <label class="text-gray-600">Email</label>
-                        <input required class="form-control" name="email_user" placeholder="Email">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="text-gray-600">Password</label>
-                        <input required class="form-control" id="pass" type="password" name="password_user">
-                    </div>
-                        
-                    <div class="form-group">
-                        <label class="text-gray-600">Konfirmasi Password</label>
-                        <input required class="form-control" id="pass_c" type="password" name="password_user">
-                    </div>
-                    <div class="form-group">
-                        <label class="message"></label>
-                    </div>
-                    
-                        
-                    <div class="form-group">
-                        <label class="text-gray-600">No. HP</label>
-                        <input required class="form-control hp" name="telepon_user" placeholder="08xxxxxxxx">
-                    </div>
-                </div>
-                                
-                <div class="modal-footer">
-                    <button class="btn btn-secondary back1" type="button" data-dismiss="modal">Batal</button>
-                    <button id="btn-submit" type="submit" class="btn btn-primary text-white">Proses</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+</html>
