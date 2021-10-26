@@ -19,7 +19,7 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('produksi');
+		$this->load->view('admin/data_project');
 		$this->load->view('footer');
 	}
 
