@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Masterdata extends CI_Controller {
 	public function __construct()
 	{
 	  parent::__construct();
@@ -12,21 +12,28 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('dashboard_admin');
+		$this->load->view('masterdata/dashboard_master_data');
 		$this->load->view('footer');
 	}
-	public function tambah_data()
+	public function data_client()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('admin/data_project');
+		$this->load->view('masterdata/data_client');
 		$this->load->view('footer');
 	}
-	public function media_order()
+	public function data_media()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('admin/media_order');
+		$this->load->view('masterdata/data_media');
+		$this->load->view('footer');
+	}
+	public function data_mitra()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('masterdata/data_mitra');
 		$this->load->view('footer');
 	}
 
