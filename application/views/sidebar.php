@@ -81,7 +81,7 @@
 
                         <?php if($mv['nama_menu'] != "divider"): ?>
                             <li>
-                                <a <?= ($mv['slug_menu'] == "#" ? '' : 'href="'.base_url().$mv['slug_menu'].'"') ?> class="side-menu cursor-pointer <?= $active; ?> <?= ($this->uri->segment('1') == "" && $mv['slug_menu'] == "dashboard" ? "side-menu--active" : "") ?>">
+                                <a <?= ($mv['slug_menu'] == "#" ? '' : 'href="'.base_url().$mv['slug_menu'].'"') ?> class="side-menu cursor-pointer <?= $active; ?> <?= ($this->uri->segment('1') == "" && $mv['slug_menu'] == "dashboard" ? "side-menu--active" : "") ?> <?= ($this->uri->segment('1') == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "side-menu--open" : "") ?>">
                                     <div class="side-menu__icon"> <i data-feather="<?= $mv['icon_menu']; ?>"></i></div>
                                     <div class="side-menu__title">
                                         <?= $mv['nama_menu']; ?>
@@ -92,7 +92,7 @@
                                 </a>
 
                                 <?php if(has_child($mv['id_menu']) > 0): ?>
-                                <ul class="">
+                                <ul class="<?= ($this->uri->segment('1') == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "side-menu__sub-open" : "") ?>">
                                     <?php foreach(get_menu_child($mv['id_menu']) as $mc): ?>
                                     <li>
                                         <a href="<?= base_url().$mc['slug_menu']; ?>" class="side-menu">
