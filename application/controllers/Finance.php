@@ -22,11 +22,39 @@ class Finance extends CI_Controller {
 		$this->load->view('finance/diagram_monitoring');
 		$this->load->view('footer');
 	}
-	public function efaktur()
+	public function buku_besar()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('faktur');
+		$this->load->view('finance/buku_besar');
+		$this->load->view('footer');
+	}
+	public function petty_cash()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/petty_cash');
+		$this->load->view('footer');
+	}
+	public function asset_penyusutan()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/asset_penyusutan');
+		$this->load->view('footer');
+	}
+	public function general_ledger()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/general_ledger');
+		$this->load->view('footer');
+	}
+	public function laporan_keuangan()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/laporan_keuangan');
 		$this->load->view('footer');
 	}
 
