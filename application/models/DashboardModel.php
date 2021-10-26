@@ -1,9 +1,31 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class LaporanModel extends CI_Model
+class DashboardModel extends CI_Model
 {
  
+  function get_menu_all()
+  {
+    $this->db->from('menu');
+    $this->db->order_by('index_menu', 'ASC');
+    return $this->db->get();
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   function get_laporan_all($limit = false, $offset =  false, $thn = false, $bulan = false, $dibuat = false, $selesai = false, $revisi = false, $id = false)
   {
     // $offset= 0;
