@@ -1,6 +1,34 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+  function get_menu_parent()
+  {
+    $ci = &get_instance();
+    $ci->db->from("menu");
+    $ci->db->where("parent_menu", 0);
+    $ci->db->order_by("index_menu", "ASC");
+    $data = $ci->db->get();
+    return $data->result_array();
+  }
+  function get_menu_child($parent)
+  {
+    $ci = &get_instance();
+    $ci->db->from("menu");
+    $ci->db->where("parent_menu", $parent);
+    $ci->db->order_by("index_menu", "ASC");
+    $data = $ci->db->get();
+    return $data->result_array();
+  }
+
+  function has_child($parent)
+  {
+    $ci = &get_instance();
+    $ci->db->from("menu");
+    $ci->db->where("parent_menu", $parent);
+    $data = $ci->db->get();
+    return $data->num_rows();
+  }
+
   function get_jam_tanggal($id)
   {
     $ci = &get_instance();

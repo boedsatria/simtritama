@@ -515,9 +515,56 @@
                     <span class="hidden xl:block text-white text-lg ml-3">SIM<span class="font-medium">TRITAMA</span> </span>
                 </a>
                 <div class="side-nav__devider my-6"></div>
+
+                <ul>
+                    <?php foreach(get_menu_parent() as $mv): ?>
+
+                        <?php 
+                            //LOGIC MENU AKTIF
+                            if($this->uri->segment('1') == $mv['slug_menu']) :
+                                $active = 'side-menu--active';
+                            else:
+                                $active = '';
+                            endif;
+                        ?>
+
+                        <?php if($mv['nama_menu'] != "divider"): ?>
+                            <li>
+                                <a href="<?= base_url().$mv['slug_menu']; ?>" class="side-menu <?= $active; ?>">
+                                    <div class="side-menu__icon"> <i data-feather="<?= $mv['icon_menu']; ?>"></i></div>
+                                    <div class="side-menu__title">
+                                        <?= $mv['nama_menu']; ?>
+                                        <?php if(has_child($mv['id_menu']) > 0): ?>
+                                            <div class="side-menu__sub-icon "> <i data-feather="chevron-down"></i> </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </a>
+
+                                <?php if(has_child($mv['id_menu']) > 0): ?>
+                                <ul class="">
+                                    <?php foreach(get_menu_child($mv['id_menu']) as $mc): ?>
+                                    <li>
+                                        <a href="<?= base_url().$mc['slug_menu']; ?>" class="side-menu">
+                                            <div class="side-menu__icon"> <i data-feather="<?= $mc['icon_menu']; ?>"></i> </div>
+                                            <div class="side-menu__title"> <?= $mc['nama_menu']; ?> </div>
+                                        </a>
+                                    </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <?php endif; ?>
+
+                            </li>
+
+
+                        <?php else: ?>
+                            <li class="side-nav__devider my-6"></li>
+                        <?php endif; ?>
+
+                    <?php endforeach; ?>
+                </ul>
                 <ul>
                     <li>
-                        <a href="javascript:;.html" class="side-menu side-menu--active">
+                        <a href="" class="side-menu side-menu--active">
                             <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                             <div class="side-menu__title">
                                 Dashboard 
@@ -538,7 +585,7 @@
                     </li>
                     <li class="side-nav__devider my-6"></li>
                     <li>
-                        <a href="javascript:;" class="side-menu">
+                        <a href="#" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="edit"></i> </div>
                             <div class="side-menu__title">
                                 Master Data 
