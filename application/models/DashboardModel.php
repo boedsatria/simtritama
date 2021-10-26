@@ -10,6 +10,25 @@ class DashboardModel extends CI_Model
     $this->db->order_by('index_menu', 'ASC');
     return $this->db->get();
   }
+
+  function get_login($nip, $password)
+  { 
+  //  print_r(password_hash($password, PASSWORD_DEFAULT));die;
+    $where = (!filter_var($nip, FILTER_VALIDATE_EMAIL) ? "nip_user" : "email_user");
+    $data = $this->db->from('user')
+      ->join('role', 'role_user = id_role')
+      ->where($where, $nip)
+      ->get()->row();
+
+    if (!isset($data)) {
+      return 'User Tidak Ditemukan';
+    } else if(password_verify($password, $data->password_user)) {
+      return $data;
+    }
+    else {
+      return 'Password Salah';
+    }
+  }
   
   
   
@@ -198,23 +217,7 @@ class DashboardModel extends CI_Model
       return 0;
     }
   }
-  function get_login($nip, $password)
-  { 
-  //  print_r(password_hash($password, PASSWORD_DEFAULT));die;
-    $where = (!filter_var($nip, FILTER_VALIDATE_EMAIL) ? "nip_user" : "email_user");
-    $data = $this->db->from('app_user')
-      ->where($where, $nip)
-      ->get()->row();
-
-    if (!isset($data)) {
-      return 'User Tidak Ditemukan';
-    } else if(password_verify($password, $data->password_user)) {
-      return $data;
-    }
-    else {
-      return 'Password Salah';
-    }
-  }
+  
 
   function get_kecamatan()
   {
