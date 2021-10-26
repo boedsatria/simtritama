@@ -693,7 +693,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="produksi-submit.html" class="side-menu">
+                                <a href="<?= base_url(); ?>produksi/tambah_data" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                     <div class="side-menu__title"> Pengajuan </div>
                                 </a>
