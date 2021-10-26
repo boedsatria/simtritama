@@ -1,6 +1,34 @@
-                <div class="grid grid-cols-12 gap-6">
-                    <div class="col-span-12 2xl:col-span-9">
-                        <div class="grid grid-cols-12 gap-6">
+                <div class="grid grid-cols-10 gap-6">
+                    <div class="col-span-3 2xl:col-span-2">
+                        <div class="grid grid-cols-2 gap-8">
+                            <!-- BEGIN: Line Chart -->
+                        <div class="intro-y box mt-5">
+                            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                                <h2 class="font-medium text-base mr-auto">
+                                    SPEN VS REVENUE
+                                </h2>
+                            </div>
+                            <div id="line-chart" class="intro-y box">
+                                <div class="preview">
+                                    <canvas id="line-chart-widget" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END: Line Chart -->
+                        <!-- BEGIN: Stacked Bar Chart -->
+                        <div class="intro-y box mt-5">
+                            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                                <h2 class="font-medium text-base mr-auto">
+                                    Stacked Bar Chart
+                                </h2>
+                            </div>
+                            <div id="stacked-bar-chart" class="intro-y box">
+                                <div class="preview">
+                                    <canvas id="stacked-bar-chart-widget" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END: Stacked Bar Chart --> 
                             <!-- BEGIN: General Report -->
                             <div class="col-span-12 mt-8">
                                 <div class="intro-y flex items-center h-10">

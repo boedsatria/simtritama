@@ -1,6 +1,6 @@
 <div class="flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        Form add user
+        Form Tambah User
     </h2>
 </div>
 <div class="grid grid-cols-12 gap-6 mt-5">
@@ -15,13 +15,20 @@
             </div>
             <div id="input" class="p-5">
                 <div class="preview">
-                    <div>
-                        <label for="nip_user" class="form-label">No induk pegawai (NIP)</label>
-                        <input id="nip_user" name="nip_user" type="text" class="form-control" placeholder="Input text">
-                    </div>
+                <label>Divisi</label>
+                        <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
+                                <option value="pic" name="pic">PIC</option>
+                                <option value="finance" name="finance">Finance</option>
+                                <option value="produksi" name="produksi">Produksi</option>
+                                <option value="placement" name="placement">Placement</option>
+                            </select> </div>
                     <div class="mt-3">
                         <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                        <input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control form-control-rounded" placeholder="Rounded">
+                        <input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control" placeholder="Rounded">
+                    </div>
+                    <div class="mt-3">
+                        <label for="nip_user" class="form-label">No induk pegawai (NIP) otomatis</label>
+                        <input id="nip_user" name="nip_user" type="text" class="form-control" placeholder="OTOMATIS FORMAT : 4 HURUF INITIAL DEPARTEMEN/ID DATABASE/BULAN/TAHUN" disabled>
                     </div>
                     <div class="mt-3">
                         <label for="email_user" class="form-label">Email</label>

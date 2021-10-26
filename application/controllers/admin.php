@@ -13,7 +13,7 @@ class Admin extends CI_Controller
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('dashboard_admin');
+		$this->load->view('admin/dashboard_admin');
 		$this->load->view('footer');
 	}
 	public function tambah_data()
