@@ -3,7 +3,7 @@
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="w-6" src="dist/images/logo.svg">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="w-6" src="<?= base_url(); ?>dist/images/logo.svg">
                 </a>
                 <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>
@@ -511,7 +511,7 @@
             <!-- BEGIN: Side Menu -->
             <nav class="side-nav">
                 <a href="" class="intro-x flex items-center pl-5 pt-4">
-                    <img alt="Satriacorp.id" class="w-6" src="dist/images/logo.svg">
+                    <img alt="Satriacorp.id" class="w-6" src="<?= base_url(); ?>dist/images/logo.svg">
                     <span class="hidden xl:block text-white text-lg ml-3">SIM<span class="font-medium">TRITAMA</span> </span>
                 </a>
                 <div class="side-nav__devider my-6"></div>
@@ -566,7 +566,7 @@
                 </ul>
                 
                 <a href="" class="intro-x flex items-center pl-5 pt-4">
-                    <img alt="Satriacorp.id" class="w-6" src="dist/images/logo.svg">
+                    <img alt="Satriacorp.id" class="w-6" src="<?= base_url(); ?>dist/images/logo.svg">
                     <span class="hidden xl:block text-white text-lg ml-3">MENU STATIC</span> </span>
                 </a>
                 <div class="side-nav__devider my-6"></div>
