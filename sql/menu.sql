@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2021 at 10:33 AM
+-- Generation Time: Oct 27, 2021 at 09:56 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -39,8 +39,8 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_menu`, `index_menu`, `role_menu`, `status_menu`) VALUES
 (1, 'Dashboard', 'dashboard', 'home', 0, 1, 0, 1),
 (2, 'divider', 'divider', '', 0, 2, 0, 1),
-(3, 'Master Data', '#', 'edit', 0, 3, 0, 1),
-(4, 'Data Client', 'masterdata/data_client', 'activity', 3, 1, 0, 1),
+(3, 'Master Data', '#', 'edit', 0, 3, 1, 1),
+(4, 'Data Client', 'masterdata/data_client', 'activity', 3, 1, 1, 1),
 (5, 'P I C', '#', 'user', 0, 5, 2, 1),
 (6, 'Data Project', 'pic/data_project', 'activity', 5, 1, 2, 1),
 (7, 'E-Faktur', 'pic/e_faktur', 'activity', 5, 2, 2, 1),
@@ -65,7 +65,8 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (26, 'divider', 'divider', '', 0, 4, 0, 1),
 (27, 'divider', 'divider', '', 0, 6, 0, 1),
 (28, 'divider', 'divider', '', 0, 8, 0, 1),
-(29, 'divider', 'divider', '', 0, 10, 0, 1);
+(29, 'divider', 'divider', '', 0, 10, 0, 1),
+(30, 'Data User', 'masterdata/data_user', 'activity', 3, 2, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -85,5 +86,5 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
