@@ -9,7 +9,7 @@ class Pic extends CI_Controller
 		//   $this->load->model('LaporanModel');
 	}
 
-	public function index() 
+	public function index()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
@@ -28,14 +28,6 @@ class Pic extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('pic/media_order');
-		$this->load->view('footer');
-	}
-
-	public function tambah_user()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('pic/tambah_user');
 		$this->load->view('footer');
 	}
 }
