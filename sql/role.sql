@@ -39,6 +39,9 @@ CREATE TABLE `role` (
 INSERT INTO `role` (`id_role`, `nama_role`) VALUES
 (1, 'Super Admin'),
 (2, 'PIC');
+(3, 'Finance');
+(4, 'Produksi');
+(5, 'Placement');
 
 --
 -- Indexes for dumped tables
