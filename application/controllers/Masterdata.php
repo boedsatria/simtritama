@@ -6,8 +6,8 @@ class Masterdata extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if(!$this->session->has_userdata('userlogin')) redirect(base_url('login'));
-        $this->load->model('UserModel');
+		if (!$this->session->has_userdata('userlogin')) redirect(base_url('login'));
+		$this->load->model('UserModel');
 	}
 
 	public function index()
@@ -47,16 +47,24 @@ class Masterdata extends CI_Controller
 
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('masterdata/data_user');
+		$this->load->view('masterdata/data_user', $data);
 		$this->load->view('footer');
 	}
 
 	public function tambah_user()
 	{
+		$data = array(
+			'role'	=> $this->UserModel->get_role()->result_array()
+		);
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('masterdata/tambah_user');
+		$this->load->view('masterdata/tambah_user', $data);
 		$this->load->view('footer');
+	}
+	public function tambah_user_action()
+	{
+		print_r($_POST);
+		die;
 	}
 
 	public function profile_user()

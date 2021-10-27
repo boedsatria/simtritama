@@ -1,0 +1,6 @@
+select option {
+  font-family: "Roboto", sans-serif;
+}
+.side-menu__icon {
+  min-width: 20px;
+}
