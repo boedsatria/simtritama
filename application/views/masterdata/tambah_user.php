@@ -32,15 +32,15 @@
                     </div>
                     <div class="mt-3">
                         <label for="email_user" class="form-label">Email</label>
-                        <input id="email_user" name="email_user" type="text" class="form-control" placeholder="With help">
+                        <input id="email_user" name="email_user" type="text" class="form-control" placeholder="Email">
                     </div>
                     <div class="mt-3">
                         <label for="no_hp" class="form-label">No Handphone</label>
-                        <input id="no_hp" name="no_hp" type="text" class="form-control" placeholder="With help">
+                        <input id="no_hp" name="no_hp" type="text" class="form-control" placeholder="No. Telephone">
                     </div>
                     <div class="mt-3">
                         <label for="foto_user" class="form-label">Foto</label>
-                        <input id="foto_user" name="foto_user" type="file" class="form-control" placeholder="Password">
+                        <input id="foto_user" name="foto_user" type="file" class="form-control" placeholder="foto">
                     </div>
                     <div class="mt-3">
                         <label for="password" class="form-label">Password</label>
