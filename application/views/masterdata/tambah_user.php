@@ -15,16 +15,16 @@
             </div>
             <div id="input" class="p-5">
                 <div class="preview">
-                <label>Divisi</label>
-                        <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
-                                <option value="pic" name="pic">PIC</option>
-                                <option value="finance" name="finance">Finance</option>
-                                <option value="produksi" name="produksi">Produksi</option>
-                                <option value="placement" name="placement">Placement</option>
-                            </select> </div>
+                    <label>Divisi</label>
+                    <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
+                            <option value="pic" name="pic">PIC</option>
+                            <option value="finance" name="finance">Finance</option>
+                            <option value="produksi" name="produksi">Produksi</option>
+                            <option value="placement" name="placement">Placement</option>
+                        </select> </div>
                     <div class="mt-3">
                         <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                        <input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control" placeholder="Rounded">
+                        <input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control" placeholder="Nama Lengkap">
                     </div>
                     <div class="mt-3">
                         <label for="nip_user" class="form-label">No induk pegawai (NIP) otomatis</label>

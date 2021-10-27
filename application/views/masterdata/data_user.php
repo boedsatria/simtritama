@@ -86,7 +86,9 @@
                     </div>
                 </div>
                 <button class="btn btn-primary py-1 px-2 mr-2">Message</button>
-                <button class="btn btn-outline-secondary py-1 px-2">Profile</button>
+                <a href="<?= base_url() ?>masterdata/profile_user">
+                    <button class="btn btn-outline-secondary py-1 px-2">Profile</button>
+                </a>
             </div>
         </div>
     </div>

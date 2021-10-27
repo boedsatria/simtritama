@@ -53,4 +53,12 @@ class Masterdata extends CI_Controller
 		$this->load->view('masterdata/tambah_user');
 		$this->load->view('footer');
 	}
+
+	public function profile_user()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('masterdata/profile_user');
+		$this->load->view('footer');
+	}
 }
