@@ -3,7 +3,9 @@
 </h2>
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-        <button class="btn btn-primary shadow-md mr-2">Add New User</button>
+        <a href="<?= base_url() ?>masterdata/tambah_user">
+            <button class="btn btn-primary shadow-md mr-2">Add New User</button>
+        </a>
         <div class="dropdown">
             <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
                 <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-feather="plus"></i> </span>
@@ -51,7 +53,9 @@
                     </div>
                 </div>
                 <button class="btn btn-primary py-1 px-2 mr-2">Message</button>
-                <button class="btn btn-outline-secondary py-1 px-2">Profile</button>
+                <a href="<?= base_url() ?>masterdata/profile_user">
+                    <button class="btn btn-outline-secondary py-1 px-2">Profile</button>
+                </a>
             </div>
         </div>
     </div>
