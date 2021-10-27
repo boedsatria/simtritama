@@ -1,11 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Masterdata extends CI_Controller {
+class Masterdata extends CI_Controller
+{
 	public function __construct()
 	{
-	  parent::__construct();
-	//   $this->load->model('LaporanModel');
+		parent::__construct();
+		//   $this->load->model('LaporanModel');
 	}
 
 	public function index()
@@ -37,4 +38,19 @@ class Masterdata extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function data_user()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('masterdata/data_user');
+		$this->load->view('footer');
+	}
+
+	public function tambah_user()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('masterdata/tambah_user');
+		$this->load->view('footer');
+	}
 }
