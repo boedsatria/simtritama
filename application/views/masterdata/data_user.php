@@ -28,7 +28,7 @@
         <div class="box">
             <div class="flex flex-col lg:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <div class="w-24 h-24 lg:w-12 lg:h-12 image-fit lg:mr-1">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-1.jpg">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="<?= base_url() ?>dist/images/profile-1.jpg">
                 </div>
                 <div class="lg:ml-2 lg:mr-auto text-center lg:text-left mt-3 lg:mt-0">
                     <a href="" class="font-medium">Christian Bale</a>
@@ -59,7 +59,7 @@
         <div class="box">
             <div class="flex flex-col lg:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <div class="w-24 h-24 lg:w-12 lg:h-12 image-fit lg:mr-1">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-13.jpg">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="<?= base_url() ?>dist/images/profile-13.jpg">
                 </div>
                 <div class="lg:ml-2 lg:mr-auto text-center lg:text-left mt-3 lg:mt-0">
                     <a href="" class="font-medium">Angelina Jolie</a>
@@ -90,7 +90,7 @@
         <div class="box">
             <div class="flex flex-col lg:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <div class="w-24 h-24 lg:w-12 lg:h-12 image-fit lg:mr-1">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-11.jpg">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="<?= base_url() ?>dist/images/profile-11.jpg">
                 </div>
                 <div class="lg:ml-2 lg:mr-auto text-center lg:text-left mt-3 lg:mt-0">
                     <a href="" class="font-medium">Johnny Depp</a>
@@ -121,7 +121,7 @@
         <div class="box">
             <div class="flex flex-col lg:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <div class="w-24 h-24 lg:w-12 lg:h-12 image-fit lg:mr-1">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="dist/images/profile-7.jpg">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="<?= base_url() ?>dist/images/profile-7.jpg">
                 </div>
                 <div class="lg:ml-2 lg:mr-auto text-center lg:text-left mt-3 lg:mt-0">
                     <a href="" class="font-medium">Charlize Theron</a>
