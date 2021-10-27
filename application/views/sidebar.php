@@ -70,32 +70,38 @@
                     <?php foreach(get_menu_parent() as $mv): ?>
 
                         <?php 
+                            $uri = $this->uri->segment('1');
                             //LOGIC MENU AKTIF
-                            if($this->uri->segment('1') == $mv['slug_menu']) :
+                            if($uri == "") :
+                                $uri = 'dashboard';
+                            endif;
+
+                            if($uri == $mv['slug_menu']) :
                                 $active = 'side-menu--active';
                             else:
                                 $active = '';
                             endif;
-
                         ?>
 
                         <?php if($mv['nama_menu'] != "divider"): ?>
                             <li>
-                                <a <?= ($mv['slug_menu'] == "#" ? '' : 'href="'.base_url().$mv['slug_menu'].'"') ?> class="side-menu cursor-pointer <?= $active; ?> <?= ($this->uri->segment('1') == "" && $mv['slug_menu'] == "dashboard" ? "side-menu--active" : "") ?> <?= ($this->uri->segment('1') == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "side-menu--open" : "") ?>">
+                                <a <?= ($mv['slug_menu'] == "#" ? '' : 'href="'.base_url().$mv['slug_menu'].'"') ?> class="side-menu cursor-pointer <?= $active; ?> <?= ($uri == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "side-menu--active side-menu--open" : "") ?>">
                                     <div class="side-menu__icon"> <i data-feather="<?= $mv['icon_menu']; ?>"></i></div>
                                     <div class="side-menu__title">
                                         <?= $mv['nama_menu']; ?>
                                         <?php if(has_child($mv['id_menu']) > 0): ?>
-                                            <div class="side-menu__sub-icon "> <i data-feather="chevron-down"></i> </div>
+                                            <div class="side-menu__sub-icon "> 
+                                                <i data-feather="chevron-<?= ($uri == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "up" : "down") ?>"></i> 
+                                            </div>
                                         <?php endif; ?>
                                     </div>
                                 </a>
 
                                 <?php if(has_child($mv['id_menu']) > 0): ?>
-                                <ul class="<?= ($this->uri->segment('1') == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "side-menu__sub-open" : "") ?>">
+                                <ul class="<?= ($uri == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "side-menu__sub-open" : "") ?>">
                                     <?php foreach(get_menu_child($mv['id_menu']) as $mc): ?>
                                     <li>
-                                        <a href="<?= base_url().$mc['slug_menu']; ?>" class="side-menu">
+                                        <a href="<?= base_url().$mc['slug_menu']; ?>" class="side-menu <?= ($this->uri->segment('2') == explode('/', $mc['slug_menu'])[1] ? "side-menu--active" : "") ?>">
                                             <div class="side-menu__icon"> <i data-feather="<?= $mc['icon_menu']; ?>"></i> </div>
                                             <div class="side-menu__title"> <?= $mc['nama_menu']; ?> </div>
                                         </a>
