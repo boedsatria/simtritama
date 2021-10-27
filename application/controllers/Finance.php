@@ -43,6 +43,13 @@ class Finance extends CI_Controller {
 		$this->load->view('finance/general_ledger');
 		$this->load->view('footer');
 	}
+	public function akun_transaksi()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/akun_transaksi');
+		$this->load->view('footer');
+	}
 	public function laporan_keuangan()
 	{
 		$this->load->view('header');
