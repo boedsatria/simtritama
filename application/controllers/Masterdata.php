@@ -6,7 +6,8 @@ class Masterdata extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		//   $this->load->model('LaporanModel');
+		if(!$this->session->has_userdata('userlogin')) redirect(base_url('login'));
+        $this->load->model('UserModel');
 	}
 
 	public function index()
@@ -40,6 +41,10 @@ class Masterdata extends CI_Controller
 
 	public function data_user()
 	{
+		$data = array(
+			'user'	=> $this->UserModel->get_user()->result_array()
+		);
+
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('masterdata/data_user');

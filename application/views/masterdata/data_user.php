@@ -4,7 +4,7 @@
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
         <a href="<?= base_url() ?>masterdata/tambah_user">
-            <button class="btn btn-primary shadow-md mr-2">Add New User</button>
+            <button class="btn btn-primary shadow-md mr-2">Tambah User Baru</button>
         </a>
         <div class="dropdown">
             <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
@@ -12,8 +12,8 @@
             </button>
             <div class="dropdown-menu w-40">
                 <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
-                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="users" class="w-4 h-4 mr-2"></i> Add Group </a>
-                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="message-circle" class="w-4 h-4 mr-2"></i> Send Message </a>
+                    <a href="<?= base_url(); ?>masterdata/tambah_role" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="users" class="w-4 h-4 mr-2"></i> Tambah Role </a>
+                    <a href="<?= base_url(); ?>masterdata/tambah_role" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="clipboard" class="w-4 h-4 mr-2"></i> Tambah Direktorat </a>
                 </div>
             </div>
         </div>
