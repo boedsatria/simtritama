@@ -30,4 +30,36 @@ class Pic extends CI_Controller
 		$this->load->view('pic/media_order');
 		$this->load->view('footer');
 	}
+
+	public function data_project()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('pic/data_project');
+		$this->load->view('footer');
+	}
+
+	public function e_faktur()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('pic/e_faktur');
+		$this->load->view('footer');
+	}
+
+	public function file_upload()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('pic/file_upload');
+		$this->load->view('footer');
+	}
+
+	public function validasi_laporan()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('pic/validasi_laporan');
+		$this->load->view('footer');
+	}
 }
