@@ -16,11 +16,11 @@ class Placement extends CI_Controller
 		$this->load->view('placement/dashboard_placement');
 		$this->load->view('footer');
 	}
-	public function job_order()
+	public function job_order_placement()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('placement/job_order');
+		$this->load->view('placement/job_order_placement');
 		$this->load->view('footer');
 	}
 	public function kirim_hps_placement()
