@@ -29,7 +29,7 @@
                                     <td>10 November 2021</td>
                                     <td>Rp. 100.000.000,-</td>
                                     <td>
-                                        <button class="btn btn-rounded-warning w-24 mr-1 mb-2">Detail</button>
+                                        <button class="btn btn-rounded-warning w-24 mr-1 mb-2"><a href="<?= base_url() ?>produksi/detail_job_order">Detail</a></button>
                                         <button class="btn btn-rounded-danger w-24 mr-1 mb-2">Download</button>
                                     </td>
                                 </tr>
