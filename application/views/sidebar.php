@@ -120,7 +120,7 @@
                     <?php endforeach; ?>
                     <li class="side-nav__devider my-6"></li>
                 </ul>
-                
+                <!--begin menu static
                 <a href="" class="intro-x flex items-center pl-5 pt-4">
                     <img alt="Satriacorp.id" class="w-6" src="<?= base_url(); ?>dist/images/logo.svg">
                     <span class="hidden xl:block text-white text-lg ml-3">MENU STATIC</span> </span>
@@ -349,8 +349,8 @@
                     </li>
                 </ul>
             </nav>
-            <!-- END: Side Menu -->
-
+             END: Side Menu -->
+                        
             <!-- BEGIN: Content -->
             <div class="content">
                 <!-- BEGIN: Top Bar -->
