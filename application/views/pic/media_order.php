@@ -69,6 +69,10 @@
             </div>
         </div>
         <!-- END: BLOCK 5 -->
+    </div>
+
+    <div class="intro-y col-span-12">
+        
         <!-- BEGIN: MENU -->
         <div class="intro-y box mt-5">
             <div id="horizontal-form" class="p-5">
@@ -85,6 +89,5 @@
         </div>
         <!-- END: OPERATION -->
     </div>
-</div>
 </div>
 <!-- END: Content -->
