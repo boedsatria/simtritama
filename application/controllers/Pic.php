@@ -27,7 +27,7 @@ class Pic extends CI_Controller
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('pic/media_order');
+		$this->load->view('pic/pic_media_order');
 		$this->load->view('footer');
 	}
 
