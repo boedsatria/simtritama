@@ -166,26 +166,61 @@
                 </h2>
             </div>
             <div class="p-5">
-                Konten Media
+                MEDIA ORDER PLACEMENT
+                <div class="mt-3"> <label for="regular-form-5" class="form-label">Kode Produksi</label>
+                <input id="regular-form-5" type="text" class="form-control" placeholder="otomatis dari nomor surat order produksi" disabled> </div>
+                <div class="mt-3"> <label for="regular-form-5" class="form-label">Jumlah Versi</label>
+                <input id="regular-form-5" type="text" class="form-control" placeholder="jumlah versi produksi otomatis dari data Ringkos" disabled> </div>
+                <div class="mt-3"> <label for="regular-form-5" class="form-label">Media Placement</label>
+                <div class="overflow-x-auto">
+                    <table class="table table--sm">
+                        <thead>
+                            <tr>
+                                <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">#</th>
+                                <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Jenis Media</th>
+                                <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Wilayah</th>
+                                <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Nama Media</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">1</td>
+                                <td class="border-b dark:border-dark-5">TV Nasional</td>
+                                <td class="border-b dark:border-dark-5">Jakarta</td>
+                                <td class="border-b dark:border-dark-5">Trans7</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">2</td>
+                                <td class="border-b dark:border-dark-5">TV Nasional</td>
+                                <td class="border-b dark:border-dark-5">Jakarta</td>
+                                <td class="border-b dark:border-dark-5">TVRI</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">3</td>
+                                <td class="border-b dark:border-dark-5">Billboard</td>
+                                <td class="border-b dark:border-dark-5">Bandung</td>
+                                <td class="border-b dark:border-dark-5">Billboard Bandung 1</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">4</td>
+                                <td class="border-b dark:border-dark-5">Billboard</td>
+                                <td class="border-b dark:border-dark-5">Semarang</td>
+                                <td class="border-b dark:border-dark-5">Billboard Semarang 1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
+                <button class="btn btn-warning w-32 mr-2 mb-2"> <i data-feather="send" class="w-4 h-4 mr-2"></i> Kirim </button>
+
+
+
             </div>
         </div>
         <!-- END: BLOCK 5 -->
     </div>
 
-    <div class="intro-y col-span-12">
-        
-        <!-- BEGIN: MENU -->
-        <div class="intro-y box mt-5">
-            <div id="horizontal-form" class="p-5">
-                <div class="preview">
-                    <button class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Simpan </button> 
-                    <button class="btn btn-danger w-32 mr-2 mb-2"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Hapus </button> 
-                    <button class="btn btn-warning w-32 mr-2 mb-2"> <i data-feather="book" class="w-4 h-4 mr-2"></i> New </button> 
-                    <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
-                </div>
-            </div>
-        </div>
-        <!-- END: OPERATION -->
     </div>
 </div>
 <!-- END: Content -->
