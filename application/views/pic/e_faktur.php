@@ -13,7 +13,7 @@
                     Cari Data Ringkasan Kontrak
                 </h2>
             </div>
-            <div id="input" class="p-5">
+            <div class="p-5">
                 <div class="preview">
                     <div>
                         <label for="regular-form-1" class="form-label">Pilih Direktorat lalu Nomor Ringkosnya :</label>
