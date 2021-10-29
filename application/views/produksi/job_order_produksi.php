@@ -9,11 +9,10 @@
                             <th>No.</th>
                             <th>No. Ringkos</th>
                             <th>Nama Direktorat</th>
-                            <th>Tanggal Mulai Produksi</th>
-                            <th>Tanggal Akhir Produksi</th>
+                            <th>Tanggal Mulai</th>
+                            <th>Tanggal Selesai</th>
                             <th>Jumlah Versi</th>
-                            <th>Anggaran Produksi</th>
-                            <th>Materi</th>
+                            <th>Option</th>
                         </tr>
                     </thead>
                     <tbody class="border-b whitespace-nowrap">
@@ -24,7 +23,6 @@
                             <td>11 Maret 2021</td>
                             <td>11 April 2021</td>
                             <td>5 Versi</td>
-                            <td>Rp.100.000.000,-</td>
                             <td>
                                 <a href="<?= base_url('produksi/detail_job_order') ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
                                     Detail </a>
