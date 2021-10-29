@@ -43,8 +43,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $ci = &get_instance();
     $ci->db->from('role');
     $ci->db->where('id_role', $id);
-    $v = $ci->db->get()->result_array();
-    $data = strtoupper(substr($v['nama_rule'], 3));
+    $v = $ci->db->get()->row_array();
+    $data = strtoupper(substr($v['nama_role'], 3));
     return $data;
 
   }
