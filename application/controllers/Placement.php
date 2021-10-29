@@ -30,6 +30,13 @@ class Placement extends CI_Controller
 		$this->load->view('placement/hps_placement');
 		$this->load->view('footer');
 	}
+	public function order_media()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('placement/order_media');
+		$this->load->view('footer');
+	}
 	public function kirim_hasil_placement()
 	{
 		$this->load->view('header');

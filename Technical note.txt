@@ -1,0 +1,35 @@
+holla Genks..
+
+attention :
+    - make sure sebelum kerja lakukan SYNC yess,,
+    - infoin ke team kita mau ngerjain apa, biar gak conflict..
+    - pastiin baca Materi sebelum kerja biar gak ngeBlank.. materi nya ada di : https://drive.google.com/drive/folders/1z5QFcOJ9Mw2hAsVvdHT07m06oFUOFbwC?usp=sharing
+    - sebelum leave/udahan jangan lupa push pull, dan ketik technical note disini ya.. biar tau update nya dan tau mau ngapain lagi atau nerusin darimana..
+
+TECHNICAL NOTE
+
+what to do :
+    - update menu biar sama dengan page yang ada
+    - folder produksi :
+            - Job Order = Tambahin tanggal batas akhir pekerjaan, gausah ada tombol detail, langsung download materi aja, detailnya ada di materi nantinya
+            - Pengajuan = ngajuin HPS, berarti ada filter atau kolom pilih nomer job order atau ringkos, trus bawahnya kolom input :
+                - Biaya Talent : input
+                - Biaya Sewa Venue : input
+                - Biaya Alat : input
+                - Biaya transportasi : input
+                - Biaya Pasca Produksi : input
+                - Total biaya : otomatis rekap (input disable)
+                - button submit
+            - Pembayaran / Tagihan : untuk rekonsiliasi pembayaran2 dalam proses produksi, misalkan bayar talent 2 juta, disini di upload bukti bayarnya.
+                - kolom pilih ringkos
+                - kolom pilih item pembayaran2
+                - upload bukti bayar
+                - status saldo produksi (jumlah biaya HPS dikurangi biaya2 yang sudah dibayarkan, diakhir produksi saldonya kudu zero, kalo ga zero = pengembalian)
+                - status pembayaran biaya produksi dari finance (sudah dibayar/belum oleh finance ke produksi)
+                    kolom ini otomatis (input disable), ngikutin inputan finance
+    - folder placement : sama kayak PRODUKSI, tp tambah page ORDER MEDIA (order_media.php)
+                - order media = placement ngorder penayangan ke media sesuai permintaan di job order,
+                    format penomeran order media = nomer ringkos/kode media/nomer order media
+                    contoh : kemenaker 01/jan/2021/TVNas-Trans7/001
+---------------HERU 29/10/2021--------------------
+
