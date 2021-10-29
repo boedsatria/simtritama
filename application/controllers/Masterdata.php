@@ -48,7 +48,7 @@ class Masterdata extends CI_Controller
 
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('masterdata/data_user', $data);
+		$this->load->view('user/data_user', $data);
 		$this->load->view('footer');
 	}
 
@@ -81,7 +81,7 @@ class Masterdata extends CI_Controller
 			'nip_user'	=>	$nip
 		);
 		$this->UserModel->update_user($update);
-		redirect(base_url().'user/'.$id);
+		redirect(base_url().'user/detail/'.$id);
 	}
 
 	public function profile_user()
