@@ -51,4 +51,11 @@ class Produksi extends CI_Controller
 		$this->load->view('produksi/keuangan_produksi');
 		$this->load->view('footer');
 	}
+	public function pengajuan_produksi()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('produksi/pengajuan_produksi');
+		$this->load->view('footer');
+	}
 }

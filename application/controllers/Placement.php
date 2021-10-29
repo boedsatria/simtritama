@@ -16,7 +16,7 @@ class Placement extends CI_Controller
 		$this->load->view('placement/dashboard_placement');
 		$this->load->view('footer');
 	}
-	public function job_order_placement()
+	public function job_order()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
