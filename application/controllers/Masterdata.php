@@ -66,9 +66,8 @@ class Masterdata extends CI_Controller
 	{
 		$data = $_POST;
 		$data['password_user'] = password_hash($_POST['password_user'], PASSWORD_DEFAULT);
-		$unspace = str_replace(" ", "", $data['password_user']);
+		$unspace = str_replace(" ", "", $data['nama_user']);
 		$nama = preg_replace("/[^a-zA-Z0-9]+/", "", strtolower($unspace));
-		$data['nama_user'] = $nama;
 
 		if($_FILES){
 			$photo = upload_files('user', $nama);
