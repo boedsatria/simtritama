@@ -69,7 +69,7 @@ class Masterdata extends CI_Controller
 		$unspace = str_replace(" ", "", $data['nama_user']);
 		$nama = preg_replace("/[^a-zA-Z0-9]+/", "", strtolower($unspace));
 		
-		if($_FILES['file'] != ""){
+		if($_FILES['file']['name'] != ""){
 			$photo = upload_files('user', $nama);
 			$data['photo_user'] = $photo;
 		}
