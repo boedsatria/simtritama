@@ -20,7 +20,7 @@ class User extends CI_Controller
 	public function detail($id)
 	{
 		$data = array(
-			'v'		=> $this->UserModel->get_user($id)
+			'u'		=> $this->UserModel->get_user($id)->row_array()
 		);
 		$this->load->view('header');
 		$this->load->view('sidebar');
