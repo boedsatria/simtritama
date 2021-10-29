@@ -121,7 +121,8 @@
                     <li class="side-nav__devider my-6"></li>
                 </ul>
 
-                <!--begin menu static 
+                <!--begin menu static -->
+                <div hidden>
                 <a href="" class="intro-x flex items-center pl-5 pt-4">
                     <img alt="Satriacorp.id" class="w-6" src="<?= base_url(); ?>dist/images/logo.svg">
                     <span class="hidden xl:block text-white text-lg ml-3">MENU STATIC</span> </span>
@@ -348,7 +349,8 @@
                             </li>
                         </ul>
                     </li>
-                </ul> -->
+                </ul>
+            </div>
             </nav>
                         
             <!-- BEGIN: Content -->
