@@ -6,6 +6,7 @@ class Masterdata extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+        date_default_timezone_set("Asia/Jakarta");
 		if (!$this->session->has_userdata('userlogin')) redirect(base_url('login'));
 		$this->load->model('UserModel');
 	}
@@ -63,8 +64,22 @@ class Masterdata extends CI_Controller
 	}
 	public function tambah_user_action()
 	{
-		print_r($_POST);
-		die;
+		$data = $_POST;
+		$data['password_user'] = password_hash($_POST['password_user'], PASSWORD_DEFAULT);
+
+		if($_FILES){
+			$photo = upload_files('user', 'users');
+			$data['photo_user'] = $photo;
+		}
+
+		$id = $this->UserModel->insert_user($data);
+		$nip = get_kode_divisi($data['role_user']).$id.date('m').date('m');
+		$update = array(
+			'id_user'	=> 	$id,
+			'nip_user'	=>	$nip
+		);
+		$this->UserModel->update_user($update);
+		redirect(base_url().'user/'.$id);
 	}
 
 	public function profile_user()
