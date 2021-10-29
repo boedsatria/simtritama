@@ -7,7 +7,6 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('DashboardModel');
-        date_default_timezone_set("Asia/Jakarta");
     }
 
     public function index()

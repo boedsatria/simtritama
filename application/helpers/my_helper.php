@@ -38,18 +38,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     return $data->result();
   }
 
-  function get_sisa($id)
+  function get_kode_divisi($id)
   {
     $ci = &get_instance();
-    $ci->db->from('peserta');
-    $ci->db->where('jam_kedatangan', $id);
-    $jumlah_peserta = $ci->db->get()->num_rows();
-
-    $ci->db->from("jam_vaksin");
-    $ci->db->where("id_jv", $id);
-    $kuota = $ci->db->get()->row()->quota_jv;
-
-    return $kuota-$jumlah_peserta;
+    $ci->db->from('role');
+    $ci->db->where('id_role', $id);
+    $v = $ci->db->get()->row_array();
+    $data = strtoupper(substr($v['nama_role'], 3));
+    return $data;
 
   }
 
@@ -217,7 +213,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $img_name = microtime(true)*10000;
     
     $data = array();
-    $config['upload_path']          = './uploaded/tmp/';
+    $config['upload_path']          = './uploads/tmp/';
     $config['file_name']            = $slug.'_'.$img_name;
     $config['allowed_types']        = '*';
     $config['max_size']             = 0;
@@ -232,10 +228,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     {
         $data = array('upload_data' => $CI->upload->data());
     }
-
+    // print_r($data);die;
     $config1['image_library'] = 'gd2';
     $config1['source_image'] = $data['upload_data']['full_path'];
-    $config1['new_image'] = './uploaded/'.$path.'/';
+    $config1['new_image'] = './uploads/'.$path.'/';
     $config1['create_thumb'] = TRUE;
     $config1['thumb_marker']  = '';
     $config1['maintain_ratio'] = TRUE;
@@ -253,7 +249,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         ob_end_clean();
     }
     
-    unlink('./uploaded/tmp/'.$data['upload_data']['file_name']);
+    unlink('./uploads/tmp/'.$data['upload_data']['file_name']);
 
     $new_name = $data['upload_data']['file_name'];
     return $new_name;

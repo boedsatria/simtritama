@@ -41,7 +41,7 @@
                         <img alt="<?= $u['nama_user']; ?>" class="rounded-full" src="<?php echo ($img_src == '' ? base_url('dist/images/no-images.png') : $avatar); ?>">
                     </div>
                     <div class="lg:ml-2 lg:mr-auto text-center lg:text-left mt-3 lg:mt-0">
-                        <a href="<?= base_url() . 'masterdata/profile_user/' . $u['id_user'] ?>" class="font-medium"><?= $u['nama_user']; ?></a>
+                        <a href="<?= base_url() . 'user/detail/' . $u['id_user'] ?>" class="font-medium"><?= $u['nama_user']; ?></a>
                         <div class="text-gray-600 text-xs mt-0.5"><?= $u['nama_role']; ?></div>
                     </div>
                     <div class="flex -ml-2 lg:ml-0 lg:justify-end mt-3 lg:mt-0">

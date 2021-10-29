@@ -17,7 +17,23 @@ class UserModel extends CI_Model
     if ($id) $this->db->where('id_role', $id);
     return $this->db->get();
   }
+  function insert_user($data)
+  {
+    $this->db->insert('user', $data);
+    return $this->db->insert_id();
+  }
 
+  function update_user($data)
+  {
+    $this->db->where('id_user', $data['id_user']);
+    $this->db->update('user', $data);
+  }
+
+  function delete_user($id)
+  {
+    $this->db->where('id_user', $id);
+    $this->db->delete('user');
+  }
 
 
 
@@ -135,23 +151,7 @@ class UserModel extends CI_Model
     return $data;
   }
 
-  function update_user($data, $email)
-  {
-    $this->db->where('email_user', $email);
-    $this->db->update('app_user', $data);
-  }
 
-  function insert_user($data)
-  {
-    $this->db->insert('app_user', $data);
-    return $this->db->insert_id();
-  }
-
-  function delete_user($id)
-  {
-    $this->db->where('id_user', $id);
-    $this->db->delete('app_user');
-  }
 
   function get_login_nama($nama, $email)
   {
