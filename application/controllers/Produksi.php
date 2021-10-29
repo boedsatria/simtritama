@@ -1,11 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Produksi extends CI_Controller {
+class Produksi extends CI_Controller
+{
 	public function __construct()
 	{
-	  parent::__construct();
-	//   $this->load->model('LaporanModel');
+		parent::__construct();
+		//   $this->load->model('LaporanModel');
 	}
 
 	public function index()
@@ -20,6 +21,13 @@ class Produksi extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('produksi/job_order_produksi');
+		$this->load->view('footer');
+	}
+	public function detail_job_order()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('produksi/detail_job_order');
 		$this->load->view('footer');
 	}
 	public function kirim_hps()
@@ -43,5 +51,4 @@ class Produksi extends CI_Controller {
 		$this->load->view('produksi/keuangan_produksi');
 		$this->load->view('footer');
 	}
-
 }
