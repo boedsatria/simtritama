@@ -27,7 +27,7 @@
                         </div>
                         <div class="input-form mt-3">
                             <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                            <input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control" placeholder="Nama Lengkap" required>
+                            <input id="nama_lengkap" name="nama_user" type="text" class="form-control" placeholder="Nama Lengkap" required>
                         </div>
                        
                         
@@ -37,7 +37,7 @@
                         </div>
                         <div class="input-form mt-3">
                             <label for="no_hp" class="form-label">No Handphone</label>
-                            <input id="no_hp" name="no_hp" type="text" class="form-control" placeholder="No. Telephone">
+                            <input id="no_hp" name="telepon_user" type="text" class="form-control" placeholder="No. Telephone">
                         </div>
                         <div class="input-form mt-3">
                             <label for="foto_user" class="form-label">Foto</label>
@@ -45,12 +45,9 @@
                         </div>
                         <div class="input-form mt-3">
                             <label for="password" class="form-label">Password</label>
-                            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+                            <input id="password" name="password_user" type="password" class="form-control" placeholder="Password" required>
                         </div>
-                        <div class="input-form mt-3">
-                            <label for="alamat" class="form-label">Alamat</label>
-                            <textarea id="alamat" name="alamat" class="editor form-control"></textarea>
-                        </div>
+                        
                         
                         <div class="mt-3">
                             <button type="submit" class="btn btn-primary">Submit</button>
