@@ -1,11 +1,11 @@
 <div class="intro-y flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        Job Order
+        Job Order Produksi
     </h2>
 </div>
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-12">
-        <!-- BEGIN: Responsive Table -->
+        <!-- BEGIN:  Table -->
         <div class="intro-y box mt-5">
             <div class="p-5" id="responsive-table">
                 <div class="preview">
@@ -17,6 +17,7 @@
                                     <th>No.Ringkos</th>
                                     <th>Nama Direktorat</th>
                                     <th>Tanggal Mulai Produksi</th>
+                                    <th>Tanggal Akhir Produksi</th>
                                     <th>Anggaran Produksi</th>
                                     <th>Materi</th>
                                 </tr>
@@ -24,12 +25,12 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>xxxxx</td>
+                                    <td>(DataBase)</td>
                                     <td>Kementrian Agama</td>
                                     <td>10 November 2021</td>
+                                    <td>10 Desember 2021</td>
                                     <td>Rp. 100.000.000,-</td>
                                     <td>
-                                        <button class="btn btn-rounded-warning w-24 mr-1 mb-2"><a href="<?= base_url() ?>produksi/detail_job_order">Detail</a></button>
                                         <button class="btn btn-rounded-danger w-24 mr-1 mb-2">Download</button>
                                     </td>
                                 </tr>
@@ -41,7 +42,7 @@
 
             </div>
         </div>
-        <!-- END: Responsive Table -->
+        <!-- END:  Table -->
 
     </div>
 </div>
