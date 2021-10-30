@@ -44,11 +44,11 @@ class Placement extends CI_Controller
 		$this->load->view('placement/hasil_placement');
 		$this->load->view('footer');
 	}
-	public function keuangan_placement()
+	public function pembayaran_tagihan()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('placement/keuangan_placement');
+		$this->load->view('placement/pembayaran_tagihan');
 		$this->load->view('footer');
 	}
 }
