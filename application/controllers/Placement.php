@@ -51,4 +51,11 @@ class Placement extends CI_Controller
 		$this->load->view('placement/pembayaran_tagihan');
 		$this->load->view('footer');
 	}
+	public function detail_order_placement()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('placement/detail_order_placement');
+		$this->load->view('footer');
+	}
 }
