@@ -73,12 +73,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+$uri = base_url();
+$username = "root";
+$password = "";
+$database = "simtritama";
+if($uri == "http://simtritama.satriacorp.id"){
+	$username = "u4814692_simtritama";
+	$password = "100%Id/En";
+	$database = "u4814692_simtritama";
+}
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'simtritama',
+	'username' => $username,
+	'password' => $password,
+	'database' => $database,
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
