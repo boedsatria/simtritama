@@ -23,7 +23,7 @@ class Placement extends CI_Controller
 		$this->load->view('placement/job_order_placement');
 		$this->load->view('footer');
 	}
-	public function kirim_hps_placement()
+	public function pengajuan_dan_logproof()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
