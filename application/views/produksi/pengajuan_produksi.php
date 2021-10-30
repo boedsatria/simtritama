@@ -153,5 +153,11 @@
             </div>
         </div>
     </div>
-</div>
+</div></br>
 <!-- END: Responsive Table -->
+<!-- Button -->
+<div class="intro-y col-span-12">
+    <button class="btn btn-secondary mr-2" type="print">Print</button>
+    <button class="btn btn-danger mr-2" type="submit">Send</button>
+</div>
+<!-- end Button -->
