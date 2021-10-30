@@ -8,11 +8,11 @@
                         <tr>
                             <th>No.</th>
                             <th>No. Ringkos</th>
-                            <th>Kode Produksi</th>
+                            <th>Jumlah Versi</th>
                             <th>Tanggal Mulai Tayang</th>
                             <th>Tanggal Akhir Tayang</th>
-                            <th>Media</th>
-                            <th>Anggaran Placement</th>
+                            <th>Option</th>
+
                         </tr>
                     </thead>
                     <tbody class="border-b whitespace-nowrap">
@@ -22,8 +22,10 @@
                             <td>987654321</td>
                             <td>17 April 2021</td>
                             <td>17 Mei 2021</td>
-                            <td><a href="<?= base_url() ?>/placement/media_detail">RCTI</a></td>
-                            <td>Rp.70.000.000,-</td>
+                            <td><a href="<?= base_url('placement/detail_order_placement') ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
+                                    Detail </a>
+                                <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Download </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
