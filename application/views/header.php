@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="htmls" class="dark">
+<html lang="en" id="htmls" class="<?= get_user_themes($this->session->userdata('userlogin')['id_user'])['theme']; ?>">
 <!-- BEGIN: Head -->
 
 <head>

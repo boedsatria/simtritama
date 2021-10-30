@@ -277,6 +277,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     if (!isset($CI->session->userdata('userlogin')['user_id'])) redirect (base_url());
   }
 
+  function get_user_themes($id)
+  {
+    $ci = &get_instance();
+    $ci->db->from("user");
+    $ci->db->where("id_user", $id);
+    $data = $ci->db->get();
+    // print_r($data->num_rows());die;
+    $data = $data->row_array();
+    $data = $data['status_user'];
+    $datas = array();
+    if($data == 1){
+      $datas['theme'] = 'light';
+      $datas['btn'] = '';
+    }else{
+      $datas['theme'] = 'dark';
+      $datas['btn'] = 'dark-mode-switcher__toggle--active';
+    }
+    // print_r($data);die;
+    return $datas;
+  }
+
 
   function tgl_indo($tanggal){
     if ($tanggal == '0000-00-00' || $tanggal == '') return ' '; 

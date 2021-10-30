@@ -27,4 +27,18 @@ class User extends CI_Controller
 		$this->load->view('user/profile_user', $data);
 		$this->load->view('footer');
 	}
+	public function themes_user($t, $id)
+	{
+		if($t == "light%20dark"){
+			$themes = 2;
+		}else{
+			$themes = 1;
+		}
+		// print_r($data);die;
+		$update = array(
+			'id_user'		=> 	$id,
+			'status_user'	=>	$themes
+		);
+		$this->UserModel->update_user($update);
+	}
 }
