@@ -24,8 +24,8 @@
                 <div id="input" class="p-5">
                     <div class="preview">
                         <div>
-                            <label for="regular-form-1" class="form-label">Nama Talent</label>
-                            <input id="regular-form-1" name="nama_talent" type="text" class="form-control" placeholder="Input biaya talent">
+                            <label for="regular-form-1" class="form-label">Nama Item</label>
+                            <input id="regular-form-1" name="nama_item" type="text" class="form-control" placeholder="Input keterangan nama per item">
                         </div></br>
                         <div>
                             <label for="regular-form-1" class="form-label">Biaya Talent</label>
@@ -35,10 +35,7 @@
                             <label for="regular-form-1" class="form-label">Biaya Sewa Venue</label>
                             <input id="regular-form-1" name="b_venue" type="text" class="form-control" placeholder="Input biaya sewa venue">
                         </div></br>
-                        <div>
-                            <label for="regular-form-1" class="form-label">Biaya Alat</label>
-                            <input id="regular-form-1" name="b_alat" type="text" class="form-control" placeholder="Input biaya sewa alat">
-                        </div></br>
+
                     </div>
                 </div>
             </div>
@@ -58,8 +55,8 @@
                             <input id="regular-form-1" name="b_pasca" type="text" class="form-control" placeholder="Input biaya sewa venue">
                         </div></br>
                         <div>
-                            <label for="regular-form-1" class="form-label">TOTAL BIAYA PRODUKSI</label>
-                            <input id="regular-form-1" name="total_biaya" type="text" class="form-control" placeholder="otomatis submit" disabled>
+                            <label for="regular-form-1" class="form-label">Biaya Alat</label>
+                            <input id="regular-form-1" name="b_alat" type="text" class="form-control" placeholder="Input biaya sewa alat">
                         </div></br>
                     </div>
                 </div>
@@ -70,11 +67,12 @@
         <!-- Button -->
         <div class="intro-y col-span-12">
             <button class="btn btn-primary mr-2" type="submit">Save</button>
-            <button class="btn btn-warning" type="reset">Cancel</button>
+            <button class="btn btn-warning mr-2" type="reset">Cancel</button>
         </div>
     </div>
 </form>
 
+<!-- BEGIN TABLE -->
 <div class="intro-y box mt-5">
     <div class="p-5" id="responsive-table">
         <div class="preview">
