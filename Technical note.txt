@@ -32,4 +32,5 @@ what to do :
                     format penomeran order media = nomer ringkos/kode media/nomer order media
                     contoh : kemenaker 01/jan/2021/TVNas-Trans7/001
 ---------------HERU 29/10/2021--------------------
-
+Tambah menu
+Logproof dipisah dari pengajuan
