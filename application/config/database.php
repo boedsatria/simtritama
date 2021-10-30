@@ -77,7 +77,7 @@ $uri = base_url();
 $username = "root";
 $password = "";
 $database = "simtritama";
-if($uri == "http://simtritama.satriacorp.id"){
+if($uri == "http://simtritama.satriacorp.id/"){
 	$username = "u4814692_simtritama";
 	$password = "100%Id/En";
 	$database = "u4814692_simtritama";
