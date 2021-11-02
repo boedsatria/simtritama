@@ -11,12 +11,11 @@
                 <!-- END: Modal Toggle -->
                 <!-- BEGIN: Modal Content -->
                 <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left">
-                                    <i data-feather="user-plus" class="w-16 h-16 text-theme-9 mx-auto mt-3"></i>
                                     <div>
                                         <div class="sm:flex items-center sm:mr-4">
                                             <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Jenis Media</label>
@@ -34,16 +33,16 @@
                                                 <option value="Lembaga">Jawa Timur</option>
                                             </select>
                                         </div></br>
-                                        <label for="nama_media" class="form-label">Nama Media</label>
+                                        <label for="nama_media" class="form-label mt-2">Nama Media</label>
                                         <input id="nama_media" type="text" name="nama_media" class="form-control w-full" placeholder="Input text">
-                                        <label for="email_media" class="form-label">Email Media</label>
+                                        <label for="email_media" class="form-label mt-2">Email Media</label>
                                         <input id="email_media" type="text" name="email_media" class="form-control w-full" placeholder="Input text">
-                                        <label for="phone_media" class="form-label">Nomor Telephone Media</label>
+                                        <label for="phone_media" class="form-label mt-2">Nomor Telephone Media</label>
                                         <input id="phone_media" type="text" name="phone_media" class="form-control w-full" placeholder="Input text">
-                                        <label for="alamat_media" class="form-label">Alamat Media</label>
+                                        <label for="alamat_media" class="form-label mt-2">Alamat Media</label>
                                         <input id="alamat_media" type="text" name="alamat_media" class="form-control w-full" placeholder="Input text">
                                         <div class="preview">
-                                            <label for="foto_media" class="form-label">Upload Foto Media</label>
+                                            <label for="foto_media" class="form-label mt-2">Upload Foto Media</label>
                                             <form data-single="true" name="foto_media" action="/file-upload" class="dropzone">
                                                 <div class="fallback">
                                                     <input name="file" type="file" />
