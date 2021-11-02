@@ -24,7 +24,7 @@
                                                 <option value="Kementerian">TV Nasional</option>
                                                 <option value="Direktorat">TV Lokal</option>
                                                 <option value="BUMN">Radio Nasional</option>
-                                                <option value="Lembaga">Radio Lokal/option>
+                                                <option value="Lembaga">Radio Lokal</option>
                                             </select> &ensp;
                                             <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
                                             <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
