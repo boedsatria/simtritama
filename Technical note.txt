@@ -34,3 +34,227 @@ what to do :
 ---------------HERU 29/10/2021--------------------
 Tambah menu
 Logproof dipisah dari pengajuan
+
+Master Data
+
+**Data client :
+
+Nama pemilik rekening
+Kontak person ->hapus
+
+isinya:
+Nama perusahan
+Siup
+Npwp dll
+->tunggu tabel exel
+
+
+**Data User:
+
+Tambah no ktp
+
+
+**Data Media:
+
+Alamat media ganti jadi Titik Media
+ 
+Tambah input discount%
+
+Nama perusahaan
+Nama media
+No npwp media
+Nama rekening
+No rekening
+
+Tambah button view galery
+
+Sub/kabupaten
+Modal -> bikin galery tambah foto bukan replace
+
+Tambah kordinat map
+
+Kasifikasi media
+Tv Nasional
+Tv Lokal
+Media luar ruang
+Media digital
+
+** Tambah Menu -> Data perusahaan penyelenggara
+
+isi nya.....
+-------------------------------
+ Nama perusahaan
+
+No.Npwp & upload file
+
+Alamat
+
+Sub bidang
+
+Nama direktur
+
+Nama komisaris -> upload file KTP & NPWP
+
+NIB -> upload file
+
+No rekening -> upload file rekening koran
+
+Nama direkening
+
+Nama Bank
+
+No akta upload file
+
+Akta perubahan -> upload file
+
+Akta pendirian -> upload fule
+
+SPT bulanan -> upload file
+
+SPT 3bulan -> upload file
+
+SPT tahunan -> upload file
+
+Kop surat -> format word
+
+Speciment stempel -> upload file pdf high resokution
+
+**Tambah Menu -> acuan harga atau katalog harga
+
+
+                         PIC:
+
+Buat direktorat di ganti jadi client user
+
+**Data Project:
+
+Tambah input kanwil buat dki
+
+Harus ada pilihan pajak pph 2%
+untuk sp2d otomatis
+
+Pencairan bukan cuma 14 hari bisa jadi ada yg sifat nya lelang
+
+No rek -> hapus
+
+Nama bank perusahaan ganti jadi nama pemilik rekening
+
+Bikin radio pembayaran LS atau termin
+Button add
+
+Switch direktorat pindah keatas
+
+Nama pemilik rekening
+Nama bank  di direktorat
+
+Nama Perusahaan Penyelenggara
+
+Produksi Media->Dashboard control media
+
+PIC harus mengetahui ketersediaan media -> tabel, chart dll
+
+instansi dari direktorat
+
+Susunan nya: .........
+✓. Kementerian
+✓. Direktorat jendral
+✓. Direktorat
+✓.provinsi
+etc. ...
+
+Buat media placement
+Tambah judul atau berdasarkan versi
+
+**E-Faktur:
+
+Ppn itu 10%
+
+
+Forward -> Finance
+Tampilan sama dengan data project
+
+**Media order:
+
+Tim pelaksana produksi
+
+Tambah upload hps
+
+**File Upload
+
+**Validasi
+
+Dashboard pic global
+
+                       Produksi
+
+**Job Order
+
+Detail ->Nilai pagu produksi-> Hapus->ganti kontrak produksi
+
+Pengajuan -> hold dulu
+
+**Tambah menu -> laporan produksi Dan approval 
+
+
+                       Placement
+
+**Job Order
+
+Detail -> MO placement harus ada approval PIC
+Tambah button MO
+
+Placement yg sudah masuk ke PIC tidak bisa dirubah lagi
+
+**Pembayaran/tagihan -> hapus
+
+MO isi nya data coast produksi dan placement
+
+                      Finance
+
+Konfirmasi pembayaran
+
+Petty cash pusat
+Daerah yg input pusat juga yg di aplikasi
+
+Request
+
+Setelah BAST dan sp2d cek yg belum terbayar
+
+Rekap dashboard:
+Harian
+Mingguan
+Bulanan
+Tahunan
+
+
+Putri ->
+Kolom sp2d
+Report -> hutang piutang yang terhitung
+input pembayaran
+
+Ina ->
+Buku besar 
+Neraca
+Audit internal
+Penyusutan akumulasi
+
+Merta ->
+Patty cash/GA
+Pengadaan
+
+Notifikasi limit operasional -> nanti ada penambahan
+
+Role akses 
+Legalitas perusahaan data & perusahaan
+
+
+__________
+
+Note tambahan
+
+Data Entry untuk Role akses
+
+Mo atau hps harus ada persetujuan dari PIC submit ke finance
+
+Logproof seminggu
+Yg di upload surat tayang, resi, capture tayang
