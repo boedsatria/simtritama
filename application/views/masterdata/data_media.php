@@ -33,6 +33,7 @@
                                                 <option value="Lembaga">Jawa Timur</option>
                                             </select>
                                         </div></br>
+
                                         <label for="nama_media" class="form-label mt-2">Nama Media</label>
                                         <input id="nama_media" type="text" name="nama_media" class="form-control w-full" placeholder="Input text">
                                         <label for="email_media" class="form-label mt-2">Email Media</label>
