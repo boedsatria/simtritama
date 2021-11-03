@@ -16,6 +16,13 @@ class Pic extends CI_Controller
 		$this->load->view('pic/dashboard_pic');
 		$this->load->view('footer');
 	}
+	public function dashboard_pic()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('pic/dashboard_pic');
+		$this->load->view('footer');
+	}
 	public function tambah_data()
 	{
 		$this->load->view('header');

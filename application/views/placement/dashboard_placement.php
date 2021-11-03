@@ -1,81 +1,181 @@
-<!-- BEGIN : JUDUL -->
-<div class="intro-y flex items-center mt-8">
-                    <h2 class="text-lg font-medium mr-auto">
-                        JUDUL PAGE <!--JUDUL PAGE-->
+<!-- BEGIN: Responsive Table -->
+<div class="intro-y flex flex-col sm:flex-row items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        KETERSEDIAAN MEDIA PLACEMENT
+    </h2>
+</div>
+<div class="intro-y box mt-5">
+    <div class="p-5" id="responsive-table">
+        <div class="preview">
+            <div class="overflow-x-auto">
+                <table class="table">
+                    <thead class="border-b-2 dark:border-dark-5 whitespace-nowrap">
+                        <tr>
+                            <th>No.</th>
+                            <th>No. Ringkos</th>
+                            <th>Media Placement</th>
+                            <th>Progress</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border-b whitespace-nowrap">
+                        <tr class="border-b">
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>Keselamatan Kerja</td>
+                            <td class="w-full">
+                                <div class="progress-bar w-1/4 bg-theme-6 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Brief OK</div>
+                            </td>
+                            <td>
+                                <a href="<?= base_url('produksi/detail_job_order') ?>" class="btn btn-sm w-24 btn-primary">
+                                    Lanjutkan </a>
+                            </td>
+                        </tr>
+                        <tr class="border-b">
+                            <td>2</td>
+                            <td>2345</td>
+                            <td>K-3 indoor</td>
+                            <td>
+                                <div class="progress-bar w-2/4 bg-theme-12 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">submit hasil</div>
+                            </td>
+                            <td>
+                                <a href="<?= base_url('produksi/detail_job_order') ?>" class="btn btn-sm w-24 btn-primary">
+                                    Lanjutkan </a>
+                            </td>
+                        </tr>
+                        <tr class="border-b">
+                            <td>3</td>
+                            <td>3456</td>
+                            <td>K-3 outdoor</td>
+                            <td>
+                                <div class="progress-bar w-3/4 bg-theme-1 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">hasil Approved</div>
+                            </td>
+                            <td>
+                                <a href="<?= base_url('produksi/detail_job_order') ?>" class="btn btn-sm w-24 btn-primary">
+                                    Lanjutkan </a>
+                            </td>
+                        </tr>
+                        <tr class="border-b">
+                            <td>4</td>
+                            <td>4567</td>
+                            <td>K-3 ketinggian</td>
+                            <td>
+                                <div class="progress-bar w-4/4 bg-theme-9 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Selesai</div>
+                            </td>
+                            <td>
+                                <a href="<?= base_url('produksi/detail_job_order') ?>" class="btn btn-sm w-24 btn-primary">
+                                    Lanjutkan </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN: Pagination -->
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+        <ul class="pagination">
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
+            </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li> <a class="pagination__link" href="">1</a> </li>
+            <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
+            <li> <a class="pagination__link" href="">3</a> </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
+            </li>
+        </ul>
+        <select class="w-20 form-select box mt-3 sm:mt-0">
+            <option>10</option>
+            <option>25</option>
+            <option>35</option>
+            <option>50</option>
+        </select>
+    </div>
+    <!-- END: Pagination -->
+</div>
+<!-- END: Responsive Table -->
+
+
+<div class="grid grid-cols-12 gap-6">
+    <div class="col-span-12 2xl:col-span-9">
+        <div class="grid grid-cols-12 gap-6">
+
+
+            <!-- BEGIN: Weekly Top Seller -->
+            <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+                <div class="intro-y flex items-center h-10">
+                    <h2 class="text-lg font-medium truncate mr-5">
+                        Media Placement
                     </h2>
                 </div>
-                <!-- END JUDUL-->
-                <div class="grid grid-cols-12 gap-6 mt-5"> <!-- KOLOM BESAR-->
-                    <div class="intro-y col-span-12 lg:col-span-6"> <!-- KOLOM KIRI-->
-                        <!-- BEGIN: BLOCK 1 -->
-                        <div class="intro-y box">
-                            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                                <h2 class="font-medium text-base mr-auto">
-                                    BLOK 1 <!-- JUDUL BLOK KIRI-->
-                                </h2>
-                                <!-- KONTEN BLOCK 1 DISINI-->
-                            </div>
+                <div class="intro-y box p-5 mt-5">
+                    <canvas class="mt-3" id="report-pie-chart" height="300"></canvas>
+                    <div class="mt-8">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
+                            <span class="truncate">17 - 30 Years old</span>
+                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
+                            <span class="font-medium xl:ml-auto">62%</span>
                         </div>
-                        <!-- END: BLOCK 1 -->
-                        <br>
-                        <!-- BEGIN: BLOCK 2 -->
-                        <div class="intro-y box">
-                            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                                <h2 class="font-medium text-base mr-auto">
-                                    BLOK 2 <!-- JUDUL BLOK KIRI-->
-                                </h2>
-                                <!-- KONTEN BLOCK 2 DISINI-->
-                            </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-2 h-2 bg-theme-1 rounded-full mr-3"></div>
+                            <span class="truncate">31 - 50 Years old</span>
+                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
+                            <span class="font-medium xl:ml-auto">33%</span>
                         </div>
-                        <!-- END: BLOCK 2 -->
-                        <br>
-                        <!-- BEGIN: BLOCK 3 -->
-                        <div class="intro-y box">
-                            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                                <h2 class="font-medium text-base mr-auto">
-                                    BLOK 3 <!-- JUDUL BLOK KIRI-->
-                                </h2>
-                                <!-- KONTEN BLOCK 3 DISINI-->
-                            </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
+                            <span class="truncate">>= 50 Years old</span>
+                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
+                            <span class="font-medium xl:ml-auto">10%</span>
                         </div>
-                        <!-- END: BLOCK 3 -->
-                    </div>
-                    <div class="intro-y col-span-12 lg:col-span-6"> <!-- KOLOM KANAN-->
-                        <!-- BEGIN: BLOCK 4 -->
-                        <div class="intro-y box">
-                            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                                <h2 class="font-medium text-base mr-auto">
-                                    BLOK 4 <!-- JUDUL BLOK 4-->
-                                </h2>
-                            </div>
-                        </div>
-                        <!-- END: BLOCK 4 -->
-						<br>
-						<!-- BEGIN: BLOCK 5 -->
-                        <div class="intro-y box">
-                            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                                <h2 class="font-medium text-base mr-auto">
-                                    BLOK 5 <!-- JUDUL BLOK 4-->
-                                </h2>
-                            </div>
-                        </div>
-                        <!-- END: BLOCK 5 -->
-                        <!-- BEGIN: MENU -->
-                        <div class="intro-y box mt-5">
-                            <div id="horizontal-form" class="p-5">
-                                <div class="preview">
-                                      <button class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Simpan </button>  <button class="btn btn-danger w-32 mr-2 mb-2"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Hapus </button> <button class="btn btn-warning w-32 mr-2 mb-2"> <i data-feather="book" class="w-4 h-4 mr-2"></i> New </button> <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
-                                </div>
-                                <div class="source-code hidden">
-                                    <button data-target="#copy-horizontal-form" class="copy-code btn py-1 px-2 btn-outline-secondary"> <i data-feather="file" class="w-4 h-4 mr-2"></i> Copy example code </button>
-                                    <div class="overflow-y-auto mt-3 rounded-md">
-                                        <pre id="copy-horizontal-form" class="source-preview"> <code class="text-xs p-0 rounded-md html pl-5 pt-8 pb-4 -mb-10 -mt-10"> HTMLOpenTagdiv class=&quot;form-inline&quot;HTMLCloseTag HTMLOpenTaglabel for=&quot;horizontal-form-1&quot; class=&quot;form-label sm:w-20&quot;HTMLCloseTagEmailHTMLOpenTag/labelHTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-1&quot; type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;example@gmail.com&quot;HTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;form-inline mt-5&quot;HTMLCloseTag HTMLOpenTaglabel for=&quot;horizontal-form-2&quot; class=&quot;form-label sm:w-20&quot;HTMLCloseTagPasswordHTMLOpenTag/labelHTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-2&quot; type=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;secret&quot;HTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;form-check sm:ml-20 sm:pl-5 mt-5&quot;HTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-3&quot; class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;&quot;HTMLCloseTag HTMLOpenTaglabel class=&quot;form-check-label&quot; for=&quot;horizontal-form-3&quot;HTMLCloseTagRemember meHTMLOpenTag/labelHTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;sm:ml-20 sm:pl-5 mt-5&quot;HTMLCloseTag HTMLOpenTagbutton class=&quot;btn btn-primary&quot;HTMLCloseTagLoginHTMLOpenTag/buttonHTMLCloseTag HTMLOpenTag/divHTMLCloseTag </code> </pre>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END: OPERATION -->
                     </div>
                 </div>
             </div>
-            <!-- END: Content -->
+            <!-- END: Weekly Top Seller -->
+            <!-- BEGIN: Sales Report -->
+            <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+                <div class="intro-y flex items-center h-10">
+                    <h2 class="text-lg font-medium truncate mr-5">
+                        Sales Report
+                    </h2>
+                </div>
+                <div class="intro-y box p-5 mt-5">
+                    <canvas class="mt-3" id="report-donut-chart" height="300"></canvas>
+                    <div class="mt-8">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
+                            <span class="truncate">17 - 30 Years old</span>
+                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
+                            <span class="font-medium xl:ml-auto">62%</span>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-2 h-2 bg-theme-1 rounded-full mr-3"></div>
+                            <span class="truncate">31 - 50 Years old</span>
+                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
+                            <span class="font-medium xl:ml-auto">33%</span>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
+                            <span class="truncate">>= 50 Years old</span>
+                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
+                            <span class="font-medium xl:ml-auto">10%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Sales Report -->
+
+
+        </div>
+    </div>
+</div>

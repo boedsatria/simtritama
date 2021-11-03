@@ -16,6 +16,13 @@ class Produksi extends CI_Controller
 		$this->load->view('produksi/dashboard_produksi');
 		$this->load->view('footer');
 	}
+	public function dashboard_produksi()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('produksi/dashboard_produksi');
+		$this->load->view('footer');
+	}
 	public function job_order()
 	{
 		$this->load->view('header');
