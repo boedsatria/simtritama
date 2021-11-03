@@ -1,14 +1,22 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Finance extends CI_Controller {
+class Finance extends CI_Controller
+{
 	public function __construct()
 	{
-	  parent::__construct();
-	//   $this->load->model('LaporanModel');
+		parent::__construct();
+		//   $this->load->model('LaporanModel');
 	}
 
 	public function index()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/dashboard_finance');
+		$this->load->view('footer');
+	}
+	public function dashboard_finance()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
@@ -22,11 +30,11 @@ class Finance extends CI_Controller {
 		$this->load->view('finance/buku_besar');
 		$this->load->view('footer');
 	}
-	public function petty_cash()
+	public function patty_cash()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/petty_cash');
+		$this->load->view('finance/patty_cash');
 		$this->load->view('footer');
 	}
 	public function asset_penyusutan()
@@ -57,5 +65,4 @@ class Finance extends CI_Controller {
 		$this->load->view('finance/laporan_keuangan');
 		$this->load->view('footer');
 	}
-
 }
