@@ -54,18 +54,21 @@
                             <div class="form-check mr-2 mt-2 sm:mt-0"> <input id="radio-switch-6" class="form-check-input" type="radio" name="horizontal_radio_button" value="horizontal-radio-daniel-craig"> <label class="form-check-label" for="radio-switch-6">Produksi dan Placement</label> </div>
                         </div><br>
                         <label for="regular-form-3" class="form-label">NO SPK/KONTRAK</label>
-                        <div class="grid grid-cols-12 gap-2"> <input type="text" class="form-control col-span-4" placeholder="Nomor SPK lengkap" aria-label="default input inline 1">
-                            <div class="relative w-56 mx-auto">
-                                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4"> <i data-feather="calendar" class="w-4 h-4"></i> </div> <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
+                        <div class="grid grid-cols-12 gap-2">
+                            <input type="text" class="form-control col-span-4" placeholder="Nomor SPK lengkap" aria-label="default input inline 1">
+                            <div class="relative w-48 mx-auto">
+                                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4">
+                                    <i data-feather="calendar" class="w-4 h-4"></i>
+                                </div>
+                                    <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
                             </div>
-                        </div> <br>
-                        <form data-single="true" action="/file-upload" class="dropzone">
-                            <div class="fallback"> <input name="file" type="file" /> </div>
-                            <div class="dz-message" data-dz-message>
-                                <div class="text-lg font-medium">Drop files here or click to upload.</div>
-                                <div class="text-gray-600"> This is just a demo dropzone. Selected files are <span class="font-medium">not</span> actually uploaded. </div>
-                            </div>
-                        </form> <br>
+                        </div>
+                        <br>
+                        <form data_single="true" action="/file-upload">
+                        <label for="data_project" class="form-label mt-2">Upload SPK</label>
+                            <input id="no_spk" name="no_spk" type="file" class="form-control" placeholder="Upload File">
+                        </form>
+
                         <label for="regular-form-3" class="form-label">NO SPMK</label>
                         <div class="grid grid-cols-12 gap-2"> <input type="text" class="form-control col-span-4" placeholder="Nomor SPMK" aria-label="default input inline 1">
                             <div class="relative w-56 mx-auto">
