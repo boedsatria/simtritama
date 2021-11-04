@@ -64,8 +64,10 @@
                             </div>
                         </div>
                         <br>
+                        <form data_single="true" action="/file-upload">
                         <label for="data_project" class="form-label mt-2">Upload SPK</label>
                             <input id="no_spk" name="no_spk" type="file" class="form-control" placeholder="Upload File">
+                        </form>
 
                         <label for="regular-form-3" class="form-label">NO SPMK</label>
                         <div class="grid grid-cols-12 gap-2"> <input type="text" class="form-control col-span-4" placeholder="Nomor SPMK" aria-label="default input inline 1">
