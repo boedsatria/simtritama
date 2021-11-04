@@ -1,42 +1,26 @@
 <!-- BEGIN : JUDUL -->
 <div class="intro-y flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        GENERAL LEDGER GENERATOR
+        INPUT DATA GENERAL LEDGER
         <!--JUDUL PAGE-->
     </h2>
 </div> <br>
 <!-- END JUDUL-->
 
 <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
-        <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
-            <div class="sm:flex items-center sm:mr-4">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">GL</label>
-                <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="Kementerian">Aktiva</option>
-                    <option value="Direktorat">Kewajiban</option>
-                    <option value="BUMN">Modal</option>
-                    <option value="Lembaga">Pendapatan</option>
-                </select>
-            </div>
-
-            <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">No.Akun</label>
+    <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
+        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Tipe General</label>
                 <select id="tabulator-html-filter-type" class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="DKI Jakarta" selected="">1101-Petty Cash</option>
-                    <option value="Jawa Barat">1102-BRI</option>
-                    <option value="Jawa Barat">1103-Piutang</option>
+                    <option value="DKI Jakarta" selected="">Aktiva</option>
+                    <option value="Jawa Barat">Kewajiban</option>
+                    <option value="Jawa Barat">Modal</option>
+                    <option value="Jawa Barat">Pendapatan</option>
+                    <option value="Jawa Barat">Beban</option>
                 </select>
-            </div>
-
-            <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Jangka Waktu Perhitungan</label>
-            </div>
-            <div class="preview">
-                <input data-daterange="true" class="datepicker form-control w-56 block mx-auto">
-            </div>
-
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 
 
@@ -87,29 +71,37 @@
                     </table>
                 </div> 
             </div>
-
-
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-            <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
-                <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
-                    <div class="sm:flex items-center sm:mr-4">
-                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Total Pemasukan</label>
-                        <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
-                    </div>
-
-                    <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Total Pengeluaran</label>
-                        <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
-                    </div>
-
-                    <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Saldo Akhir</label>
-                        <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
-                    </div>
-                </form>
+                <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
+                    <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
+                        <div class="sm:flex items-center sm:mr-4">
+                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Tanggal</label>
+                            <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
+                        </div>
+                        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Nama Transaksi</label>
+                            <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
+                        </div>
+                        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">No.Ref</label>
+                            <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
+                        </div>
+                        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Masuk</label>
+                            <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
+                        </div>
+                        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Keluar</label>
+                            <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
+                        </div>
+                        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                            <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> input</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        </div> <br>
+    </div> <br>
         <!-- END: BLOCK 5 -->
         <!-- BEGIN: MENU -->
         

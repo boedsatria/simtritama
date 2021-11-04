@@ -59,7 +59,7 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (14, 'Petty Cash', 'finance/petty_cash', 'activity', 11, 3, 3, 1),
 (15, 'Aset dan Penyusutan', 'finance/aset_dan_penyusutan', 'activity', 11, 4, 3, 1),
 (16, 'General Ledger', 'finance/general_ledger', 'activity', 11, 5, 3, 1),
-(17, 'Cetak Laporan Keuangan', 'finance/cetak_laporan_keuangan', 'activity', 11, 6, 3, 1),
+(17, 'Cetak Laporan Keuangan', 'finance/laporan_keuangan', 'activity', 11, 6, 3, 1),
 (18, 'Produksi', '#', 'truck', 0, 9, 4, 1),
 (19, 'Job Order', 'produksi/job_order', 'activity', 18, 1, 4, 1),
 (20, 'Pengajuan', 'produksi/pengajuan', 'activity', 18, 2, 4, 1),
