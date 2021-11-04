@@ -126,7 +126,7 @@
                                 <td class="border-b dark:border-dark-5">16</td>
                                 <td class="border-b dark:border-dark-5">No. Akta Perusahaan</td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                <td><button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
                             </tr>
                             <tr>
