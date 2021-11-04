@@ -57,7 +57,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">5</td>
-                                <td class="border-b dark:border-dark-5">Foto KTP komisaris</td>
+                                <td class="border-b dark:border-dark-5"> KTP komisaris</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -78,7 +78,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">8</td>
-                                <td class="border-b dark:border-dark-5">Foto KTP Direktur</td>
+                                <td class="border-b dark:border-dark-5"> KTP Direktur</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -93,7 +93,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">10</td>
-                                <td class="border-b dark:border-dark-5">Image NPWP Perusahaan</td>
+                                <td class="border-b dark:border-dark-5"> NPWP Perusahaan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -107,7 +107,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">10</td>
-                                <td class="border-b dark:border-dark-5">Image NPWP Komisaris</td>
+                                <td class="border-b dark:border-dark-5"> NPWP Komisaris</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -121,7 +121,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">12</td>
-                                <td class="border-b dark:border-dark-5">Image NPWP Direktur</td>
+                                <td class="border-b dark:border-dark-5"> NPWP Direktur</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -129,7 +129,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">13</td>
-                                <td class="border-b dark:border-dark-5">Image SPT Bulanan</td>
+                                <td class="border-b dark:border-dark-5"> SPT Bulanan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -145,7 +145,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">15</td>
-                                <td class="border-b dark:border-dark-5">Image SPT Tahunan</td>
+                                <td class="border-b dark:border-dark-5"> SPT Tahunan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -160,7 +160,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">17</td>
-                                <td class="border-b dark:border-dark-5">Image Akta Perusahaan</td>
+                                <td class="border-b dark:border-dark-5"> Akta Perusahaan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -174,7 +174,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">19</td>
-                                <td class="border-b dark:border-dark-5">Image Akta Perubahan</td>
+                                <td class="border-b dark:border-dark-5"> Akta Perubahan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -188,7 +188,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">21</td>
-                                <td class="border-b dark:border-dark-5">Image Akta Pendirian</td>
+                                <td class="border-b dark:border-dark-5"> Akta Pendirian</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -202,7 +202,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">23</td>
-                                <td class="border-b dark:border-dark-5">Image NIB</td>
+                                <td class="border-b dark:border-dark-5"> NIB</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -224,7 +224,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">26</td>
-                                <td class="border-b dark:border-dark-5">Image Speciment Stempel</td>
+                                <td class="border-b dark:border-dark-5"> Speciment Stempel</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -251,7 +251,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">31</td>
-                                <td class="border-b dark:border-dark-5">Image Rekening Koran</td>
+                                <td class="border-b dark:border-dark-5"> Rekening Koran</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
