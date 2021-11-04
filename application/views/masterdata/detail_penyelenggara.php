@@ -216,7 +216,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">25</td>
-                                <td class="border-b dark:border-dark-5">Image Kop Surat</td>
+                                <td class="border-b dark:border-dark-5"> Kop Surat</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
