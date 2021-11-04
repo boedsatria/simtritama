@@ -117,7 +117,7 @@
                                 <td class="border">xxxxxxxxxxx</td>
                                 <td class="border">123456789</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Edit</button>
+                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-200">
@@ -126,7 +126,7 @@
                                 <td class="border">xxxxxxxxxxx</td>
                                 <td class="border">987654321</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Edit</button>
+                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-200">
@@ -135,7 +135,7 @@
                                 <td class="border">xxxxxxxxxxx</td>
                                 <td class="border">987654333</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Edit</button>
+                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
                                 </td>
                             </tr>
                         </tbody>
