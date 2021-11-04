@@ -18,20 +18,31 @@
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left">
                                     <div>
-                                        <label for="kategori_penyusutan" class="form-label">Kategori</label>
-                                        <input id="kategori_penyusutan" type="text" name="kategori_penyusutan" class="form-control w-full" placeholder="Input text">
+                                        <label for="regular-form-1" class="form-label">Kategori</label>
+                                        <select data-placeholder="Select your favorite actors" name="kategori" class="tom-select w-full">
+                                            <option value="Kategori1">Kategori 1</option>
+                                            <option value="Kategori2">Kategori 2</option>
+                                            <option value="Kategori3">Kategori 3</option>
+                                        </select></br>
                                         <label for="nama_item" class="form-label">Nama Item</label>
-                                        <input id="nama_item" type="text" name="nama_item" class="form-control w-full" placeholder="Input text">
-                                        <label for="tgl_beli" class="form-label">Tanggal Beli</label>
-                                        <input id="tgl_beli" type="text" name="tgl_beli" class="form-control w-full" placeholder="Input text">
+                                        <input id="nama_item" type="text" name="nama_item" class="form-control w-full" placeholder="Input text"></br>
+                                        <label for="regular-form-3" class="form-label">Tanggal Beli</label>
+                                        <div class="grid grid-cols-12 gap-2">
+                                            <div class="relative w-72 mx-auto">
+                                                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4">
+                                                    <i data-feather="calendar" class="w-4 h-4"></i>
+                                                </div>
+                                                <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
+                                            </div>
+                                        </div></br>
                                         <label for="hrg_beli" class="form-label">Harga Beli</label>
-                                        <input id="hrg_beli" type="text" name="hrg_beli" class="form-control w-full" placeholder="Input text">
+                                        <input id="hrg_beli" type="text" name="hrg_beli" class="form-control w-full" placeholder="Input text"></br>
                                         <label for="nilai_peny" class="form-label">Nilai Penyusutan</label>
-                                        <input id="nilai_peny" type="text" name="nilai_peny" class="form-control w-full" placeholder="Input text">
+                                        <input id="nilai_peny" type="text" name="nilai_peny" class="form-control w-full" disabled></br>
                                         <label for="nilai_ini" class="form-label">Nilai Saat ini</label>
-                                        <input id="nilai_ini" type="text" name="nilai_ini" class="form-control w-full" placeholder="Input text">
+                                        <input id="nilai_ini" type="text" name="nilai_ini" class="form-control w-full" disabled></br>
                                         <label for="tgl_zero" class="form-label">Tanggal Zero</label>
-                                        <input id="tgl_zero" type="text" name="tgl_zero" class="form-control w-full" placeholder="Input text">
+                                        <input id="tgl_zero" type="text" name="tgl_zero" class="form-control w-full" disabled></br>
                                     </div>
                                 </div>
                                 <div class="px-5 pb-8 text-center">
