@@ -1,90 +1,124 @@
 <!-- BEGIN : JUDUL -->
 <div class="intro-y flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        JUDUL PAGE
+        GENERAL LEDGER GENERATOR
         <!--JUDUL PAGE-->
     </h2>
-</div>
+</div> <br>
 <!-- END JUDUL-->
-<div class="grid grid-cols-12 gap-6 mt-5">
-    <!-- KOLOM BESAR-->
-    <div class="intro-y col-span-12 lg:col-span-6">
-        <!-- KOLOM KIRI-->
-        <!-- BEGIN: BLOCK 1 -->
-        <div class="intro-y box">
-            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                <h2 class="font-medium text-base mr-auto">
-                    BLOK 1
-                    <!-- JUDUL BLOK KIRI-->
-                </h2>
-                <!-- KONTEN BLOCK 1 DISINI-->
+
+<div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
+        <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
+            <div class="sm:flex items-center sm:mr-4">
+                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">GL</label>
+                <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
+                    <option value="Kementerian">Aktiva</option>
+                    <option value="Direktorat">Kewajiban</option>
+                    <option value="BUMN">Modal</option>
+                    <option value="Lembaga">Pendapatan</option>
+                </select>
             </div>
-        </div>
-        <!-- END: BLOCK 1 -->
-        <br>
-        <!-- BEGIN: BLOCK 2 -->
-        <div class="intro-y box">
-            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                <h2 class="font-medium text-base mr-auto">
-                    BLOK 2
-                    <!-- JUDUL BLOK KIRI-->
-                </h2>
-                <!-- KONTEN BLOCK 2 DISINI-->
+
+            <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">No.Akun</label>
+                <select id="tabulator-html-filter-type" class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
+                    <option value="DKI Jakarta" selected="">1101-Petty Cash</option>
+                    <option value="Jawa Barat">1102-BRI</option>
+                    <option value="Jawa Barat">1103-Piutang</option>
+                </select>
             </div>
-        </div>
-        <!-- END: BLOCK 2 -->
-        <br>
-        <!-- BEGIN: BLOCK 3 -->
-        <div class="intro-y box">
-            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                <h2 class="font-medium text-base mr-auto">
-                    BLOK 3
-                    <!-- JUDUL BLOK KIRI-->
-                </h2>
-                <!-- KONTEN BLOCK 3 DISINI-->
+
+            <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Jangka Waktu Perhitungan</label>
             </div>
-        </div>
-        <!-- END: BLOCK 3 -->
+            <div class="preview">
+                <input data-daterange="true" class="datepicker form-control w-56 block mx-auto">
+            </div>
+
+        </form>
     </div>
-    <div class="intro-y col-span-12 lg:col-span-6">
-        <!-- KOLOM KANAN-->
-        <!-- BEGIN: BLOCK 4 -->
+
+
+
+<div class="grid grid-cols-4 gap-6 mt-5">
+    <!-- KOLOM BESAR-->
+    <div>
+    <!-- BEGIN: BLOCK 5 -->
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                <h2 class="font-medium text-base mr-auto">
-                    BLOK 4
-                    <!-- JUDUL BLOK 4-->
-                </h2>
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Tanggal</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Transaksi</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">No Ref</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Masuk</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Keluar</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Saldo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border">dd/mm/yyyy</td>
+                                <td class="border">Transaksi Petty Cash 1 xxxxxxxxxxxxxxxxxxxxx</td>
+                                <td class="border">xxxxx</td>
+                                <td class="border">1000xxxxxxxxxxxxxxx</td>
+                                <td class="border"> - </td>
+                                <td class="border"> 200xxxxxxxxxxxxxxxxx </td>
+                            </tr>
+                            <tr>
+                                <td class="border">dd/mm/yyyy</td>
+                                <td class="border">Transaksi Petty Cash 2xxxxxxxxxxxxxxxxxxxxxxx</td>
+                                <td class="border">xxxxx</td>
+                                <td class="border"> - </td>
+                                <td class="border">100xxxxxxxxxxxxxxxxx</td>
+                                <td class="border"> 500xxxxxxxxxxxxxxxxxxx </td>
+                            </tr>
+                            <tr>
+                                <td class="border">dd/mm/yyyy</td>
+                                <td class="border">Transaksi Petty Cash 3xxxxxxxxxxxxxxxxxxxx</td>
+                                <td class="border">xxxxx</td>
+                                <td class="border"> - </td>
+                                <td class="border">200</td>
+                                <td class="border"> 300xxxxxxxxxxxxxxxxxxxxx </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> 
             </div>
-        </div>
-        <!-- END: BLOCK 4 -->
-        <br>
-        <!-- BEGIN: BLOCK 5 -->
-        <div class="intro-y box">
+
+
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                <h2 class="font-medium text-base mr-auto">
-                    BLOK 5
-                    <!-- JUDUL BLOK 4-->
-                </h2>
+            <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
+                <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
+                    <div class="sm:flex items-center sm:mr-4">
+                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Total Pemasukan</label>
+                        <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
+                    </div>
+
+                    <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Total Pengeluaran</label>
+                        <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
+                    </div>
+
+                    <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Saldo Akhir</label>
+                        <input id="regular-form-1" type="text" class="form-control w-56 block mx-auto" placeholder="RUMUS">
+                    </div>
+                </form>
             </div>
         </div>
+        </div> <br>
         <!-- END: BLOCK 5 -->
         <!-- BEGIN: MENU -->
-        <div class="intro-y box mt-5">
-            <div id="horizontal-form" class="p-5">
-                <div class="preview">
-                    <button class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Simpan </button> <button class="btn btn-danger w-32 mr-2 mb-2"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Hapus </button> <button class="btn btn-warning w-32 mr-2 mb-2"> <i data-feather="book" class="w-4 h-4 mr-2"></i> New </button> <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
-                </div>
-                <div class="source-code hidden">
-                    <button data-target="#copy-horizontal-form" class="copy-code btn py-1 px-2 btn-outline-secondary"> <i data-feather="file" class="w-4 h-4 mr-2"></i> Copy example code </button>
-                    <div class="overflow-y-auto mt-3 rounded-md">
-                        <pre id="copy-horizontal-form" class="source-preview"> <code class="text-xs p-0 rounded-md html pl-5 pt-8 pb-4 -mb-10 -mt-10"> HTMLOpenTagdiv class=&quot;form-inline&quot;HTMLCloseTag HTMLOpenTaglabel for=&quot;horizontal-form-1&quot; class=&quot;form-label sm:w-20&quot;HTMLCloseTagEmailHTMLOpenTag/labelHTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-1&quot; type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;example@gmail.com&quot;HTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;form-inline mt-5&quot;HTMLCloseTag HTMLOpenTaglabel for=&quot;horizontal-form-2&quot; class=&quot;form-label sm:w-20&quot;HTMLCloseTagPasswordHTMLOpenTag/labelHTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-2&quot; type=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;secret&quot;HTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;form-check sm:ml-20 sm:pl-5 mt-5&quot;HTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-3&quot; class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;&quot;HTMLCloseTag HTMLOpenTaglabel class=&quot;form-check-label&quot; for=&quot;horizontal-form-3&quot;HTMLCloseTagRemember meHTMLOpenTag/labelHTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;sm:ml-20 sm:pl-5 mt-5&quot;HTMLCloseTag HTMLOpenTagbutton class=&quot;btn btn-primary&quot;HTMLCloseTagLoginHTMLOpenTag/buttonHTMLCloseTag HTMLOpenTag/divHTMLCloseTag </code> </pre>
-                    </div>
-                </div>
+        
+        <div id="horizontal-form" class="p-2">
+            <div class="preview">
+                <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
             </div>
         </div>
         <!-- END: OPERATION -->
-    </div>
-</div>
-</div>
+</div>    
+
 <!-- END: Content -->
