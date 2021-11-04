@@ -17,8 +17,8 @@
                                 <div>
                                     <label for="coa" class="form-label mt-2">COA</label>
                                     <input id="coa" type="text" name="coa" class="form-control w-full" placeholder="Input text">
-                                    <label for="wilayah_coa" class="form-label mt-2">Wilayah</label>
-                                    <input id="wilayah_coa" type="text" name="wilayah_coa" class="form-control w-full" placeholder="Input text">
+                                    <label for="deskripsi_coa" class="form-label mt-2">Deskripsi</label>
+                                    <input id="deskripsi_coa" type="text" name="wilayah_coa" class="form-control w-full" placeholder="Input text">
                                     <label for="limit_anggaran" class="form-label mt-2">Limit Anggaran</label>
                                     <input id="limit_anggaran" type="text" name="limit_anggaran" class="form-control w-full" placeholder="Input text">
                                 </div>
@@ -44,7 +44,7 @@
                         <tr class="text-center">
                             <th class="border border-b-2 dark:border-dark-5 w-1">No.</th>
                             <th class="border border-b-2 dark:border-dark-5">COA</th>
-                            <th class="border border-b-2 dark:border-dark-5">Wilayah</th>
+                            <th class="border border-b-2 dark:border-dark-5">Deskripsi</th>
                             <th class="border border-b-2 dark:border-dark-5">Limit Anggaran</th>
                             <th class="border border-b-2 dark:border-dark-5">Aksi</th>
                         </tr>
@@ -52,8 +52,8 @@
                     <tbody>
                         <tr class="hover:bg-gray-200">
                             <td class="border">1</td>
-                            <td class="border">1101</td>
-                            <td class="border">Pusat</td>
+                            <td class="border">1113</td>
+                            <td class="border">Petty Banten</td>
                             <td class="border">Rp.1000,-</td>
                             <td class="border text-center">
                                 <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Edit</button>
@@ -61,8 +61,8 @@
                         </tr>
                         <tr class="hover:bg-gray-200">
                             <td class="border">2</td>
-                            <td class="border">1113</td>
-                            <td class="border">Jakarta</td>
+                            <td class="border">6118</td>
+                            <td class="border">Belanja Modal</td>
                             <td class="border">Rp.1200,-</td>
                             <td class="border text-center">
                                 <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Edit</button>
@@ -70,8 +70,8 @@
                         </tr>
                         <tr class="hover:bg-gray-200">
                             <td class="border">3</td>
-                            <td class="border">1118</td>
-                            <td class="border">Banten</td>
+                            <td class="border">7101</td>
+                            <td class="border">Gaji Karyawan</td>
                             <td class="border">Rp.800,-</td>
                             <td class="border text-center">
                                 <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Edit</button>
