@@ -1,7 +1,7 @@
 <!-- BEGIN : RINGKOS -->
 <div class="intro-y flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        Data Kegiatan
+        DATA KEGIATAN
     </h2>
 </div>
 <div class="grid grid-cols-12 gap-6 mt-5">
@@ -56,7 +56,7 @@
                         <label for="regular-form-3" class="form-label">NO SPK/KONTRAK</label>
                         <div class="grid grid-cols-12 gap-2">
                             <input type="text" class="form-control col-span-4" placeholder="Nomor SPK lengkap" aria-label="default input inline 1">
-                            <div class="relative w-48 mx-auto">
+                            <div class="relative w-56 mx-auto">
                                 <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4">
                                     <i data-feather="calendar" class="w-4 h-4"></i>
                                 </div>
@@ -70,17 +70,15 @@
                         </form>
 
                         <label for="regular-form-3" class="form-label">NO SPMK</label>
-                        <div class="grid grid-cols-12 gap-2"> <input type="text" class="form-control col-span-4" placeholder="Nomor SPMK" aria-label="default input inline 1">
+                        <div class="grid grid-cols-12 gap-2">
+                            <input type="text" class="form-control col-span-4" placeholder="Nomor SPMK" aria-label="default input inline 1">
                             <div class="relative w-56 mx-auto">
                                 <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4"> <i data-feather="calendar" class="w-4 h-4"></i> </div> <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
                             </div>
                         </div> <br>
-                        <form data-single="true" action="/file-upload" class="dropzone">
-                            <div class="fallback"> <input name="file" type="file" /> </div>
-                            <div class="dz-message" data-dz-message>
-                                <div class="text-lg font-medium">Drop files here or click to upload.</div>
-                                <div class="text-gray-600"> This is just a demo dropzone. Selected files are <span class="font-medium">not</span> actually uploaded. </div>
-                            </div>
+                        <form data_single="true" action="/file-upload">
+                        <label for="data_project" class="form-label mt-2">Upload SPMK</label>
+                            <input id="no_spmk" name="no_spmk" type="file" class="form-control" placeholder="Upload File">
                         </form> <br>
                         <label for="regular-form-3" class="form-label">NO BAST</label>
                         <div class="grid grid-cols-12 gap-2"> <input type="text" class="form-control col-span-4" placeholder="Nomor BAST" aria-label="default input inline 1">
@@ -88,12 +86,9 @@
                                 <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4"> <i data-feather="calendar" class="w-4 h-4"></i> </div> <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
                             </div>
                         </div> <br>
-                        <form data-single="true" action="/file-upload" class="dropzone">
-                            <div class="fallback"> <input name="file" type="file" /> </div>
-                            <div class="dz-message" data-dz-message>
-                                <div class="text-lg font-medium">Drop files here or click to upload.</div>
-                                <div class="text-gray-600"> This is just a demo dropzone. Selected files are <span class="font-medium">not</span> actually uploaded. </div>
-                            </div>
+                        <form data_single="true" action="/file-upload">
+                        <label for="data_project" class="form-label mt-2">Upload BAST</label>
+                            <input id="no_bast" name="no_bast" type="file" class="form-control" placeholder="Upload File">
                         </form> <br>
                         <label for="regular-form-3" class="form-label">NO BAP/Berita Acara</label>
                         <div class="grid grid-cols-12 gap-2"> <input type="text" class="form-control col-span-4" placeholder="Nomor BAP" aria-label="default input inline 1">
@@ -101,12 +96,9 @@
                                 <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4"> <i data-feather="calendar" class="w-4 h-4"></i> </div> <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
                             </div>
                         </div> <br>
-                        <form data-single="true" action="/file-upload" class="dropzone">
-                            <div class="fallback"> <input name="file" type="file" /> </div>
-                            <div class="dz-message" data-dz-message>
-                                <div class="text-lg font-medium">Drop files here or click to upload.</div>
-                                <div class="text-gray-600"> This is just a demo dropzone. Selected files are <span class="font-medium">not</span> actually uploaded. </div>
-                            </div>
+                        <form data_single="true" action="/file-upload">
+                        <label for="data_project" class="form-label mt-2">Upload BAP</label>
+                            <input id="no_bap" name="no_bap" type="file" class="form-control" placeholder="Upload File">
                         </form> <br>
                         <label for="regular-form-3" class="form-label">JANGKA WAKTU PELAKSANAAN ( tentukan tanggal mulai dan tanggal akhir )</label>
                         <input data-daterange="true" class="datepicker form-control w-56 block mx-auto"> <br>
@@ -118,13 +110,10 @@
                         <input id="regular-form-1" type="text" class="form-control" placeholder="Input nilai dalam Rupiah"> </div> <br>
                         <div> <label for="regular-form-1" class="form-label">NILAI SP2D</label>
                             <input id="regular-form-1" type="text" class="form-control" placeholder="Input nilai dalam Rupiah">
-                            <form data-single="true" action="/file-upload" class="dropzone">
-                                <div class="fallback"> <input name="file" type="file" /> </div>
-                                <div class="dz-message" data-dz-message>
-                                    <div class="text-lg font-medium">Drop files here or click to upload.</div>
-                                    <div class="text-gray-600"> This is just a demo dropzone. Selected files are <span class="font-medium">not</span> actually uploaded. </div>
-                                </div>
-                            </form> <br>
+                            <form data_single="true" action="/file-upload">
+                        <label for="data_project" class="form-label mt-2">Upload SPK</label>
+                            <input id="no_sp2d" name="no_sp2d" type="file" class="form-control" placeholder="Upload File">
+                        </form> <br>
                             <label for="regular-form-3" class="form-label">TANGGAL ESTIMASI PENCAIRAN</label>
                             <div class="grid grid-cols-12 gap-2"> <input type="text" class="form-control col-span-4" placeholder="otomatis 14H pasca BAST" aria-label="default input inline 1"> <input type="text" class="form-control col-span-4" placeholder="Reminder H-7" aria-label="default input inline 2"> <input type="text" class="form-control col-span-4" placeholder="Status Pembayaran" aria-label="Status"> </div> <br>
                             <div class="relative w-56 mx-auto"> </div>
@@ -148,7 +137,7 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    DATA PERUSAHAAN / DIREKTORAT
+                    DATA CLIENT / USER
                 </h2>
             </div>
             <div id="vertical-form" class="p-5">
