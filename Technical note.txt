@@ -289,7 +289,7 @@ Upload Akta Perubahan :
 No NIB :
 Upload NIB :
 No KBLI : (gunakan koma untuk input lebih dari satu KBLI)
-Upload Ko Surat : 
+Upload Kop Surat : 
 Upload Speciment Stampel :
 ---Perbankan---
 Nama Akun Bank :
