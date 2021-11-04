@@ -53,12 +53,6 @@
                                 <td class="border-b dark:border-dark-5">4</td>
                                 <td class="border-b dark:border-dark-5">No. KTP komisaris</td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">5</td>
-                                <td class="border-b dark:border-dark-5"> KTP komisaris</td>
-                                <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
@@ -74,12 +68,6 @@
                                 <td class="border-b dark:border-dark-5">7</td>
                                 <td class="border-b dark:border-dark-5">No. KTP Direktur</td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">8</td>
-                                <td class="border-b dark:border-dark-5"> KTP Direktur</td>
-                                <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
@@ -89,12 +77,6 @@
                                 <td class="border-b dark:border-dark-5">9</td>
                                 <td class="border-b dark:border-dark-5">No. NPWP Perusahaan </td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">10</td>
-                                <td class="border-b dark:border-dark-5"> NPWP Perusahaan</td>
-                                <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
@@ -103,12 +85,6 @@
                                 <td class="border-b dark:border-dark-5">9</td>
                                 <td class="border-b dark:border-dark-5">No. NPWP Komisaris </td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">10</td>
-                                <td class="border-b dark:border-dark-5"> NPWP Komisaris</td>
-                                <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
@@ -117,12 +93,6 @@
                                 <td class="border-b dark:border-dark-5">11</td>
                                 <td class="border-b dark:border-dark-5">No. NPWP Direktur </td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">12</td>
-                                <td class="border-b dark:border-dark-5"> NPWP Direktur</td>
-                                <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
@@ -156,40 +126,13 @@
                                 <td class="border-b dark:border-dark-5">16</td>
                                 <td class="border-b dark:border-dark-5">No. Akta Perusahaan</td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">17</td>
-                                <td class="border-b dark:border-dark-5"> Akta Perusahaan</td>
-                                <td class="border-b dark:border-dark-5">-</td>
-                                <td class="border-b dark:border-dark-5">
-                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">18</td>
                                 <td class="border-b dark:border-dark-5">No. Akta Perubahan</td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">19</td>
-                                <td class="border-b dark:border-dark-5"> Akta Perubahan</td>
-                                <td class="border-b dark:border-dark-5">-</td>
-                                <td class="border-b dark:border-dark-5">
-                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">20</td>
-                                <td class="border-b dark:border-dark-5">No. Akta Pendirian</td>
-                                <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">21</td>
-                                <td class="border-b dark:border-dark-5"> Akta Pendirian</td>
-                                <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
@@ -198,12 +141,6 @@
                                 <td class="border-b dark:border-dark-5">22</td>
                                 <td class="border-b dark:border-dark-5">No. NIB</td>
                                 <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">23</td>
-                                <td class="border-b dark:border-dark-5"> NIB</td>
-                                <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
