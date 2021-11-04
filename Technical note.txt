@@ -297,3 +297,15 @@ Nama Bank :
 Nomor Rekening :
 Upload Rekening Koran :
 ========================================================================================
+
+Asset dan Penyusutan :
+Detail nya :
+
+no.
+Ketegori
+Nama Item
+Tahun Beli (tgl, bulan, Tahun)
+Nilai Beli
+Nilai Penyusutan per tahun
+Nilai Saat Ini
+Tahun akhir nilai aset (kapan asetnya zero)
