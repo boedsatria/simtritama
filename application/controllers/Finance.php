@@ -44,6 +44,13 @@ class Finance extends CI_Controller
 		$this->load->view('finance/aset_dan_penyusutan');
 		$this->load->view('footer');
 	}
+	public function detail_penyusutan()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/detail_penyusutan');
+		$this->load->view('footer');
+	}
 	public function general_ledger()
 	{
 		$this->load->view('header');

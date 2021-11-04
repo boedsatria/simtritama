@@ -17,22 +17,21 @@
                             <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left">
-                                    <i data-feather="user-plus" class="w-16 h-16 text-theme-9 mx-auto mt-3"></i>
                                     <div>
-                                        <label for="crud-form-1" class="form-label">Nama Direktorat</label>
-                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                        <label for="crud-form-1" class="form-label">Wilayah/Propinsi</label>
-                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                        <label for="crud-form-1" class="form-label">N.P.W.P</label>
-                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                        <label for="crud-form-1" class="form-label">Kategori</label>
-                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                        <label for="crud-form-1" class="form-label">No Rekening</label>
-                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                        <label for="crud-form-1" class="form-label">Alamat</label>
-                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                        <label for="crud-form-1" class="form-label">Kontak Person</label>
-                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
+                                        <label for="kategori_penyusutan" class="form-label">Kategori</label>
+                                        <input id="kategori_penyusutan" type="text" name="kategori_penyusutan" class="form-control w-full" placeholder="Input text">
+                                        <label for="nama_item" class="form-label">Nama Item</label>
+                                        <input id="nama_item" type="text" name="nama_item" class="form-control w-full" placeholder="Input text">
+                                        <label for="tgl_beli" class="form-label">Tanggal Beli</label>
+                                        <input id="tgl_beli" type="text" name="tgl_beli" class="form-control w-full" placeholder="Input text">
+                                        <label for="hrg_beli" class="form-label">Harga Beli</label>
+                                        <input id="hrg_beli" type="text" name="hrg_beli" class="form-control w-full" placeholder="Input text">
+                                        <label for="nilai_peny" class="form-label">Nilai Penyusutan</label>
+                                        <input id="nilai_peny" type="text" name="nilai_peny" class="form-control w-full" placeholder="Input text">
+                                        <label for="nilai_ini" class="form-label">Nilai Saat ini</label>
+                                        <input id="nilai_ini" type="text" name="nilai_ini" class="form-control w-full" placeholder="Input text">
+                                        <label for="tgl_zero" class="form-label">Tanggal Zero</label>
+                                        <input id="tgl_zero" type="text" name="tgl_zero" class="form-control w-full" placeholder="Input text">
                                     </div>
                                 </div>
                                 <div class="px-5 pb-8 text-center">
@@ -56,44 +55,13 @@
             <div class="sm:flex items-center sm:mr-4">
                 <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Kategori</label>
                 <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="Kementerian">Kementerian</option>
-                    <option value="Direktorat">Direktorat</option>
-                    <option value="BUMN">BUMN</option>
-                    <option value="Lembaga">Lembaga</option>
+                    <option value="Kategori_1">Kategori 1</option>
+                    <option value="Kategori_2">Kategori 2</option>
+                    <option value="Kategori_3">Kategori 3</option>
+                    <option value="Kategori_4">Kategori 4</option>
                 </select>
             </div>
-            <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Status</label>
-                <select id="tabulator-html-filter-type" class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="Aktif" selected>Aktif</option>
-                    <option value="Non Aktif">Non Aktif</option>
-                </select>
-            </div>
-            <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
-                <select id="tabulator-html-filter-type" class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="DKI Jakarta" selected>DKI Jakarta</option>
-                    <option value="Jawa Barat">Jawa Barat</option>
-                    <option value="Jawa Barat">Jawa Tengah</option>
-                </select>
-            </div>
-            <div class="mt-2 xl:mt-0">
-                <button id="tabulator-html-filter-go" type="button" class="btn btn-primary w-full sm:w-16">Go</button>
-                <button id="tabulator-html-filter-reset" type="button" class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1">Reset</button>
-            </div>
-        </form>
-        <div class="flex mt-5 sm:mt-0">
-            <button id="tabulator-print" class="btn btn-outline-secondary w-1/2 sm:w-auto mr-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
-            <div class="dropdown w-1/2 sm:w-auto">
-                <button class="dropdown-toggle btn btn-outline-secondary w-full sm:w-auto" aria-expanded="false"> <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export <i data-feather="chevron-down" class="w-4 h-4 ml-auto sm:ml-2"></i> </button>
-                <div class="dropdown-menu w-40">
-                    <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
-                        <a id="tabulator-export-csv" href="javascript:;" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export PDF </a>
-                        <a id="tabulator-export-json" href="javascript:;" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export XLSX </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
     <div class="intro-y box p-5 mt-5">
         <!-- BEGIN: Hoverable Table -->
@@ -113,29 +81,32 @@
                         <tbody>
                             <tr class="hover:bg-gray-200">
                                 <td class="border">1</td>
-                                <td class="border">Kementrian Agama</td>
-                                <td class="border">xxxxxxxxxxx</td>
-                                <td class="border">123456789</td>
+                                <td class="border">Kategori 1</td>
+                                <td class="border">Item 1</td>
+                                <td class="border">25/082019</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
+                                    <a href="<?= base_url('finance/detail_penyusutan') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
+                                        Detail </a>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-200">
                                 <td class="border">2</td>
-                                <td class="border">Kementrian Sosial</td>
-                                <td class="border">xxxxxxxxxxx</td>
-                                <td class="border">987654321</td>
+                                <td class="border">Kategori 2</td>
+                                <td class="border">Item 2</td>
+                                <td class="border">24/082019</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
+                                    <a href="<?= base_url('finance/detail_penyusutan') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
+                                        Detail </a>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-200">
                                 <td class="border">3</td>
-                                <td class="border">Dinas Perhubungan</td>
-                                <td class="border">xxxxxxxxxxx</td>
-                                <td class="border">987654333</td>
+                                <td class="border">Kategori 3</td>
+                                <td class="border">Item 3</td>
+                                <td class="border">26/082019</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
+                                    <a href="<?= base_url('finance/detail_penyusutan') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
+                                        Detail </a>
                                 </td>
                             </tr>
                         </tbody>
@@ -143,6 +114,7 @@
                 </div>
             </div>
         </div>
+        </form>
         <!-- BEGIN: Pagination -->
         <div class="p-5">
             <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
