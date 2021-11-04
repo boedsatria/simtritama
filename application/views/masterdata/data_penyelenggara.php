@@ -16,6 +16,8 @@
                             <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left">
+                                    <h3><u>FORM DATA PERUSAHAAN PENYELENGGARA</u></h3>
+                                    </br>
                                     <label for="nama_perusahaan" class="form-label mt-2">Nama Perusahaan</label>
                                     <input id="nama_perusahaan" type="text" name="nama_perusahaan" class="form-control w-full" placeholder="Input text">
                                     <label for="alamat_perusahaan" class="form-label mt-2">Alamat Perusahaan</label>
@@ -24,18 +26,44 @@
                                     <input id="no_npwp" type="text" name="no_npwp" class="form-control w-full" placeholder="Input text">
                                     <label for="npwp_perusahaan" class="form-label mt-2">Upload NPWP Perusahaan</label>
                                     <input id="npwp_perusahaan" name="npwp_perusahaan" type="file" class="form-control" placeholder="Upload File">
-                                    <label for="sub_bidang" class="form-label mt-2">Sub Bidang</label>
+                                    <label for="sub_bidang" class="form-label mt-2">Sub Bidang/No. KBLI</label>
                                     <input id="sub_bidang" type="text" name="sub_bidang" class="form-control w-full" placeholder="Input text">
+
                                     <label for="direktur_perusahaan" class="form-label mt-2">Nama Direktur Perusahaan</label>
                                     <input id="direktur_perusahaan" type="text" name="direktur_perusahaan" class="form-control w-full" placeholder="Input text">
+                                    <label for="no_ktpdirek" class="form-label mt-2">No. KTP Direktur</label>
+                                    <input id="no_ktpdirek" type="text" name="no_ktpdirek" class="form-control w-full" placeholder="Input text">
+                                    <label for="ktp_direktur" class="form-label mt-2">Upload KTP Direktur</label>
+                                    <input id="ktp_direktur" name="ktp_direktur" type="file" class="form-control" placeholder="Upload File">
+                                    <label for="npwp_direktur" class="form-label mt-2">Upload NPWP Direktur</label>
+                                    <input id="npwp_direktur" name="npwp_direktur" type="file" class="form-control" placeholder="Upload File">
+
                                     <label for="komisaris_perusahaan" class="form-label mt-2">Nama Komisaris Perusahaan</label>
                                     <input id="komisaris_perusahaan" type="text" name="komisaris_perusahaan" class="form-control w-full" placeholder="Input text">
+                                    <label for="no_ktpkomis" class="form-label mt-2">No. KTP Komisaris</label>
+                                    <input id="no_ktpkomis" type="text" name="no_ktpkomis" class="form-control w-full" placeholder="Input text">
                                     <label for="ktp_komisaris" class="form-label mt-2">Upload KTP Komisaris</label>
                                     <input id="ktp_komisaris" name="ktp_komisaris" type="file" class="form-control" placeholder="Upload File">
                                     <label for="npwp_komisaris" class="form-label mt-2">Upload NPWP Komisaris</label>
                                     <input id="npwp_komisaris" name="npwp_komisaris" type="file" class="form-control" placeholder="Upload File">
+
                                     <label for="nib_file" class="form-label mt-2">Upload NIB</label>
                                     <input id="nib_file" name="nib_file" type="file" class="form-control" placeholder="Upload File">
+                                    <label for="no_akta" class="form-label mt-2">No. Akta Perusahaan</label>
+                                    <input id="no_akta" type="text" name="no_akta" class="form-control w-full" placeholder="Input text">
+                                    <label for="akta_file" class="form-label mt-2">Upload Akta Perusahaan</label>
+                                    <input id="akta_file" name="akta_file" type="file" class="form-control" placeholder="Upload File">
+                                    <label for="akta_pendirian" class="form-label mt-2">Upload Akta Pendirian</label>
+                                    <input id="akta_pendirian" name="akta_pendirian" type="file" class="form-control" placeholder="Upload File">
+                                    <label for="akta_perubahan" class="form-label mt-2">Upload Akta Perubahan</label>
+                                    <input id="akta_perubahan" name="akta_perubahan" type="file" class="form-control" placeholder="Upload File">
+                                    <label for="akta_perubahan" class="form-label mt-2">Upload SPT Bulanan</label>
+                                    <input id="akta_perubahan" name="akta_perubahan" type="file" class="form-control" placeholder="Upload File">
+                                    <label for="akta_perubahan" class="form-label mt-2">Upload SPT Per 3 Bulan</label>
+                                    <input id="akta_perubahan" name="akta_perubahan" type="file" class="form-control" placeholder="Upload File">
+                                    <label for="akta_perubahan" class="form-label mt-2">Upload SPT Tahunan</label>
+                                    <input id="akta_perubahan" name="akta_perubahan" type="file" class="form-control" placeholder="Upload File">
+
                                     <label for="no_rek" class="form-label mt-2">No. Rekening Bank</label>
                                     <input id="no_rek" type="text" name="no_rek" class="form-control w-full" placeholder="Input text">
                                     <label for="rek_koran" class="form-label mt-2">Upload Rekening Koran</label>

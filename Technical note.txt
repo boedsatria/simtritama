@@ -107,7 +107,7 @@ No akta -> upload file
 
 Akta perubahan -> upload file
 
-Akta pendirian -> upload fule
+Akta pendirian -> upload file
 
 SPT bulanan -> upload file
 
