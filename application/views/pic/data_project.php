@@ -144,15 +144,13 @@
                 <div class="preview">
                     <div class="mt-3">
                         <div>
-                            <label for="horizontal-form-1" class="form-label sm:w-20">Nama Perusahaan</label>
+                            <label for="horizontal-form-1" class="form-label sm:w-auto">Nama Perusahaan</label>
                             <input id="horizontal-form-1" type="text" class="form-control" placeholder="otomatis dari database saat isi data Ringkos">
-                            <label for="horizontal-form-1" class="form-label sm:w-20">Alamat Perusahaan</label>
+                            <label for="horizontal-form-1" class="form-label sm:w-auto">Alamat Perusahaan</label>
                             <input id="horizontal-form-1" type="text" class="form-control" placeholder="otomatis dari database saat isi data Ringkos">
-                            <label for="horizontal-form-1" class="form-label sm:w-20">NPWP Perusahaan</label>
+                            <label for="horizontal-form-1" class="form-label sm:w-auto">NPWP Perusahaan</label>
                             <input id="horizontal-form-1" type="text" class="form-control" placeholder="otomatis dari database saat isi data Ringkos">
-                            <label for="horizontal-form-1" class="form-label sm:w-20">No.Rek Perusahaan</label>
-                            <input id="horizontal-form-1" type="text" class="form-control" placeholder="otomatis dari database saat isi data Ringkos">
-                            <label for="horizontal-form-1" class="form-label sm:w-20">Nama Bank Perusahaan</label>
+                            <label for="horizontal-form-1" class="form-label sm:w-auto">Nama Akun Bank</label>
                             <input id="horizontal-form-1" type="text" class="form-control" placeholder="otomatis dari database saat isi data Ringkos">
                         </div>
                     </div>
