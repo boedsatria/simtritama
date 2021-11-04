@@ -103,7 +103,7 @@ Nama direkening
 
 Nama Bank
 
-No akta upload file
+No akta -> upload file
 
 Akta perubahan -> upload file
 

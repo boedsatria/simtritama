@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2021 at 07:50 AM
+-- Generation Time: Nov 04, 2021 at 12:18 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -73,7 +73,8 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (28, 'divider', 'divider', '', 0, 8, 0, 1),
 (29, 'divider', 'divider', '', 0, 10, 0, 1),
 (30, 'Data User', 'masterdata/data_user', 'activity', 3, 2, 1, 1),
-(31, 'Data Media', 'masterdata/data_media', 'activity', 3, 3, 1, 1);
+(31, 'Data Media', 'masterdata/data_media', 'activity', 3, 3, 1, 1),
+(32, 'Data Perusahaan Penyelenggara', 'masterdata/data_penyelenggara', 'activity', 3, 4, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -93,10 +94,9 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-COMMIT;
