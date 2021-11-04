@@ -32,7 +32,7 @@
     <div id="button-modal" class="p-5">
         <div class="preview">
             <!-- BEGIN: Modal Toggle -->
-            <div class="text-right"> <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-sm btn-primary">Tambah Data</a> </div>
+            <div class="text-right"> <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-sm btn-primary w-72">Tambah Data</a> </div>
             <!-- END: Modal Toggle -->
             <!-- BEGIN: Modal Content -->
             <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
