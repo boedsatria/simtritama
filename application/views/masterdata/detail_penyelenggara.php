@@ -137,7 +137,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">14</td>
-                                <td class="border-b dark:border-dark-5">Image SPT Triwulan</td>
+                                <td class="border-b dark:border-dark-5"> SPT Triwulan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
