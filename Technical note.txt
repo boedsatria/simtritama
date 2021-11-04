@@ -258,3 +258,42 @@ Mo atau hps harus ada persetujuan dari PIC submit ke finance
 
 Logproof seminggu
 Yg di upload surat tayang, resi, capture tayang
+
+========================heru, list modal input data perusahaan penyelenggara ==================
+Data Perusahaan Penyelenggara :
+
+Nama Perusahaan :
+Alamat :
+---Identitas Pengurus ---
+Nama Komisaris :
+No KTP Komisaris :
+Upload KTP Komisaris :
+Nama Direktur :
+No KTP Direktur :
+Upload KTP Direktur :
+---NPWP---
+No NPWP Perusahaan :
+Upload NPWP Perusahaan :
+No NPWP Komisaris :
+Upload NPWP Komisaris :
+No NPWP Direktur :
+Upload NPWP Direktur :
+Upload SPT Bulanan :
+Upload SPT Triwulan :
+Upload SPT Tahunan :
+---Legalitas---
+No Akta :
+Upload Akta :
+No Akta Perubahan :
+Upload Akta Perubahan :
+No NIB :
+Upload NIB :
+No KBLI : (gunakan koma untuk input lebih dari satu KBLI)
+Upload Ko Surat : 
+Upload Speciment Stampel :
+---Perbankan---
+Nama Akun Bank :
+Nama Bank : 
+Nomor Rekening :
+Upload Rekening Koran :
+========================================================================================
