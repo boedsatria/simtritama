@@ -138,16 +138,16 @@
                             <th>No.</th>
                             <th>Nama Perusahaan</th>
                             <th>Alamat</th>
-                            <th>Sub Bidang</th>
+                            <th>No. KBLI</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="border-b whitespace-nowrap">
                         <tr>
                             <td>1</td>
-                            <td>xxxxxxx</td>
-                            <td>xxxxxxx</td>
-                            <td>xxxxxxx</td>
+                            <td>PT. Satriacorp.id</td>
+                            <td>Pondok Gede</td>
+                            <td>1234567, 9876543, 234567</td>
                             <td>
                                 <a href="<?= base_url('masterdata/detail_penyelenggara') ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
                                     Detail </a>
