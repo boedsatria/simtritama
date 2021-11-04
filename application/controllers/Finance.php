@@ -30,11 +30,11 @@ class Finance extends CI_Controller
 		$this->load->view('finance/buku_besar');
 		$this->load->view('footer');
 	}
-	public function patty_cash()
+	public function petty_cash()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/patty_cash');
+		$this->load->view('finance/petty_cash');
 		$this->load->view('footer');
 	}
 	public function asset_penyusutan()
