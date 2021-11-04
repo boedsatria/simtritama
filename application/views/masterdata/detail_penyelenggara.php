@@ -57,7 +57,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">5</td>
-                                <td class="border-b dark:border-dark-5">Foto KTP komisaris</td>
+                                <td class="border-b dark:border-dark-5"> KTP komisaris</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -78,7 +78,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">8</td>
-                                <td class="border-b dark:border-dark-5">Foto KTP Direktur</td>
+                                <td class="border-b dark:border-dark-5"> KTP Direktur</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -93,7 +93,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">10</td>
-                                <td class="border-b dark:border-dark-5">Image NPWP Perusahaan</td>
+                                <td class="border-b dark:border-dark-5"> NPWP Perusahaan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -107,7 +107,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">10</td>
-                                <td class="border-b dark:border-dark-5">Image NPWP Komisaris</td>
+                                <td class="border-b dark:border-dark-5"> NPWP Komisaris</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -121,7 +121,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">12</td>
-                                <td class="border-b dark:border-dark-5">Image NPWP Direktur</td>
+                                <td class="border-b dark:border-dark-5"> NPWP Direktur</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -129,7 +129,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">13</td>
-                                <td class="border-b dark:border-dark-5">Image SPT Bulanan</td>
+                                <td class="border-b dark:border-dark-5"> SPT Bulanan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -137,7 +137,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">14</td>
-                                <td class="border-b dark:border-dark-5">Image SPT Triwulan</td>
+                                <td class="border-b dark:border-dark-5"> SPT Triwulan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -145,7 +145,7 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">15</td>
-                                <td class="border-b dark:border-dark-5">Image SPT Tahunan</td>
+                                <td class="border-b dark:border-dark-5"> SPT Tahunan</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
@@ -160,7 +160,98 @@
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">17</td>
-                                <td class="border-b dark:border-dark-5">Image Akta Perusahaan</td>
+                                <td class="border-b dark:border-dark-5"> Akta Perusahaan</td>
+                                <td class="border-b dark:border-dark-5">-</td>
+                                <td class="border-b dark:border-dark-5">
+                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">18</td>
+                                <td class="border-b dark:border-dark-5">No. Akta Perubahan</td>
+                                <td class="border-b dark:border-dark-5">123456789</td>
+                                <td class="border-b dark:border-dark-5"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">19</td>
+                                <td class="border-b dark:border-dark-5"> Akta Perubahan</td>
+                                <td class="border-b dark:border-dark-5">-</td>
+                                <td class="border-b dark:border-dark-5">
+                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">20</td>
+                                <td class="border-b dark:border-dark-5">No. Akta Pendirian</td>
+                                <td class="border-b dark:border-dark-5">123456789</td>
+                                <td class="border-b dark:border-dark-5"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">21</td>
+                                <td class="border-b dark:border-dark-5"> Akta Pendirian</td>
+                                <td class="border-b dark:border-dark-5">-</td>
+                                <td class="border-b dark:border-dark-5">
+                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">22</td>
+                                <td class="border-b dark:border-dark-5">No. NIB</td>
+                                <td class="border-b dark:border-dark-5">123456789</td>
+                                <td class="border-b dark:border-dark-5"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">23</td>
+                                <td class="border-b dark:border-dark-5"> NIB</td>
+                                <td class="border-b dark:border-dark-5">-</td>
+                                <td class="border-b dark:border-dark-5">
+                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">24</td>
+                                <td class="border-b dark:border-dark-5">No. KBLI</td>
+                                <td class="border-b dark:border-dark-5">12345, 23456, 34567</td>
+                                <td class="border-b dark:border-dark-5"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">25</td>
+                                <td class="border-b dark:border-dark-5"> Kop Surat</td>
+                                <td class="border-b dark:border-dark-5">-</td>
+                                <td class="border-b dark:border-dark-5">
+                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">26</td>
+                                <td class="border-b dark:border-dark-5"> Speciment Stempel</td>
+                                <td class="border-b dark:border-dark-5">-</td>
+                                <td class="border-b dark:border-dark-5">
+                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
+                                </td>
+                            </tr>
+                            <!-- Perbankan -->
+                            <tr>
+                                <td class="border-b dark:border-dark-5">27</td>
+                                <td class="border-b dark:border-dark-5">Nama Akun Bank</td>
+                                <td class="border-b dark:border-dark-5"> Satriacorp</td>
+                                <td class="border-b dark:border-dark-5"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">28</td>
+                                <td class="border-b dark:border-dark-5">Nama Bank</td>
+                                <td class="border-b dark:border-dark-5">BCA</td>
+                                <td class="border-b dark:border-dark-5"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">30</td>
+                                <td class="border-b dark:border-dark-5">No. Rekening</td>
+                                <td class="border-b dark:border-dark-5">12345678987654321</td>
+                                <td class="border-b dark:border-dark-5"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border-b dark:border-dark-5">31</td>
+                                <td class="border-b dark:border-dark-5"> Rekening Koran</td>
                                 <td class="border-b dark:border-dark-5">-</td>
                                 <td class="border-b dark:border-dark-5">
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
