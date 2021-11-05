@@ -236,7 +236,7 @@
 
 
                  <!-- BEGIN: Modal Toggle -->
-                 <div class="text-right p-5">
+                 <div class="text-center p-5">
                      <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-primary">Tambah Data</a>
                     </div>
                     <!-- END: Modal Toggle -->
@@ -345,7 +345,7 @@
 
 
                  <!-- BEGIN: Modal Toggle -->
-                 <div class="text-right p-5">
+                 <div class="text-center p-5">
                      <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-primary">Tambah Data</a>
                     </div>
                     <!-- END: Modal Toggle -->
@@ -358,7 +358,7 @@
                         </div>
 
                         <div class="mt-3 p-5">
-                        <label for="regular-form-4" class="form-label">Katergori Produksi</label>
+                        <label for="regular-form-4" class="form-label">Kategori Produksi</label>
                         <div class="mt-2">
                             <select data-placeholder="Select your favorite actors" class="tom-select w-full">
                                 <option value="1">Video Syuting Talent</option>
