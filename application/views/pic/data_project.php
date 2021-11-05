@@ -278,9 +278,6 @@
                             </select>
                         </div>
                     </div>
-
-
-
                             <div class="px-5 pb-8 text-center">
                                 <button type="button" data-dismiss="modal" class="btn btn-primary w-auto">Simpan dan Tutup</button>
                                 <button type="button" data-dismiss="modal" class="btn btn-primary w-auto">Simpan dan Tambah data lain</button>
@@ -342,8 +339,6 @@
                         </tbody>
                     </table>
                 </div>
-
-
                  <!-- BEGIN: Modal Toggle -->
                  <div class="text-center p-5">
                      <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-primary">Tambah Data</a>
@@ -387,9 +382,6 @@
                             </select>
                         </div>
                     </div>
-
-
-
                             <div class="px-5 pb-8 text-center">
                                 <button type="button" data-dismiss="modal" class="btn btn-primary w-auto">Simpan dan Tutup</button>
                                 <button type="button" data-dismiss="modal" class="btn btn-primary w-auto">Simpan dan Tambah data lain</button>
@@ -422,3 +414,5 @@
 </div>
 </div>
 <!-- END: Content -->
+</div>
+</div>
