@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2021 at 05:05 PM
+-- Generation Time: Nov 05, 2021 at 08:22 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -59,7 +59,7 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (14, 'Petty Cash', 'finance/petty_cash', 'activity', 11, 3, 3, 1),
 (15, 'Aset dan Penyusutan', 'finance/aset_dan_penyusutan', 'activity', 11, 4, 3, 1),
 (16, 'General Ledger', 'finance/general_ledger', 'activity', 11, 5, 3, 1),
-(17, 'Cetak Laporan Keuangan', 'finance/laporan_keuangan', 'activity', 11, 6, 3, 1),
+(17, 'Cetak Laporan Keuangan', 'finance/cetak_laporan_keuangan', 'activity', 11, 6, 3, 1),
 (18, 'Produksi', '#', 'truck', 0, 9, 4, 1),
 (19, 'Job Order', 'produksi/job_order', 'activity', 18, 1, 4, 1),
 (20, 'Pengajuan', 'produksi/pengajuan', 'activity', 18, 2, 4, 1),
@@ -75,7 +75,11 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (30, 'Data User', 'masterdata/data_user', 'activity', 3, 2, 1, 1),
 (31, 'Data Media', 'masterdata/data_media', 'activity', 3, 3, 1, 1),
 (32, 'Data Perusahaan Penyelenggara', 'masterdata/data_penyelenggara', 'activity', 3, 4, 1, 1),
-(33, 'Plafon dan COA', 'finance/plafon_coa', 'activity', 11, 7, 3, 1);
+(33, 'Plafon dan COA', 'finance/plafon_coa', 'activity', 11, 7, 3, 1),
+(34, 'Dashboard PIC', 'pic/dashboard_pic', 'activity', 5, 6, 2, 1),
+(35, 'Dashboard Finance', 'finance/dashboard_finance', 'activity', 11, 8, 3, 1),
+(36, 'Dashboard Produksi', 'produksi/dashboard_produksi', 'activity', 18, 4, 4, 1),
+(37, 'Dashboard Placement', 'placement/dashboard_placement', 'activity', 22, 4, 5, 1);
 
 --
 -- Indexes for dumped tables
@@ -95,7 +99,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
