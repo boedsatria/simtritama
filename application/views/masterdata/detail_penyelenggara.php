@@ -309,9 +309,6 @@
                     <a href="<?= base_url('masterdata/data_penyelenggara') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
                         Back </a>
                 </div>
-
-
-
             </div>
         </div>
         <!-- END: BLOCK 1 -->
