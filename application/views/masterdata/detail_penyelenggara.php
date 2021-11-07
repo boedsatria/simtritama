@@ -13,9 +13,7 @@
         <!-- BEGIN: BLOCK 1 -->
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-
                 <!-- KONTEN BLOCK 1 DISINI-->
-
                 <div class="overflow-x-auto">
                     <table class="table">
                         <thead>
@@ -37,7 +35,7 @@
                             <tr>
                                 <td class="border-b dark:border-dark-5">2</td>
                                 <td class="border-b dark:border-dark-5">Alamat</td>
-                                <td class="border-b dark:border-dark-5">Pondok Gede</td>
+                                <td class="border-b dark:border-dark-5">Pondok Gede, Jl. Pasar Kecapi</td>
                                 <td class="border-b dark:border-dark-5"></td>
                             </tr>
                             <tr>
