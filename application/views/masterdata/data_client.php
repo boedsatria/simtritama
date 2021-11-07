@@ -29,6 +29,8 @@
                                         <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
                                         <label for="crud-form-1" class="form-label">No Rekening</label>
                                         <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
+                                        <label for="crud-form-1" class="form-label">Nama Pemilik Rekening</label>
+                                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
                                         <label for="crud-form-1" class="form-label">Alamat</label>
                                         <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
                                         <label for="crud-form-1" class="form-label">Kontak Person</label>
@@ -117,7 +119,8 @@
                                 <td class="border">xxxxxxxxxxx</td>
                                 <td class="border">123456789</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
+                                    <a href="<?= base_url('masterdata/detail_client') ?>" class="btn btn-primary w-24 mr-2 mb-2">
+                                        Detail </a>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-200">
@@ -126,7 +129,8 @@
                                 <td class="border">xxxxxxxxxxx</td>
                                 <td class="border">987654321</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
+                                    <a href="<?= base_url('masterdata/detail_client') ?>" class="btn btn-primary w-24 mr-2 mb-2">
+                                        Detail </a>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-200">
@@ -135,7 +139,8 @@
                                 <td class="border">xxxxxxxxxxx</td>
                                 <td class="border">987654333</td>
                                 <td class="border text-center">
-                                    <button class="btn btn-sm btn-primary w-24 mr-1 mb-2">Detail</button>
+                                    <a href="<?= base_url('masterdata/detail_client') ?>" class="btn btn-primary w-24 mr-2 mb-2">
+                                        Detail </a>
                                 </td>
                             </tr>
                         </tbody>

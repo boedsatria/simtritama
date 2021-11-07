@@ -22,6 +22,8 @@
                                     <input id="nama_perusahaan" type="text" name="nama_perusahaan" class="form-control w-full" placeholder="Input text">
                                     <label for="alamat_perusahaan" class="form-label mt-2">Alamat Perusahaan</label>
                                     <input id="alamat_perusahaan" type="text" name="alamat_perusahaan" class="form-control w-full" placeholder="Input text">
+                                    <label for="no_telp" class="form-label mt-2">No. Telephone</label>
+                                    <input id="no_telp" type="text" name="no_telp" class="form-control w-full" placeholder="Input text">
                                 </div>
 
                                 <div class="p-5 text-left">
