@@ -1,7 +1,7 @@
 <!-- BEGIN : JUDUL -->
 <div class="intro-y flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        DETAIL DATA PERUSAHAAN PENYELENGGARA
+        DETAIL DATA ALAMAT PERUSAHAAN PENYELENGGARA
         <!--JUDUL PAGE-->
     </h2>
 </div>
@@ -41,6 +41,51 @@
                                 <td class="border-b dark:border-dark-5"></td>
                             </tr>
 
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print Rekap </button>
+                    <a href="<?= base_url('masterdata/data_penyelenggara') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
+                        Back </a>
+                </div>
+            </div>
+        </div>
+        <!-- END: BLOCK 1 -->
+    </div>
+</div>
+
+
+<!-- BEGIN : JUDUL -->
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        DETAIL DATA PENGURUS PERUSAHAAN
+        <!--JUDUL PAGE-->
+    </h2>
+</div>
+<!-- END JUDUL-->
+<div class="grid grid-cols-2 gap-2 mt-5">
+    <!-- KOLOM BESAR-->
+    <div class="intro-y col-span-2 lg:col-span-4">
+        <!-- KOLOM KIRI-->
+        <!-- BEGIN: BLOCK 1 -->
+        <div class="intro-y box">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+
+                <!-- KONTEN BLOCK 1 DISINI-->
+
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-gray-700 dark:bg-dark-1 text-white text-center">
+                                <th class="whitespace-nowrap">No.</th>
+                                <th class="whitespace-nowrap">Informasi</th>
+                                <th class="whitespace-nowrap">Data</th>
+                                <th class="whitespace-nowrap">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
                             <!-- identitas pengurus -->
 
                             <tr>
@@ -72,6 +117,51 @@
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
                             </tr>
+
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print Rekap </button>
+                    <a href="<?= base_url('masterdata/data_penyelenggara') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
+                        Back </a>
+                </div>
+            </div>
+        </div>
+        <!-- END: BLOCK 1 -->
+    </div>
+</div>
+
+<!-- BEGIN : JUDUL -->
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        DETAIL DATA NPWP
+        <!--JUDUL PAGE-->
+    </h2>
+</div>
+<!-- END JUDUL-->
+<div class="grid grid-cols-2 gap-2 mt-5">
+    <!-- KOLOM BESAR-->
+    <div class="intro-y col-span-2 lg:col-span-4">
+        <!-- KOLOM KIRI-->
+        <!-- BEGIN: BLOCK 1 -->
+        <div class="intro-y box">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+
+                <!-- KONTEN BLOCK 1 DISINI-->
+
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-gray-700 dark:bg-dark-1 text-white text-center">
+                                <th class="whitespace-nowrap">No.</th>
+                                <th class="whitespace-nowrap">Informasi</th>
+                                <th class="whitespace-nowrap">Data</th>
+                                <th class="whitespace-nowrap">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
                             <!-- NPWP -->
                             <tr>
                                 <td class="border-b dark:border-dark-5">9</td>
@@ -121,6 +211,49 @@
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
                             </tr>
+
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print Rekap </button>
+                    <a href="<?= base_url('masterdata/data_penyelenggara') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
+                        Back </a>
+                </div>
+            </div>
+        </div>
+        <!-- END: BLOCK 1 -->
+    </div>
+</div>
+
+<!-- BEGIN : JUDUL -->
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        DETAIL DATA LEGALITAS PERUSAHAAN PENYELENGGARA
+        <!--JUDUL PAGE-->
+    </h2>
+</div>
+<!-- END JUDUL-->
+<div class="grid grid-cols-2 gap-2 mt-5">
+    <!-- KOLOM BESAR-->
+    <div class="intro-y col-span-2 lg:col-span-4">
+        <!-- KOLOM KIRI-->
+        <!-- BEGIN: BLOCK 1 -->
+        <div class="intro-y box">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                <!-- KONTEN BLOCK 1 DISINI-->
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-gray-700 dark:bg-dark-1 text-white text-center">
+                                <th class="whitespace-nowrap">No.</th>
+                                <th class="whitespace-nowrap">Informasi</th>
+                                <th class="whitespace-nowrap">Data</th>
+                                <th class="whitespace-nowrap">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
                             <!-- legalitas -->
                             <tr>
                                 <td class="border-b dark:border-dark-5">16</td>
@@ -167,6 +300,54 @@
                                     <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
                                 </td>
                             </tr>
+
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print Rekap </button>
+                    <a href="<?= base_url('masterdata/data_penyelenggara') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
+                        Back </a>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- END: BLOCK 1 -->
+    </div>
+</div>
+
+<!-- BEGIN : JUDUL -->
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        DETAIL DATA PERBANKAN PERUSAHAAN PENYELENGGARA
+        <!--JUDUL PAGE-->
+    </h2>
+</div>
+<!-- END JUDUL-->
+<div class="grid grid-cols-2 gap-2 mt-5">
+    <!-- KOLOM BESAR-->
+    <div class="intro-y col-span-2 lg:col-span-4">
+        <!-- KOLOM KIRI-->
+        <!-- BEGIN: BLOCK 1 -->
+        <div class="intro-y box">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+
+                <!-- KONTEN BLOCK 1 DISINI-->
+
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-gray-700 dark:bg-dark-1 text-white text-center">
+                                <th class="whitespace-nowrap">No.</th>
+                                <th class="whitespace-nowrap">Informasi</th>
+                                <th class="whitespace-nowrap">Data</th>
+                                <th class="whitespace-nowrap">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
                             <!-- Perbankan -->
                             <tr>
                                 <td class="border-b dark:border-dark-5">27</td>
@@ -203,9 +384,6 @@
                     <a href="<?= base_url('masterdata/data_penyelenggara') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
                         Back </a>
                 </div>
-
-
-
             </div>
         </div>
         <!-- END: BLOCK 1 -->

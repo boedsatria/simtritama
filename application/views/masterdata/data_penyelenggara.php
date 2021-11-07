@@ -44,7 +44,7 @@
                                 </div>
 
                                 <div class="p-5 text-left">
-                                    <h3 class="px-5 pb-8 text-center"><u>NO POKOK HARUS PAJAK (NPWP) / PAJAK</u></h3>
+                                    <h3 class="px-5 pb-8 text-center"><u>NO POKOK WAJIB PAJAK (NPWP) / PAJAK</u></h3>
                                     </br>
                                     <label for="no_npwp" class="form-label mt-2">No. NPWP Perusahaan</label>
                                     <input id="no_npwp" type="text" name="no_npwp" class="form-control w-full" placeholder="Input text">
