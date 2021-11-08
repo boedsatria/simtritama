@@ -72,11 +72,11 @@ class Finance extends CI_Controller
 		$this->load->view('finance/akun_transaksi');
 		$this->load->view('footer');
 	}
-	public function laporan_keuangan()
+	public function cetak_laporan_keuangan()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/laporan_keuangan');
+		$this->load->view('finance/cetak_laporan_keuangan');
 		$this->load->view('footer');
 	}
 	public function plafon_coa()
