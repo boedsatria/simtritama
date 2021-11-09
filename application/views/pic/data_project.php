@@ -65,6 +65,15 @@
                             </select> </div>
                     </div>
                     <br>
+                    <div>
+                        <label for="regular-form-1" class="form-label">PERUSAHAAN PENYELENGGARA</label>
+                        <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
+                                <option value="1">PT 1</option>
+                                <option value="2">PT 2</option>
+                                <option value="3">PT 3</option>
+                                <option value="4">PT 4</option>                           
+                            </select> </div>
+                    </div></br>
                     <div class="mt-3">
                         <label for="regular-form-1" class="form-label">JUDUL KEGIATAN</label>
                         <input id="regular-form-1" type="text" class="form-control" placeholder="input judul kegiatan">
