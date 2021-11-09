@@ -39,6 +39,13 @@ class Masterdata extends CI_Controller
 		$this->load->view('masterdata/data_media');
 		$this->load->view('footer');
 	}
+	public function detail_media()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('masterdata/detail_media');
+		$this->load->view('footer');
+	}
 	public function data_mitra()
 	{
 		$this->load->view('header');
