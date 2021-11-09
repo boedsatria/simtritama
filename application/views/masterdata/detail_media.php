@@ -15,7 +15,7 @@
                 <div class="absolute mb-1 mr-1 flex items-center justify-center bottom-0 right-0 bg-theme-1 rounded-full p-2"> <i class="w-4 h-4 text-white" data-feather="camera"></i> </div>
             </div>
             <div class="ml-5">
-                <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">SATRIACORP.ID</div>
+                <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">Nama Media</div>
                 <div class="text-gray-600">KBLI 1, KBLI 2, KBLI 3, KBLI 4</div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <div class="intro-y box col-span-12 lg:col-span-6">
                 <div class="flex items-center p-5 border-b border-gray-200 dark:border-dark-5">
                     <h2 class="font-medium text-base mr-auto">
-                        Daftar Pekerjaan
+                        INFORMASI 
                     </h2>
                     <div class="dropdown ml-auto">
                         <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false"> <i data-feather="more-horizontal" class="w-5 h-5 text-gray-600 dark:text-gray-300"></i> </a>
@@ -271,137 +271,6 @@
 </div>
 
 
-<div class="intro-y tab-content mt-5">
-    <div id="dashboard" class="tab-pane active" role="tabpanel" aria-labelledby="dashboard-tab">
-        <div class="grid grid-cols-12 gap-6">
-            <!-- BEGIN: Top Categories -->
-            <div class="intro-y box col-span-12 lg:col-span-6">
-                <div class="flex items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                    <h2 class="font-medium text-base mr-auto">
-                    DETAIL DATA LEGALITAS PERUSAHAAN PENYELENGGARA
-                    </h2>
-                    
-                </div>
-                <div class="p-5">
-                <table class="table">
-                        <thead>
-                            <tr class="bg-gray-700 dark:bg-dark-1 text-white text-center">
-                                <th class="whitespace-nowrap">No.</th>
-                                <th class="whitespace-nowrap">Informasi</th>
-                                <th class="whitespace-nowrap">Data</th>
-                                <th class="whitespace-nowrap">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <!-- legalitas -->
-                            <tr>
-                                <td class="border-b dark:border-dark-5">1</td>
-                                <td class="border-b dark:border-dark-5">No. Akta Perusahaan</td>
-                                <td class="border-b dark:border-dark-5">123456789</td>
-                                <td><button class="btn btn-success w-24 mr-2 mb-2">Download</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">2</td>
-                                <td class="border-b dark:border-dark-5">No. Akta Perubahan</td>
-                                <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5">
-                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">3</td>
-                                <td class="border-b dark:border-dark-5">No. NIB</td>
-                                <td class="border-b dark:border-dark-5">123456789</td>
-                                <td class="border-b dark:border-dark-5">
-                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">4</td>
-                                <td class="border-b dark:border-dark-5">No. KBLI</td>
-                                <td class="border-b dark:border-dark-5">12345, 23456, 34567</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">5</td>
-                                <td class="border-b dark:border-dark-5"> Kop Surat</td>
-                                <td class="border-b dark:border-dark-5">-</td>
-                                <td class="border-b dark:border-dark-5">
-                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">6</td>
-                                <td class="border-b dark:border-dark-5"> Speciment Stempel</td>
-                                <td class="border-b dark:border-dark-5">-</td>
-                                <td class="border-b dark:border-dark-5">
-                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!-- END: Top Categories -->
-            <!-- BEGIN: Work In Progress -->
-            <div class="intro-y box col-span-12 lg:col-span-6">
-                <div class="flex items-center p-5 border-b border-gray-200 dark:border-dark-5">
-                    <h2 class="font-medium text-base mr-auto">
-                    DETAIL DATA PERBANKAN PERUSAHAAN PENYELENGGARA
-                    </h2>
-                </div>
-                <div class="p-5">
-                <table class="table">
-                        <thead>
-                            <tr class="bg-gray-700 dark:bg-dark-1 text-white text-center">
-                                <th class="whitespace-nowrap">No.</th>
-                                <th class="whitespace-nowrap">Informasi</th>
-                                <th class="whitespace-nowrap">Data</th>
-                                <th class="whitespace-nowrap">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <!-- Perbankan -->
-                            <tr>
-                                <td class="border-b dark:border-dark-5">1</td>
-                                <td class="border-b dark:border-dark-5">Nama Akun Bank</td>
-                                <td class="border-b dark:border-dark-5"> Satriacorp</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">2</td>
-                                <td class="border-b dark:border-dark-5">Nama Bank</td>
-                                <td class="border-b dark:border-dark-5">BCA</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">3</td>
-                                <td class="border-b dark:border-dark-5">No. Rekening</td>
-                                <td class="border-b dark:border-dark-5">12345678987654321</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">4</td>
-                                <td class="border-b dark:border-dark-5"> Rekening Koran</td>
-                                <td class="border-b dark:border-dark-5">-</td>
-                                <td class="border-b dark:border-dark-5">
-                                    <button class="btn btn-success w-24 mr-2 mb-2">Download</button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!-- END: Work In Progress -->
-        </div>
-    </div>
-</div>
-
 <div class="grid grid-cols-2 gap-2 mt-5">
     <!-- KOLOM BESAR-->
     <div class="intro-y col-span-2 lg:col-span-4">
@@ -416,7 +285,7 @@
                 <div id="horizontal-form" class="p-5">
                 <div class="preview">
                     <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print Rekap </button>
-                    <a href="<?= base_url('masterdata/data_penyelenggara') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
+                    <a href="<?= base_url('masterdata/data_media') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
                         Back </a>
                 </div>
             </div>  

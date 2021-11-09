@@ -18,7 +18,7 @@
                                 <div class="p-5 text-left">
                                     <div>
                                         
-                                        <label class="form-label mt-2">Kategori</label>
+                                        <label class="form-label mt-2">Kategori Media</label>
                                             <select id="tabulator-html-filter-type" class="form-select w-full form-control">
                                                 <option value="Media Televisi" selected>Media Televisi</option>
                                                 <option value="Media Digital">Media Digital</option>
