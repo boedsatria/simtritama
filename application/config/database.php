@@ -74,6 +74,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $uri = base_url();
+$host = "localhost";
 $username = "root";
 $password = "";
 $database = "simtritama";
@@ -82,10 +83,13 @@ if($uri == "http://simtritama.satriacorp.id/"){
 	$password = "100%Id/En";
 	$database = "u4814692_simtritama";
 }
-
+$os = PHP_OS;
+if($os == "Darwin"){
+	$password = "root";
+}
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => $host,
 	'username' => $username,
 	'password' => $password,
 	'database' => $database,
