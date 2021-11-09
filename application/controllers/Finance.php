@@ -23,6 +23,13 @@ class Finance extends CI_Controller
 		$this->load->view('finance/dashboard_finance');
 		$this->load->view('footer');
 	}
+	public function diagram_monitoring()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/dashboard_finance');
+		$this->load->view('footer');
+	}
 	public function buku_besar()
 	{
 		$this->load->view('header');
@@ -30,18 +37,25 @@ class Finance extends CI_Controller
 		$this->load->view('finance/buku_besar');
 		$this->load->view('footer');
 	}
-	public function patty_cash()
+	public function petty_cash()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/patty_cash');
+		$this->load->view('finance/petty_cash');
 		$this->load->view('footer');
 	}
-	public function asset_penyusutan()
+	public function aset_dan_penyusutan()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/asset_penyusutan');
+		$this->load->view('finance/aset_dan_penyusutan');
+		$this->load->view('footer');
+	}
+	public function detail_penyusutan()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/detail_penyusutan');
 		$this->load->view('footer');
 	}
 	public function general_ledger()
@@ -58,11 +72,18 @@ class Finance extends CI_Controller
 		$this->load->view('finance/akun_transaksi');
 		$this->load->view('footer');
 	}
-	public function laporan_keuangan()
+	public function cetak_laporan_keuangan()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/laporan_keuangan');
+		$this->load->view('finance/cetak_laporan_keuangan');
+		$this->load->view('footer');
+	}
+	public function plafon_coa()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/plafon_coa');
 		$this->load->view('footer');
 	}
 }

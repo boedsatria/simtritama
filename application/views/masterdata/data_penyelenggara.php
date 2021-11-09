@@ -22,6 +22,8 @@
                                     <input id="nama_perusahaan" type="text" name="nama_perusahaan" class="form-control w-full" placeholder="Input text">
                                     <label for="alamat_perusahaan" class="form-label mt-2">Alamat Perusahaan</label>
                                     <input id="alamat_perusahaan" type="text" name="alamat_perusahaan" class="form-control w-full" placeholder="Input text">
+                                    <label for="no_telp" class="form-label mt-2">No. Telephone</label>
+                                    <input id="no_telp" type="text" name="no_telp" class="form-control w-full" placeholder="Input text">
                                 </div>
 
                                 <div class="p-5 text-left">
@@ -44,7 +46,7 @@
                                 </div>
 
                                 <div class="p-5 text-left">
-                                    <h3 class="px-5 pb-8 text-center"><u>NO POKOK HARUS PAJAK (NPWP) / PAJAK</u></h3>
+                                    <h3 class="px-5 pb-8 text-center"><u>NO POKOK WAJIB PAJAK (NPWP) / PAJAK</u></h3>
                                     </br>
                                     <label for="no_npwp" class="form-label mt-2">No. NPWP Perusahaan</label>
                                     <input id="no_npwp" type="text" name="no_npwp" class="form-control w-full" placeholder="Input text">
@@ -164,6 +166,36 @@
             </div>
         </div>
     </div>
+</div>
+<div class="p-5">
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+        <ul class="pagination">
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
+            </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li> <a class="pagination__link" href="">1</a> </li>
+            <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
+            <li> <a class="pagination__link" href="">3</a> </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
+            </li>
+        </ul>
+        <select class="w-20 form-select box mt-3 sm:mt-0">
+            <option>10</option>
+            <option>25</option>
+            <option>35</option>
+            <option>50</option>
+        </select>
+    </div>
+    <!-- END: Pagination -->
 </div>
 <!-- END: HTML Table Data -->
 </div>

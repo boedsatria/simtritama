@@ -14,34 +14,11 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    PILIH DATA RINGKOS
+                    CARI / PILIH DATA PROJECT
                 </h2>
             </div>
             <div class="p-5">
-                RINGKOS
-
-                <!-- BEGIN: Nested Select -->
-                <div class="mt-3"> <label>Direktorat</label>
-                    <div class="mt-2">
-                        <select data-placeholder="Select your favorite actors" class="tom-select w-full">
-                            <optgroup label="Kementerian A">
-                                <option value="1">Direktorat 1</option>
-                                <option value="2">Direktorat 2</option>
-                                <option value="3">Direktorat 3</option>
-                                <option value="4">Direktorat 4</option>
-                                <option value="5">Direktorat 5</option>
-                            </optgroup>
-                            <optgroup label="Kementerian B">
-                                <option value="1">Direktorat 1</option>
-                                <option value="2">Direktorat 2</option>
-                                <option value="3">Direktorat 3</option>
-                                <option value="4">Direktorat 4</option>
-                                <option value="5">Direktorat 5</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                </div>
-                <!-- END: Nested Select -->
+                BERDASARKAN NOMOR RINGKOS                
                 <!-- BEGIN: Nested Select -->
                 <div class="mt-3"> <label>Nomor Ringkos</label>
                     <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
@@ -62,7 +39,32 @@
                         </select> </div>
                 </div>
                 <!-- END: Nested Select -->
-
+            </div>
+            <div class="p-5">
+                PERSEMPIT PENCARIAN (Permudah pencarian dengan mempersempit parameter)               
+                <!-- BEGIN: Nested Select -->
+                <div class="mt-3"> <label>KEMENTERIAN</label>
+                    <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
+                                <option value="1">Kementerian 1</option>
+                                <option value="2">Kementerian 2</option>
+                                <option value="3">Kementerian 3</option>
+                        </select> </div>
+                </div>
+                <div class="mt-3"> <label>DIREKTORAT JENDERAL</label>
+                    <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
+                                <option value="1">Dirjen 1</option>
+                                <option value="2">Dirjen 2</option>
+                                <option value="3">Dirjen 3</option>
+                        </select> </div>
+                </div>
+                <div class="mt-3"> <label>DIREKTORAT</label>
+                    <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
+                                <option value="1">Direktorat 1</option>
+                                <option value="2">Direktorat 2</option>
+                                <option value="3">Direktorat 3</option>
+                        </select> </div>
+                </div>
+                <!-- END: Nested Select -->
             </div>
         </div>
         <!-- END: BLOCK 1 -->
@@ -76,17 +78,17 @@
             </div>
             <div class="p-5">
                 WAKTU PEKERJAAN
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">Mulai Produksi</label>
-                    <input id="regular-form-5" type="text" class="form-control" placeholder="Otomatis dari database timeline Ringkos" disabled>
+                <div class="mt-3"> <label for="regular-form-5" class="form-label">Jangka Waktu Pekerjaan sesuai Kontrak</label>
+                    <div class="grid grid-cols-12 gap-2">
+                                <input type="text" class="form-control col-span-4" placeholder="TANGGAL MULAI AUTO" aria-label="default input inline 1" disabled>
+                                <input type="text" class="form-control col-span-4" placeholder="TANGGAL SELESAI AUTO" aria-label="default input inline 2" disabled>
+                            </div>
                 </div>
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">Batas akhir Produksi</label>
-                    <input id="regular-form-5" type="text" class="form-control" placeholder="Otomatis dari database timeline Ringkos" disabled>
+                <div class="mt-3"> <label for="regular-form-5" class="form-label">Tentukan waktu Mulai dan akhir Produksi</label>
+                    <input data-daterange="true" class="datepicker form-control w-56 block mx-auto">
                 </div>
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">Mulai Placement</label>
-                    <input id="regular-form-5" type="text" class="form-control" placeholder="Otomatis dari database timeline Ringkos" disabled>
-                </div>
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">Batas akhir Placement</label>
-                    <input id="regular-form-5" type="text" class="form-control" placeholder="Otomatis dari database timeline Ringkos" disabled>
+                <div class="mt-3"> <label for="regular-form-5" class="form-label">Tentukan waktu mulai dan akhir Placement</label>
+                <input data-daterange="true" class="datepicker form-control w-56 block mx-auto">
                 </div>
 
             </div>
@@ -101,11 +103,7 @@
                 </h2>
             </div>
             <div class="p-5">
-                HPS Pagu Anggaran Pekerjaan
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">HPS Produksi</label>
-                    <input id="regular-form-5" type="text" class="form-control" placeholder="HPS sesuai Pagu Pekerjaan Otomatis dari database Ringkos" disabled>
-                </div>
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">HPS Placement</label>
+                <div class="mt-3"> <label for="regular-form-5" class="form-label">Nilai HPS sesuai Kontrak</label>
                     <input id="regular-form-5" type="text" class="form-control" placeholder="HPS sesuai Pagu Pekerjaan Otomatis dari database Ringkos" disabled>
                 </div>
             </div>
@@ -118,34 +116,55 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    JOB ORDER PRODUKSI
+                    RINGKASAN JOB ORDER PRODUKSI
                 </h2>
             </div>
             <div class="p-5">
-                Konten Produksi
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">Jumlah Versi</label>
-                    <input id="regular-form-5" type="text" class="form-control" placeholder="jumlah versi produksi otomatis dari data Ringkos" disabled>
+                <input id="regular-form-5" type="text" class="form-control" placeholder="NOMOR JOB ORDER FORMAT : Nomor Ringkos/No.Job/JO/dd/mm/yyyy" disabled>   
+                
+                <div class="p-5">Konten Produksi</div>
+
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">JUDUL VERSI</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">KATEGORI PRODUKSI</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">TALENT</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">VENUE PRODUKSI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border">Keselamatan Kerja dalam ruang</td>
+                                <td class="border">Video Syuting</td>
+                                <td class="border">Lucky Bayu</td>
+                                <td class="border">Ruang Assembly PT Astra</td>
+                            </tr>
+                            <tr>
+                                <td class="border">Menuju Indonesia Sehat</td>
+                                <td class="border">Video Animasi 3D</td>
+                                <td class="border"> - </td>
+                                <td class="border"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border">Keselamatan Kerja Ketinggian</td>
+                                <td class="border">Video 2D Ekplainer</td>
+                                <td class="border"> - </td>
+                                <td class="border"> - </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="mt-3"> <label for="regular-form-5" class="form-label">Wilayah Pekerjaan</label>
-                    <input id="regular-form-5" type="text" class="form-control" placeholder="otomatis sesuai data Ringkos" disabled>
-                </div>
+                
+
+
                 <!-- BEGIN: Nested Select -->
-                <div class="mt-3"> <label>Tim Pelaksana Produksi</label>
+                <div class="mt-3"> <label>Tim Pelaksana Produksi Terpilih</label>
                     <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
-                            <optgroup label="Jakarta">
                                 <option value="1">TIM 1</option>
                                 <option value="2">TIM 2</option>
                                 <option value="3">TIM 3</option>
-                                <option value="4">TIM 4</option>
-                                <option value="5">TIM 5</option>
-                            </optgroup>
-                            <optgroup label="Jawa Barat">
-                                <option value="1">TIM 6</option>
-                                <option value="2">TIM 7</option>
-                                <option value="3">TIM 8</option>
-                                <option value="4">TIM 9</option>
-                                <option value="5">TIM 10</option>
-                            </optgroup>
                         </select> </div>
                 </div>
                 <!-- END: Nested Select -->

@@ -32,7 +32,7 @@
     <div id="button-modal" class="p-5">
         <div class="preview">
             <!-- BEGIN: Modal Toggle -->
-            <div class="text-right"> <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-sm btn-primary">Tambah Data</a> </div>
+            <div class="text-right"> <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-sm btn-primary w-72">Tambah Data</a> </div>
             <!-- END: Modal Toggle -->
             <!-- BEGIN: Modal Content -->
             <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
@@ -132,38 +132,38 @@
                     </div>
                 </div>
             </div>
-            <!-- BEGIN: Pagination -->
-            <div class="p-5">
-                <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-                    <ul class="pagination">
-                        <li>
-                            <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
-                        </li>
-                        <li>
-                            <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
-                        </li>
-                        <li> <a class="pagination__link" href="">...</a> </li>
-                        <li> <a class="pagination__link" href="">1</a> </li>
-                        <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
-                        <li> <a class="pagination__link" href="">3</a> </li>
-                        <li> <a class="pagination__link" href="">...</a> </li>
-                        <li>
-                            <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
-                        </li>
-                        <li>
-                            <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
-                        </li>
-                    </ul>
-                    <select class="w-20 form-select box mt-3 sm:mt-0">
-                        <option>10</option>
-                        <option>25</option>
-                        <option>35</option>
-                        <option>50</option>
-                    </select>
-                </div>
-                <!-- END: Pagination -->
-            </div>
         </div>
         <!-- END: Hoverable Table -->
+        <!-- BEGIN: Pagination -->
+        <div class="p-5">
+            <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+                <ul class="pagination">
+                    <li>
+                        <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
+                    </li>
+                    <li>
+                        <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
+                    </li>
+                    <li> <a class="pagination__link" href="">...</a> </li>
+                    <li> <a class="pagination__link" href="">1</a> </li>
+                    <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
+                    <li> <a class="pagination__link" href="">3</a> </li>
+                    <li> <a class="pagination__link" href="">...</a> </li>
+                    <li>
+                        <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
+                    </li>
+                    <li>
+                        <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
+                    </li>
+                </ul>
+                <select class="w-20 form-select box mt-3 sm:mt-0">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>35</option>
+                    <option>50</option>
+                </select>
+            </div>
+            <!-- END: Pagination -->
+        </div>
     </div>
 </div>

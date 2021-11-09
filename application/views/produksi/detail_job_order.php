@@ -108,9 +108,6 @@
                     <a href="<?= base_url('produksi/pengajuan') ?>" class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
                         Pengajuan HPS </a>
                 </div>
-
-
-
             </div>
         </div>
         <!-- END: BLOCK 1 -->
