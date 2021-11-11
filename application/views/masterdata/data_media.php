@@ -17,23 +17,27 @@
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left">
                                     <div>
-                                        <div class="sm:flex items-center sm:mr-4">
-                                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Jenis Media</label>
-                                            <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                                                <option value="Kementerian">TV Nasional</option>
-                                                <option value="Direktorat">TV Lokal</option>
-                                                <option value="BUMN">Radio Nasional</option>
-                                                <option value="Lembaga">Radio Lokal</option>
-                                            </select> &ensp;
-                                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
-                                            <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                                                <option value="Kementerian">DKI Jakarta</option>
-                                                <option value="Direktorat">Jawa Barat</option>
-                                                <option value="BUMN">Jawa Tengah</option>
-                                                <option value="Lembaga">Jawa Timur</option>
+                                        
+                                        <label class="form-label mt-2">Kategori Media</label>
+                                            <select id="tabulator-html-filter-type" class="form-select w-full form-control">
+                                                <option value="Media Televisi" selected>Media Televisi</option>
+                                                <option value="Media Digital">Media Digital</option>
+                                                <option value="Media Luar Ruang">Media Luar Ruang</option>
                                             </select>
-                                        </div></br>
-
+                                        <label class="form-label mt-2">Jenis Media</label>
+                                            <select id="tabulator-html-filter-type" class="form-select w-full form-control">
+                                            <optgroup label="Media Televisi">
+                                                <option value="TV Nasional">TV Nasional</option>
+                                                <option value="TV Lokal">TV Lokal</option>
+                                                <option value="Radio Nasional">Radio Nasional</option>
+                                            </optgroup>
+                                            </select>
+                                        <label class="form-label mt-2">Wilayah</label>
+                                            <select id="tabulator-html-filter-type" class="form-select w-full form-control">
+                                                <option value="DKI Jakarta" selected>DKI Jakarta</option>
+                                                <option value="Jawa Barat">Jawa Barat</option>
+                                                <option value="Jawa Tengah">Jawa Tengah</option>
+                                            </select>
                                         <label for="nama_media" class="form-label mt-2">Nama Media</label>
                                         <input id="nama_media" type="text" name="nama_media" class="form-control w-full" placeholder="Input text">
                                         <label for="email_media" class="form-label mt-2">Email Media</label>
@@ -42,6 +46,8 @@
                                         <input id="phone_media" type="text" name="phone_media" class="form-control w-full" placeholder="Input text">
                                         <label for="alamat_media" class="form-label mt-2">Alamat Media</label>
                                         <input id="alamat_media" type="text" name="alamat_media" class="form-control w-full" placeholder="Input text">
+                                        <label for="kordinat" class="form-label mt-2">Titik Kordinat Media</label>
+                                        <input id="kordinat" type="text" name="kordinat" class="form-control w-full" placeholder="Input text">
                                         <div class="preview">
                                             <label for="foto_media" class="form-label mt-2">Upload Foto Media</label>
                                             <form data-single="true" name="foto_media" action="/file-upload" class="dropzone">
@@ -73,18 +79,30 @@
 <div class="intro-y box p-5 mt-5">
     <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
         <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
-            <div class="sm:flex items-center sm:mr-4">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Jenis Media</label>
-                <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="Kementerian">Billboard</option>
-                    <option value="Direktorat">TV Nasional</option>
-                    <option value="BUMN">TV Lokal</option>
-                    <option value="Lembaga">Radio Nasional</option>
+
+            <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+                <label class="w-48 flex-none xl:w-auto xl:flex-initial mr-2">Kategori</label>
+                <select id="tabulator-html-filter-type" class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
+                    <option value="Media Televisi" selected>Media Televisi</option>
+                    <option value="Media Digital">Media Digital</option>
+                    <option value="Media Luar Ruang">Media Luar Ruang</option>
                 </select>
             </div>
 
+            <div class="sm:flex items-center sm:mr-4">
+                <label class="w-full mr-2">Jenis Media</label>
+                <select class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
+                    <optgroup label="Media Televisi">
+                    <option value="TV Nasional">TV Nasional</option>
+                    <option value="TV Lokal">TV Lokal</option>
+                    <option value="Radio Nasional">Radio Nasional</option>
+                    </optgroup>
+                    
+                </select>
+            </div>
+           
             <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
+                <label class="w-48 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
                 <select id="tabulator-html-filter-type" class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
                     <option value="DKI Jakarta" selected>DKI Jakarta</option>
                     <option value="Jawa Barat">Jawa Barat</option>
@@ -104,6 +122,7 @@
                             <th>Wilayah</th>
                             <th>Nama Media</th>
                             <th>Titik Media/Alamat</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="border-b whitespace-nowrap">
@@ -113,6 +132,10 @@
                             <td>xxxxxxx</td>
                             <td>xxxxxxx</td>
                             <td>xxxxxxx</td>
+                            <td>
+                            <a href="<?= base_url('masterdata/detail_media') ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
+                                    Detail </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

@@ -10,7 +10,7 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    Cari Data Ringkasan Kontrak
+                    Data E-Faktur Keluar
                 </h2>
             </div>
             <div class="p-5">
@@ -73,8 +73,101 @@
                 </div>
             </div>
         </div>
-        <!-- END: Data ringkos -->
+        <!-- END: Data ringkos -->  
+</div>
+ 
+
+<div class="intro-y col-span-12 lg:col-span-6">
+        <div class="intro-y box">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                <h2 class="font-medium text-base mr-auto">
+                Data E-Faktur Masuk
+                </h2>
+            </div>
+            <div id="input" class="p-5">
+                <div class="preview">
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">NAMA MEDIA</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">NO. FAKTUR</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">TANGGAL FAKTUR</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border">TRANSCOPR</td>
+                                <td class="border">123456</td>
+                                <td class="border">20/11/2021</td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="border">SURYA CIPTA MANDIRI</td>
+                                <td class="border">234567</td>
+                                <td class="border"> 20/11/2021 </td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="border">MNC</td>
+                                <td class="border">345678</td>
+                                <td class="border">20/11/2021</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3">
+                        <label for="regular-form-1" class="form-label">NAMA PERUSAHAAN MEDIA</label>
+                        <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
+                                <option value="1">TransCorp</option>
+                                <option value="2">surya cipta mandiri</option>
+                                <option value="3">Media internusa</option>
+                                <option value="4">MNC</option>
+                            </select> </div>
+                    </div>
+                    <div class="mt-3">
+                    <label for="regular-form-3" class="form-label">NO FAKTUR</label>
+                        <div class="grid grid-cols-12 gap-2">
+                            <input type="text" class="form-control col-span-4" placeholder="Nomor Faktur lengkap" aria-label="default input inline 1">
+                            <div class="relative w-56 mx-auto">
+                                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4">
+                                    <i data-feather="calendar" class="w-4 h-4"></i>
+                                </div>
+                                <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                    <form data_single="true" action="/file-upload">
+                            <label for="upload_faktur" class="form-label mt-2">Upload Faktur</label>
+                            <input id="upload_faktur" name="upload_faktur" type="file" class="form-control" placeholder="Upload Faktur">
+                        </form>
+                    </div>
+                </div>
+            </br>
+                <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Tambah Data </button>
+            </div>
+        </div>
+        <!-- BEGIN: SUBMIT -->
+        <div class="intro-y box mt-5">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                <h2 class="font-medium text-base mr-auto">
+                    SUBMIT
+                </h2>
+            </div>
+            <div id="horizontal-form" class="p-5">
+                <div class="preview">
+                    <button class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Simpan </button>  <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+    
     <div class="col-span-12 lg:col-span-6">
         <!-- BEGIN: DATA BENDAHARA -->
         <div class="intro-y box">
@@ -109,20 +202,13 @@
             </div>
             <div id="horizontal-form" class="p-5">
                 <div class="preview">
-                    <button class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Simpan </button> <button class="btn btn-danger w-32 mr-2 mb-2"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Hapus </button> <button class="btn btn-warning w-32 mr-2 mb-2"> <i data-feather="book" class="w-4 h-4 mr-2"></i> New </button> <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
-                </div>
-                <div class="source-code hidden">
-                    <button data-target="#copy-horizontal-form" class="copy-code btn py-1 px-2 btn-outline-secondary"> <i data-feather="file" class="w-4 h-4 mr-2"></i> Copy example code </button>
-                    <div class="overflow-y-auto mt-3 rounded-md">
-                        <pre id="copy-horizontal-form" class="source-preview"> <code class="text-xs p-0 rounded-md html pl-5 pt-8 pb-4 -mb-10 -mt-10"> HTMLOpenTagdiv class=&quot;form-inline&quot;HTMLCloseTag HTMLOpenTaglabel for=&quot;horizontal-form-1&quot; class=&quot;form-label sm:w-20&quot;HTMLCloseTagEmailHTMLOpenTag/labelHTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-1&quot; type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;example@gmail.com&quot;HTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;form-inline mt-5&quot;HTMLCloseTag HTMLOpenTaglabel for=&quot;horizontal-form-2&quot; class=&quot;form-label sm:w-20&quot;HTMLCloseTagPasswordHTMLOpenTag/labelHTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-2&quot; type=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;secret&quot;HTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;form-check sm:ml-20 sm:pl-5 mt-5&quot;HTMLCloseTag HTMLOpenTaginput id=&quot;horizontal-form-3&quot; class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;&quot;HTMLCloseTag HTMLOpenTaglabel class=&quot;form-check-label&quot; for=&quot;horizontal-form-3&quot;HTMLCloseTagRemember meHTMLOpenTag/labelHTMLCloseTag HTMLOpenTag/divHTMLCloseTag HTMLOpenTagdiv class=&quot;sm:ml-20 sm:pl-5 mt-5&quot;HTMLCloseTag HTMLOpenTagbutton class=&quot;btn btn-primary&quot;HTMLCloseTagLoginHTMLOpenTag/buttonHTMLCloseTag HTMLOpenTag/divHTMLCloseTag </code> </pre>
-                    </div>
+                    <button class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Simpan </button> <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
                 </div>
             </div>
         </div>
+</div>
         <!-- END: SUBMIT -->
     </div>
 </div>
 <!-- END: Data BENDAHARA -->
-</div>
-</div>
 </div>

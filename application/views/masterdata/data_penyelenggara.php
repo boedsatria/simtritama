@@ -127,11 +127,24 @@
     </div>
 </div>
 <!-- BEGIN: HTML Table Data -->
+
 <!-- BEGIN: filter -->
 <div class="intro-y box p-5 mt-5">
     <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
     </div>
     <div class="p-5" id="responsive-table">
+    <div class="sm:flex items-center sm:mr-4">
+                                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">No. KBLI</label>
+                                            <select id="tabulator-html-filter-field" class="tom-select w-56" multiple>
+                                                <option value="Kementerian">12345</option>
+                                                <option value="Direktorat">23456</option>
+                                                <option value="BUMN">34567</option>
+                                                <option value="Lembaga">45678</option>
+                                            </select> &ensp;
+                                            <input type="text" class="form-control w-56 box pr-10 placeholder-theme-13" placeholder="Search...">
+                <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-feather="search"></i>
+                                        </div></br>
+                                    
         <div class="preview">
             <div class="overflow-x-auto">
                 <table class="table">
