@@ -1,20 +1,19 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class UserModel extends CI_Model
+class ClientModel extends CI_Model
 {
 
-  function get_user($id = false)
+  function get_client($id = false)
   {
-    $this->db->from('user');
-    $this->db->join('role', 'role_user = id_role');
-    if ($id) $this->db->where('id_user', $id);
+    $this->db->from('client');
+    if ($id) $this->db->where('id_client', $id);
     return $this->db->get();
   }
-  function get_role($id = false)
+  function get_client_category($id = false)
   {
-    $this->db->from('role');
-    if ($id) $this->db->where('id_role', $id);
+    $this->db->from('client_category');
+    if ($id) $this->db->where('id_client_category', $id);
     return $this->db->get();
   }
   function insert($data)
