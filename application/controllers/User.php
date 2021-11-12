@@ -75,8 +75,13 @@ class User extends CI_Controller
 
 	public function delete($id)
 	{
-		$this->UserModel->delete($id);
+		$images = $this->UserModel->get_files($id);
+		$path = 'user';
 		
+		$this->UserModel->delete($id);
+		if (file_exists('./uploads/'.$path.'/'.$images)) {
+			del_files($images, $path);
+		}
 		redirect(base_url() . 'masterdata/data_user');
 	}
 

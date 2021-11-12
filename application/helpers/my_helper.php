@@ -254,9 +254,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $new_name = $data['upload_data']['file_name'];
     return $new_name;
   }
-  function delete_images($images, $path)
+  function del_files($images, $path)
   { 
-
     unlink('./uploads/'.$path.'/'.$images);
   }
 

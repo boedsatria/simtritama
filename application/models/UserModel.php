@@ -19,6 +19,11 @@ class UserModel extends CI_Model
     $this->db->where('id_user', $id);
     return $this->db->get()->row_array();
   }
+  function get_files($id)
+  {
+    $data = $this->get_user_detail($id);
+    return $data['photo_user'];
+  }
 
   function get_role($id = false)
   {
