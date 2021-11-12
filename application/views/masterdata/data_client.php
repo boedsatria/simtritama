@@ -1,5 +1,5 @@
 <!-- BEGIN : konten -->
-<div class="intro-y flex flex-col sm:flex-row items-center mt-8">
+<div class="intro-y flex flex-col sm:flex-row items-center mt-4">
     <h2 class="text-lg font-medium mr-auto">
         DATABASE DIREKTORAT
     </h2>

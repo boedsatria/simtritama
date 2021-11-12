@@ -4,3 +4,41 @@ select option {
 .side-menu__icon {
   min-width: 20px;
 }
+
+.side-nav.no-animate > ul > li.side-nav__devider {
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-animation-delay: 0 !important;
+  animation-delay: 0 !important;
+  -webkit-animation-fill-mode:  none !important;
+  animation-fill-mode: none !important;
+}
+
+.side-nav.no-animate > ul > li > a:not(.side-menu--active) {
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-animation-delay: 0 !important;
+  animation-delay: 0 !important;
+  -webkit-animation-fill-mode:  none !important;
+  animation-fill-mode: none !important;
+  opacity: 100%;
+  transform: none;
+}
+
+.side-nav.no-animate > ul > li > a {
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-animation-fill-mode:  none !important;
+  animation-fill-mode: none !important;
+}
+
+.side-nav.no-animate > ul ul li > a {
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-animation-delay: 0 !important;
+  animation-delay: 0 !important;
+  -webkit-animation-fill-mode:  none !important;
+  animation-fill-mode: none !important;
+  opacity: 100%;
+  transform: none;
+}

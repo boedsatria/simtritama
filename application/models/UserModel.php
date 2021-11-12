@@ -4,13 +4,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class UserModel extends CI_Model
 {
 
-  function get_user($id = false)
+  function get_user($div = false, $search = false)
   {
     $this->db->from('user');
     $this->db->join('role', 'role_user = id_role');
-    if ($id) $this->db->where('id_user', $id);
+    if ($div || $div > 0) $this->db->where('role_user', $div);
+    if ($search) $this->db->like('nama_user', $search, 'both');
     return $this->db->get();
   }
+  function get_user_detail($id)
+  {
+    $this->db->from('user');
+    $this->db->join('role', 'role_user = id_role');
+    $this->db->where('id_user', $id);
+    return $this->db->get()->row_array();
+  }
+
   function get_role($id = false)
   {
     $this->db->from('role');

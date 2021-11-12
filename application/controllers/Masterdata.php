@@ -78,8 +78,12 @@ class Masterdata extends CI_Controller
 
 	public function data_user()
 	{
+		$div = (isset($_GET['divisi']) ? $_GET['divisi'] : "0");
+		$search = (isset($_GET['search']) ? $_GET['search'] : "");
+		// print_r($_GET);
 		$data = array(
-			'user'	=> $this->UserModel->get_user()->result_array()
+			'user'	=> $this->UserModel->get_user($div, $search)->result_array(),
+			'role'	=> $this->UserModel->get_role()->result_array()
 		);
 
 		$this->load->view('header');
@@ -88,27 +92,5 @@ class Masterdata extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function tambah_user()
-	{
-		$data = array(
-			'role'	=> $this->UserModel->get_role()->result_array()
-		);
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('masterdata/tambah_user', $data);
-		$this->load->view('footer');
-	}
-	public function delete_user($id)
-	{
-		$this->UserModel->delete($id);
-		redirect(base_url() . 'masterdata/data_user');
-	}
-
-	public function profile_user()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('masterdata/profile_user');
-		$this->load->view('footer');
-	}
+	
 }

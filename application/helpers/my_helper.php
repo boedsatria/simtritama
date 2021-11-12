@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $ci->db->from('role');
     $ci->db->where('id_role', $id);
     $v = $ci->db->get()->row_array();
-    $data = strtoupper(substr($v['nama_role'], 3));
+    $data = strtoupper(substr($v['nama_role'], 0, 3));
     return $data;
 
   }
@@ -254,6 +254,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $new_name = $data['upload_data']['file_name'];
     return $new_name;
   }
+  function delete_images($images, $path)
+  { 
+
+    unlink('./uploads/'.$path.'/'.$images);
+  }
 
   function check_admin()
   {
@@ -298,6 +303,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     return $datas;
   }
 
+  function seo_title($s)
+  {
+    $c = array(' ');
+    $d = array('-', '/', '\\', ',', '.', '#', ':', ';', '\'', '"', '[', ']', '{', '}', ')', '(', '|', '`', '~', '!', '@', '%', '$', '^', '&', '*', '=', '?', '+', '–');
+    $s = str_replace($d, '', $s); // Hilangkan karakter yang telah disebutkan di array $d
+    $s = strtolower(str_replace($c, '-', $s)); // Ganti spasi dengan tanda - dan ubah hurufnya menjadi kecil semua
+    return $s;
+  }
 
   function tgl_indo($tanggal){
     if ($tanggal == '0000-00-00' || $tanggal == '') return ' '; 
