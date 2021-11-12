@@ -66,6 +66,13 @@ class User extends CI_Controller
 		if ($_FILES['file']['name'] != "") {
 			$photo = upload_files('user', $nama);
 			$data['photo_user'] = $photo;
+
+			$images = $this->UserModel->get_files($data['id_user']);
+			$path = 'user';
+			
+			if (file_exists('./uploads/'.$path.'/'.$images)) {
+				del_files($images, $path);
+			}
 		}
 
 		$this->UserModel->update($data);
@@ -77,7 +84,7 @@ class User extends CI_Controller
 	{
 		$images = $this->UserModel->get_files($id);
 		$path = 'user';
-		
+
 		$this->UserModel->delete($id);
 		if (file_exists('./uploads/'.$path.'/'.$images)) {
 			del_files($images, $path);
