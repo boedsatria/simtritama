@@ -75,6 +75,9 @@
                 if($uri == "") :
                     $uri = 'dashboard';
                 endif;
+                if($uri == "user") :
+                    $uri = 'masterdata';
+                endif;
 
                 if($uri == $mv['slug_menu']) :
                     $active = 'side-menu--active';
