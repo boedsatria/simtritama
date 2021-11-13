@@ -19,13 +19,6 @@ class Masterdata extends CI_Controller
 		$this->load->view('masterdata/dashboard_master_data');
 		$this->load->view('footer');
 	}
-	public function data_client()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('masterdata/data_client');
-		$this->load->view('footer');
-	}
 	public function detail_client()
 	{
 		$this->load->view('header');
@@ -79,6 +72,19 @@ class Masterdata extends CI_Controller
 
 
 
+	//--------CLIENT MENU START--------//
+	public function list_client()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('client/list_client');
+		$this->load->view('footer');
+	}
+	//--------CLIENT MENU END--------//
+
+
+
+
 
 
 	//--------USER MENU START--------//
@@ -91,7 +97,7 @@ class Masterdata extends CI_Controller
 		$limit = 6;
 		$offset = ($this->uri->segment(3) ? $this->uri->segment(3) : 0);
 		if($limit > $offset) $offset = 0;
-// print_r($selesai);die;
+		
 		$config['base_url'] = base_url('masterdata/list_user/');
 		$config['reuse_query_string'] = true;
 		$config['total_rows'] = $this->UserModel->get($div, $search)->num_rows();

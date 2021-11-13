@@ -1,76 +1,74 @@
 <!-- BEGIN : konten -->
-<div class="flex flex-col sm:flex-row items-center mt-4">
+<div class="flex flex-col sm:flex-row items-center my-5">
     <h2 class="text-lg font-medium mr-auto">
         DATA USER
     </h2>
-    <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-        <!--begin modal-->
-        <div id="button-modal" class="p-5">
-            <!-- BEGIN: Modal Toggle -->
-            <div class="text-center"> 
-                <a data-toggle="modal" data-target="#button-modal-preview" class="btn cursor-pointer btn-primary">Tambah Data</a>
-            </div>
-            <!-- END: Modal Toggle -->
-            <!-- BEGIN: Modal Content -->
-            <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content"> 
-                        <a data-dismiss="modal" class="cursor-pointer"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
-                        <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_user_action">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-left">
-                                    <div class="input-form mt-3">
-                                        <label for="divisi" class="form-label">Divisi</label>
-                                        <select id="divisi" placeholder="Pilih Divisi" class="form-control" name="role_user" required>
-                                            <option value="">- Pilih Role -</option>
-                                            <?php foreach ($role as $r) : ?>
-                                                <option value="<?= $r['id_role']; ?>"><?= $r['nama_role']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                    <div class="input-form mt-3">
-                                        <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                        <input id="nama_lengkap" name="nama_user" type="text" class="form-control" placeholder="Nama Lengkap" required>
-                                    </div>
-                                    <div class="input-form mt-3">
-                                        <label for="email_user" class="form-label">Email</label>
-                                        <input id="email_user" name="email_user" type="text" class="form-control" placeholder="Email" required>
-                                    </div>
-                                    <div class="input-form mt-3">
-                                        <label for="no_hp" class="form-label">No Handphone</label>
-                                        <input id="no_hp" name="telepon_user" type="text" class="form-control" placeholder="No. Telephone">
-                                    </div>
-                                    <div class="input-form mt-3">
-                                        <label for="foto_user" class="form-label">Foto</label>
-                                        <input id="foto_user" name="file" type="file" class="form-control" placeholder="foto">
-                                    </div>
-                                    <div class="input-form mt-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input id="password" name="password_user" type="password" class="form-control" placeholder="Password" required>
-                                    </div>
-                                    <!-- END: Input -->
+    <div class="w-full sm:w-auto flex">
+        <!-- BEGIN: Modal Toggle -->
+        <div class="text-center"> 
+            <a data-toggle="modal" data-target="#button-modal-preview" class="btn cursor-pointer btn-primary">Tambah Data</a>
+        </div>
+        <!-- END: Modal Toggle -->
+        <!-- BEGIN: Modal Content -->
+        <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content"> 
+                    <a data-dismiss="modal" class="cursor-pointer"> 
+                        <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
+                    </a>
+                    <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_user_action">
+                        <div class="modal-body p-0">
+                            <div class="p-5 text-left">
+                                <div class="input-form mt-3">
+                                    <label for="divisi" class="form-label">Divisi</label>
+                                    <select id="divisi" placeholder="Pilih Divisi" class="form-control" name="role_user" required>
+                                        <option value="">- Pilih Role -</option>
+                                        <?php foreach ($role as $r) : ?>
+                                            <option value="<?= $r['id_role']; ?>"><?= $r['nama_role']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
-                                <div class="px-5 pb-8 text-center">
-                                    <button type="submit" class="btn btn-primary w-24">Ok</button>
+                                <div class="input-form mt-3">
+                                    <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                    <input id="nama_lengkap" name="nama_user" type="text" class="form-control" placeholder="Nama Lengkap" required>
                                 </div>
+                                <div class="input-form mt-3">
+                                    <label for="email_user" class="form-label">Email</label>
+                                    <input id="email_user" name="email_user" type="text" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label for="no_hp" class="form-label">No Handphone</label>
+                                    <input id="no_hp" name="telepon_user" type="text" class="form-control" placeholder="No. Telephone">
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label for="foto_user" class="form-label">Foto</label>
+                                    <input id="foto_user" name="file" type="file" class="form-control" placeholder="foto">
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input id="password" name="password_user" type="password" class="form-control" placeholder="Password" required>
+                                </div>
+                                <!-- END: Input -->
                             </div>
-                        </form>
-                    </div>
+                            <div class="px-5 pb-8 text-center">
+                                <button type="submit" class="btn btn-primary w-24">Ok</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <!--end modal konten-->
         </div>
-        <!--end modal-->
+        <!--end modal konten-->
     </div>
 </div>
 
 <!-- BEGIN: filter -->
 <div class="box p-5 mt-5">
     <div class="flex flex-col sm:items-end xl:items-start">
-        <form class="md:flex w-full" action="<?= base_url(); ?>masterdata/list_user/">
-            <div class="flex items-center">
-                <label class="w-16 flex-none mr-2">Divisi</label>
-                <select name="divisi" class="form-select w-full mr-2 sm:mt-0 sm:w-auto">
+        <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_user/">
+            <div class="flex items-center mb-2 sm:mb-0">
+                <label class="w-16 flex mr-2">Divisi</label>
+                <select name="divisi" class="form-select w-full sm:w-auto">
                     <option value="0">Semua</option>
                     <?php 
                     foreach($role as $r):
@@ -84,11 +82,11 @@
 
             <?php $search = (isset($_GET['search']) ? $_GET['search'] : ""); ?>
 
-            <div class="flex w-full">
-                <div class="w-full text-right">
-                    <input name="search" value="<?= $search; ?>" type="text" class="form-control w-56 pr-10 placeholder-theme-13 mr-2 mt-2 mb-2 md:w-full" placeholder="Search...">
-                    <button type="submit" class="btn btn-primary w-full sm:w-16">Go</button>
-                    <a href="<?= base_url();?>masterdata/list_user" class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1">Reset</a>
+            <div class="w-full">
+                <div class="float-right ml-2 flex">
+                    <input name="search" value="<?= $search; ?>" type="text" class="flex-col form-control placeholder-theme-13" placeholder="Search...">
+                    <button type="submit" class="flex-col btn btn-primary ml-2">Go</button>
+                    <a href="<?= base_url();?>masterdata/list_user" class="flex-col btn btn-secondary ml-2">Reset</a>
                 </div>
             </div>
         </form>
