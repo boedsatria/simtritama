@@ -13,6 +13,7 @@ class UserModel extends CI_Model
     if ($limit) $this->db->limit($limit, $offset);
     return $this->db->get();
   }
+
   function get_detail($id)
   {
     $this->db->from('user');
@@ -20,9 +21,10 @@ class UserModel extends CI_Model
     $this->db->where('id_user', $id);
     return $this->db->get()->row_array();
   }
+
   function get_files($id)
   {
-    $data = $this->get_user_detail($id);
+    $data = $this->get_detail($id);
     return $data['photo_user'];
   }
 
@@ -32,6 +34,7 @@ class UserModel extends CI_Model
     if ($id) $this->db->where('id_role', $id);
     return $this->db->get();
   }
+  
   function insert($data)
   {
     $this->db->insert('user', $data);

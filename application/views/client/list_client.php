@@ -5,41 +5,82 @@
     </h2>
     <div class="w-full sm:w-auto flex">
         <!-- BEGIN: Modal Toggle -->
-        <div class="text-center"> 
+        <div class="text-center mr-2"> 
             <a data-toggle="modal" data-target="#button-modal-preview" class="btn cursor-pointer btn-primary">Tambah Data</a> 
         </div>
         <!-- END: Modal Toggle -->
         <!-- BEGIN: Modal Content -->
         <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content modal-lg">
+                <div class="modal-content">
                     <a data-dismiss="modal" class="cursor-pointer"> 
                         <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
                     </a>
-                    <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_user_action">
+                    <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_client_action">
                         <div class="modal-body p-0">
                             <div class="p-5 text-left">
-                                <div>
-                                    <label for="crud-form-1" class="form-label">Nama Direktorat</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                    <label for="crud-form-1" class="form-label">Wilayah/Propinsi</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                    <label for="crud-form-1" class="form-label">N.P.W.P</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                    <label for="crud-form-1" class="form-label">Kategori</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                    <label for="crud-form-1" class="form-label">No Rekening</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                    <label for="crud-form-1" class="form-label">Nama Pemilik Rekening</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                    <label for="crud-form-1" class="form-label">Alamat</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
-                                    <label for="crud-form-1" class="form-label">Kontak Person</label>
-                                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Nama Direktorat</label>
+                                    <input name="nama_client" type="text" class="form-control" placeholder="Nama Client" required>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Kategori</label>
+                                    <select placeholder="Pilih Kategori" class="form-control" name="kategori_client" required>
+                                        <option value="">- Pilih kategori -</option>
+                                        <?php foreach ($cat as $cc) : ?>
+                                            <option value="<?= $cc['id_client_category']; ?>"><?= $cc['nama_client_category']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Wilayah/Propinsi</label>
+                                    <select placeholder="Pilih Wilayah" class="form-control" name="wilayah_client" required>
+                                        <option value="">- Pilih Wilayah -</option>
+                                        <?php foreach ($wil as $w) : ?>
+                                            <option value="<?= $w['id_wilayah']; ?>"><?= $w['nama_wilayah']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">N P W P</label>
+                                    <input name="npwp_client" type="text" class="form-control" placeholder="NPWP Client" required>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Nomer Rekening</label>
+                                    <input name="no_rek_client" type="text" class="form-control" placeholder="Nomer Rekening Client" required>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Nama Pemilik Rekening</label>
+                                    <input name="nama_rek_client" type="text" class="form-control" placeholder="Nama Rekening Client" required>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Nama Bank</label>
+                                    <input name="bank_client" type="text" class="form-control" placeholder="Bank Client" required>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Contact Person</label>
+                                    <input name="pic_client" type="text" class="form-control" placeholder="Contact Person Client" required>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Parent</label>
+                                    <select placeholder="Pilih Parent" class="tom-select" name="parent_client" required>
+                                        <option value="0">- No Parent -</option>
+                                        <?php foreach ($client as $p) : ?>
+                                            <option value="<?= $p['id_client']; ?>"><?= $p['nama_client']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Foto</label>
+                                    <input name="file" type="file" class="form-control" placeholder="foto">
+                                </div>
+                                <div class="input-form mt-3">
+                                    <label class="form-label">Alamat Detail</label>
+                                    <textarea name="alamat_client" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="px-5 pb-8 text-center">
-                                <button type="button" data-dismiss="modal" class="btn btn-primary w-24">Ok</button>
+                                <button type="submit" class="btn btn-primary w-24">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -47,6 +88,93 @@
             </div>
         </div>
         <!--end modal konten-->
+        
+        <div class="dropdown">
+            <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
+                <span class="w-5 h-5 flex items-center justify-center"> 
+                    <i class="w-4 h-4" data-feather="plus"></i> 
+                </span>
+            </button>
+            <div class="dropdown-menu w-64">
+                <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                    <a class="flex items-center block p-2 bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md cursor-pointer" data-toggle="modal" data-target="#button-modal-cat"> 
+                        <i data-feather="layers" class="w-4 h-4 mr-2"></i> 
+                        Tambah Kategori Direktorat
+                    </a>
+                    <!-- BEGIN: Modal Kategori -->
+                    <div id="button-modal-cat" class="modal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <a data-dismiss="modal" class="cursor-pointer"> 
+                                    <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
+                                </a>
+                                <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_cat_action">
+                                    <div class="modal-body p-0">
+                                        <div class="p-5 text-left">
+                                            <div class="input-form mt-3">
+                                                <label class="form-label">Nama Kategori</label>
+                                                <input name="nama_client_category" type="text" class="form-control" placeholder="Nama Kategori" required>
+                                            </div>
+                                        </div>
+                                        <div class="px-5 pb-8 text-center">
+                                            <button type="submit" class="btn btn-primary w-24">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end modal kategori-->
+
+
+
+                    <a class="flex items-center block p-2 bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md cursor-pointer" data-toggle="modal" data-target="#button-modal-wil"> 
+                        <i data-feather="map" class="w-4 h-4 mr-2"></i> 
+                        Tambah Wilayah
+                    </a>
+                    <!-- BEGIN: Modal Kategori -->
+                    <div id="button-modal-wil" class="modal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <a data-dismiss="modal" class="cursor-pointer"> 
+                                    <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
+                                </a>
+                                <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_wil_action">
+                                    <div class="modal-body p-0">
+                                        <div class="p-5 text-left">
+                                            <div class="input-form mt-3">
+                                                <label class="form-label">Nama Wilayah</label>
+                                                <input name="nama_wilayah" type="text" class="form-control" placeholder="Nama Wilayah" required>
+                                            </div>
+                                            <div class="input-form mt-3">
+                                                <label class="form-label">Deskripsi</label>
+                                                <textarea name="desc_wilayah" class="form-control"></textarea>
+                                            </div>
+                                            <div class="input-form mt-3">
+                                                <label class="form-label">Parent Wilayah</label>
+                                                <select placeholder="Pilih Parent" class="form-control" name="parent_wilayah" required>
+                                                    <option value="0">- No Parent -</option>
+                                                    <?php foreach ($wil as $w) : ?>
+                                                        <option value="<?= $w['id_wilayah']; ?>"><?= $w['nama_wilayah']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="px-5 pb-8 text-center">
+                                            <button type="submit" class="btn btn-primary w-24">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end modal kategori-->
+
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 <!-- BEGIN: HTML Table Data -->
@@ -55,36 +183,39 @@
 
 <div class="box p-5 mt-5">
     <div class="flex flex-col sm:items-end xl:items-start">
-        <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_user/">
-            <div class="flex items-center mb-2 sm:mb-0">
+        <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_client/">
+            <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
                 <label class="w-16 flex mr-2">Kategori</label>
-                <select name="divisi" class="form-select w-full sm:w-auto">
+                <select name="cat" class="form-select w-full sm:w-auto">
                     <option value="0">Semua</option>
                     <?php 
-                    foreach($cat_c as $cc):
+                    foreach($cat as $cc):
                         $selected = "";
                         if($_GET['cat'] == $cc['id_client_category']) $selected = "selected";
                     ?>
-                    <option value="<?= $r['id_role']; ?>" <?= $selected; ?>><?= $r['nama_role']; ?> </option>
+                    <option value="<?= $cc['id_client_category']; ?>" <?= $selected; ?>><?= $cc['nama_client_category']; ?> </option>
                     <?php endforeach; ?>
                 </select>
+                <!--
+                        - Kementerian
+                        - Direktorat
+                        - BUMN
+                        - Lembaga
+                -->
             </div>
 
-            <div class="flex items-center sm:mr-4">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Kategori</label>
-                <select class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="Kementerian">Kementerian</option>
-                    <option value="Direktorat">Direktorat</option>
-                    <option value="BUMN">BUMN</option>
-                    <option value="Lembaga">Lembaga</option>
-                </select>
-            </div>
-            <div class="flex items-center sm:mr-4 mt-2 xl:mt-0">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
-                <select class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
-                    <option value="DKI Jakarta" selected>DKI Jakarta</option>
-                    <option value="Jawa Barat">Jawa Barat</option>
-                    <option value="Jawa Barat">Jawa Tengah</option>
+
+            <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
+                <label class="w-16 flex mr-2">Wilayah</label>
+                <select name="wil" class="form-select w-full sm:w-auto">
+                    <option value="0">Semua</option>
+                    <?php 
+                    foreach($wil as $w):
+                        $selected = "";
+                        if($_GET['wil'] == $w['id_wilayah']) $selected = "selected";
+                    ?>
+                    <option value="<?= $w['id_wilayah']; ?>" <?= $selected; ?>><?= $w['nama_wilayah']; ?> </option>
+                    <?php endforeach; ?>
                 </select>
             </div>
 
@@ -95,7 +226,7 @@
                 <div class="float-right ml-2 flex">
                     <input name="search" value="<?= $search; ?>" type="text" class="flex-col form-control placeholder-theme-13" placeholder="Search...">
                     <button type="submit" class="flex-col btn btn-primary ml-2">Go</button>
-                    <a href="<?= base_url();?>masterdata/list_user" class="flex-col btn btn-secondary ml-2">Reset</a>
+                    <a href="<?= base_url();?>masterdata/list_client" class="flex-col btn btn-secondary ml-2">Reset</a>
                 </div>
             </div>
         </form>
@@ -103,90 +234,43 @@
 </div>
 
 
-<div class="intro-y box p-5 mt-5">
-    <div class="intro-y box p-5 mt-5">
-        <!-- BEGIN: Hoverable Table -->
-        <div class="p-5" id="hoverable-table">
-            <div class="preview">
-                <div class="overflow-x-auto">
-                    <table class="table">
-                        <thead>
-                            <tr class="text-center">
-                                <th class="border border-b-2 dark:border-dark-5 w-1">No.</th>
-                                <th class="border border-b-2 dark:border-dark-5">Nama Direktorat</th>
-                                <th class="border border-b-2 dark:border-dark-5">Alamat</th>
-                                <th class="border border-b-2 dark:border-dark-5">Kontak Person</th>
-                                <th class="border border-b-2 dark:border-dark-5">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="hover:bg-gray-200">
-                                <td class="border">1</td>
-                                <td class="border">Kementrian Agama</td>
-                                <td class="border">xxxxxxxxxxx</td>
-                                <td class="border">123456789</td>
-                                <td class="border text-center">
-                                    <a href="<?= base_url('masterdata/detail_client') ?>" class="btn btn-primary w-24 mr-2 mb-2">
-                                        Detail </a>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-gray-200">
-                                <td class="border">2</td>
-                                <td class="border">Kementrian Sosial</td>
-                                <td class="border">xxxxxxxxxxx</td>
-                                <td class="border">987654321</td>
-                                <td class="border text-center">
-                                    <a href="<?= base_url('masterdata/detail_client') ?>" class="btn btn-primary w-24 mr-2 mb-2">
-                                        Detail </a>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-gray-200">
-                                <td class="border">3</td>
-                                <td class="border">Dinas Perhubungan</td>
-                                <td class="border">xxxxxxxxxxx</td>
-                                <td class="border">987654333</td>
-                                <td class="border text-center">
-                                    <a href="<?= base_url('masterdata/detail_client') ?>" class="btn btn-primary w-24 mr-2 mb-2">
-                                        Detail </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <!-- END: Hoverable Table -->
-    </div>
+<div class="intro-x box p-5 mt-5">
+    <!-- BEGIN: Table -->
+    <table class="table">
+        <thead>
+            <tr class="bg-gray-700 dark:bg-dark-1 text-white">
+                <th class="whitespace-nowrap">No</th>
+                <th class="whitespace-nowrap">Nama Direktorat</th>
+                <th class="whitespace-nowrap">Alamat</th>
+                <th class="whitespace-nowrap">Kontak Person</th>
+                <th class="whitespace-nowrap">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            if(count($client) == 0) echo '<tr><td colspan="5" align="center">No Data</td></tr>';
+            $x = 1;
+            foreach($client as $c): 
+            ?>
+            <tr>
+                <td class="border-b dark:border-dark-5"><?= $x; ?></td>
+                <td class="border-b dark:border-dark-5"><?= $c['nama_client']; ?></td>
+                <td class="border-b dark:border-dark-5"><?= $c['alamat_client']; ?></td>
+                <td class="border-b dark:border-dark-5"><?= $c['pic_client']; ?></td>
+                <td class="border-b dark:border-dark-5">
+                    <a href="<?= base_url('masterdata/detail_client/'.$c['id_client']) ?>" class="btn btn-primary w-24 mr-2 mb-2">Detail </a>
+                </td>
+            </tr>
+            <?php 
+            $x++;
+            endforeach; 
+            ?>
+        </tbody>
+    </table>
+    <!-- END: Table -->
+
 </div>
-<!-- BEGIN: Pagination -->
-<div class="p-5">
-    <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-        <ul class="pagination">
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
-            </li>
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
-            </li>
-            <li> <a class="pagination__link" href="">...</a> </li>
-            <li> <a class="pagination__link" href="">1</a> </li>
-            <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
-            <li> <a class="pagination__link" href="">3</a> </li>
-            <li> <a class="pagination__link" href="">...</a> </li>
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
-            </li>
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
-            </li>
-        </ul>
-        <select class="w-20 form-select box mt-3 sm:mt-0">
-            <option>10</option>
-            <option>25</option>
-            <option>35</option>
-            <option>50</option>
-        </select>
-    </div>
-    <!-- END: Pagination -->
+    <!-- BEGIN: Pagination -->
+<div class="col-span-12 mt-4 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+    <?= $page; ?>
 </div>
-<!-- END: HTML Table Data -->

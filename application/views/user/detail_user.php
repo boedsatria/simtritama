@@ -248,8 +248,8 @@
                     <div class="flex flex-col flex-row border-b border-gray-200 dark:border-dark-5">
                         <div class="p-5 text-left">
                             <div class="input-form mt-3">
-                                <label for="divisi" class="form-label">Divisi</label>
-                                <select id="divisi" placeholder="Pilih Divisi" class="form-control" name="role_user" required>
+                                <label class="form-label">Divisi</label>
+                                <select placeholder="Pilih Divisi" class="form-control" name="role_user" required>
                                     <?php 
                                     foreach ($role as $r) : 
                                         $selected = ($u['role_user'] == $r['id_role'] ? "selected" : "");
@@ -259,29 +259,29 @@
                                 </select>
                             </div>
                             <div class="input-form mt-3">
-                                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                <input id="nama_lengkap" name="nama_user" type="text" class="form-control" value="<?= $u['nama_user']; ?>" required>
+                                <label class="form-label">Nama Lengkap</label>
+                                <input name="nama_user" type="text" class="form-control" value="<?= $u['nama_user']; ?>" required>
                                 <input name="id_user" type="hidden" value="<?= $u['id_user']; ?>">
                             </div>
                             <div class="input-form mt-3">
-                                <label for="email_user" class="form-label">Email</label>
-                                <input id="email_user" name="email_user" type="text" class="form-control" value="<?= $u['email_user']; ?>" required>
+                                <label class="form-label">Email</label>
+                                <input name="email_user" type="text" class="form-control" value="<?= $u['email_user']; ?>" required>
                             </div>
                             <div class="input-form mt-3">
-                                <label for="nip_user" class="form-label">No Karyawan</label>
-                                <input id="nip_user" name="nip_user" type="text" class="form-control" value="<?= $u['nip_user']; ?>" required>
+                                <label class="form-label">No Karyawan</label>
+                                <input name="nip_user" type="text" class="form-control" value="<?= $u['nip_user']; ?>" required>
                             </div>
                             <div class="input-form mt-3">
-                                <label for="no_hp" class="form-label">No Handphone</label>
-                                <input id="no_hp" name="telepon_user" type="text" class="form-control" value="<?= $u['telepon_user']; ?>">
+                                <label class="form-label">No Handphone</label>
+                                <input name="telepon_user" type="text" class="form-control" value="<?= $u['telepon_user']; ?>">
                             </div>
                             <div class="input-form mt-3">
-                                <label for="foto_user" class="form-label">Foto</label>
-                                <input id="foto_user" name="file" type="file" class="form-control">
+                                <label class="form-label">Foto</label>
+                                <input name="file" type="file" class="form-control">
                             </div>
                             <div class="input-form mt-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input id="password" name="password_user" type="password" class="form-control">
+                                <label class="form-label">Password</label>
+                                <input name="password_user" type="password" class="form-control">
                                 <small>Isi Password jika ingin diganti</small>
                             </div>
                             <!-- END: Input -->
