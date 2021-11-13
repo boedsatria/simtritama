@@ -12,6 +12,8 @@ select option {
   animation-delay: 0 !important;
   -webkit-animation-fill-mode:  none !important;
   animation-fill-mode: none !important;
+  opacity: 100%;
+  transform: none;
 }
 
 .side-nav.no-animate > ul > li > a:not(.side-menu--active) {

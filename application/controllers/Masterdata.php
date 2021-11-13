@@ -76,7 +76,13 @@ class Masterdata extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function data_user()
+
+
+
+
+
+	//--------USER MENU START--------//
+	public function list_user()
 	{
 		$div = (isset($_GET['divisi']) ? $_GET['divisi'] : "0");
 		$search = (isset($_GET['search']) ? $_GET['search'] : "");
@@ -86,9 +92,9 @@ class Masterdata extends CI_Controller
 		$offset = ($this->uri->segment(3) ? $this->uri->segment(3) : 0);
 		if($limit > $offset) $offset = 0;
 // print_r($selesai);die;
-		$config['base_url'] = base_url('masterdata/data_user/');
+		$config['base_url'] = base_url('masterdata/list_user/');
 		$config['reuse_query_string'] = true;
-		$config['total_rows'] = $this->UserModel->get_user($div, $search)->num_rows();
+		$config['total_rows'] = $this->UserModel->get($div, $search)->num_rows();
 		$config['per_page'] = $limit;
 		$config['full_tag_open'] = '<ul class="pagination mx-auto">';
 		$config['first_tag_open'] = '<li>';
@@ -111,23 +117,96 @@ class Masterdata extends CI_Controller
 		$config['anchor_class'] = 'pagination__link';
 		$config['attributes'] = ['class' => 'pagination__link'];
 		$this->pagination->initialize($config);
-
 		//PAGINATION END//
 
-
-
-		// print_r($_GET);
 		$data = array(
-			'user'	=> $this->UserModel->get_user($div, $search, $limit, $offset)->result_array(),
+			'user'	=> $this->UserModel->get($div, $search, $limit, $offset)->result_array(),
 			'role'	=> $this->UserModel->get_role()->result_array(),
 			'page'	=> $this->pagination->create_links()
 		);
 
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('user/data_user', $data);
+		$this->load->view('user/list_user', $data);
 		$this->load->view('footer');
 	}
+
+	public function detail_user($id)
+	{
+		$data = array(
+			'u'		=> $this->UserModel->get_detail($id),
+			'role'	=> $this->UserModel->get_role()->result_array()
+		);
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('user/detail_user', $data);
+		$this->load->view('footer');
+	}
+	public function tambah_user_action()
+	{
+		$data = $_POST;
+		$data['password_user'] = password_hash($_POST['password_user'], PASSWORD_DEFAULT);
+		$nama = seo_title($data['nama_user']);
+
+		if ($_FILES['file']['name'] != "") {
+			$photo = upload_files('user', $nama);
+			$data['photo_user'] = $photo;
+		}
+
+		$id = $this->UserModel->insert($data);
+		$nip = get_kode_divisi($data['role_user']) . $id . date('m') . date('Y');
+		$update = array(
+			'id_user'	=> 	$id,
+			'nip_user'	=>	$nip
+		);
+		$this->UserModel->update($update);
+		redirect(base_url() . 'masterdata/detail_user/' . $id);
+	}
+	public function edit_user_action()
+	{
+		$data['id_user'] = $_POST['id_user'];
+		$data['role_user'] = $_POST['role_user'];
+		$data['nama_user'] = $_POST['nama_user'];
+		$data['nip_user'] = $_POST['nip_user'];
+		$data['email_user'] = $_POST['email_user'];
+		$data['telepon_user'] = $_POST['telepon_user'];
+
+		if($data['password_user'] != ""):
+			$data['password_user'] = password_hash($_POST['password_user'], PASSWORD_DEFAULT);
+		endif;
+
+		$nama = seo_title($data['nama_user']);
+
+		if ($_FILES['file']['name'] != "") {
+			$photo = upload_files('user', $nama);
+			$data['photo_user'] = $photo;
+
+			$images = $this->UserModel->get_files($data['id_user']);
+			$path = 'user';
+			
+			if (file_exists('./uploads/'.$path.'/'.$images)) {
+				del_files($images, $path);
+			}
+		}
+
+		$this->UserModel->update($data);
+		redirect(base_url() . 'masterdata/detail_user/' . $data['id_user']);
+	}
+
+
+	public function delete_user($id)
+	{
+		$images = $this->UserModel->get_files($id);
+		$path = 'user';
+
+		$this->UserModel->delete($id);
+		if (file_exists('./uploads/'.$path.'/'.$images)) {
+			del_files($images, $path);
+		}
+		redirect(base_url() . 'masterdata/list_user');
+	}
+	//--------USER MENU END--------//
+
 
 	
 }

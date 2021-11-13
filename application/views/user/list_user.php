@@ -16,7 +16,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content"> 
                         <a data-dismiss="modal" class="cursor-pointer"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
-                        <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>user/tambah_action">
+                        <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_user_action">
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left">
                                     <div class="input-form mt-3">
@@ -67,7 +67,7 @@
 <!-- BEGIN: filter -->
 <div class="box p-5 mt-5">
     <div class="flex flex-col sm:items-end xl:items-start">
-        <form class="md:flex w-full" action="<?= base_url(); ?>masterdata/data_user/">
+        <form class="md:flex w-full" action="<?= base_url(); ?>masterdata/list_user/">
             <div class="flex items-center">
                 <label class="w-16 flex-none mr-2">Divisi</label>
                 <select name="divisi" class="form-select w-full mr-2 sm:mt-0 sm:w-auto">
@@ -87,8 +87,8 @@
             <div class="flex w-full">
                 <div class="w-full text-right">
                     <input name="search" value="<?= $search; ?>" type="text" class="form-control w-56 pr-10 placeholder-theme-13 mr-2 mt-2 mb-2 md:w-full" placeholder="Search...">
-                    <button id="tabulator-html-filter-go" type="submit" class="btn btn-primary w-full sm:w-16">Go</button>
-                    <a href="<?= base_url();?>masterdata/data_user" class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1">Reset</a>
+                    <button type="submit" class="btn btn-primary w-full sm:w-16">Go</button>
+                    <a href="<?= base_url();?>masterdata/list_user" class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1">Reset</a>
                 </div>
             </div>
         </form>
@@ -111,7 +111,7 @@
                         <img alt="<?= $u['nama_user']; ?>" class="rounded-full" src="<?php echo ($img_src == '' ? base_url('dist/images/no-images.png') : $avatar); ?>">
                     </div>
                     <div class="lg:ml-2 lg:mr-auto text-center lg:text-left mt-3 lg:mt-0">
-                        <a href="<?= base_url() . 'user/detail/' . $u['id_user'] ?>" class="font-medium"><?= $u['nama_user']; ?></a>
+                        <a href="<?= base_url() . 'masterdata/detail_user/' . $u['id_user'] ?>" class="font-medium"><?= $u['nama_user']; ?></a>
                         <div class="text-gray-600 text-xs mt-0.5"><?= $u['nama_role']; ?></div>
                     </div>
                     <div class="flex -ml-2 lg:ml-0 lg:justify-end mt-3 lg:mt-0">
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     <a href="<?= base_url() . 'user/messages_to/' . $u['id_user'] ?>" class="btn btn-primary py-1 px-2 mr-2">Message</a>
-                    <a href="<?= base_url() . 'user/detail/' . $u['id_user'] ?>" class="btn btn-outline-secondary py-1 px-2">Profile</a>
+                    <a href="<?= base_url() . 'masterdata/detail_user/' . $u['id_user'] ?>" class="btn btn-outline-secondary py-1 px-2">Profile</a>
                     <a data-toggle="modal" data-target="#delete-modal-<?= $u['id_user'] ?>" class="btn btn-danger py-1 px-2 float-right">Delete</a>
                     <!-- BEGIN: Modal Content -->
                     <div id="delete-modal-<?= $u['id_user'] ?>" class="modal" tabindex="-1" aria-hidden="true">
@@ -145,7 +145,7 @@
                                     </div>
                                     <div class="px-5 pb-8 text-center"> 
                                         <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Cancel</button> 
-                                        <a href="<?= base_url() . 'user/delete/' . $u['id_user'] ?>" class="btn btn-danger w-24">Delete</a> 
+                                        <a href="<?= base_url() . 'masterdata/delete_user/' . $u['id_user'] ?>" class="btn btn-danger w-24">Delete</a> 
                                     </div>
                                 </div>
                             </div>

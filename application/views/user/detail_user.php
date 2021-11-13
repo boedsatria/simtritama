@@ -241,7 +241,7 @@
     </div>
 
     <div id="account-and-profile" class="tab-pane" role="tabpanel" aria-labelledby="account-and-profile">
-        <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>user/edit_action">
+        <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>user/edit_user_action">
             <div class="grid grid-cols-12 gap-6">
                 <!-- BEGIN: EDIT USER -->
                 <div class="box col-span-12">
