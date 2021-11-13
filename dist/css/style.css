@@ -42,3 +42,6 @@ select option {
   opacity: 100%;
   transform: none;
 }
+.pagination li .pagination__link {
+  min-height: 38px;
+}
