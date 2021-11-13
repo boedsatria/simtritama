@@ -66,8 +66,8 @@
 
 <!-- BEGIN: filter -->
 <div class="box p-5 mt-5">
-    <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
-        <form class="xl:flex w-full">
+    <div class="flex flex-col sm:items-end xl:items-start">
+        <form class="md:flex w-full">
             <div class="flex items-center">
                 <label class="w-16 flex-none mr-2">Divisi</label>
                 <select name="divisi" class="form-select w-full mr-2 sm:mt-0 sm:w-auto">
@@ -86,7 +86,7 @@
 
             <div class="flex w-full">
                 <div class="w-full text-right">
-                    <input name="search" value="<?= $search; ?>" type="text" class="form-control w-56 pr-10 placeholder-theme-13 mr-2" placeholder="Search...">
+                    <input name="search" value="<?= $search; ?>" type="text" class="form-control w-56 pr-10 placeholder-theme-13 mr-2 mt-2 mb-2 md:w-full" placeholder="Search...">
                     <button id="tabulator-html-filter-go" type="submit" class="btn btn-primary w-full sm:w-16">Go</button>
                     <a href="<?= base_url();?>masterdata/data_user" class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1">Reset</a>
                 </div>
@@ -98,7 +98,7 @@
 <div class="grid grid-cols-12 gap-6 mt-5">
     <!-- BEGIN: Users Layout -->
     <?php foreach ($user as $u) : ?>
-        <div class="col-span-12 md:col-span-6">
+        <div class="intro-x col-span-12 md:col-span-6">
             <div class="box">
                 <div class="flex flex-col lg:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                     <div class="w-24 h-24 lg:w-12 lg:h-12 image-fit lg:mr-1">
