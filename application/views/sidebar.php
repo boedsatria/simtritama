@@ -71,13 +71,18 @@
 
             <?php 
                 $uri = $this->uri->segment('1');
+                $uri2 = $this->uri->segment('2');
                 //LOGIC MENU AKTIF
                 if($uri == "") :
                     $uri = 'dashboard';
                 endif;
-                if($uri == "user") :
-                    $uri = 'masterdata';
+
+
+                if($uri2 == "detail_user") :
+                    $uri2 = 'list_user';
                 endif;
+
+
 
                 if($uri == $mv['slug_menu']) :
                     $active = 'side-menu--active';
@@ -104,7 +109,7 @@
                     <ul class="<?= ($uri == str_replace(" ", "", strtolower($mv['nama_menu'])) ? "side-menu__sub-open" : "") ?>">
                         <?php foreach(get_menu_child($mv['id_menu']) as $mc): ?>
                         <li>
-                            <a href="<?= base_url().$mc['slug_menu']; ?>" class="side-menu <?= ($this->uri->segment('2') == explode('/', $mc['slug_menu'])[1] ? "side-menu--active" : "") ?>">
+                            <a href="<?= base_url().$mc['slug_menu']; ?>" class="side-menu <?= ($uri2 == explode('/', $mc['slug_menu'])[1] ? "side-menu--active" : "") ?>">
                                 <div class="side-menu__icon"> <i data-feather="<?= $mc['icon_menu']; ?>"></i> </div>
                                 <div class="side-menu__title"> <?= $mc['nama_menu']; ?> </div>
                             </a>
