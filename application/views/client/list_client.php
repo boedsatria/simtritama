@@ -182,10 +182,22 @@
 <!-- BEGIN: filter -->
 
 <div class="box p-5 mt-5">
-    <div class="flex flex-col sm:items-end xl:items-start">
+    <div class="flex flex-col sm:items-end xl:items-start overflow-x-auto">
         <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_client/">
             <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
-                <label class="w-16 flex mr-2">Kategori</label>
+
+                <?php $size = (isset($_GET['size']) ? $_GET['size'] : "0"); ?>
+
+                <label class="w-6 flex mr-2">Size</label>
+                <select name="size" class="form-select sm:w-auto">
+                    <option value="10" <?= ($size == 10 ? "selected" : "") ?>>10</option>
+                    <option value="50"<?= ($size == 50 ? "selected" : "") ?>>50</option>
+                    <option value="100"><?= ($size == 100 ? "selected" : "") ?>100</option>
+                    <option value="0"<?= ($size == 0 ? "selected" : "") ?>>Semua</option>
+                </select>
+            </div>
+            <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
+                <label class="w-12 flex mr-2">Kategori</label>
                 <select name="cat" class="form-select w-full sm:w-auto">
                     <option value="0">Semua</option>
                     <?php 
@@ -196,17 +208,11 @@
                     <option value="<?= $cc['id_client_category']; ?>" <?= $selected; ?>><?= $cc['nama_client_category']; ?> </option>
                     <?php endforeach; ?>
                 </select>
-                <!--
-                        - Kementerian
-                        - Direktorat
-                        - BUMN
-                        - Lembaga
-                -->
             </div>
 
 
             <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
-                <label class="w-16 flex mr-2">Wilayah</label>
+                <label class="w-12 flex mr-2">Wilayah</label>
                 <select name="wil" class="form-select w-full sm:w-auto">
                     <option value="0">Semua</option>
                     <?php 
@@ -234,16 +240,16 @@
 </div>
 
 
-<div class="intro-x box p-5 mt-5">
+<div class="intro-x box p-5 mt-5 overflow-x-auto">
     <!-- BEGIN: Table -->
     <table class="table">
         <thead>
             <tr class="bg-gray-700 dark:bg-dark-1 text-white">
                 <th class="whitespace-nowrap">No</th>
                 <th class="whitespace-nowrap">Nama Direktorat</th>
-                <th class="whitespace-nowrap">Alamat</th>
+                <th class="">Alamat</th>
                 <th class="whitespace-nowrap">Kontak Person</th>
-                <th class="whitespace-nowrap">Aksi</th>
+                <th class="">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -255,7 +261,7 @@
             <tr>
                 <td class="border-b dark:border-dark-5"><?= $x; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $c['nama_client']; ?></td>
-                <td class="border-b dark:border-dark-5"><?= $c['alamat_client']; ?></td>
+                <td class="border-b dark:border-dark-5 w-56"><?= $c['alamat_client']; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $c['pic_client']; ?></td>
                 <td class="border-b dark:border-dark-5">
                     <a href="<?= base_url('masterdata/detail_client/'.$c['id_client']) ?>" class="btn btn-primary w-24 mr-2 mb-2">Detail </a>
