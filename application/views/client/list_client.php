@@ -186,10 +186,12 @@
         <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_client/">
             <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
 
-                <?php $size = (isset($_GET['size']) ? $_GET['size'] : "0"); ?>
+                <?php $size = (isset($_GET['size']) ? $_GET['size'] : "10"); ?>
 
                 <label class="w-6 flex mr-2">Size</label>
                 <select name="size" class="form-select sm:w-auto">
+                    <option value="1" <?= ($size == 1 ? "selected" : "") ?>>1</option>
+                    <option value="5" <?= ($size == 5 ? "selected" : "") ?>>5</option>
                     <option value="10" <?= ($size == 10 ? "selected" : "") ?>>10</option>
                     <option value="50"<?= ($size == 50 ? "selected" : "") ?>>50</option>
                     <option value="100"><?= ($size == 100 ? "selected" : "") ?>100</option>

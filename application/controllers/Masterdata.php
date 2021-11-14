@@ -72,9 +72,11 @@ class Masterdata extends CI_Controller
 		$cat = (isset($_GET['cat']) ? $_GET['cat'] : "0");
 		$wil = (isset($_GET['wil']) ? $_GET['wil'] : "0");
 		$search = (isset($_GET['search']) ? $_GET['search'] : "");
+		$default_size = 10;
+		$size = (isset($_GET['size']) ? $_GET['size'] : $default_size);
 
 		//PAGINATION START//
-		$limit = 10;
+		$limit = $size;
 		$offset = ($this->uri->segment(3) ? $this->uri->segment(3) : 0);
 		if($limit > $offset) $offset = 0;
 
