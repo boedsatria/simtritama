@@ -20,6 +20,7 @@ class ClientModel extends CI_Model
   {
     $this->db->from('client');
     $this->db->join('client_category', 'kategori_client = id_client_category');
+    $this->db->join('wilayah', 'wilayah_client = id_wilayah');
     $this->db->where('id_client', $id);
     return $this->db->get()->row_array();
   }

@@ -1,21 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 05, 2021 at 08:22 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.15
+-- Host: localhost:8889
+-- Generation Time: Nov 14, 2021 at 08:04 AM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `simtritama`
@@ -35,7 +29,7 @@ CREATE TABLE `menu` (
   `parent_menu` int(11) NOT NULL,
   `index_menu` int(11) NOT NULL,
   `role_menu` int(11) NOT NULL,
-  `status_menu` tinyint(1) NOT NULL DEFAULT 1
+  `status_menu` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -46,7 +40,7 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (1, 'Dashboard', 'dashboard', 'home', 0, 1, 0, 1),
 (2, 'divider', 'divider', '', 0, 2, 0, 1),
 (3, 'Master Data', '#', 'edit', 0, 3, 0, 1),
-(4, 'Data Client', 'masterdata/data_client', 'activity', 3, 1, 0, 1),
+(4, 'Data Client', 'masterdata/list_client', 'activity', 3, 1, 0, 1),
 (5, 'P I C', '#', 'user', 0, 5, 2, 1),
 (6, 'Data Project', 'pic/data_project', 'activity', 5, 1, 2, 1),
 (7, 'E-Faktur', 'pic/e_faktur', 'activity', 5, 2, 2, 1),
@@ -72,14 +66,9 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (27, 'divider', 'divider', '', 0, 6, 0, 1),
 (28, 'divider', 'divider', '', 0, 8, 0, 1),
 (29, 'divider', 'divider', '', 0, 10, 0, 1),
-(30, 'Data User', 'masterdata/data_user', 'activity', 3, 2, 1, 1),
+(30, 'Data User', 'masterdata/list_user', 'activity', 3, 2, 1, 1),
 (31, 'Data Media', 'masterdata/data_media', 'activity', 3, 3, 1, 1),
-(32, 'Data Perusahaan Penyelenggara', 'masterdata/data_penyelenggara', 'activity', 3, 4, 1, 1),
-(33, 'Plafon dan COA', 'finance/plafon_coa', 'activity', 11, 7, 3, 1),
-(34, 'Dashboard PIC', 'pic/dashboard_pic', 'activity', 5, 6, 2, 1),
-(35, 'Dashboard Finance', 'finance/dashboard_finance', 'activity', 11, 8, 3, 1),
-(36, 'Dashboard Produksi', 'produksi/dashboard_produksi', 'activity', 18, 4, 4, 1),
-(37, 'Dashboard Placement', 'placement/dashboard_placement', 'activity', 22, 4, 5, 1);
+(32, 'Data Perusahaan Penyelenggara', 'masterdata/data_penyelenggara', 'activity', 3, 4, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -99,9 +88,5 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

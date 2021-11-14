@@ -35,7 +35,7 @@ INSERT INTO `role` (`id_role`, `nama_role`) VALUES
 (2, 'PIC'),
 (3, 'Finance'),
 (4, 'Produksi'),
-(5, 'Placement')
+(5, 'Placement'),
 (6, 'Legalitas');
 
 --

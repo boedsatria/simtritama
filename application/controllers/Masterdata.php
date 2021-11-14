@@ -62,6 +62,13 @@ class Masterdata extends CI_Controller
 		$this->load->view('masterdata/detail_image');
 		$this->load->view('footer');
 	}
+	public function detail_c()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('masterdata/detail_client');
+		$this->load->view('footer');
+	}
 
 
 
@@ -125,11 +132,11 @@ class Masterdata extends CI_Controller
 		$data = array(
 			'c'		=> $this->ClientModel->get_detail($id)
 		);
-		print_r($data['c']);die;
-		// $this->load->view('header');
-		// $this->load->view('sidebar');
-		// $this->load->view('user/detail_user', $data);
-		// $this->load->view('footer');
+		// print_r($data['c']);die;
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('client/detail_client', $data);
+		$this->load->view('footer');
 	}
 
 	public function tambah_client_action()

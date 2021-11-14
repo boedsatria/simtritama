@@ -42,6 +42,10 @@
                                     </select>
                                 </div>
                                 <div class="input-form mt-3">
+                                    <label class="form-label">Telepon</label>
+                                    <input name="telepon_client" type="text" class="form-control" placeholder="Telepon Client">
+                                </div>
+                                <div class="input-form mt-3">
                                     <label class="form-label">N P W P</label>
                                     <input name="npwp_client" type="text" class="form-control" placeholder="NPWP Client" required>
                                 </div>
@@ -242,7 +246,7 @@
 </div>
 
 
-<div class="intro-x box p-5 mt-5 overflow-x-auto">
+<div class="box p-5 mt-5 overflow-x-auto">
     <!-- BEGIN: Table -->
     <table class="table">
         <thead>
@@ -260,7 +264,7 @@
             $x = 1;
             foreach($client as $c): 
             ?>
-            <tr>
+            <tr class="intro-x">
                 <td class="border-b dark:border-dark-5"><?= $x; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $c['nama_client']; ?></td>
                 <td class="border-b dark:border-dark-5 w-56"><?= $c['alamat_client']; ?></td>
