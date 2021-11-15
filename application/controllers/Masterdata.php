@@ -20,7 +20,7 @@ class Masterdata extends CI_Controller
 		$this->load->view('footer');
 	}
 	
-	public function data_media()
+	public function data_media($data)
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
@@ -98,7 +98,7 @@ class Masterdata extends CI_Controller
 		$config['prev_tag_open'] = '<li>';
 		$config['prev_link'] = '<i class="w-4 h-4" data-feather="chevron-left"></i>';
 		$config['prev_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li><a class="pagination__link pagination__link--active" href="#">';
+		$config['cur_tag_open'] = '<li><a class="pagination__link pagination__link--active">';
 		$config['cur_tag_close'] = '</a></li>';
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
@@ -130,7 +130,10 @@ class Masterdata extends CI_Controller
 	public function detail_client($id)
 	{
 		$data = array(
-			'c'		=> $this->ClientModel->get_detail($id)
+			'c'			=> $this->ClientModel->get_detail($id),
+			'client'	=> $this->ClientModel->get()->result_array(),
+			'cat'		=> $this->ClientModel->get_cat()->result_array(),
+			'wil'		=> $this->ClientModel->get_wil()->result_array(),
 		);
 		// print_r($data['c']);die;
 		$this->load->view('header');
@@ -162,6 +165,36 @@ class Masterdata extends CI_Controller
 		$this->ClientModel->insert_wil($_POST);
 		redirect(base_url() . 'masterdata/list_client');
 	}
+	public function edit_client_action()
+	{
+		$data = $_POST;
+		$nama = seo_title($data['nama_client']);
+		$path = 'client';
+
+		if ($_FILES['file']['name'] != "") {
+			$photo = upload_files($path, $nama);
+			$data['photo_client'] = $photo;
+
+			$images = $this->ClientModel->get_files($data['id_client']);
+			
+			if (file_exists('./uploads/'.$path.'/'.$images)) {
+				del_files($images, $path);
+			}
+		}
+		$this->ClientModel->update($data);
+		redirect(base_url() . 'masterdata/detail_client/' . $data['id_client']);
+	}
+	public function delete_client($id)
+	{
+		$images = $this->ClientModel->get_files($id);
+		$path = 'client';
+
+		$this->ClientModel->delete($id);
+		if (file_exists('./uploads/'.$path.'/'.$images)) {
+			del_files($images, $path);
+		}
+		redirect(base_url() . 'masterdata/list_client');
+	}
 	//--------CLIENT MENU END--------//
 
 
@@ -174,9 +207,11 @@ class Masterdata extends CI_Controller
 	{
 		$div = (isset($_GET['divisi']) ? $_GET['divisi'] : "0");
 		$search = (isset($_GET['search']) ? $_GET['search'] : "");
+		$default_size = 10;
+		$size = (isset($_GET['size']) ? $_GET['size'] : $default_size);
 
 		//PAGINATION START//
-		$limit = 6;
+		$limit = $size;
 		$offset = ($this->uri->segment(3) ? $this->uri->segment(3) : 0);
 		if($limit > $offset) $offset = 0;
 		
@@ -264,13 +299,13 @@ class Masterdata extends CI_Controller
 		endif;
 
 		$nama = seo_title($data['nama_user']);
+		$path = 'user';
 
 		if ($_FILES['file']['name'] != "") {
-			$photo = upload_files('user', $nama);
+			$photo = upload_files($path, $nama);
 			$data['photo_user'] = $photo;
 
 			$images = $this->UserModel->get_files($data['id_user']);
-			$path = 'user';
 			
 			if (file_exists('./uploads/'.$path.'/'.$images)) {
 				del_files($images, $path);

@@ -66,6 +66,19 @@
 <div class="box p-5 mt-5">
     <div class="flex flex-col sm:items-end xl:items-start">
         <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_user/">
+            <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
+
+                <?php $size = (isset($_GET['size']) ? $_GET['size'] : "10"); ?>
+
+                <label class="w-6 flex mr-2">Size</label>
+                <select name="size" class="form-select sm:w-auto">
+                    <option value="10" <?= ($size == 10 ? "selected" : "") ?>>10</option>
+                    <option value="50"<?= ($size == 50 ? "selected" : "") ?>>50</option>
+                    <option value="100"><?= ($size == 100 ? "selected" : "") ?>100</option>
+                    <option value="0"<?= ($size == 0 ? "selected" : "") ?>>Semua</option>
+                </select>
+            </div>
+
             <div class="flex items-center mb-2 sm:mb-0">
                 <label class="w-16 flex mr-2">Divisi</label>
                 <select name="divisi" class="form-select w-full sm:w-auto">
@@ -131,7 +144,7 @@
                 <a href="<?= base_url() . 'user/messages_to/' . $u['id_user'] ?>" class="btn btn-primary py-1 px-2 mr-2">Message</a>
                 <a href="<?= base_url() . 'masterdata/detail_user/' . $u['id_user'] ?>" class="btn btn-outline-secondary py-1 px-2">Profile</a>
                 <a data-toggle="modal" data-target="#delete-modal-<?= $u['id_user'] ?>" class="btn btn-danger py-1 px-2 float-right">Delete</a>
-                <!-- BEGIN: Modal Content -->
+                <!-- BEGIN: Modal DELETE -->
                 <div id="delete-modal-<?= $u['id_user'] ?>" class="modal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -148,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-                </div> <!-- END: Modal Content -->
+                </div> <!-- END: Modal DELETE -->
 
             </div>
         </div>

@@ -11,19 +11,23 @@
         <!-- END: Modal Toggle -->
         <!-- BEGIN: Modal Content -->
         <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <a data-dismiss="modal" class="cursor-pointer"> 
                         <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
                     </a>
                     <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_client_action">
                         <div class="modal-body p-0">
-                            <div class="p-5 text-left">
-                                <div class="input-form mt-3">
+                            <div class="p-5 text-left grid grid-cols-12 gap-6">
+                                <div class="input-form col-span-6 mt-1">
                                     <label class="form-label">Nama Direktorat</label>
                                     <input name="nama_client" type="text" class="form-control" placeholder="Nama Client" required>
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-6 mt-1">
+                                    <label class="form-label">Contact Person</label>
+                                    <input name="pic_client" type="text" class="form-control" placeholder="Contact Person Client" required>
+                                </div>
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Kategori</label>
                                     <select placeholder="Pilih Kategori" class="form-control" name="kategori_client" required>
                                         <option value="">- Pilih kategori -</option>
@@ -32,7 +36,7 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Wilayah/Propinsi</label>
                                     <select placeholder="Pilih Wilayah" class="form-control" name="wilayah_client" required>
                                         <option value="">- Pilih Wilayah -</option>
@@ -41,31 +45,27 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Telepon</label>
                                     <input name="telepon_client" type="text" class="form-control" placeholder="Telepon Client">
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">N P W P</label>
                                     <input name="npwp_client" type="text" class="form-control" placeholder="NPWP Client" required>
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Nomer Rekening</label>
                                     <input name="no_rek_client" type="text" class="form-control" placeholder="Nomer Rekening Client" required>
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Nama Pemilik Rekening</label>
                                     <input name="nama_rek_client" type="text" class="form-control" placeholder="Nama Rekening Client" required>
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Nama Bank</label>
                                     <input name="bank_client" type="text" class="form-control" placeholder="Bank Client" required>
                                 </div>
-                                <div class="input-form mt-3">
-                                    <label class="form-label">Contact Person</label>
-                                    <input name="pic_client" type="text" class="form-control" placeholder="Contact Person Client" required>
-                                </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Parent</label>
                                     <select placeholder="Pilih Parent" class="tom-select" name="parent_client" required>
                                         <option value="0">- No Parent -</option>
@@ -74,11 +74,11 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Foto</label>
                                     <input name="file" type="file" class="form-control" placeholder="foto">
                                 </div>
-                                <div class="input-form mt-3">
+                                <div class="input-form col-span-12 mt-1">
                                     <label class="form-label">Alamat Detail</label>
                                     <textarea name="alamat_client" class="form-control"></textarea>
                                 </div>
@@ -194,8 +194,6 @@
 
                 <label class="w-6 flex mr-2">Size</label>
                 <select name="size" class="form-select sm:w-auto">
-                    <option value="1" <?= ($size == 1 ? "selected" : "") ?>>1</option>
-                    <option value="5" <?= ($size == 5 ? "selected" : "") ?>>5</option>
                     <option value="10" <?= ($size == 10 ? "selected" : "") ?>>10</option>
                     <option value="50"<?= ($size == 50 ? "selected" : "") ?>>50</option>
                     <option value="100"><?= ($size == 100 ? "selected" : "") ?>100</option>
@@ -270,7 +268,26 @@
                 <td class="border-b dark:border-dark-5 w-56"><?= $c['alamat_client']; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $c['pic_client']; ?></td>
                 <td class="border-b dark:border-dark-5">
-                    <a href="<?= base_url('masterdata/detail_client/'.$c['id_client']) ?>" class="btn btn-primary w-24 mr-2 mb-2">Detail </a>
+                    <a href="<?= base_url('masterdata/detail_client/'.$c['id_client']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
+                    <a data-toggle="modal" data-target="#delete-modal-<?= $c['id_client'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
+                    <!-- BEGIN: Modal DELETE -->
+                    <div id="delete-modal-<?= $c['id_client'] ?>" class="modal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body p-0">
+                                    <div class="p-5 text-center"> 
+                                        <i data-feather="x-circle" class="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
+                                        <div class="text-3xl mt-5">Are you sure?</div>
+                                        <div class="text-gray-600 mt-2">Do you really want to delete these records? <br>This process cannot be undone.</div>
+                                    </div>
+                                    <div class="px-5 pb-8 text-center"> 
+                                        <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Cancel</button> 
+                                        <a href="<?= base_url() . 'masterdata/delete_client/' . $c['id_client'] ?>" class="btn btn-danger w-24">Delete</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- END: Modal DELETE -->
                 </td>
             </tr>
             <?php 

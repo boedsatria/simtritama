@@ -10,6 +10,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data = $ci->db->get();
     return $data->result_array();
   }
+  function get_slug_parent($parent)
+  {
+    $ci = &get_instance();
+    $ci->db->from("menu");
+    $ci->db->where("id_menu", $parent);
+    $datas = $ci->db->get();
+    $datas = $datas->row_array();
+    if($parent == 0):
+      $data = "";
+    else:
+      $data = $datas['slug_menu'].'/';
+    endif;
+
+    return $data;
+  }
   function get_menu_child($parent)
   {
     $ci = &get_instance();
