@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 13, 2021 at 07:44 PM
+-- Generation Time: Nov 15, 2021 at 06:18 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -34,7 +34,8 @@ CREATE TABLE `client_category` (
 INSERT INTO `client_category` (`id_client_category`, `nama_client_category`, `status_client_category`) VALUES
 (1, 'Kementerian', 1),
 (2, 'Lembaga', 1),
-(3, 'Swasta', 1);
+(3, 'Swasta', 1),
+(4, 'BUMN', 1);
 
 --
 -- Indexes for dumped tables
@@ -54,5 +55,5 @@ ALTER TABLE `client_category`
 -- AUTO_INCREMENT for table `client_category`
 --
 ALTER TABLE `client_category`
-  MODIFY `id_client_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_client_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
