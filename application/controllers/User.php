@@ -30,6 +30,6 @@ class User extends CI_Controller
 			'id_user'		=> 	$id,
 			'status_user'	=>	$themes
 		);
-		$this->UserModel->update_user($update);
+		$this->UserModel->update($update);
 	}
 }
