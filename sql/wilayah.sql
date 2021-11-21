@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 13, 2021 at 07:45 PM
+-- Generation Time: Nov 21, 2021 at 05:59 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -36,7 +36,8 @@ CREATE TABLE `wilayah` (
 INSERT INTO `wilayah` (`id_wilayah`, `nama_wilayah`, `desc_wilayah`, `parent_wilayah`, `status_wilayah`) VALUES
 (1, 'DKI Jakarta', '', 0, 1),
 (2, 'Jawa Barat', '', 0, 1),
-(3, 'Bekasi', '', 2, 1);
+(3, 'Bekasi', '', 2, 1),
+(4, 'Bogor', '', 2, 1);
 
 --
 -- Indexes for dumped tables
@@ -56,5 +57,5 @@ ALTER TABLE `wilayah`
 -- AUTO_INCREMENT for table `wilayah`
 --
 ALTER TABLE `wilayah`
-  MODIFY `id_wilayah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_wilayah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;

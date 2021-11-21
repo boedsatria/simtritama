@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 15, 2021 at 06:18 AM
+-- Generation Time: Nov 21, 2021 at 05:55 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `client_category` (
   `id_client_category` int(11) NOT NULL,
-  `nama_client_category` varchar(64) NOT NULL,
+  `nama_client_category` varchar(128) NOT NULL,
   `status_client_category` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
