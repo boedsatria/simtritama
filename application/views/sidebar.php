@@ -1,5 +1,24 @@
 <body class="main">
     <!-- BEGIN: Mobile Menu -->
+    <?php 
+        $uri = $this->uri->segment('1');
+        $uri2 = $this->uri->segment('2');
+        $uri3 = $this->uri->segment('3');
+        //LOGIC MENU AKTIF
+        if($uri == "") :
+            $uri = 'dashboard';
+        endif;
+
+
+        if($uri2 == "detail_user") :
+            $uri2 = 'list_user';
+        elseif($uri2 == "detail_client"):
+            $uri2 = 'list_client';
+        elseif($uri2 == "detail_media"):
+            $uri2 = 'list_media';
+        endif;
+    ?>
+    
     <div class="mobile-menu md:hidden">
         <div class="mobile-menu-bar">
             <a href="" class="flex mr-auto">
@@ -22,7 +41,7 @@
 
             <?php if($mv['nama_menu'] != "divider"): ?>
             <li>
-                <a <?= ($mv['slug_menu'] == "#" ? '' : 'href="'.base_url().$mv['slug_menu'].'"') ?> class="cursor-pointer menu <?= $activem; ?> <?= ($this->uri->segment('1') == "" && $mv['slug_menu'] == "dashboard" ? "menu--active" : "") ?>">
+                <a <?= ($mv['slug_menu'] == "#" ? '' : 'href="'.base_url().$mv['slug_menu'].'"') ?> class="cursor-pointer menu <?= $activem; ?> <?= ($uri == "" && $mv['slug_menu'] == "dashboard" ? "menu--active" : "") ?>">
                     <div class="menu__icon"> <i data-feather="<?= $mv['icon_menu']; ?>"></i> </div>
                     <div class="menu__title"> <?= $mv['nama_menu']; ?> 
                         <?php if(has_child($mv['id_menu']) > 0): ?>
@@ -33,7 +52,7 @@
                 </a>
 
                 <?php if(has_child($mv['id_menu']) > 0): ?>
-                <ul class="<?= ($this->uri->segment('1') == "" && $mv['slug_menu'] == "dashboard" ? "menu__sub-open" : "") ?>">
+                <ul class="<?= ($uri == "" && $mv['slug_menu'] == "dashboard" ? "menu__sub-open" : "") ?>">
                     <?php foreach(get_menu_child($mv['id_menu']) as $mc): ?>
                     <li>
                         <a href="<?= base_url().$mc['slug_menu']; ?>" class="menu">
@@ -68,24 +87,6 @@
 
             <ul>
             <?php foreach(get_menu_parent() as $mv): ?>
-
-            <?php 
-                $uri = $this->uri->segment('1');
-                $uri2 = $this->uri->segment('2');
-                $uri3 = $this->uri->segment('3');
-                //LOGIC MENU AKTIF
-                if($uri == "") :
-                    $uri = 'dashboard';
-                endif;
-
-
-                if($uri2 == "detail_user") :
-                    $uri2 = 'list_user';
-                elseif($uri2 == "detail_client"):
-                    $uri2 = 'list_client';
-                endif;
-
-            ?>
 
             <?php if($mv['nama_menu'] != "divider"): ?>
                 <li>
@@ -162,7 +163,48 @@
                 <!-- BEGIN: Top Bar -->
                 <div class="top-bar">
                     <!-- BEGIN: Breadcrumb -->
-                    <div class="breadcrumb mr-auto hidden sm:flex"> <a href="<?= base_url(); ?>">Applications</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="<?= base_url(); ?>" class="breadcrumb--active">Dashboard</a> </div>
+                    <div class="breadcrumb mr-auto hidden sm:flex"> 
+                        
+                        <a href="<?= base_url(); ?>">Dashboard</a> 
+                        
+                        <?php 
+                        if($uri != "dashboard"): 
+                            $link = ($uri2 != "" ? 'href="'.base_url().$uri.'"' : 'class="breadcrumb--active"');
+                        ?>
+                        <i data-feather="chevron-right" class="breadcrumb__icon"></i> 
+                        <a <?= $link; ?>><?= get_menu_name($uri); ?></a> 
+                        <?php endif; ?>
+
+                        <?php 
+                        if($uri2 != ""): 
+                            $link2 = ($uri3 != "" ? 'href="'.base_url().$uri.'/'.$uri2.'"' : 'class="breadcrumb--active"');
+                        ?>
+                        <i data-feather="chevron-right" class="breadcrumb__icon"></i> 
+                        <a <?= $link2; ?>><?= get_menu_name($uri2); ?></a> 
+                        <?php endif; ?>
+
+                        <?php 
+                        if($uri3 != ""):
+                            $link3 = 'class="breadcrumb--active"';
+                            if($uri2 == "list_client"):
+                                $nama_bc = get_nama_client($uri3);
+                            elseif($uri2 == "list_user"):
+                                $nama_bc = get_nama_user($uri3);
+                            elseif($uri2 == "list_media"):
+                                if($this->uri->segment(2) == "detail_media"):
+                                    $nama_bc = get_nama_media($uri3);
+                                else:
+                                    $nama_bc = get_cat_name($uri3);
+                                endif;
+                            else:
+                                $nama_bc = get_menu_name($uri3);
+                            endif;
+                        ?>
+                        <i data-feather="chevron-right" class="breadcrumb__icon"></i> 
+                        <a <?= $link3; ?>><?= $nama_bc; ?></a> 
+                        <?php endif; ?>
+                        
+                    </div>
                     <!-- END: Breadcrumb -->
                     
                     <!-- BEGIN: Notifications -->

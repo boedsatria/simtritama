@@ -10,6 +10,7 @@ class Masterdata extends CI_Controller
 		if (!$this->session->has_userdata('userlogin')) redirect(base_url('login'));
 		$this->load->model('ClientModel');
 		$this->load->model('UserModel');
+		$this->load->model('MediaModel');
 	}
 
 	public function index()
@@ -20,20 +21,6 @@ class Masterdata extends CI_Controller
 		$this->load->view('footer');
 	}
 	
-	public function data_media($data)
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('masterdata/data_media');
-		$this->load->view('footer');
-	}
-	public function detail_media()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('masterdata/detail_media');
-		$this->load->view('footer');
-	}
 	public function data_mitra()
 	{
 		$this->load->view('header');
@@ -69,6 +56,120 @@ class Masterdata extends CI_Controller
 		$this->load->view('masterdata/detail_client');
 		$this->load->view('footer');
 	}
+
+
+
+
+	//--------MEDIA MENU START--------//
+	public function list_media($cat = false)
+	{
+		$cat = ($cat != false ? get_cat_id($cat) : "0");
+		$type = (isset($_GET['type']) ? $_GET['type'] : "0");
+		$wil = (isset($_GET['wil']) ? $_GET['wil'] : "0");
+		$search = (isset($_GET['search']) ? $_GET['search'] : "");
+		$default_size = 10;
+		$size = (isset($_GET['size']) ? $_GET['size'] : $default_size);
+
+		//PAGINATION START//
+		$limit = $size;
+		$offset = ($this->uri->segment(3) ? $this->uri->segment(3) : 0);
+		if($limit > $offset) $offset = 0;
+
+		$config['base_url'] = base_url('masterdata/list_media/');
+		$config['reuse_query_string'] = true;
+		$config['total_rows'] = $this->MediaModel->get($cat, $type, $wil, $search)->num_rows();
+		$config['per_page'] = $limit;
+		$config['full_tag_open'] = '<ul class="pagination mx-auto">';
+		$config['first_tag_open'] = '<li>';
+		$config['first_link'] = '<i class="w-4 h-4" data-feather="chevrons-left"></i>';
+		$config['first_tag_close'] = '</li>';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_link'] = '<i class="w-4 h-4" data-feather="chevron-left"></i>';
+		$config['prev_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li><a class="pagination__link pagination__link--active">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		$config['next_tag_open'] = '<li>';
+		$config['next_link'] = '<i class="w-4 h-4" data-feather="chevron-right"></i>';
+		$config['next_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_link'] = '<i class="w-4 h-4" data-feather="chevrons-right"></i>';
+		$config['last_tag_close'] = '</li>';
+		$config['full_tag_close'] = '</ul>';
+		$config['anchor_class'] = 'pagination__link';
+		$config['attributes'] = ['class' => 'pagination__link'];
+		$this->pagination->initialize($config);
+		//PAGINATION END//
+		
+		$data = array(
+			'media'		=> $this->MediaModel->get($cat, $type, $wil, $search, $limit, $offset)->result_array(),
+			'all'		=> $this->MediaModel->get()->result_array(),
+			'cat'		=> $this->MediaModel->get_cat()->result_array(),
+			'type'		=> $this->MediaModel->get_type_media($cat)->result_array(),
+			'type_all'	=> $this->MediaModel->get_type()->result_array(),
+			'wil'		=> $this->MediaModel->get_wil()->result_array(),
+			'page'		=> $this->pagination->create_links(),
+			'total_row'	=> $config['total_rows']
+		);
+		// print_r($data['type']);die;
+
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('media/list_media', $data);
+		$this->load->view('footer');
+	}
+
+	public function tambah_media_action()
+	{
+		$data = $_POST;
+		$nama = seo_title($data['nama_media']);
+
+		if ($_FILES['file']['name'] != "") {
+			$photo = upload_files('media', $nama);
+			$data['photo_media'] = $photo;
+		}
+
+		$id = $this->MediaModel->insert($data);
+		redirect(base_url() . 'masterdata/detail_media/' . $id);
+	}
+
+	public function detail_media($id)
+	{
+		$data = array(
+			'm'			=> $this->MediaModel->get_detail($id),
+			'media'		=> $this->MediaModel->get()->result_array(),
+			'cat'		=> $this->MediaModel->get_cat()->result_array(),
+			'type'		=> $this->MediaModel->get_type()->result_array(),
+			'wil'		=> $this->MediaModel->get_wil()->result_array(),
+		);
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('media/detail_media', $data);
+		$this->load->view('footer');
+	}
+
+	public function tambah_type_action()
+	{
+		$this->MediaModel->insert_type($_POST);
+		redirect(base_url() . 'masterdata/list_media/'.get_menu_slug($_POST['parent_media_type']));
+	}
+	public function delete_media($id)
+	{
+		$images = $this->MediaModel->get_files($id);
+		$path = 'media';
+
+		$this->MediaModel->delete($id);
+		if (file_exists('./uploads/'.$path.'/'.$images)) {
+			del_files($images, $path);
+		}
+		redirect(base_url() . 'masterdata/list_media');
+	}
+
+	//--------MEDIA MENU END--------//
+
+
+
 
 
 
@@ -116,9 +217,11 @@ class Masterdata extends CI_Controller
 
 		$data = array(
 			'client'	=> $this->ClientModel->get($cat, $wil, $search, $limit, $offset)->result_array(),
+			'all'		=> $this->ClientModel->get()->result_array(),
 			'cat'		=> $this->ClientModel->get_cat()->result_array(),
 			'wil'		=> $this->ClientModel->get_wil()->result_array(),
-			'page'		=> $this->pagination->create_links()
+			'page'		=> $this->pagination->create_links(),
+			'total_row'	=> $config['total_rows']
 		);
 
 		$this->load->view('header');
@@ -160,10 +263,10 @@ class Masterdata extends CI_Controller
 		$this->ClientModel->insert_cat($_POST);
 		redirect(base_url() . 'masterdata/list_client');
 	}
-	public function tambah_wil_action()
+	public function tambah_wil_action($parent = false)
 	{
 		$this->ClientModel->insert_wil($_POST);
-		redirect(base_url() . 'masterdata/list_client');
+		redirect(base_url() . 'masterdata/'.$parent);
 	}
 	public function edit_client_action()
 	{
@@ -243,9 +346,10 @@ class Masterdata extends CI_Controller
 		//PAGINATION END//
 
 		$data = array(
-			'user'	=> $this->UserModel->get($div, $search, $limit, $offset)->result_array(),
-			'role'	=> $this->UserModel->get_role()->result_array(),
-			'page'	=> $this->pagination->create_links()
+			'user'		=> $this->UserModel->get($div, $search, $limit, $offset)->result_array(),
+			'role'		=> $this->UserModel->get_role()->result_array(),
+			'page'		=> $this->pagination->create_links(),
+			'total_row'	=> $config['total_rows']
 		);
 
 		$this->load->view('header');

@@ -1,7 +1,7 @@
 <!-- BEGIN : konten -->
 <div class="flex flex-col sm:flex-row items-center my-5">
     <h2 class="text-lg font-medium mr-auto">
-        DATABASE DIREKTORAT
+        DATABASE MEDIA
     </h2>
     <div class="w-full sm:w-auto flex">
         <!-- BEGIN: Modal Toggle -->
@@ -16,71 +16,69 @@
                     <a data-dismiss="modal" class="cursor-pointer"> 
                         <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
                     </a>
-                    <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_client_action">
+                    <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_media_action">
                         <div class="modal-body p-0">
                             <div class="p-5 text-left grid grid-cols-12 gap-6">
-                                <div class="input-form col-span-6 mt-1">
-                                    <label class="form-label">Nama Direktorat</label>
-                                    <input name="nama_client" type="text" class="form-control" placeholder="Nama Client" required>
+                                <div class="input-form col-span-4 mt-1">
+                                    <label class="form-label">Nama Media</label>
+                                    <input name="nama_media" type="text" class="form-control" placeholder="Nama Media" required>
                                 </div>
-                                <div class="input-form col-span-6 mt-1">
-                                    <label class="form-label">Contact Person</label>
-                                    <input name="pic_client" type="text" class="form-control" placeholder="Contact Person Client" required>
+                                <div class="input-form col-span-4 mt-1">
+                                    <label class="form-label">Email Media</label>
+                                    <input name="email_media" type="text" class="form-control" placeholder="Email Media" required>
+                                </div>
+                                <div class="input-form col-span-4 mt-1">
+                                    <label class="form-label">Parent</label>
+                                    <select placeholder="Pilih Parent" class="tom-select" name="parent_media" required>
+                                        <option value="0">- No Parent -</option>
+                                        <?php foreach ($all as $m) : ?>
+                                            <option value="<?= $m['id_media']; ?>"><?= $m['nama_media']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                                 <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Kategori</label>
-                                    <select placeholder="Pilih Kategori" class="form-control" name="kategori_client" required>
+                                    <select placeholder="Pilih Kategori" class="form-control" name="kategori_media" required>
                                         <option value="">- Pilih kategori -</option>
                                         <?php foreach ($cat as $cc) : ?>
-                                            <option value="<?= $cc['id_client_category']; ?>"><?= $cc['nama_client_category']; ?></option>
+                                            <option value="<?= $cc['id_media_category']; ?>"><?= $cc['nama_media_category']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="input-form col-span-4 mt-1">
+                                    <label class="form-label">Type Media</label>
+                                    <select placeholder="Pilih Type Media" class="form-control" name="type_media" required>
+                                        <option value="">- Pilih Type Media -</option>
+                                        <?php foreach ($type_all as $ta) : ?>
+                                            <option value="<?= $ta['id_media_type']; ?>"><?= $ta['nama_media_type']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Wilayah/Propinsi</label>
-                                    <select placeholder="Pilih Wilayah" class="form-control" name="wilayah_client" required>
+                                    <select placeholder="Pilih Wilayah" class="form-control" name="wilayah_media" required>
                                         <option value="">- Pilih Wilayah -</option>
                                         <?php foreach ($wil as $w) : ?>
                                             <option value="<?= $w['id_wilayah']; ?>"><?= $w['nama_wilayah']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="input-form col-span-4 mt-1">
-                                    <label class="form-label">Parent</label>
-                                    <select placeholder="Pilih Parent" class="tom-select" name="parent_client" required>
-                                        <option value="0">- No Parent -</option>
-                                        <?php foreach ($all as $p) : ?>
-                                            <option value="<?= $p['id_client']; ?>"><?= $p['nama_client']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                                <div class="input-form col-span-4 mt-1">
-                                    <label class="form-label">N P W P</label>
-                                    <input name="npwp_client" type="text" class="form-control" placeholder="NPWP Client" required>
-                                </div>
-                                <div class="input-form col-span-4 mt-1">
-                                    <label class="form-label">Nomer Rekening</label>
-                                    <input name="no_rek_client" type="text" class="form-control" placeholder="Nomer Rekening Client" required>
-                                </div>
-                                <div class="input-form col-span-4 mt-1">
-                                    <label class="form-label">Nama Pemilik Rekening</label>
-                                    <input name="nama_rek_client" type="text" class="form-control" placeholder="Nama Rekening Client" required>
-                                </div>
-                                <div class="input-form col-span-4 mt-1">
-                                    <label class="form-label">Nama Bank</label>
-                                    <input name="bank_client" type="text" class="form-control" placeholder="Bank Client" required>
-                                </div>
-                                <div class="input-form col-span-4 mt-1">
+                                <div class="input-form col-span-4 mt-1">                                   
                                     <label class="form-label">Telepon</label>
-                                    <input name="telepon_client" type="text" class="form-control" placeholder="Telepon Client">
+                                    <input name="telepon_media" type="text" class="form-control" placeholder="Telepon Media" required>
                                 </div>
                                 <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Foto</label>
                                     <input name="file" type="file" class="form-control" placeholder="foto">
                                 </div>
+                                <div class="input-form col-span-4 mt-1">
+                                    <label class="form-label">Titik Kordinat</label>
+                                    <input name="titik_media" type="text" class="form-control" placeholder="Titik Kordinat Media">
+                                    <small>Kosongkan Jika Tidak Terdapat Titik Kordinat</small>
+                                </div>
                                 <div class="input-form col-span-12 mt-1">
                                     <label class="form-label">Alamat Detail</label>
-                                    <textarea name="alamat_client" class="form-control"></textarea>
+                                    <textarea name="alamat_media" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="px-5 pb-8 text-center">
@@ -101,23 +99,32 @@
             </button>
             <div class="dropdown-menu w-64">
                 <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
-                    <a class="flex items-center block p-2 bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md cursor-pointer" data-toggle="modal" data-target="#button-modal-cat"> 
+                    <a class="flex items-center block p-2 bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md cursor-pointer" data-toggle="modal" data-target="#button-modal-type"> 
                         <i data-feather="layers" class="w-4 h-4 mr-2"></i> 
-                        Tambah Kategori Direktorat
+                        Tambah Type Media
                     </a>
                     <!-- BEGIN: Modal Kategori -->
-                    <div id="button-modal-cat" class="modal" tabindex="-1" aria-hidden="true">
+                    <div id="button-modal-type" class="modal" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <a data-dismiss="modal" class="cursor-pointer"> 
                                     <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
                                 </a>
-                                <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_cat_action">
+                                <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_type_action">
                                     <div class="modal-body p-0">
                                         <div class="p-5 text-left">
                                             <div class="input-form mt-3">
-                                                <label class="form-label">Nama Kategori</label>
-                                                <input name="nama_client_category" type="text" class="form-control" placeholder="Nama Kategori" required>
+                                                <label class="form-label">Kategori</label>
+                                                <select placeholder="Pilih Parent" class="form-control" name="parent_media_type" required>
+                                                    <option value="0">- No Parent -</option>
+                                                    <?php foreach ($cat as $c) : ?>
+                                                        <option value="<?= $c['id_media_category']; ?>"><?= $c['nama_media_category']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                            <div class="input-form mt-3">
+                                                <label class="form-label">Nama Type</label>
+                                                <input name="nama_media_type" type="text" class="form-control" placeholder="Nama Kategori" required>
                                             </div>
                                         </div>
                                         <div class="px-5 pb-8 text-center">
@@ -143,7 +150,7 @@
                                 <a data-dismiss="modal" class="cursor-pointer"> 
                                     <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
                                 </a>
-                                <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_wil_action/list_client">
+                                <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>masterdata/tambah_wil_action/list_media">
                                     <div class="modal-body p-0">
                                         <div class="p-5 text-left">
                                             <div class="input-form mt-3">
@@ -185,23 +192,27 @@
 <!-- BEGIN: filter -->
 <div class="box p-5 mt-5">
     <div class="flex flex-col sm:items-end xl:items-start overflow-x-auto">
-        <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_client/">
+        <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_media/">
 
             <?php if(isset($_GET['size'])): ?>
                 <input name="size" value="<?= $_GET['size'] ?>" type="hidden">
             <?php endif; ?>
 
             <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
-                <label class="w-12 flex mr-2">Kategori</label>
-                <select name="cat" class="form-select w-full sm:w-auto">
+                <label class="w-12 flex mr-2">Type</label>
+                <select name="type" class="form-select w-full sm:w-auto">
                     <option value="0">Semua</option>
                     <?php 
-                    foreach($cat as $cc):
+
+                    foreach(($this->uri->segment('3') != "" ? $type : $type_all) as $tf):
                         $selected = "";
-                        if($_GET['cat'] == $cc['id_client_category']) $selected = "selected";
+                        if($_GET['type'] == $tf['id_media_type']) $selected = "selected";
                     ?>
-                    <option value="<?= $cc['id_client_category']; ?>" <?= $selected; ?>><?= $cc['nama_client_category']; ?> </option>
-                    <?php endforeach; ?>
+                    <option value="<?= $tf['id_media_type']; ?>" <?= $selected; ?>><?= $tf['nama_media_type']; ?> </option>
+                    <?php 
+                    endforeach; 
+
+                    ?>
                 </select>
             </div>
 
@@ -227,13 +238,12 @@
                 <div class="float-right ml-2 flex">
                     <input name="search" value="<?= $search; ?>" type="text" class="flex-col form-control placeholder-theme-13" placeholder="Search...">
                     <button type="submit" class="flex-col btn btn-primary ml-2">Go</button>
-                    <a href="<?= base_url();?>masterdata/list_client" class="flex-col btn btn-secondary ml-2">Reset</a>
+                    <a href="<?= base_url().'masterdata/list_media/'.$this->uri->segment('3'); ?>" class="flex-col btn btn-secondary ml-2">Reset</a>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
 
 <div class="box p-5 mt-5 overflow-x-auto">
     <!-- BEGIN: Table -->
@@ -241,27 +251,29 @@
         <thead>
             <tr class="bg-gray-700 dark:bg-dark-1 text-white">
                 <th class="whitespace-nowrap">No</th>
-                <th class="whitespace-nowrap">Nama Direktorat</th>
+                <th class="whitespace-nowrap">Nama Media</th>
+                <th class="whitespace-nowrap">Type Media</th>
+                <th class="whitespace-nowrap">Wilayah</th>
                 <th class="">Alamat</th>
-                <th class="whitespace-nowrap">Kontak Person</th>
                 <th class="">Aksi</th>
             </tr>
         </thead>
         <tbody>
             <?php 
-            if(count($client) == 0) echo '<tr><td colspan="5" align="center">No Data</td></tr>';
-            foreach($client as $c): 
+            if(count($media) == 0) echo '<tr><td colspan="5" align="center">No Data</td></tr>';
+            foreach($media as $m): 
             ?>
             <tr class="intro-x">
-                <td class="border-b dark:border-dark-5"><?= $c['id_client']; ?></td>
-                <td class="border-b dark:border-dark-5"><?= $c['nama_client']; ?></td>
-                <td class="border-b dark:border-dark-5 w-56"><?= $c['alamat_client']; ?></td>
-                <td class="border-b dark:border-dark-5"><?= $c['pic_client']; ?></td>
-                <td class="border-b dark:border-dark-5">
-                    <a href="<?= base_url('masterdata/detail_client/'.$c['id_client']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
-                    <a data-toggle="modal" data-target="#delete-modal-<?= $c['id_client'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
+                <td class="border-b dark:border-dark-5"><?= $m['id_media']; ?></td>
+                <td class="border-b dark:border-dark-5"><?= $m['nama_media']; ?></td>
+                <td class="border-b dark:border-dark-5"><?= $m['nama_media_type']; ?></td>
+                <td class="border-b dark:border-dark-5"><?= $m['nama_wilayah']; ?></td>
+                <td class="border-b dark:border-dark-5 w-56"><?= $m['alamat_media']; ?></td>
+                <td class="border-b dark:border-dark-5 w-40">
+                    <a href="<?= base_url('masterdata/detail_media/'.$m['id_media']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
+                    <a data-toggle="modal" data-target="#delete-modal-<?= $m['id_media'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                     <!-- BEGIN: Modal DELETE -->
-                    <div id="delete-modal-<?= $c['id_client'] ?>" class="modal" tabindex="-1" aria-hidden="true">
+                    <div id="delete-modal-<?= $m['id_media'] ?>" class="modal" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body p-0">
@@ -272,7 +284,7 @@
                                     </div>
                                     <div class="px-5 pb-8 text-center"> 
                                         <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Cancel</button> 
-                                        <a href="<?= base_url() . 'masterdata/delete_client/' . $c['id_client'] ?>" class="btn btn-danger w-24">Delete</a> 
+                                        <a href="<?= base_url() . 'masterdata/delete_media/' . $m['id_media'] ?>" class="btn btn-danger w-24">Delete</a> 
                                     </div>
                                 </div>
                             </div>
@@ -287,11 +299,14 @@
     <div class="p-5 flex flex-col sm:flex-row items-center text-center sm:text-left text-gray-600">
         <div class="dark:text-gray-300">Total <?= $total_row ?> Data</div>
         <div class="sm:ml-auto mt-2 sm:mt-0 dark:text-gray-300">
-            <form action="<?= base_url(); ?>masterdata/list_client/">
+            <form action="<?= base_url(); ?>masterdata/list_media/">
 
                 <?php $size = (isset($_GET['size']) ? $_GET['size'] : "10"); ?>
                 <?php if(isset($_GET['cat'])): ?>
                     <input name="cat" value="<?= $_GET['cat'] ?>" type="hidden">
+                <?php endif; ?>
+                <?php if(isset($_GET['type'])): ?>
+                    <input name="type" value="<?= $_GET['type'] ?>" type="hidden">
                 <?php endif; ?>
                 <?php if(isset($_GET['wil'])): ?>
                     <input name="wil" value="<?= $_GET['wil'] ?>" type="hidden">
@@ -301,6 +316,7 @@
                 <?php endif; ?>
                 
                 <select name="size" class="form-select" onchange="this.form.submit()">
+                    <option value="2" <?= ($size == 2 ? "selected" : "") ?>>2</option>
                     <option value="10" <?= ($size == 10 ? "selected" : "") ?>>10</option>
                     <option value="50" <?= ($size == 50 ? "selected" : "") ?>>50</option>
                     <option value="100" <?= ($size == 100 ? "selected" : "") ?>>100</option>

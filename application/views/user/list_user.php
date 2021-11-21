@@ -1,7 +1,7 @@
 <!-- BEGIN : konten -->
 <div class="flex flex-col sm:flex-row items-center my-5">
     <h2 class="text-lg font-medium mr-auto">
-        DATA USER
+        DATABASE USER
     </h2>
     <div class="w-full sm:w-auto flex">
         <!-- BEGIN: Modal Toggle -->
@@ -65,20 +65,11 @@
 <!-- BEGIN: filter -->
 <div class="box p-5 mt-5">
     <div class="flex flex-col sm:items-end xl:items-start">
-        <form class="sm:flex w-full" action="<?= base_url(); ?>masterdata/list_user/">
-            <div class="flex items-center mb-2 sm:mb-0 sm:mr-4">
 
-                <?php $size = (isset($_GET['size']) ? $_GET['size'] : "10"); ?>
-
-                <label class="w-6 flex mr-2">Size</label>
-                <select name="size" class="form-select sm:w-auto">
-                    <option value="10" <?= ($size == 10 ? "selected" : "") ?>>10</option>
-                    <option value="50"<?= ($size == 50 ? "selected" : "") ?>>50</option>
-                    <option value="100"><?= ($size == 100 ? "selected" : "") ?>100</option>
-                    <option value="0"<?= ($size == 0 ? "selected" : "") ?>>Semua</option>
-                </select>
-            </div>
-
+        <form class="sm:flex w-full" action="<?= base_url().'masterdata/list_user/'?>">
+            <?php if(isset($_GET['size'])): ?>
+                <input name="size" value="<?= $_GET['size'] ?>" type="hidden">
+            <?php endif; ?>
             <div class="flex items-center mb-2 sm:mb-0">
                 <label class="w-16 flex mr-2">Divisi</label>
                 <select name="divisi" class="form-select w-full sm:w-auto">
@@ -169,9 +160,33 @@
     <?php endforeach; ?>
     <!-- END: Users Layout -->
 
-    <!-- BEGIN: Pagination -->
-    <div class="col-span-12 mt-4 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-        <?= $page; ?>
-    </div>
-    <!-- END: Pagination -->
 </div>
+
+<div class="p-5 flex flex-col sm:flex-row items-center text-center sm:text-left text-gray-600">
+    <div class="dark:text-gray-300">Total <?= $total_row ?> Data</div>
+    <div class="sm:ml-auto mt-2 sm:mt-0 dark:text-gray-300">
+        <form action="<?= base_url(); ?>masterdata/list_user/">
+            <?php $size = (isset($_GET['size']) ? $_GET['size'] : "10"); ?>
+            <?php if(isset($_GET['divisi'])): ?>
+                <input name="divisi" value="<?= $_GET['divisi'] ?>" type="hidden">
+            <?php endif; ?>
+            <?php if(isset($_GET['search'])): ?>
+                <input name="search" value="<?= $_GET['search'] ?>" type="hidden">
+            <?php endif; ?>
+            
+            <select name="size" class="form-select" onchange="this.form.submit()">
+                <option value="10" <?= ($size == 10 ? "selected" : "") ?>>10</option>
+                <option value="50" <?= ($size == 50 ? "selected" : "") ?>>50</option>
+                <option value="100" <?= ($size == 100 ? "selected" : "") ?>>100</option>
+                <option value="0" <?= ($size == 0 ? "selected" : "") ?>>Semua</option>
+            </select>
+        </form>
+    </div>
+</div>
+
+
+<!-- BEGIN: Pagination -->
+<div class="col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center mb-10">
+    <?= $page; ?>
+</div>
+<!-- END: Pagination -->

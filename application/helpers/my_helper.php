@@ -25,6 +25,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     return $data;
   }
+  function get_menu_slug($id)
+  {
+    $ci = &get_instance();
+    $ci->db->from("media_category");
+    $ci->db->where("id_media_category", $id);
+    $data = $ci->db->get();
+    $data = $data->row_array();
+
+    $ci->db->from("menu");
+    $ci->db->where("nama_menu", $data['nama_media_category']);
+    $datas = $ci->db->get();
+    $datas = $datas->row_array();
+
+    return $datas['slug_menu'];
+  }
   function get_menu_child($parent)
   {
     $ci = &get_instance();
@@ -33,6 +48,90 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $ci->db->order_by("index_menu", "ASC");
     $data = $ci->db->get();
     return $data->result_array();
+  }
+  function get_menu_name($slug)
+  {
+    $ci = &get_instance();
+    $ci->db->from("menu");
+    $ci->db->where("slug_menu", $slug);
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['nama_menu'];
+    else:
+      $v = "";
+    endif;
+    return $v;
+  }
+  function get_cat_id($slug)
+  {
+    $ci = &get_instance();
+    $ci->db->from("media_category");
+    $ci->db->where("nama_media_category", str_replace("_", " ", $slug));
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['id_media_category'];
+    else:
+      $v = 0;
+    endif;
+    return $v;
+  }
+  function get_nama_client($id)
+  {
+    $ci = &get_instance();
+    $ci->db->from("client");
+    $ci->db->where("id_client", $id);
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['nama_client'];
+    else:
+      $v = "";
+    endif;
+    return $v;
+  }
+  function get_nama_user($id)
+  {
+    $ci = &get_instance();
+    $ci->db->from("user");
+    $ci->db->where("id_user", $id);
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['nama_user'];
+    else:
+      $v = "";
+    endif;
+    return $v;
+  }
+  function get_nama_media($id)
+  {
+    $ci = &get_instance();
+    $ci->db->from("media");
+    $ci->db->where("id_media", $id);
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['nama_media'];
+    else:
+      $v = "";
+    endif;
+    return $v;
+  }
+  function get_cat_name($slug)
+  {
+    $ci = &get_instance();
+    $ci->db->from("media_category");
+    $ci->db->where("nama_media_category", str_replace("_", " ", $slug));
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['nama_media_category'];
+    else:
+      $v = "";
+    endif;
+    return $v;
   }
 
   function has_child($parent)
