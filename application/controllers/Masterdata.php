@@ -11,6 +11,7 @@ class Masterdata extends CI_Controller
 		$this->load->model('ClientModel');
 		$this->load->model('UserModel');
 		$this->load->model('MediaModel');
+		$this->load->model('PenyelenggaraModel');
 	}
 
 	public function index()
@@ -26,20 +27,6 @@ class Masterdata extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('masterdata/data_mitra');
-		$this->load->view('footer');
-	}
-	public function data_penyelenggara()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('masterdata/data_penyelenggara');
-		$this->load->view('footer');
-	}
-	public function detail_penyelenggara()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('masterdata/detail_penyelenggara');
 		$this->load->view('footer');
 	}
 	public function detail_image()
@@ -60,6 +47,76 @@ class Masterdata extends CI_Controller
 
 
 
+	//--------PENYELENGGARA MENU START--------//
+
+	public function list_penyelenggara()
+	{
+		$kbli = (isset($_GET['kbli']) ? $_GET['kbli'] : "");
+		$search = (isset($_GET['search']) ? $_GET['search'] : "");
+		$default_size = 10;
+		$size = (isset($_GET['size']) ? $_GET['size'] : $default_size);
+
+		//PAGINATION START//
+		$limit = $size;
+		$offset = ($this->uri->segment(3) ? $this->uri->segment(3) : 0);
+		if($limit > $offset) $offset = 0;
+
+		$config['base_url'] = base_url('masterdata/list_penyelenggara/');
+		$config['reuse_query_string'] = true;
+		$config['total_rows'] = $this->PenyelenggaraModel->get($kbli, $search)->num_rows();
+		$config['per_page'] = $limit;
+		$config['full_tag_open'] = '<ul class="pagination mx-auto">';
+		$config['first_tag_open'] = '<li>';
+		$config['first_link'] = '<i class="w-4 h-4" data-feather="chevrons-left"></i>';
+		$config['first_tag_close'] = '</li>';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_link'] = '<i class="w-4 h-4" data-feather="chevron-left"></i>';
+		$config['prev_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li><a class="pagination__link pagination__link--active">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		$config['next_tag_open'] = '<li>';
+		$config['next_link'] = '<i class="w-4 h-4" data-feather="chevron-right"></i>';
+		$config['next_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_link'] = '<i class="w-4 h-4" data-feather="chevrons-right"></i>';
+		$config['last_tag_close'] = '</li>';
+		$config['full_tag_close'] = '</ul>';
+		$config['anchor_class'] = 'pagination__link';
+		$config['attributes'] = ['class' => 'pagination__link'];
+		$this->pagination->initialize($config);
+		//PAGINATION END//
+		
+		$data = array(
+			'penyelenggara'		=> $this->PenyelenggaraModel->get($kbli, $search, $limit, $offset)->result_array(),
+			'all'				=> $this->PenyelenggaraModel->get()->result_array(),
+			'kbli'				=> $this->PenyelenggaraModel->get_kbli()->result_array(),
+			'page'				=> $this->pagination->create_links(),
+			'total_row'			=> $config['total_rows']
+		);
+		// print_r($data['type']);die;
+
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('penyelenggara/list_penyelenggara', $data);
+		$this->load->view('footer');
+	}
+	public function detail_penyelenggara($id = false)
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('penyelenggara/detail_penyelenggara');
+		$this->load->view('footer');
+	}
+
+	//--------PENYELENGGARA MENU END--------//
+
+
+
+
+
+	
 	//--------MEDIA MENU START--------//
 	public function list_media($cat = false)
 	{

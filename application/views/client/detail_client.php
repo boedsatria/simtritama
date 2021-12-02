@@ -16,7 +16,7 @@
                 <div class="text-gray-600"><?= $c['nama_client_category']; ?></div>
             </div>
         </div>
-        <div class="mt-6 lg:mt-0 flex-1 dark:text-gray-300 px-5 border-l border-r border-gray-200 dark:border-dark-5 border-t lg:border-t-0 pt-5 lg:pt-0">
+        <div class="mt-6 lg:mt-0 flex-1 dark:text-gray-300 px-5 border-l border-gray-200 dark:border-dark-5 border-t lg:border-t-0 pt-5 lg:pt-0">
             <div class="font-medium text-center lg:text-left lg:mt-3">Details</div>
             <div class="flex flex-col justify-center items-center lg:items-start mt-4">
                 <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="mail" class="w-4 h-4 mr-2"></i><?= $c['alamat_client']; ?></div>
@@ -30,11 +30,11 @@
         </div>
     </div>
     <div class="nav nav-tabs flex-col sm:flex-row justify-center lg:justify-start" role="tablist"> 
-        <a id="dashboard-tab" data-toggle="tab" data-target="#dashboard" href="javascript:;" class="py-4 sm:mr-8 active" role="tab" aria-controls="dashboard" aria-selected="true">Dashboard</a> 
+        <a id="dashboard-tab" data-toggle="tab" data-target="#dashboard" class="py-4 sm:mr-8 cursor-pointer active" role="tab" aria-controls="dashboard" aria-selected="true">Dashboard</a> 
         
-        <a id="tasks-tab" data-toggle="tab" data-target="#tasks" href="javascript:;" class="py-4 sm:mr-8" role="tab" aria-selected="false">Project</a> 
+        <a id="tasks-tab" data-toggle="tab" data-target="#tasks" class="py-4 cursor-pointer sm:mr-8" role="tab" aria-selected="false">Project</a> 
 
-        <a id="account-and-profile-tab" data-toggle="tab" data-target="#account-and-profile" href="javascript:;" class="py-4 sm:mr-8" role="tab" aria-selected="false">Edit Profile</a> 
+        <a id="account-and-profile-tab" data-toggle="tab" data-target="#account-and-profile" class="py-4 cursor-pointer sm:mr-8" role="tab" aria-selected="false">Edit Profile</a> 
     </div>
 </div>
 <!-- END: Profile Info -->

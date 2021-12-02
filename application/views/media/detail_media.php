@@ -1,33 +1,36 @@
-<div class="intro-y flex items-center mt-8">
-    <h2 class="text-lg font-medium mr-auto">
-        DETAIL DATA MEDIA
-        <!--JUDUL PAGE-->
-    </h2>
-</div>
+<!-- BEGIN: Profile Info -->
 <div class="intro-y box px-5 pt-5 mt-5">
     <div class="flex flex-col lg:flex-row border-b border-gray-200 dark:border-dark-5 pb-5 -mx-5">
         <div class="flex flex-1 px-5 items-center justify-center lg:justify-start">
             <div class="w-20 h-20 sm:w-24 sm:h-24 flex-none lg:w-32 lg:h-32 image-fit relative">
-                
-                <img alt="Administrator" class="rounded-full" src="<?= base_url('uploads/user/boed.jpg') ?>">
-                    
-                <img alt="Administrator" class="rounded-full" src="<?= base_url('uploads/user/boed.jpg') ?>">
-                <div class="absolute mb-1 mr-1 flex items-center justify-center bottom-0 right-0 bg-theme-1 rounded-full p-2"> <i class="w-4 h-4 text-white" data-feather="camera"></i> </div>
+                <?php
+                $img_src = $m['photo_media'];
+                $avatar = (strpos($img_src, "http") !== false ? $img_src : base_url() . 'uploads/media/' . $img_src);
+                ?>
+
+                <img alt="<?= $m['nama_media']; ?>" class="rounded-full" src="<?php echo ($img_src == '' ? base_url('dist/images/no-images.png') : $avatar); ?>">
+            
             </div>
             <div class="ml-5">
-                <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">Nama Media</div>
-                <div class="text-gray-600">KBLI 1, KBLI 2, KBLI 3, KBLI 4</div>
+                <div class="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg"><?= $m['nama_media']; ?></div>
+                <div class="text-gray-600"><?= $m['nama_media_category']; ?></div>
+                <div class="text-gray-600"><?= $m['nama_media_type']; ?></div>
             </div>
         </div>
-        <div class="mt-6 lg:mt-0 flex-1 dark:text-gray-300 px-5 border-l border-r border-gray-200 dark:border-dark-5 border-t lg:border-t-0 pt-5 lg:pt-0">
+        <div class="mt-6 lg:mt-0 flex-1 dark:text-gray-300 px-5 border-l border-gray-200 dark:border-dark-5 border-t lg:border-t-0 pt-5 lg:pt-0">
             <div class="font-medium text-center lg:text-left lg:mt-3">Contact Details</div>
             <div class="flex flex-col justify-center items-center lg:items-start mt-4">
-                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="mail" class="w-4 h-4 mr-2"></i>admin@satriacorp.id</div>
-                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="phone" class="w-4 h-4 mr-2"></i>123456789</div>
-                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>Jl.Pasar Kecapi</div>
-                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="globe" class="w-4 h-4 mr-2"></i>www.satriacorp.id</div>
+                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="mail" class="w-4 h-4 mr-2"></i><?= $m['email_media']; ?></div>
+                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="phone" class="w-4 h-4 mr-2"></i><?= $m['telepon_media']; ?></div>
+                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="map-pin" class="w-4 h-4 mr-2"></i><?= $m['alamat_media']; ?></div>
+                <div class="truncate sm:whitespace-normal flex items-center"> <i data-feather="globe" class="w-4 h-4 mr-2"></i><?= $m['titik_media']; ?></div>
             </div>
         </div>
+    </div>
+    <div class="nav nav-tabs flex-col sm:flex-row justify-center lg:justify-start" role="tablist"> 
+        <a id="dashboard-tab" data-toggle="tab" data-target="#dashboard" class="py-4 sm:mr-8 cursor-pointer active" role="tab" aria-controls="dashboard" aria-selected="true">Dashboard</a>
+
+        <a id="account-and-profile-tab" data-toggle="tab" data-target="#account-and-profile" class="py-4 cursor-pointer sm:mr-8" role="tab" aria-selected="false">Edit Profile</a> 
     </div>
 </div>
 <!-- END: Profile Info -->
@@ -130,11 +133,8 @@
             <!-- END: Work In Progress -->
         </div>
     </div>
-</div>     
-
-
-<div class="intro-y tab-content mt-5">
-    <div id="dashboard" class="tab-pane active" role="tabpanel" aria-labelledby="dashboard-tab">
+    
+    <div id="account-and-profile" class="tab-pane" role="tabpanel" aria-labelledby="account-and-profile">
         <div class="grid grid-cols-12 gap-6">
             <!-- BEGIN: Top Categories -->
             <div class="intro-y box col-span-12 lg:col-span-6">
@@ -267,34 +267,5 @@
             </div>
             <!-- END: Work In Progress -->
         </div>
-    </div>
-</div>
-
-
-<div class="grid grid-cols-2 gap-2 mt-5">
-    <!-- KOLOM BESAR-->
-    <div class="intro-y col-span-2 lg:col-span-4">
-        <!-- KOLOM KIRI-->
-        <!-- BEGIN: BLOCK 1 -->
-        <div class="intro-y box">
-            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
-
-                <!-- KONTEN BLOCK 1 DISINI-->
-
-                <div class="overflow-x-auto">
-                <div id="horizontal-form" class="p-5">
-                <div class="preview">
-                    <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print Rekap </button>
-                    <a href="<?= base_url('masterdata/data_media') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
-                        Back </a>
-                </div>
-            </div>  
-                </div>
-            </div>
-        </div>
-        <!-- END: BLOCK 1 -->
-
-        
-        <!-- END: SUBMIT -->
     </div>
 </div>
