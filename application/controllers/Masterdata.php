@@ -51,10 +51,12 @@ class Masterdata extends CI_Controller
 
 	public function list_penyelenggara()
 	{
-		$kbli = (isset($_GET['kbli']) ? $_GET['kbli'] : "");
+		$kbli = (isset($_GET['kbli']) ? $_GET['kbli'] : "0");
 		$search = (isset($_GET['search']) ? $_GET['search'] : "");
 		$default_size = 10;
 		$size = (isset($_GET['size']) ? $_GET['size'] : $default_size);
+
+		// print_r($kbli);die;
 
 		//PAGINATION START//
 		$limit = $size;
@@ -90,7 +92,6 @@ class Masterdata extends CI_Controller
 		
 		$data = array(
 			'penyelenggara'		=> $this->PenyelenggaraModel->get($kbli, $search, $limit, $offset)->result_array(),
-			'all'				=> $this->PenyelenggaraModel->get()->result_array(),
 			'kbli'				=> $this->PenyelenggaraModel->get_kbli()->result_array(),
 			'page'				=> $this->pagination->create_links(),
 			'total_row'			=> $config['total_rows']
@@ -102,12 +103,79 @@ class Masterdata extends CI_Controller
 		$this->load->view('penyelenggara/list_penyelenggara', $data);
 		$this->load->view('footer');
 	}
+	public function tambah_penyelenggara_action()
+	{
+		$kbli = (count($_POST['kbli_penyelenggara']) > 0 ? array_values($_POST['kbli_penyelenggara']) : "");
+		$path = 'penyelenggara';
+
+		$data = array(
+			'nama_penyelenggara'		=>	$_POST['nama_penyelenggara'],
+			'email_penyelenggara'		=>	$_POST['email_penyelenggara'],
+			'telepon_penyelenggara'		=>	$_POST['telepon_penyelenggara'],
+			'alamat_penyelenggara'		=>	$_POST['alamat_penyelenggara'],
+			'kbli_penyelenggara'		=>	implode(", ", $kbli)
+		);
+
+
+		$nama = seo_title($data['nama_penyelenggara']);
+
+		if ($_FILES['file']['name'] != "") {
+			$photo = upload_files($path, $nama);
+			$data['photo_penyelenggara'] = $photo;
+		}
+
+		$id = $this->PenyelenggaraModel->insert($data);
+		redirect(base_url() . 'masterdata/detail_penyelenggara/' . $id);
+	}
+
 	public function detail_penyelenggara($id = false)
 	{
+		if ($id == false) redirect(base_url() . 'masterdata/list_penyelenggara');
+		$data = array(
+			'p'		=> $this->PenyelenggaraModel->get_detail($id),
+			'kbli'	=> $this->PenyelenggaraModel->get_kbli()->result_array()
+		);
+
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('penyelenggara/detail_penyelenggara');
+		$this->load->view('penyelenggara/detail_penyelenggara', $data);
 		$this->load->view('footer');
+	}
+
+	public function tambah_kbli_action()
+	{
+		$this->PenyelenggaraModel->insert_kbli($_POST);
+		redirect(base_url() . 'masterdata/list_penyelenggara');
+	}
+
+	public function edit_penyelenggara_action()
+	{
+		$kbli = (count($_POST['kbli_penyelenggara']) > 0 ? array_values($_POST['kbli_penyelenggara']) : "");
+		$path = 'penyelenggara';
+
+		$data = array(
+			'id_penyelenggara'			=>	$_POST['id_penyelenggara'],
+			'nama_penyelenggara'		=>	$_POST['nama_penyelenggara'],
+			'email_penyelenggara'		=>	$_POST['email_penyelenggara'],
+			'telepon_penyelenggara'		=>	$_POST['telepon_penyelenggara'],
+			'alamat_penyelenggara'		=>	$_POST['alamat_penyelenggara'],
+			'kbli_penyelenggara'		=>	implode(", ", $kbli)
+		);
+
+		$nama = seo_title($data['nama_penyelenggara']);
+// print_r($data);die;
+		if ($_FILES['file']['name'] != "") {
+			$photo = upload_files($path, $nama);
+			$data['photo_penyelenggara'] = $photo;
+
+			$images = $this->PenyelenggaraModel->get_files($data['id_penyelenggara']);
+			
+			if (file_exists('./uploads/'.$path.'/'.$images)) {
+				del_files($images, $path);
+			}
+		}
+		$this->PenyelenggaraModel->update($data);
+		redirect(base_url() . 'masterdata/detail_penyelenggara/' . $data['id_penyelenggara']);
 	}
 
 	//--------PENYELENGGARA MENU END--------//
@@ -191,8 +259,9 @@ class Masterdata extends CI_Controller
 		redirect(base_url() . 'masterdata/detail_media/' . $id);
 	}
 
-	public function detail_media($id)
+	public function detail_media($id = false)
 	{
+		if ($id == false) redirect(base_url() . 'masterdata/list_media');
 		$data = array(
 			'm'			=> $this->MediaModel->get_detail($id),
 			'media'		=> $this->MediaModel->get()->result_array(),
@@ -287,8 +356,9 @@ class Masterdata extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function detail_client($id)
+	public function detail_client($id = false)
 	{
+		if ($id == false) redirect(base_url() . 'masterdata/list_client');
 		$data = array(
 			'c'			=> $this->ClientModel->get_detail($id),
 			'client'	=> $this->ClientModel->get()->result_array(),
@@ -415,8 +485,9 @@ class Masterdata extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function detail_user($id)
+	public function detail_user($id = false)
 	{
+		if ($id == false) redirect(base_url() . 'masterdata/list_user');
 		$data = array(
 			'u'		=> $this->UserModel->get_detail($id),
 			'role'	=> $this->UserModel->get_role()->result_array()

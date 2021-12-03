@@ -7,9 +7,15 @@ class PenyelenggaraModel extends CI_Model
   function get($kbli = false, $search = false, $limit = false, $offset = false)
   {
     $this->db->from('penyelenggara');
-    if ($kbli) $this->db->like('kbli_penyelenggara', $kbli, 'both');
+    if ($kbli) :
+      foreach($kbli as $v):
+        $this->db->or_like('kbli_penyelenggara', $v, 'both');
+      endforeach;
+    endif;
     if ($search) $this->db->like('nama_penyelenggara', $search, 'both');
     if ($limit) $this->db->limit($limit, $offset);
+    // $this->db->get();
+    // print_r($this->db->last_query());die;
     return $this->db->get();
   }
 

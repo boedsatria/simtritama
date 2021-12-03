@@ -105,6 +105,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     endif;
     return $v;
   }
+  function get_nama_penyelenggara($id)
+  {
+    $ci = &get_instance();
+    $ci->db->from("penyelenggara");
+    $ci->db->where("id_penyelenggara", $id);
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['nama_penyelenggara'];
+    else:
+      $v = "";
+    endif;
+    return $v;
+  }
   function get_nama_media($id)
   {
     $ci = &get_instance();

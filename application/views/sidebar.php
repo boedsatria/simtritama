@@ -16,6 +16,8 @@
             $uri2 = 'list_client';
         elseif($uri2 == "detail_media"):
             $uri2 = 'list_media';
+        elseif($uri2 == "detail_penyelenggara"):
+            $uri2 = 'list_penyelenggara';
         endif;
     ?>
     
@@ -196,6 +198,8 @@
                                 else:
                                     $nama_bc = get_cat_name($uri3);
                                 endif;
+                            elseif($uri2 == "list_penyelenggara"):
+                                $nama_bc = get_nama_penyelenggara($uri3);
                             else:
                                 $nama_bc = get_menu_name($uri3);
                             endif;
