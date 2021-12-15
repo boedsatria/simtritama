@@ -20,7 +20,6 @@
                     <table class="table">
                         <thead>
                             <tr class="bg-gray-700 dark:bg-dark-1 text-white">
-                                <th class="whitespace-nowrap">No.</th>
                                 <th class="whitespace-nowrap">Data</th>
                                 <th class="whitespace-nowrap">Value</th>
                                 <th class="whitespace-nowrap">Deskripsi</th>
@@ -28,97 +27,83 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="border-b dark:border-dark-5">1</td>
                                 <td class="border-b dark:border-dark-5">Nomor Ringkos</td>
                                 <td class="border-b dark:border-dark-5">DIR001/001/001/001</td>
                                 <td class="border-b dark:border-dark-5"> - </td>
                             </tr>
                             <tr>
-                                <td class="border-b dark:border-dark-5">2</td>
                                 <td class="border-b dark:border-dark-5">Direktorat</td>
                                 <td class="border-b dark:border-dark-5">Kementerian Tenaga Kerja Republik Indonesia</td>
                                 <td class="border-b dark:border-dark-5"> - </td>
                             </tr>
                             <tr>
-                                <td class="border-b dark:border-dark-5">3</td>
                                 <td class="border-b dark:border-dark-5">Tanggal Mulai Tayang</td>
                                 <td class="border-b dark:border-dark-5">01 Januari 2022</td>
                                 <td class="border-b dark:border-dark-5"> - </td>
                             </tr>
                             <tr>
-                                <td class="border-b dark:border-dark-5">4</td>
                                 <td class="border-b dark:border-dark-5">Tanggal Akhir Tayang</td>
                                 <td class="border-b dark:border-dark-5">01 Maret 2022</td>
                                 <td class="border-b dark:border-dark-5"> - </td>
                             </tr>
                             <tr>
-                                <td class="border-b dark:border-dark-5">5</td>
                                 <td class="border-b dark:border-dark-5">Jumlah Versi</td>
                                 <td class="border-b dark:border-dark-5">3</td>
                                 <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
+                            </tr>                          
                             <tr>
-                                <td class="border-b dark:border-dark-5">6</td>
-                                <td class="border-b dark:border-dark-5">Jenis Media</td>
-                                <td class="border-b dark:border-dark-5">Animasi 3D</td>
-                                <td class="border-b dark:border-dark-5"> 40 </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">7</td>
-                                <td class="border-b dark:border-dark-5">Lokasi Media</td>
-                                <td class="border-b dark:border-dark-5">Bandar Lampung</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">8</td>
-                                <td class="border-b dark:border-dark-5">Nama Media</td>
-                                <td class="border-b dark:border-dark-5">Animasi 2D</td>
-                                <td class="border-b dark:border-dark-5"> 40 </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">9</td>
-                                <td class="border-b dark:border-dark-5">Jenis Media</td>
-                                <td class="border-b dark:border-dark-5">Animasi 3D</td>
-                                <td class="border-b dark:border-dark-5"> 40 </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">10</td>
-                                <td class="border-b dark:border-dark-5">Lokasi Media</td>
-                                <td class="border-b dark:border-dark-5">Jakarta</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">11</td>
-                                <td class="border-b dark:border-dark-5">Nama Media</td>
-                                <td class="border-b dark:border-dark-5">Animasi 2D</td>
-                                <td class="border-b dark:border-dark-5"> 40 </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">12</td>
-                                <td class="border-b dark:border-dark-5">Jenis Media</td>
-                                <td class="border-b dark:border-dark-5">Animasi 3D</td>
-                                <td class="border-b dark:border-dark-5"> 40 </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">13</td>
-                                <td class="border-b dark:border-dark-5">Lokasi Media</td>
-                                <td class="border-b dark:border-dark-5">Bandung</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">14</td>
-                                <td class="border-b dark:border-dark-5">Nama Media</td>
-                                <td class="border-b dark:border-dark-5">Animasi 2D</td>
-                                <td class="border-b dark:border-dark-5"> 40 </td>
-                            </tr>
-                            <tr>
-                                <td class="border-b dark:border-dark-5">12</td>
                                 <td class="border-b dark:border-dark-5">Pagu Biaya Media</td>
                                 <td class="border-b dark:border-dark-5">450.000.000,00</td>
                                 <td class="border-b dark:border-dark-5"> Rupiah </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="intro-y box">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                <h2 class="font-medium text-base mr-auto">
+                    PLACEMENT MEDIA
+                </h2>
+            </div>
+            <div id="vertical-form" class="p-5">
+                <div class="preview">
+
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">JUDUL VERSI</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">KATEGORI MEDIA</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">JENIS MEDIA</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">WILAYAH MEDIA</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">TITIK MEDIA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border">Keselamatan Kerja dalam ruang</td>
+                                <td class="border">Media Luar Ruang</td>
+                                <td class="border">Videotron</td>
+                                <td class="border">Jakarta R.I</td>
+                                <td class="border">Pancoran</td>
+                            </tr>
+                            <tr>
+                                <td class="border">Keselamatan Kerja dalam ruang</td>
+                                <td class="border">Media Digital</td>
+                                <td class="border">iFlix</td>
+                                <td class="border"> - </td>
+                                <td class="border"> - </td>
+                            </tr>
+                            <tr>
+                                <td class="border">Keselamatan Kerja dalam ruang</td>
+                                <td class="border">Media Televisi</td>
+                                <td class="border">TV Nasional</td>
+                                <td class="border"> - </td>
+                                <td class="border">RCTI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                     <br>
                     <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
