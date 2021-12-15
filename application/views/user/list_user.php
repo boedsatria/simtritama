@@ -132,7 +132,7 @@
                         <div class="progress-bar w-1/4 bg-theme-1" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
-                <a href="<?= base_url() . 'user/messages_to/' . $u['id_user'] ?>" class="btn btn-primary py-1 px-2 mr-2">Message</a>
+                <!-- <a href="<?= base_url() . 'user/messages_to/' . $u['id_user'] ?>" class="btn btn-primary py-1 px-2 mr-2">Message</a> -->
                 <a href="<?= base_url() . 'masterdata/detail_user/' . $u['id_user'] ?>" class="btn btn-outline-secondary py-1 px-2">Profile</a>
                 <a data-toggle="modal" data-target="#delete-modal-<?= $u['id_user'] ?>" class="btn btn-danger py-1 px-2 float-right">Delete</a>
                 <!-- BEGIN: Modal DELETE -->
