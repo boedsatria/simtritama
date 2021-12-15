@@ -382,6 +382,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $new_name = $data['upload_data']['file_name'];
     return $new_name;
   }
+
+  function upload_pdf($slug, $inputname)
+  {
+    $CI =&get_instance();
+    $CI->load->library(['upload', 'image_lib']); // load library 
+
+    $img_name = microtime(true)*10000;
+
+    $data = array();
+    $config['upload_path']          = './uploads/files/';
+    $config['file_name']            = $slug.'_'.$img_name;
+    $config['allowed_types']        = '*';
+    $config['max_size']             = 0;
+
+    $CI->upload->initialize($config);
+    
+    if ( ! $CI->upload->do_upload($inputname))
+    {
+        $error = array('error' => $CI->upload->display_errors());
+    }
+    else
+    {
+        $data = array('upload_data' => $CI->upload->data());
+    }
+    // print_r($data);die;
+
+    $new_name = $data['upload_data']['file_name'];
+    return $new_name;
+  }
+
+
   function del_files($images, $path)
   { 
     unlink('./uploads/'.$path.'/'.$images);
