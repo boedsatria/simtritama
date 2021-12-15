@@ -189,16 +189,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     return $data[$field];
   }
 
-  function get_data_pegawai($nama, $field)
+  function get_produksi($parent)
   {
     $ci = &get_instance();
-    $ci->db->select($field);
-    $ci->db->from("user");
-    $ci->db->where("nama_user", $nama);
+    $ci->db->from("project_produksi");
+    $ci->db->where("parent_pp", $parent);
     $data = $ci->db->get();
     // print_r($ci->db->last_query());die;
-    $data = $data->row_array();
-    return $data[$field];
+    $data = $data->result_array();
+    return $data;
   }
 
   function get_images_laporan($id)

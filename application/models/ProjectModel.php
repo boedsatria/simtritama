@@ -39,6 +39,13 @@ class ProjectModel extends CI_Model
     $data = $this->db->get()->result_array();
     return $data;
   }
+  function get_cat_pla($id)
+  {
+    $this->db->from('project_produksi');
+    $this->db->where('parent_pp', $id);
+    $data = $this->db->get()->result_array();
+    return $data;
+  }
 
 
   function get_files($id, $field)

@@ -8,6 +8,7 @@ class Pic extends CI_Controller
 		parent::__construct();
 		  $this->load->model('ProjectModel');
 		  $this->load->model('ClientModel');
+		  $this->load->model('PenyelenggaraModel');
 	}
 
 	public function index()
@@ -317,7 +318,7 @@ class Pic extends CI_Controller
 		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail($id));
 		$data = array(
 			'v'			=> $query,
-			'pelaksana'	=> $this->ClientModel->get()->result_array()
+			'pelaksana'	=> $this->PenyelenggaraModel->get()->result_array()
 		);
 
 		$this->load->view('header');
@@ -334,7 +335,37 @@ class Pic extends CI_Controller
 		$data = array();
 		$data['id_project'] = $id;
 
-		$data['client_project'] 		= $_POST['client_project'];
+		$data['pelaksana_project'] 		= $_POST['pelaksana_project'];
+		// print_r($_POST);die;
+
+		$this->ProjectModel->update($data);
+
+		redirect(base_url() . 'pic/tambah_project_5/' . $id);
+
+	}
+	public function tambah_project_5($id = false)
+	{
+		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail($id));
+		$data = array(
+			'v'			=> $query,
+			// 'cat'		=> $this->ProjectModel->get_cat_pro()->result_array()
+		);
+
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('pic/tambah_project_header', $data);
+		$this->load->view('pic/tambah_project_5', $data);
+		$this->load->view('footer');
+	}
+
+	public function tambah_project_5_action()
+	{
+		$id = $_POST['id_project'];
+		
+		$data = array();
+		$data['id_project'] = $id;
+
+		$data['pelaksana_project'] 		= $_POST['pelaksana_project'];
 		// print_r($_POST);die;
 
 		$this->ProjectModel->update($data);
