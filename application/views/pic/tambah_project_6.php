@@ -22,7 +22,7 @@
             </div>
             <div class="col-span-12 sm:col-span-12">
                 <label class="form-label">Deskripsi</label>
-                <textarea type="text" class="form-control" name="desc_pm"><?= $v['desc_pm']; ?></textarea>
+                <textarea type="text" class="form-control" name="desc_pm"><?= $gp['desc_pm']; ?></textarea>
             </div>
 
             <div class="border-t border-gray-200 dark:border-dark-5 col-span-12"></div>
@@ -48,7 +48,7 @@
 
             <div class="col-span-12 flex items-center justify-center sm:justify-end mt-5">
                 <a href="<?= base_url().'pic/tambah_project_5/'.$v['id_project'] ?>" class="btn btn-secondary w-24">Previous</a>
-                <button type="submit" class="btn btn-primary w-24 ml-2">Next</a>
+                <button type="submit" class="btn btn-primary w-24 ml-2">FINISH</a>
             </div>
         </form>
     </div>

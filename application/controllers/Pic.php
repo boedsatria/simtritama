@@ -365,6 +365,7 @@ class Pic extends CI_Controller
 		$data = array();
 		$data['parent_pp'] = $id;
 		$data['cost_pp'] = str_replace('.', '', $_POST['cost_pp']);
+		$data['desc_pp'] = $_POST['desc_pp'];
 
 		$data['judul_pp'] 		= $_POST['judul_pp'];
 		// print_r($_POST);die;
@@ -395,14 +396,15 @@ class Pic extends CI_Controller
 		
 		$data = array();
 		$data['parent_pm'] = $id;
-		$data['cost_pm'] = str_replace('.', '', $_POST['cost_pm']);
+		$data['desc_pm'] = str_replace('.', '', $_POST['cost_pm']);
+		$data['desc_pm'] = $_POST['desc_pm'];
 
 		$data['judul_pm'] 		= $_POST['judul_pm'];
 		// print_r($_POST);die;
 
 		$this->ProjectModel->update_pla($data);
 
-		redirect(base_url() . 'pic/tambah_project/' . $id);
+		redirect(base_url() . 'pic/list_project/');
 
 	}
 
