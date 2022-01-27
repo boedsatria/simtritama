@@ -41,7 +41,7 @@
                 <label class="form-label">Deskripsi</label>
                 <textarea type="text" class="form-control" name="desc_pm"></textarea>
             </div>
-            <div class="col-span-12 sm:col-span-12">
+            <div class="col-span-12 sm:col-span-12" hidden>
                 <button type="submit" class="btn btn-success">Tambah</button>
             </div>
 
