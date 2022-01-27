@@ -160,7 +160,7 @@
                 <th class="whitespace-nowrap">Nama Penyelenggara</th>
                 <th class="">Alamat</th>
                 <th class="whitespace-nowrap">KBLI</th>
-                <th class="">Aksi</th>
+                <th class="" <?= ($this->session->userdata('userlogin')['role_user'] <= 2 ? "" : "hidden"); ?>>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -173,7 +173,7 @@
                 <td class="border-b dark:border-dark-5"><?= $p['nama_penyelenggara']; ?></td>
                 <td class="border-b dark:border-dark-5 w-56"><?= $p['alamat_penyelenggara']; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $p['kbli_penyelenggara']; ?></td>
-                <td class="border-b dark:border-dark-5">
+                <td class="border-b dark:border-dark-5" <?= ($this->session->userdata('userlogin')['role_user'] <= 2 ? "" : "hidden"); ?>>
                     <a href="<?= base_url('masterdata/detail_penyelenggara/'.$p['id_penyelenggara']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
                     <a data-toggle="modal" data-target="#delete-modal-<?= $p['id_penyelenggara'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                     <!-- BEGIN: Modal DELETE -->

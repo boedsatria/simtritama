@@ -255,7 +255,7 @@
                 <th class="whitespace-nowrap">Type Media</th>
                 <th class="whitespace-nowrap">Wilayah</th>
                 <th class="">Alamat</th>
-                <th class="">Aksi</th>
+                <th class="" <?= ($this->session->userdata('userlogin')['role_user'] <= 2 ? "" : "hidden"); ?>>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -269,7 +269,7 @@
                 <td class="border-b dark:border-dark-5"><?= $m['nama_media_type']; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $m['nama_wilayah']; ?></td>
                 <td class="border-b dark:border-dark-5 w-56"><?= $m['alamat_media']; ?></td>
-                <td class="border-b dark:border-dark-5 w-40">
+                <td class="border-b dark:border-dark-5 w-40" <?= ($this->session->userdata('userlogin')['role_user'] <= 2 ? "" : "hidden"); ?>>
                     <a href="<?= base_url('masterdata/detail_media/'.$m['id_media']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
                     <a data-toggle="modal" data-target="#delete-modal-<?= $m['id_media'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                     <!-- BEGIN: Modal DELETE -->
