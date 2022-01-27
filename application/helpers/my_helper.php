@@ -199,6 +199,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data = $data->result_array();
     return $data;
   }
+  function get_placement($parent)
+  {
+    $ci = &get_instance();
+    $ci->db->from("project_placement");
+    $ci->db->where("parent_pm", $parent);
+    $data = $ci->db->get();
+    // print_r($ci->db->last_query());die;
+    $data = $data->result_array();
+    return $data;
+  }
 
   function get_images_laporan($id)
   {
