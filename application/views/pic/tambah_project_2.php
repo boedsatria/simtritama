@@ -10,14 +10,15 @@
                 <input id="input-wizard-3" type="text" value="<?= $v['no_project']; ?>" class="form-control" name="no_project" readonly>
             </div>
 
-            <div class="col-span-12 sm:col-span-12">
+            <div class="col-span-6 sm:col-span-12">
                 <label class="form-label">Mulai - Selesai Tanggal</label>
-                <input name="mulai_selesai" data-daterange="true" class="datepicker form-control" value="<?= date('Y-m-d', strtotime($v['mulai_project'])).' - '.date('Y-m-d', strtotime($v['selesai_project'])); ?>">
+                <input id="durasi_pro" name="mulai_selesai" data-daterange="true" class="datepicker form-control" value="<?= ($v['mulai_project'] == "0000-00-00 00:00:00" ? date("Y-m-d") : date('Y-m-d', strtotime($v['mulai_project']))).' - '. ($v['mulai_project'] == "0000-00-00 00:00:00" ? date("Y-m-d") : date('Y-m-d', strtotime($v['selesai_project']))); ?>">
             </div>
 
-            <div class="col-span-6 sm:col-span-12">
+            <div class="col-span-6 sm:col-span-12" hidden>
+                
                 <label class="form-label">Lama Kegiatan</label>
-                <input type="text" value="<?= ($v['durasi_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['durasi_project']))); ?>" class="form-control" placeholder="Lama Kegiatan" name="durasi_project">
+                <input id="lama_kegiatan" type="text" value="<?= ($v['durasi_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['durasi_project']))); ?>" class="form-control" placeholder="Lama Kegiatan" name="durasi_project">
             </div>
             <div class="col-span-6 sm:col-span-12">
                 <label class="form-label">Tanggal Pencairan</label>
@@ -31,11 +32,11 @@
 
             <div class="col-span-6 sm:col-span-12">
                 <label class="form-label">Nilai Project</label>
-                <input type="text" value="<?= ($v['nilai_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['nilai_project']))); ?>" class="form-control" placeholder="Nilai Project" name="nilai_project">
+                <input id="nilai_project" type="text" value="<?= ($v['nilai_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['nilai_project']))); ?>" class="form-control" placeholder="Nilai Project" name="nilai_project">
             </div>
             <div class="col-span-6 sm:col-span-12">
                 <label class="form-label">Nilai SP2D</label>
-                <input type="text" value="<?= ($v['sp2d_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['sp2d_project']))); ?>" class="form-control" placeholder="Nilai SP2D" name="sp2d_project">
+                <input id="nilai_sppd" type="text" value="<?= ($v['sp2d_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['sp2d_project']))); ?>" class="form-control" placeholder="Nilai SP2D" name="sp2d_project">
             </div>
             
 

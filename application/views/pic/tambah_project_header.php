@@ -10,7 +10,7 @@
     $btn2 = $btn3 = $btn4 = $btn5 = $btn6 = "text-gray-600 bg-gray-200 dark:bg-dark-1";
     $link2 = $link3 = $link4 = $link5 = $link6 = "";
     if($v['id_project'] > 0):
-        if($v['file_bap_project'] != ""):
+        if($v['nama_project'] != ""):
             $btn2 = "btn-primary";
             $text2 = "";
             $link2 = "href='".base_url().'pic/tambah_project_2/'.$v['id_project']."'";
@@ -54,23 +54,26 @@
     endif;
 
 
-    if($uri = "tambah_project_2"):
+    if($uri == "tambah_project_2"):
         $btn2 = "btn-primary";
         $text2 = "";
-    elseif($uri = "tambah_project_3"):
+    elseif($uri == "tambah_project_3"):
         $btn3 = "btn-primary";
         $text3 = "";
-    elseif($uri = "tambah_project_4"):
+    elseif($uri == "tambah_project_4"):
         $btn4 = "btn-primary";
         $text4 = "";
-    elseif($uri = "tambah_project_5"):
+    elseif($uri == "tambah_project_5"):
         $btn5 = "btn-primary";
         $text5 = "";
-    elseif($uri = "tambah_project_6"):
+    elseif($uri == "tambah_project_6"):
         $btn6 = "btn-primary";
         $text6 = "";
     endif;
+
+    print_r($uri);
 ?>
+
 <!-- BEGIN: Wizard Layout -->
 <div class="box py-10 sm:py-10 mt-5">
     <div class="wizard flex flex-col lg:flex-row justify-center px-5 sm:px-20">

@@ -67,7 +67,7 @@
                 <td class="border-b dark:border-dark-5"><?= $p['nama_project']; ?></td>
                 <td class="border-b dark:border-dark-5 w-56"><?= $p['nama_client']; ?></td>
                 <td class="border-b dark:border-dark-5">
-                    <a href="<?= base_url('pic/detail_project/'.$p['id_project']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
+                    <a href="<?= base_url('pic/tambah_project/'.$p['id_project']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
                     <a data-toggle="modal" data-target="#delete-modal-<?= $p['id_project'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                     <!-- BEGIN: Modal DELETE -->
                     <div id="delete-modal-<?= $p['id_project'] ?>" class="modal" tabindex="-1" aria-hidden="true">
