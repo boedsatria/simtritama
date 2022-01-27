@@ -363,12 +363,13 @@ class Pic extends CI_Controller
 		$id = $_POST['parent_pp'];
 		
 		$data = array();
-		$data['id_project'] = $id;
+		$data['parent_pp'] = $id;
+		$data['cost_pp'] = str_replace('.', '', $_POST['cost_pp']);;
 
-		$data['pelaksana_project'] 		= $_POST['pelaksana_project'];
+		$data['judul_pp'] 		= $_POST['judul_pp'];
 		// print_r($_POST);die;
 
-		$this->ProjectModel->update($data);
+		$this->ProjectModel->update_pro($data);
 
 		redirect(base_url() . 'pic/tambah_project_6/' . $id);
 

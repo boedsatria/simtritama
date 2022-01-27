@@ -60,6 +60,11 @@ class ProjectModel extends CI_Model
     $this->db->insert('project', $data);
     return $this->db->insert_id();
   }
+  function update_pro($data)
+  {
+    $this->db->insert('project_produksi', $data);
+    return $this->db->insert_id();
+  }
 
   function update($data)
   {

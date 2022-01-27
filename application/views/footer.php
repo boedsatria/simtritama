@@ -12,6 +12,7 @@
         <script type="text/javascript">
             var element = document.getElementById("htmls");
             var nilai_project = document.getElementById("nilai_project");
+            var nilai_pro = document.getElementById("nilai_pro");
             var durasi_pro = document.getElementById("durasi_pro");
             var lama_kegiatan = document.getElementById("lama_kegiatan");
             var nilai_sppd = document.getElementById("nilai_sppd");
@@ -31,10 +32,13 @@
             }
 
 
-            durasi_pro.addEventListener("change",function(event){
-                alert(this.value);
-                lama_kegiatan.value = this.value;
-            });
+            // durasi_pro.addEventListener("change",function(event){
+            //     alert(this.value);
+            //     lama_kegiatan.value = this.value;
+            // });
+
+
+
 
 
             nilai_project.addEventListener("keydown",function(event){

@@ -17,12 +17,12 @@
                 <input type="text" value="<?= $gp['judul_pp']; ?>" class="form-control" name="judul_pp">
             </div>
             <div class="col-span-6 sm:col-span-12">
-                <label class="form-label">Nilai Kontrak</label>
-                <input type="text" value="<?= number_format($gp['cost_pp'], 0); ?>" class="form-control" name="cost_pp">
+                <label class="form-label">Anggaran Produksi</label>
+                <input id="nilai_project" type="text" value="<?= number_format($gp['cost_pp'], 0); ?>" class="form-control" name="cost_pp">
             </div>
             <div class="col-span-12 sm:col-span-12">
                 <label class="form-label">Deskripsi</label>
-                <textarea type="text" class="form-control" name="desc_pp"><?= $v['desc_pp']; ?></textarea>
+                <textarea type="text" class="form-control" name="desc_pp"><?= $gp['desc_pp']; ?></textarea>
             </div>
 
             <div class="border-t border-gray-200 dark:border-dark-5 col-span-12"></div>
@@ -34,8 +34,8 @@
                 <input type="text" class="form-control" name="judul_pp">
             </div>
             <div class="col-span-6 sm:col-span-12">
-                <label class="form-label">Nilai Kontrak</label>
-                <input type="text" class="form-control" name="cost_pp">
+                <label class="form-label">Anggaran Produksi</label>
+                <input id="nilai_project" type="text" class="form-control" name="cost_pp">
             </div>
             <div class="col-span-12 sm:col-span-12">
                 <label class="form-label">Deskripsi</label>
