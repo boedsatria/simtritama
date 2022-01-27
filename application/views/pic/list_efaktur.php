@@ -1,7 +1,7 @@
 <!-- BEGIN : konten -->
 <div class="flex flex-col sm:flex-row items-center my-5">
     <h2 class="text-lg font-medium mr-auto">
-        DATABASE PROJECT
+        E FAKTUR PROJECT
     </h2>
     <div class="w-full sm:w-auto flex">
         <div class="text-center mr-2"> 
@@ -13,7 +13,7 @@
 <!-- BEGIN: filter -->
 <div class="box p-5 mt-5">
     <div class="flex flex-col sm:items-end xl:items-start">
-        <form class="sm:flex w-full" action="<?= base_url(); ?>pic/list_project/">
+        <form class="sm:flex w-full" action="<?= base_url(); ?>pic/e_faktur/">
 
             <?php if(isset($_GET['size'])): ?>
                 <input name="size" value="<?= $_GET['size'] ?>" type="hidden">
@@ -67,26 +67,7 @@
                 <td class="border-b dark:border-dark-5"><?= $p['nama_project']; ?></td>
                 <td class="border-b dark:border-dark-5 w-56"><?= $p['nama_client']; ?></td>
                 <td class="border-b dark:border-dark-5">
-                    <a href="<?= base_url('pic/tambah_project/'.$p['id_project']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
-                    <a data-toggle="modal" data-target="#delete-modal-<?= $p['id_project'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
-                    <!-- BEGIN: Modal DELETE -->
-                    <div id="delete-modal-<?= $p['id_project'] ?>" class="modal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-body p-0">
-                                    <div class="p-5 text-center"> 
-                                        <i data-feather="x-circle" class="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                                        <div class="text-3xl mt-5">Are you sure?</div>
-                                        <div class="text-gray-600 mt-2">Do you really want to delete these records? <br>This process cannot be undone.</div>
-                                    </div>
-                                    <div class="px-5 pb-8 text-center"> 
-                                        <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Cancel</button> 
-                                        <a href="<?= base_url() . 'pic/delete_project/' . $p['id_project'] ?>" class="btn btn-danger w-24">Delete</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- END: Modal DELETE -->
+                    <a href="<?= base_url('pic/efaktur_project/'.$p['id_project']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">E Faktur </a>
                 </td>
             </tr>
             <?php endforeach; ?>
