@@ -257,7 +257,7 @@
                 <td class="border-b dark:border-dark-5"><?= $c['nama_client']; ?></td>
                 <td class="border-b dark:border-dark-5 w-56"><?= $c['alamat_client']; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $c['pic_client']; ?></td>
-                <td class="border-b dark:border-dark-5">
+                <td class="border-b dark:border-dark-5" <?= ($this->session->userdata('userlogin')['role_user'] <= 2 ? "" : "hidden"); ?>>
                     <a href="<?= base_url('masterdata/detail_client/'.$c['id_client']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Detail </a>
                     <a data-toggle="modal" data-target="#delete-modal-<?= $c['id_client'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                     <!-- BEGIN: Modal DELETE -->
