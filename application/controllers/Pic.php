@@ -180,8 +180,8 @@ class Pic extends CI_Controller
 		$data['durasi_project'] 		= $_POST['durasi_project'];
 		$data['mulai_project'] 			= $mulai;
 		$data['selesai_project'] 		= $selesai;
-		$data['nilai_project'] 			= $_POST['nilai_project'];
-		$data['sp2d_project'] 			= $_POST['sp2d_project'];
+		$data['nilai_project'] 			= str_replace('.', '', $_POST['nilai_project']);
+		$data['sp2d_project'] 			= str_replace(',', '.', str_replace('.', '', $_POST['sp2d_project']));
 		$data['tgl_pencairan_project'] 	= date('Y-m-d', strtotime($_POST['tgl_pencairan_project']));
 
 
