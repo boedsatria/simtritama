@@ -360,7 +360,7 @@ class Pic extends CI_Controller
 
 	public function tambah_project_5_action()
 	{
-		$id = $_POST['id_project'];
+		$id = $_POST['parent_pp'];
 		
 		$data = array();
 		$data['id_project'] = $id;
@@ -370,7 +370,37 @@ class Pic extends CI_Controller
 
 		$this->ProjectModel->update($data);
 
-		redirect(base_url() . 'pic/tambah_project_5/' . $id);
+		redirect(base_url() . 'pic/tambah_project_6/' . $id);
+
+	}
+	public function tambah_project_6($id = false)
+	{
+		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail($id));
+		$data = array(
+			'v'			=> $query,
+			// 'cat'		=> $this->ProjectModel->get_cat_pro()->result_array()
+		);
+
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('pic/tambah_project_header', $data);
+		$this->load->view('pic/tambah_project_6', $data);
+		$this->load->view('footer');
+	}
+
+	public function tambah_project_6_action()
+	{
+		$id = $_POST['parent_pp'];
+		
+		$data = array();
+		$data['id_project'] = $id;
+
+		$data['pelaksana_project'] 		= $_POST['pelaksana_project'];
+		// print_r($_POST);die;
+
+		$this->ProjectModel->update($data);
+
+		redirect(base_url() . 'pic/tambah_project_6/' . $id);
 
 	}
 
