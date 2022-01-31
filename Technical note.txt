@@ -309,3 +309,5 @@ Nilai Beli
 Nilai Penyusutan per tahun
 Nilai Saat Ini
 Tahun akhir nilai aset (kapan asetnya zero)
+
+januari 31 2022, herupurwantobdg reconnect from win 10 rog
