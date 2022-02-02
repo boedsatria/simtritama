@@ -11,6 +11,7 @@
         <script src="<?= base_url(); ?>dist/js/app.js"></script>
         <script type="text/javascript">
             var element = document.getElementById("htmls");
+            var kat_pm = document.getElementById("kat_pm");
             var nilai_project = document.getElementById("nilai_project");
             var nilai_pro = document.getElementById("nilai_pro");
             var durasi_pro = document.getElementById("durasi_pro");
@@ -23,6 +24,16 @@
                 if(themes == ""){
                     themes = 'light';
                 }
+
+                var urls = `<?= base_url(); ?>user/themes_user/${themes}/<?= $this->session->userdata('userlogin')['id_user'] ?>`;
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("GET", urls);
+                xhttp.send(); 
+                
+            }
+
+            function kategori_pm() {
+                console.log(kat_pm.value);
 
                 var urls = `<?= base_url(); ?>user/themes_user/${themes}/<?= $this->session->userdata('userlogin')['id_user'] ?>`;
                 const xhttp = new XMLHttpRequest();

@@ -71,7 +71,7 @@
         $text6 = "";
     endif;
 
-    print_r($uri);
+    // print_r($uri);
 ?>
 
 <!-- BEGIN: Wizard Layout -->
@@ -79,7 +79,7 @@
     <div class="wizard flex flex-col lg:flex-row justify-center px-5 sm:px-20">
         <a <?= ($v['id_project'] == 0 ? "" : "href='".base_url().'pic/tambah_project/'.$v['id_project']."'") ?> class="lg:text-center flex items-center lg:block flex-1 z-10">
             <button class="w-10 h-10 rounded-full btn btn-primary">1</button>
-            <div class="lg:w-32 font-medium text-base lg:mt-3 ml-3 lg:mx-auto">Judul Kegiatan</div>
+            <div class="lg:w-32 text-base lg:mt-3 ml-3 lg:mx-auto">Judul Kegiatan</div>
         </a>
         <a <?= $link2 ?> class="lg:text-center flex items-center mt-5 lg:mt-0 lg:block flex-1 z-10">
             <button class="w-10 h-10 rounded-full btn <?= $btn2 ?>">2</button>

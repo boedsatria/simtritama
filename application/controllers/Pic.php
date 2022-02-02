@@ -348,7 +348,7 @@ class Pic extends CI_Controller
 		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail($id));
 		$data = array(
 			'v'			=> $query,
-			// 'cat'		=> $this->ProjectModel->get_cat_pro()->result_array()
+			'cat'		=> $this->ProjectModel->get_cat_pro()
 		);
 
 		$this->load->view('header');
@@ -358,29 +358,104 @@ class Pic extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function tambah_project_5_action()
+	// public function tambah_project_5_action()
+	// {
+	// 	$id = $_POST['parent_pp'];
+		
+	// 	$data = array();
+	// 	$data['parent_pp'] = $id;
+	// 	$data['cost_pp'] = str_replace('.', '', $_POST['cost_pp']);
+	// 	$data['desc_pp'] = $_POST['desc_pp'];
+
+	// 	$data['judul_pp'] 		= $_POST['judul_pp'];
+	// 	// print_r($_POST);die;
+
+	// 	$this->ProjectModel->update_pro($data);
+
+	// 	redirect(base_url() . 'pic/tambah_project_6/' . $id);
+
+	// }
+	public function tambah_project_produksi_action()
 	{
 		$id = $_POST['parent_pp'];
 		
 		$data = array();
 		$data['parent_pp'] = $id;
-		$data['cost_pp'] = str_replace('.', '', $_POST['cost_pp']);
+
+		$deadline = strtotime($_POST['deadline_pp']);
+		$deadline = date('Y-m-d',$deadline);
+		
+		$data['deadline_pp'] = $deadline;
 		$data['desc_pp'] = $_POST['desc_pp'];
+		$data['kategori_pp'] = $_POST['kategori_pp'];
+
+		$data['judul_pp'] 		= $_POST['judul_pp'];
+		// print_r($_POST);die;
+
+		$this->ProjectModel->insert_pro($data);
+
+		if($_POST['jenis_project'] == 1):
+			redirect(base_url() . 'pic/list_project/');
+		else:
+			redirect(base_url() . 'pic/tambah_project_5/' . $id);
+		endif;
+
+	}
+
+	public function edit_pp($id = false)
+	{
+		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail_pp($id));
+		$data = array(
+			'gp'			=> $query,
+			'cat'		=> $this->ProjectModel->get_cat_pro()
+		);
+
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		// $this->load->view('pic/tambah_project_header', $data);
+		$this->load->view('pic/edit_pp', $data);
+		$this->load->view('footer');
+	}
+	public function edit_pp_action()
+	{
+		$id = $_POST['parent_pp'];
+		
+		$data = array();
+		$data['parent_pp'] = $id;
+		$data['id_pp'] = $_POST['id_pp'];
+
+		$deadline = strtotime($_POST['deadline_pp']);
+		$deadline = date('Y-m-d',$deadline);
+		
+		$data['deadline_pp'] = $deadline;
+		$data['desc_pp'] = $_POST['desc_pp'];
+		$data['kategori_pp'] = $_POST['kategori_pp'];
 
 		$data['judul_pp'] 		= $_POST['judul_pp'];
 		// print_r($_POST);die;
 
 		$this->ProjectModel->update_pro($data);
 
-		redirect(base_url() . 'pic/tambah_project_6/' . $id);
+		redirect(base_url() . 'pic/tambah_project_5/' . $id);
 
 	}
+
+
+	public function delete_pp($id, $parent)
+	{
+		$this->ProjectModel->delete_pp($id);
+		redirect(base_url() . 'pic/tambah_project_5/' . $parent);
+	}
+
+
+
+
 	public function tambah_project_6($id = false)
 	{
 		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail($id));
 		$data = array(
 			'v'			=> $query,
-			// 'cat'		=> $this->ProjectModel->get_cat_pro()->result_array()
+			'cat'		=> $this->ProjectModel->get_cat_pro()
 		);
 
 		$this->load->view('header');
@@ -425,7 +500,7 @@ class Pic extends CI_Controller
 		$offset = ($this->uri->segment(3) ? $this->uri->segment(3) : 0);
 		if($limit > $offset) $offset = 0;
 
-		$config['base_url'] = base_url('pic/list_project/');
+		$config['base_url'] = base_url('pic/e_faktur/');
 		$config['reuse_query_string'] = true;
 		$config['total_rows'] = $this->ProjectModel->get($jenis, $search)->num_rows();
 		$config['per_page'] = $limit;
@@ -463,11 +538,7 @@ class Pic extends CI_Controller
 		$this->load->view('sidebar');
 		$this->load->view('pic/list_efaktur', $data);
 		$this->load->view('footer');
-	
-		// $this->load->view('header');
-		// $this->load->view('sidebar');
-		// $this->load->view('pic/e_faktur');
-		// $this->load->view('footer');
+
 	}
 
 	public function efaktur_project($id = false)

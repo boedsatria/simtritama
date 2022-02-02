@@ -35,6 +35,7 @@ class ProjectModel extends CI_Model
   function get_produksi($id)
   {
     $this->db->from('project_produksi');
+    $this->db->join('produksi_category', 'id_pc = kategori_pp', 'LEFT');
     $this->db->where('parent_pp', $id);
     $data = $this->db->get()->result_array();
     return $data;
@@ -46,7 +47,20 @@ class ProjectModel extends CI_Model
     $data = $this->db->get()->result_array();
     return $data;
   }
+  function get_cat_pro()
+  {
+    $this->db->from('produksi_category');
+    $data = $this->db->get()->result_array();
+    return $data;
+  }
 
+  function get_detail_pp($id)
+  {
+    $this->db->from('project_produksi');
+    $this->db->where('id_pp', $id);
+    $data = $this->db->get()->row_array();
+    return $data;
+  }
 
   function get_files($id, $field)
   {
@@ -60,10 +74,15 @@ class ProjectModel extends CI_Model
     $this->db->insert('project', $data);
     return $this->db->insert_id();
   }
-  function update_pro($data)
+  function insert_pro($data)
   {
     $this->db->insert('project_produksi', $data);
     return $this->db->insert_id();
+  }
+  function update_pro($data)
+  {
+    $this->db->where('id_pp', $data['id_pp']);
+    $this->db->update('project_produksi', $data);
   }
   function update_pla($data)
   {
@@ -81,5 +100,10 @@ class ProjectModel extends CI_Model
   {
     $this->db->where('id_project', $id);
     $this->db->delete('project');
+  }
+  function delete_pp($id)
+  {
+    $this->db->where('id_pp', $id);
+    $this->db->delete('project_produksi');
   }
 }
