@@ -30,19 +30,19 @@
             <?php endforeach; ?>
 
             <div class="col-span-6 sm:col-span-12">
-                <label class="form-label">Judul Produksi</label>
+                <label class="form-label">Judul Produksi (Judul Versi yang akan diproduksi)</label>
                 <input type="text" class="form-control" name="judul_pp">
             </div>
             <div class="col-span-6 sm:col-span-12">
-                <label class="form-label">Anggaran Produksi</label>
+                <label class="form-label">Anggaran Produksi (optional)</label>
                 <input id="nilai_project" type="text" class="form-control" name="cost_pp">
             </div>
             <div class="col-span-12 sm:col-span-12">
-                <label class="form-label">Deskripsi</label>
+                <label class="form-label">Deskripsi(Penjelasan singkat tentang versi yang akan diproduksi)</label>
                 <textarea type="text" class="form-control" name="desc_pp"></textarea>
             </div>
             <div class="col-span-12 sm:col-span-12" hidden>
-                <button type="submit" class="btn btn-success">Tambah</button>
+                <button type="submit" class="btn btn-success">Tambah Versi</button>
             </div>
 
 
