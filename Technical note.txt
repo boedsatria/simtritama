@@ -311,3 +311,34 @@ Nilai Saat Ini
 Tahun akhir nilai aset (kapan asetnya zero)
 
 januari 31 2022, herupurwantobdg reconnect from win 10 rog
+
+[8:42 PM, 1/29/2022] Heru Purwanto Satria Media Teknologi: Note 1 :
+Role user 
+Super Admin = All access
+PIC = C.R.U.D Sesuai jobdesk masing², gabisa akses master data (read only)
+[8:47 PM, 1/29/2022] Heru Purwanto Satria Media Teknologi: Note 2 :
+Generate E Faktur (faktur keluar) : 
+Input Nama Pemilik rekening, Nama Bank, No.rekening optional
+E faktur masuk pindah ke finance
+Keterangan pajak PPN jadi PPN + PPH (ditampilan ui nya aja diupdate)
+Nilai DPP dan SP2D Ditampilkan
+
+[8:47 PM, 1/29/2022] Heru Purwanto Satria Media Teknologi: Note 3 :
+File upload & validasi laporan take out aja (fitur PIC)
+
+[8:49 PM, 1/29/2022] Heru Purwanto Satria Media Teknologi: Note 4 :
+Nomor & tanggal SPK, SPMK = mandatori
+
+[8:56 PM, 1/29/2022] Heru Purwanto Satria Media Teknologi: Note 5 :
+Media order, 
+Dimulai dari cari ringkos, atau dari project list, ada menu untuk nambah order produksi dan order placement, jadi tabel,
+Anggaran produksi takeout aja atau tetep ada tp gak mandatori
+Media order placement data yg di input :
+Nomor versi
+Judul versi
+Jenis media
+Durasi 
+Jumlah spot tayang
+Tanggal tayang
+Pada saat generate media order otomatis cc ke Finance & div placement/produksi (notif)
+Function button print bukti bayar takeout
