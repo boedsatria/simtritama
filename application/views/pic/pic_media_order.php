@@ -43,27 +43,21 @@
             <div class="p-5">
                 PERSEMPIT PENCARIAN (Permudah pencarian dengan mempersempit parameter)               
                 <!-- BEGIN: Nested Select -->
-                <div class="mt-3"> <label>KEMENTERIAN</label>
+                <div class="mt-3"> <label>NAMA CLIENT</label>
                     <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
                                 <option value="1">Kementerian 1</option>
                                 <option value="2">Kementerian 2</option>
                                 <option value="3">Kementerian 3</option>
                         </select> </div>
                 </div>
-                <div class="mt-3"> <label>DIREKTORAT JENDERAL</label>
+                <div class="mt-3"> <label>JUDUL PEKERJAAN</label>
                     <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
                                 <option value="1">Dirjen 1</option>
                                 <option value="2">Dirjen 2</option>
                                 <option value="3">Dirjen 3</option>
                         </select> </div>
                 </div>
-                <div class="mt-3"> <label>DIREKTORAT</label>
-                    <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
-                                <option value="1">Direktorat 1</option>
-                                <option value="2">Direktorat 2</option>
-                                <option value="3">Direktorat 3</option>
-                        </select> </div>
-                </div>
+
                 <!-- END: Nested Select -->
             </div>
         </div>

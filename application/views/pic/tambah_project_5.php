@@ -6,7 +6,7 @@
                     <input type="hidden" name="parent_pp" value="<?= $v['id_project']; ?>">
                 </div>
                 <div class="col-span-6 sm:col-span-12">
-                    <label for="input-wizard-3" class="form-label">Nomer Kegiatan</label>
+                    <label for="input-wizard-3" class="form-label">Nomer RINGKOS Kegiatan</label>
                     <input id="input-wizard-3" type="text" value="<?= $v['no_project']; ?>" class="form-control" readonly>
                 </div>
             </div>
