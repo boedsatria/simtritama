@@ -86,13 +86,13 @@
                         <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>pic/tambah_project_placement_action">
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left grid grid-cols-12 gap-6">
-                                    <div class="col-span-6 sm:col-span-12">
+                                    <div class="col-span-12">
                                         <label class="form-label">Judul Versi</label>
                                         <input type="text" class="form-control" name="judul_pm" required>
                                         <input type="hidden" name="parent_pm" value="<?= $v['id_project']; ?>">
                                         <input type="hidden" name="jenis_pm" value="<?= $v['jenis_project']; ?>">
                                     </div>
-                                    <div class="col-span-12">
+                                    <div class="col-span-6">
                                         <label class="form-label">Kategori</label>
                                         <select class="form-select" name="kategori_pm">
                                             <?php foreach($cat as $cp): ?>
@@ -100,7 +100,7 @@
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <div class="col-span-12">
+                                    <div class="col-span-6">
                                         <label class="form-label">Type</label>
                                         <select class="form-select" name="jenis_pm">
                                             <?php foreach($type as $tp): ?>
