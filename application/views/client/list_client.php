@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Nama Bank</label>
-                                    <input name="bank_client" type="text" class="form-control" placeholder="Bank Client" required>
+                                    <input name="bank_client" type="text" class="form-control" placeholder="Bank Client">
                                 </div>
                                 <div class="input-form col-span-4 mt-1">
                                     <label class="form-label">Telepon</label>
