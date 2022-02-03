@@ -474,18 +474,21 @@ class Pic extends CI_Controller
 		$data = array();
 		$data['parent_pm'] = $id;
 
-		$data['judul_pp'] 		= $_POST['judul_pp'];
-		$data['kategori_pp'] 	= $_POST['kategori_pp'];
+		$data['judul_pm'] 		= $_POST['judul_pm'];
+		$data['kategori_pm'] 	= $_POST['kategori_pm'];
+		$data['jenis_pm'] 		= $_POST['jenis_pm'];
+		$data['wilayah_pm'] 	= $_POST['media_pm'];
+		$data['cost_pm'] 		= str_replace('.', '', $_POST['cost_pm']);
 
-		$data['desc_pp'] = $_POST['desc_pp'];
+		$data['desc_pm'] = $_POST['desc_pm'];
 		// print_r($_POST);die;
 
-		$this->ProjectModel->insert_pro($data);
+		$this->ProjectModel->insert_pla($data);
 
 		if($_POST['jenis_project'] == 1):
 			redirect(base_url() . 'pic/list_project/');
 		else:
-			redirect(base_url() . 'pic/tambah_project_5/' . $id);
+			redirect(base_url() . 'pic/tambah_project_6/' . $id);
 		endif;
 
 	}

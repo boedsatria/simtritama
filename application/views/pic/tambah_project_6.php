@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="col-span-12">
                                         <label class="form-label">Cost</label>
-                                        <input type="text" class="form-control" name="cost_pm">
+                                        <input type="text" class="form-control" name="cost_pm" id="nilai_project">
                                     </div>
                                     <div class="col-span-12 sm:col-span-12">
                                         <label class="form-label">Deskripsi</label>
