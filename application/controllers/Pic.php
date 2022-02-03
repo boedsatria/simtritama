@@ -455,7 +455,9 @@ class Pic extends CI_Controller
 		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail($id));
 		$data = array(
 			'v'			=> $query,
-			'cat'		=> $this->ProjectModel->get_cat_pro()
+			'cat'		=> $this->ProjectModel->get_cat_pla(),
+			'type'		=> $this->ProjectModel->get_type_pla(),
+			'media'		=> $this->ProjectModel->get_media_pla()
 		);
 
 		$this->load->view('header');
@@ -465,21 +467,26 @@ class Pic extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function tambah_project_6_action()
+	public function tambah_project_placement_action()
 	{
-		$id = $_POST['parent_pp'];
+		$id = $_POST['parent_pm'];
 		
 		$data = array();
 		$data['parent_pm'] = $id;
-		$data['desc_pm'] = str_replace('.', '', $_POST['cost_pm']);
-		$data['desc_pm'] = $_POST['desc_pm'];
 
-		$data['judul_pm'] 		= $_POST['judul_pm'];
+		$data['judul_pp'] 		= $_POST['judul_pp'];
+		$data['kategori_pp'] 	= $_POST['kategori_pp'];
+
+		$data['desc_pp'] = $_POST['desc_pp'];
 		// print_r($_POST);die;
 
-		$this->ProjectModel->update_pla($data);
+		$this->ProjectModel->insert_pro($data);
 
-		redirect(base_url() . 'pic/list_project/');
+		if($_POST['jenis_project'] == 1):
+			redirect(base_url() . 'pic/list_project/');
+		else:
+			redirect(base_url() . 'pic/tambah_project_5/' . $id);
+		endif;
 
 	}
 

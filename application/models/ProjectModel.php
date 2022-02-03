@@ -40,10 +40,22 @@ class ProjectModel extends CI_Model
     $data = $this->db->get()->result_array();
     return $data;
   }
-  function get_cat_pla($id)
+  function get_cat_pla()
   {
-    $this->db->from('project_produksi');
-    $this->db->where('parent_pp', $id);
+    $this->db->from('media_category');
+    $data = $this->db->get()->result_array();
+    return $data;
+  }
+  function get_type_pla()
+  {
+    $this->db->from('media_type');
+    $data = $this->db->get()->result_array();
+    return $data;
+  }
+  function get_media_pla()
+  {
+    $this->db->from('media');
+    $this->db->join('wilayah', 'id_wilayah = wilayah_media', 'LEFT');
     $data = $this->db->get()->result_array();
     return $data;
   }

@@ -28,13 +28,14 @@
                     </thead>
                     <tbody>
                         <?php 
-                        if(count($v['placement']) == 0) echo '<tr><td colspan="5" align="center">No Data</td></tr>';
+                        if(count($v['placement']) == 0) echo '<tr><td colspan="9" align="center">No Data</td></tr>';
                         foreach($v['placement'] as $p): 
                         ?>
                         <tr class="intro-x">
                             <td class="border-b dark:border-dark-5"><?= $p['judul_pp']; ?></td>
-                            <td class="border-b dark:border-dark-5"><?= $p['nama_pc']; ?></td>
-                            <td class="border-b dark:border-dark-5"><?= tgl_indo($p['deadline_pp']); ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['nama_media_category']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['nama_media_type']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['deadline_pp']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['desc_pp']; ?></td>
                             <td class="border-b dark:border-dark-5">
                                 <a href="<?= base_url('pic/edit_pp/'.$p['id_pp']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Edit </a>
@@ -77,40 +78,51 @@
 
 
             <div id="button-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <a data-dismiss="modal" class="cursor-pointer"> 
                             <i data-feather="x" class="w-8 h-8 text-gray-500"></i> 
                         </a>
-                        <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>pic/tambah_project_produksi_action">
+                        <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>pic/tambah_project_placement_action">
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left grid grid-cols-12 gap-6">
                                     <div class="col-span-6 sm:col-span-12">
                                         <label class="form-label">Judul Versi</label>
-                                        <input type="text" class="form-control" name="judul_pp" required>
-                                        <input type="hidden" name="parent_pp" value="<?= $v['id_project']; ?>">
-                                        <input type="hidden" name="jenis_pp" value="<?= $v['jenis_project']; ?>">
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-12">
-                                        <label class="form-label">Tanggal Deadline</label>
-                                        <div class="relative ">
-                                            <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 text-gray-600 dark:bg-dark-1 dark:border-dark-4">
-                                                <i data-feather="calendar" class="w-4 h-4"></i>
-                                            </div>
-                                            <input type="text" value="" class="datepicker form-control pl-12" name="deadline_pp" data-single-mode="true">
-                                        </div>
+                                        <input type="text" class="form-control" name="judul_pm" required>
+                                        <input type="hidden" name="parent_pm" value="<?= $v['id_project']; ?>">
+                                        <input type="hidden" name="jenis_pm" value="<?= $v['jenis_project']; ?>">
                                     </div>
                                     <div class="col-span-12">
-                                        <label class="form-label">Jenis Produksi</label>
-                                        <select class="form-select" name="kategori_pp">
+                                        <label class="form-label">Kategori</label>
+                                        <select class="form-select" name="kategori_pm">
                                             <?php foreach($cat as $cp): ?>
-                                            <option value="<?= $cp['id_pc'] ?>"><?= $cp['nama_pc'] ?></option>
+                                            <option value="<?= $cp['id_media_category'] ?>"><?= $cp['nama_media_category'] ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
+                                    <div class="col-span-12">
+                                        <label class="form-label">Type</label>
+                                        <select class="form-select" name="jenis_pm">
+                                            <?php foreach($type as $tp): ?>
+                                            <option value="<?= $tp['id_media_type'] ?>"><?= $tp['nama_media_type'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-span-12">
+                                        <label class="form-label">Media</label>
+                                        <select class="form-select" name="media_pm">
+                                            <?php foreach($type as $tp): ?>
+                                            <option value="<?= $tp['id_media_type'] ?>"><?= $tp['nama_media_type'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-span-12">
+                                        <label class="form-label">Cost</label>
+                                        <input type="text" class="form-control" name="cost_pm">
+                                    </div>
                                     <div class="col-span-12 sm:col-span-12">
                                         <label class="form-label">Deskripsi</label>
-                                        <textarea type="text" class="form-control" name="desc_pp"></textarea>
+                                        <textarea type="text" class="form-control" name="desc_pm"></textarea>
                                     </div>
                                 </div>
                                 <div class="px-5 pb-8 text-center">
