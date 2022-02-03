@@ -29,12 +29,12 @@
                     </div>
                     <div class="mt-3">
                         <label for="regular-form-1" class="form-label">NOMOR N.P.W.P</label>
-                        <input id="regular-form-1" type="text" class="form-control" value="<?= $v['tgl_spk_project'] ?>" readonly>
+                        <input id="regular-form-1" type="text" class="form-control" value="<?= $v['npwp_client'] ?>" readonly>
                     </div>
                     <div class="mt-3">
                         <label for="regular-form-1" class="form-label con-span-4">TANGGAL PENYELESAIAN</label>
                         <div class="grid grid-cols-8 gap-2">
-                            <input type="text" class="form-control col-span-4" placeholder="Tanggal otomatis dari database" aria-label="default input inline 3">
+                            <input type="text" class="form-control col-span-4" value="<?= $v['npwp_client'] ?>" readonly>
                         </div>
                         <br>
                         <label for="regular-form-1" class="form-label con-span-4">NILAI KONTRAK</label>

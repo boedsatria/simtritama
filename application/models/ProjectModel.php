@@ -18,6 +18,8 @@ class ProjectModel extends CI_Model
   function get_detail($id)
   {
     $this->db->from('project');
+    $this->db->join('client', 'id_client = client_project', 'LEFT');
+    $this->db->join('penyelenggara', 'id_penyelenggara = pelaksana_project', 'LEFT');
     $this->db->where('id_project', $id);
     $data = $this->db->get()->row_array();
     $data['produksi'] = $this->get_produksi($data['id_project']);
