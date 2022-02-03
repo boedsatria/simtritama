@@ -72,8 +72,8 @@
 
 
             <div class="col-span-12 flex items-center justify-center sm:justify-end mt-5">
-                <a href="<?= base_url().'pic/tambah_project_4/'.$v['id_project'] ?>" class="btn btn-secondary w-24">Previous</a>
-                <a href="<?= base_url().'pic/tambah_project_6/'.$v['id_project'] ?>" class="btn btn-primary w-24 ml-2">Next</a>
+                <a href="<?= base_url().'pic/tambah_project_5/'.$v['id_project'] ?>" class="btn btn-secondary w-24">Previous</a>
+                <a href="<?= base_url().'pic/list_project/' ?>" class="btn btn-primary w-24 ml-2">Finish</a>
             </div>
 
 
