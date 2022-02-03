@@ -28,6 +28,9 @@ class ProjectModel extends CI_Model
   function get_placement($id)
   {
     $this->db->from('project_placement');
+    $this->db->join('media_category', 'id_media_category = kategory_pm', 'LEFT');
+    $this->db->join('media_type', 'id_media_type = jenis_pm', 'LEFT');
+    $this->db->join('media', 'id_media = wilayah_pm', 'LEFT');
     $this->db->where('parent_pm', $id);
     $data = $this->db->get()->result_array();
     return $data;

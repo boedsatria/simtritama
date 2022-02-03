@@ -475,7 +475,7 @@ class Pic extends CI_Controller
 		$data['parent_pm'] = $id;
 
 		$data['judul_pm'] 		= $_POST['judul_pm'];
-		$data['kategori_pm'] 	= $_POST['kategori_pm'];
+		$data['kategory_pm'] 	= $_POST['kategori_pm'];
 		$data['jenis_pm'] 		= $_POST['jenis_pm'];
 		$data['wilayah_pm'] 	= $_POST['media_pm'];
 		$data['cost_pm'] 		= str_replace('.', '', $_POST['cost_pm']);
