@@ -111,8 +111,8 @@
                                     <div class="col-span-12">
                                         <label class="form-label">Media</label>
                                         <select class="form-select" name="media_pm">
-                                            <?php foreach($type as $tp): ?>
-                                            <option value="<?= $tp['id_media_type'] ?>"><?= $tp['nama_media_type'] ?></option>
+                                            <?php foreach($media as $mp): ?>
+                                            <option value="<?= $mp['id_media'] ?>"><?= $mp['nama_media'] ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
