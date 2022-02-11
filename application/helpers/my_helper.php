@@ -480,7 +480,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   }
 
   function tgl_indo($tanggal){
-    if ($tanggal == '0000-00-00' || $tanggal == '') return ' '; 
+    if ($tanggal == '0000-00-00' || $tanggal == '' || $tanggal == '0000-00-00 00:00:00') return ' '; 
     $bulan = array (
         1 =>   'Januari',
         'Februari',
