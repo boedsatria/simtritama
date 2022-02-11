@@ -342,3 +342,19 @@ Jumlah spot tayang
 Tanggal tayang
 Pada saat generate media order otomatis cc ke Finance & div placement/produksi (notif)
 Function button print bukti bayar takeout
+
+
+google meet 11 02 2022:
+simtritama.satriacorp.id
+user : 5678
+password :1234
+You7:18 PM
+tambah masa tayang
+You7:21 PM
+tampilkan nama perusahaan penyelenggara
+You7:23 PM
+durasi tayang perspot
+You7:24 PM
+5,10,15,30,60,120
+Adinda Putri7:27 PM
+om yang type placement diganti position aja
