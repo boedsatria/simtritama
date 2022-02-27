@@ -3,7 +3,6 @@
             <div class="col-span-6 sm:col-span-12">
                     <label for="input-wizard-2" class="form-label">Judul Kegiatan</label>
                     <input id="input-wizard-2" type="text" value="<?= $v['nama_project']; ?>" class="form-control" placeholder="Judul Kegiatan" readonly>
-                    <input type="hidden" name="parent_pp" value="<?= $v['id_project']; ?>">
                 </div>
                 <div class="col-span-6 sm:col-span-12">
                     <label for="input-wizard-3" class="form-label">Nomer RINGKOS Kegiatan</label>
@@ -18,10 +17,8 @@
                             <th class="whitespace-nowrap">Judul</th>
                             <th class="whitespace-nowrap">Kategori</th>
                             <th class="whitespace-nowrap">Jenis</th>
-                            <th class="whitespace-nowrap">Wilayah</th>
-                            <th class="whitespace-nowrap">Alamat</th>
+                            <th class="whitespace-nowrap">Media</th>
                             <th class="whitespace-nowrap">Harga Tayang</th>
-                            <th class="whitespace-nowrap">Diskon</th>
                             <th class="whitespace-nowrap">Deskripsi</th>
                             <th class="">Aksi</th>
                         </tr>
@@ -32,16 +29,17 @@
                         foreach($v['placement'] as $p): 
                         ?>
                         <tr class="intro-x">
-                            <td class="border-b dark:border-dark-5"><?= $p['judul_pp']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['judul_pm']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_category']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_type']; ?></td>
-                            <td class="border-b dark:border-dark-5"><?= $p['deadline_pp']; ?></td>
-                            <td class="border-b dark:border-dark-5"><?= $p['desc_pp']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['nama_media']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['cost_pm']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['desc_pm']; ?></td>
                             <td class="border-b dark:border-dark-5">
-                                <a href="<?= base_url('pic/edit_pp/'.$p['id_pp']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Edit </a>
-                                <a data-toggle="modal" data-target="#delete-modal-<?= $p['id_pp'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
+                                <a href="<?= base_url('pic/edit_pm/'.$p['id_pm']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Edit </a>
+                                <a data-toggle="modal" data-target="#delete-modal-<?= $p['id_pm'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                                 <!-- BEGIN: Modal DELETE -->
-                                <div id="delete-modal-<?= $p['id_pp'] ?>" class="modal" tabindex="-1" aria-hidden="true">
+                                <div id="delete-modal-<?= $p['id_pm'] ?>" class="modal" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body p-0">
@@ -52,7 +50,7 @@
                                                 </div>
                                                 <div class="px-5 pb-8 text-center"> 
                                                     <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Cancel</button> 
-                                                    <a href="<?= base_url() . 'pic/delete_pp/' . $p['id_pp'].'/'.$p['parent_pp'] ?>" class="btn btn-danger w-24">Delete</a> 
+                                                    <a href="<?= base_url() . 'pic/delete_pm/' . $p['id_pm'].'/'.$p['parent_pm'] ?>" class="btn btn-danger w-24">Delete</a> 
                                                 </div>
                                             </div>
                                         </div>
@@ -72,8 +70,8 @@
 
 
             <div class="col-span-12 flex items-center justify-center sm:justify-end mt-5">
-                <a href="<?= base_url().'pic/tambah_project_4/'.$v['id_project'] ?>" class="btn btn-secondary w-24">Previous</a>
-                <a href="<?= base_url().'pic/tambah_project_6/'.$v['id_project'] ?>" class="btn btn-primary w-24 ml-2">Next</a>
+                <a href="<?= base_url().'pic/tambah_project_5/'.$v['id_project'] ?>" class="btn btn-secondary w-24">Previous</a>
+                <a href="<?= base_url().'pic/list_project/' ?>" class="btn btn-primary w-24 ml-2">Finish</a>
             </div>
 
 
@@ -118,7 +116,7 @@
                                     </div>
                                     <div class="col-span-12">
                                         <label class="form-label">Cost</label>
-                                        <input type="text" class="form-control" name="cost_pm">
+                                        <input type="text" class="form-control" name="cost_pm" id="nilai_project">
                                     </div>
                                     <div class="col-span-12 sm:col-span-12">
                                         <label class="form-label">Deskripsi</label>

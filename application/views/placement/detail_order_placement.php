@@ -16,45 +16,38 @@
 
                 <!-- KONTEN BLOCK 1 DISINI-->
 
-                <div class="overflow-x-auto">
+                <div class="w-full">
                     <table class="table">
                         <thead>
                             <tr class="bg-gray-700 dark:bg-dark-1 text-white">
-                                <th class="whitespace-nowrap">Data</th>
-                                <th class="whitespace-nowrap">Value</th>
-                                <th class="whitespace-nowrap">Deskripsi</th>
+                                <th class="w-5">Data</th>
+                                <th class="w-32">Value</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="border-b dark:border-dark-5">Nomor Ringkos</td>
-                                <td class="border-b dark:border-dark-5">DIR001/001/001/001</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
+                                <td class="border-b dark:border-dark-5"><?= $v['no_project'] ?></td>
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">Direktorat</td>
-                                <td class="border-b dark:border-dark-5">Kementerian Tenaga Kerja Republik Indonesia</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
+                                <td class="border-b dark:border-dark-5"><?= $v['nama_client']; ?></td>
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">Tanggal Mulai Tayang</td>
-                                <td class="border-b dark:border-dark-5">01 Januari 2022</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
+                                <td class="border-b dark:border-dark-5"><?= tgl_indo($v['mulai_project']) ?></td>
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">Tanggal Akhir Tayang</td>
-                                <td class="border-b dark:border-dark-5">01 Maret 2022</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
+                                <td class="border-b dark:border-dark-5"><?= tgl_indo($v['selesai_project']) ?></td>
                             </tr>
                             <tr>
                                 <td class="border-b dark:border-dark-5">Jumlah Versi</td>
-                                <td class="border-b dark:border-dark-5">3</td>
-                                <td class="border-b dark:border-dark-5"> - </td>
+                                <td class="border-b dark:border-dark-5"><?= count($v['placement']); ?></td>
                             </tr>                          
                             <tr>
                                 <td class="border-b dark:border-dark-5">Pagu Biaya Media</td>
-                                <td class="border-b dark:border-dark-5">450.000.000,00</td>
-                                <td class="border-b dark:border-dark-5"> Rupiah </td>
+                                <td class="border-b dark:border-dark-5">Rp. <?= $v['anggaran_placement_project'] ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -77,37 +70,26 @@
                                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">JENIS MEDIA</th>
                                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">WILAYAH MEDIA</th>
                                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">TITIK MEDIA</th>
+                                <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($v['placement'] as $p): ?>
                             <tr>
-                                <td class="border">Keselamatan Kerja dalam ruang</td>
-                                <td class="border">Media Luar Ruang</td>
-                                <td class="border">Videotron</td>
-                                <td class="border">Jakarta R.I</td>
-                                <td class="border">Pancoran</td>
+                                <td class="border"><?= $p['judul_pm'] ?></td>
+                                <td class="border"><?= $p['nama_media_category'] ?></td>
+                                <td class="border"><?= $p['nama_media_type'] ?></td>
+                                <td class="border"><?= $p['nama_wilayah'] ?></td>
+                                <td class="border"><?= $p['titik_media'] ?></td>
+                                <td class="border"><a href="<?= base_url().'placement/download_materi/'.$p['materi_pm'] ?>" class="btn btn-primary w-48 mr-2 mb-2"> Download Materi </a></td>
                             </tr>
-                            <tr>
-                                <td class="border">Keselamatan Kerja dalam ruang</td>
-                                <td class="border">Media Digital</td>
-                                <td class="border">iFlix</td>
-                                <td class="border"> - </td>
-                                <td class="border"> - </td>
-                            </tr>
-                            <tr>
-                                <td class="border">Keselamatan Kerja dalam ruang</td>
-                                <td class="border">Media Televisi</td>
-                                <td class="border">TV Nasional</td>
-                                <td class="border"> - </td>
-                                <td class="border">RCTI</td>
-                            </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>
 
                     <br>
                     <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
-                    <button class="btn btn-success w-48 mr-2 mb-2"> <i data-feather="hard-drive" class="w-4 h-4 mr-2"></i> Download Materi </button>
                     <a href="<?= base_url('placement/pengajuan_dan_logproof') ?>" class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
                         Pengajuan HPS </a>
                     <a href="<?= base_url('placement/job_order') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>

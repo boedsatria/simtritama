@@ -5,9 +5,6 @@
     </h2>
 </div>
 
-<?php
-print_r($v);die;
-?>
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-6">
         <!-- BEGIN: DATA RINGKOS -->
@@ -19,39 +16,25 @@ print_r($v);die;
             </div>
             <div class="p-5">
                 <div class="preview">
-                    <div>
-                        <label for="regular-form-1" class="form-label">Pilih Direktorat lalu Nomor Ringkosnya :</label>
-                        <div class="flex flex-col sm:flex-row items-center">
-                            <select class="form-select form-select-lg sm:mt-2 sm:mr-2" aria-label=".form-select-lg example">
-                                <option>Direktorat 1</option>
-                                <option>Direktorat 2</option>
-                            </select>
-                            <select class="form-select form-select-lg sm:mt-2 sm:mr-2" aria-label=".form-select-lg example">
-                                <option>Ringkos 001</option>
-                                <option>Ringkos 002</option>
-                            </select>
-                        </div>
-                    </div>
-                    <br>
                     <div class="mt-3">
                         <label for="regular-form-1" class="form-label">JUDUL KEGIATAN</label>
-                        <input id="regular-form-1" type="text" class="form-control" placeholder="Otomatis dari database ringkos">
+                        <input id="regular-form-1" type="text" class="form-control" value="<?= $v['nama_project'] ?>" readonly>
                     </div>
                     <div class="mt-3">
                         <label for="regular-form-1" class="form-label con-span-4">NOMOR SPK/KONTRAK</label>
                         <div class="grid grid-cols-8 gap-2">
-                            <input type="text" class="form-control col-span-4" placeholder="Nomor otomatis dari data database" aria-label="default input inline 1">
-                            <input type="text" class="form-control col-span-4" placeholder="Tanggal otomatis dari database" aria-label="default input inline 3">
+                            <input type="text" class="form-control col-span-4" value="<?= $v['no_spk_project'] ?>" readonly>
+                            <input type="text" class="form-control col-span-4" value="<?= $v['tgl_spk_project'] ?>" readonly>
                         </div>
                     </div>
                     <div class="mt-3">
                         <label for="regular-form-1" class="form-label">NOMOR N.P.W.P</label>
-                        <input id="regular-form-1" type="text" class="form-control" placeholder="Otomatis dari database Direktorat">
+                        <input id="regular-form-1" type="text" class="form-control" value="<?= $v['npwp_client'] ?>" readonly>
                     </div>
                     <div class="mt-3">
                         <label for="regular-form-1" class="form-label con-span-4">TANGGAL PENYELESAIAN</label>
                         <div class="grid grid-cols-8 gap-2">
-                            <input type="text" class="form-control col-span-4" placeholder="Tanggal otomatis dari database" aria-label="default input inline 3">
+                            <input type="text" class="form-control col-span-4" value="<?= $v['npwp_client'] ?>" readonly>
                         </div>
                         <br>
                         <label for="regular-form-1" class="form-label con-span-4">NILAI KONTRAK</label>

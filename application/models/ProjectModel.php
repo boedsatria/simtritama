@@ -9,7 +9,28 @@ class ProjectModel extends CI_Model
     $this->db->from('project');
     if ($search) $this->db->like('nama_project', $search, 'both');
     if ($limit) $this->db->limit($limit, $offset);
+    if($jenis == 1):
+      $this->db->where('jenis_project', 1);
+      $this->db->or_where('jenis_project', 3);
+    elseif($jenis == 2):
+      $this->db->where('jenis_project', 2);
+      $this->db->or_where('jenis_project', 3);
+    else:
+      $this->db->where('jenis_project <=', $jenis);
+    endif;
     $this->db->join('client', 'id_client = client_project', 'LEFT');
+    // $this->db->get();
+    // print_r($this->db->last_query());die;
+    return $this->db->get();
+  }
+  function get_placement_data($jenis = false, $search = false, $limit = false, $offset = false)
+  {
+    $this->db->from('project');
+    if ($search) $this->db->like('nama_project', $search, 'both');
+    if ($limit) $this->db->limit($limit, $offset);
+    if ($jenis) $this->db->where('jenis_project', $jenis);
+    $this->db->join('client', 'id_client = client_project', 'LEFT');
+    $this->db->where('jenis_project > ', '1');
     // $this->db->get();
     // print_r($this->db->last_query());die;
     return $this->db->get();
@@ -18,6 +39,8 @@ class ProjectModel extends CI_Model
   function get_detail($id)
   {
     $this->db->from('project');
+    $this->db->join('client', 'id_client = client_project', 'LEFT');
+    $this->db->join('penyelenggara', 'id_penyelenggara = pelaksana_project', 'LEFT');
     $this->db->where('id_project', $id);
     $data = $this->db->get()->row_array();
     $data['produksi'] = $this->get_produksi($data['id_project']);
@@ -28,6 +51,10 @@ class ProjectModel extends CI_Model
   function get_placement($id)
   {
     $this->db->from('project_placement');
+    $this->db->join('media_category', 'id_media_category = kategory_pm', 'LEFT');
+    $this->db->join('media_type', 'id_media_type = jenis_pm', 'LEFT');
+    $this->db->join('media', 'id_media = wilayah_pm', 'LEFT');
+    $this->db->join('wilayah', 'id_wilayah= wilayah_media', 'LEFT');
     $this->db->where('parent_pm', $id);
     $data = $this->db->get()->result_array();
     return $data;
@@ -95,6 +122,11 @@ class ProjectModel extends CI_Model
   {
     $this->db->where('id_pp', $data['id_pp']);
     $this->db->update('project_produksi', $data);
+  }
+  function insert_pla($data)
+  {
+    $this->db->insert('project_placement', $data);
+    return $this->db->insert_id();
   }
   function update_pla($data)
   {

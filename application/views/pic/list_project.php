@@ -51,7 +51,7 @@
             <tr class="bg-gray-700 dark:bg-dark-1 text-white">
                 <th class="whitespace-nowrap">No</th>
                 <th class="whitespace-nowrap">No Ringkos</th>
-                <th class="whitespace-nowrap">Nama Penyelenggara</th>
+                <th class="whitespace-nowrap">Judul Kegiatan</th>
                 <th class="">Client</th>
                 <th class="">Aksi</th>
             </tr>
@@ -59,10 +59,10 @@
         <tbody>
             <?php 
             if(count($project) == 0) echo '<tr><td colspan="5" align="center">No Data</td></tr>';
-            foreach($project as $p): 
+            foreach($project as $k => $p): 
             ?>
             <tr class="intro-x">
-                <td class="border-b dark:border-dark-5"><?= $p['id_project']; ?></td>
+                <td class="border-b dark:border-dark-5"><?= $k+1; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $p['no_project']; ?></td>
                 <td class="border-b dark:border-dark-5"><?= $p['nama_project']; ?></td>
                 <td class="border-b dark:border-dark-5 w-56"><?= $p['nama_client']; ?></td>
