@@ -14,13 +14,13 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    Pilih Kategori
+                    Pilih Kategori Akun
                     <!-- JUDUL BLOK KIRI-->
                 </h2>
             </div>
             <div class="mt-2">
                 <select data-placeholder="Select your favorite actors" class="tom-select w-full">
-                    <option value="1">1000 Harta</option>
+                    <option value="1">1000 Harta</option> <!-- drop down dari database COA parent-->
                     <option value="2">2000 Kewajiban</option>
                     <option value="3">3000 Modal</option>
                     <option value="4">4000 Pendapatan</option>
@@ -33,13 +33,13 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    Pilih Nama Transaksi
+                    Pilih Akun Transaksi
                     <!-- JUDUL BLOK KIRI-->
                 </h2>
                 <!-- KONTEN BLOCK 2 DISINI-->
             </div>
             <div class="mt-2"> <select data-placeholder="Select your favorite actors" class="tom-select w-full">
-             <option value="1">1102 BRI</option>
+             <option value="1">1102 BRI</option> <!-- drop down dari database COA child-->
              <option value="2">1103 Piutang Usaha</option>
              <option value="3">1104 Piutang Karyawan</option>
              <option value="4">1105 BCA</option>
@@ -52,7 +52,7 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    Tentukan Tanggal Transaksi
+                    Tanggal Transaksi
                     <!-- JUDUL BLOK KIRI-->
                 </h2>
                 <!-- KONTEN BLOCK 3 DISINI-->
@@ -93,7 +93,7 @@
         <div class="intro-y box">
             <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                 <h2 class="font-medium text-base mr-auto">
-                    Input Jumlah Transaksi
+                    Deskripsi
                     <!-- JUDUL BLOK 4-->
                 </h2>
             </div>
@@ -101,7 +101,18 @@
         </div>
         <!-- END: BLOCK 4 -->
         <br>
-        
+        <!-- BEGIN: BLOCK 5 -->
+        <div class="intro-y box">
+            <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                <h2 class="font-medium text-base mr-auto">
+                    Input Jumlah Transaksi
+                    <!-- JUDUL BLOK 5-->
+                </h2>
+            </div>
+            <div><input id="regular-form-1" type="text" class="form-control" placeholder="Input text"> </div>
+        </div>
+        <!-- END: BLOCK 5 -->
+        <br>
         <!-- BEGIN: MENU -->
         <div class="intro-y box mt-5">
             <div id="horizontal-form" class="p-5">
