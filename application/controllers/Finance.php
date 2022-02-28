@@ -91,13 +91,7 @@ class Finance extends CI_Controller
 
 
 
-	public function aset_habis_pakai()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('finance/aset_habis_pakai');
-		$this->load->view('footer');
-	}
+
 	public function aset_dan_penyusutan()
 	{
 		$this->load->view('header');
