@@ -10,24 +10,15 @@
         <option value="">1108 - DKI Jakarta</option>
         <option value="">1109 - Banten</option>
     </select> &ensp;
-    <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Tahun</label>
-    <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-        <?php for ($x = 2021; $x <= 2070; $x++) : ?>
-            <option value="<?= $x; ?>"><?= $x; ?></option>
-        <?php endfor; ?>
-    </select> &ensp;
-    <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Bulan</label>
-    <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-        <?php for ($x = 1; $x <= 12; $x++) : ?>
-            <option value="<?= $x; ?>"><?= monthOnly_indo('2021-' . $x . '-01') ?></option>
-        <?php endfor; ?>
-    </select> &ensp;
-    <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Tanggal</label>
-    <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-        <?php for ($x = 1; $x <= 31; $x++) : ?>
-            <option value="<?= $x; ?>"><?= $x; ?></option>
-        <?php endfor; ?>
-    </select>
+    
+    <label class="form-label">Tanggal Transaksi</label>
+    <div class="relative ">
+        <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 text-gray-600 dark:bg-dark-1 dark:border-dark-4">
+            <i data-feather="calendar" class="w-4 h-4"></i>
+        </div>
+        <input type="text" class="datepicker form-control pl-12" name="tgl_trans" data-single-mode="true">
+    </div>
+                                        
     <!--begin modal-->
     <div id="button-modal" class="p-5">
         <div class="preview">
@@ -53,7 +44,7 @@
                                             <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">COA</label>
                                             <select id="tabulator-html-filter-field" class="form-select w-full mt-2" name="wilayah">
                                                 <?php foreach($area as $a): ?>
-                                                <option value="<?= $a['no_coa'] ?>"><?= $a['no_coa']." - ".$a['nama_coa'] ?></option>
+                                                <option value="<?= $a['no_coa'] ?>"><?= $a['no_coa']." - ".$a['nama_coa']; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div></br>
