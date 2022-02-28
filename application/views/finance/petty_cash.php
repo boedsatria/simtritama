@@ -40,38 +40,54 @@
                     <div class="modal-content">
                         <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                         <div class="modal-body p-0">
-                            <div class="p-5 text-left">
-                                <div>
-                                    <div class="sm:flex items-center sm:mr-4">
-                                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Jenis Transaksi</label>
-                                        <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                                            <option value="Kementerian"> Masuk</option>
-                                            <option value="Direktorat"> Keluar</option>
+                            <form action="<?= base_url(); ?>finance/petty_cash_action" method="POST" enctype="multipart/form-data">
+                                <div class="p-5 text-left">
+                                    <div>
+                                        <div class="sm:flex items-center sm:mr-4">
+                                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Jenis Transaksi</label>
+                                            <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto" name="jenis">
+                                                <option value="masuk"> Masuk</option>
+                                                <option value="keluar"> Keluar</option>
 
-                                        </select> &ensp;
-                                        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
-                                        <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto">
-                                            <option value="Kementerian">DKI Jakarta</option>
-                                            <option value="Direktorat">Jawa Barat</option>
-                                            <option value="BUMN">Jawa Tengah</option>
-                                            <option value="Lembaga">Jawa Timur</option>
-                                        </select>
-                                    </div></br>
+                                            </select> &ensp;
+                                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
+                                            <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto" name="wilayah">
+                                                <?php foreach($area as $a): ?>
+                                                <option value="<?= $a['no_coa'] ?>"><?= $a['nama_coa'] ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div></br>
 
-                                    <label for="nama_media" class="form-label mt-2">Nama Transaksi</label>
-                                    <input id="nama_media" type="text" name="nama_media" class="form-control w-full" placeholder="Input text">
-                                    <label for="email_media" class="form-label mt-2">Jumlah Transaksi</label>
-                                    <input id="email_media" type="text" name="email_media" class="form-control w-full" placeholder="Input text">
-                                    <label for="phone_media" class="form-label mt-2">Nama PIC</label>
-                                    <input id="phone_media" type="text" name="phone_media" class="form-control w-full" placeholder="Input text">
-                                    <label for="alamat_media" class="form-label mt-2">Nama Client User</label>
-                                    <input id="alamat_media" type="text" name="alamat_media" class="form-control w-full" placeholder="Input text">
+                                        <label for="nama_media" class="form-label mt-2">Nama Transaksi</label>
+                                        <input id="nama_media" type="text" class="form-control w-full" placeholder="Input text" name="nama">
+                                        <label for="email_media" class="form-label mt-2">Jumlah Transaksi</label>
+                                        <input id="email_media" type="text" class="form-control w-full" placeholder="Input text" name="transaksi">
+                                        <label for="phone_media" class="form-label mt-2">Nama Pengguna Anggaran</label>
+                                        <select id="tabulator-html-filter-field" class="form-select w-full mt-2 form-control" name="pa">
+                                            <?php foreach($user as $u): ?>
+                                            <option value="<?= $u['id_user'] ?>"><?= $u['nip_user']." - ".$u['nama_user'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select><br><br>
 
+                                        <div class="col-span-6 sm:col-span-12">
+                                            <label class="form-label">Tanggal Transaksi</label>
+                                            <div class="relative ">
+                                                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 text-gray-600 dark:bg-dark-1 dark:border-dark-4">
+                                                    <i data-feather="calendar" class="w-4 h-4"></i>
+                                                </div>
+                                                <input type="text" class="datepicker form-control pl-12" name="tgl_trans" data-single-mode="true">
+                                            </div>
+                                        </div>
+
+                                        <label for="alamat_media" class="form-label mt-2">Upload Bukti</label>
+                                        <input id="alamat_media" type="file" class="form-control w-full" placeholder="Input text" name="file">
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="px-5 pb-8 text-center">
-                                <button type="button" data-dismiss="modal" class="btn btn-primary w-24">Ok</button>
-                            </div>
+                                <div class="px-5 pb-8 text-center">
+                                    <button type="submit" class="btn btn-primary w-24">Simpan</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -125,12 +141,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="source-code hidden">
-                    <button data-target="#copy-hoverable-table" class="copy-code btn py-1 px-2 btn-outline-secondary"> <i data-feather="file" class="w-4 h-4 mr-2"></i> Copy example code </button>
-                    <div class="overflow-y-auto mt-3 rounded-md">
-                        <pre class="source-preview" id="copy-hoverable-table"> <code class="text-xs p-0 rounded-md html pl-5 pt-8 pb-4 -mb-10 -mt-10"> HTMLOpenTagdiv class=&quot;overflow-x-auto&quot;HTMLCloseTag HTMLOpenTagtable class=&quot;table&quot;HTMLCloseTag HTMLOpenTagtheadHTMLCloseTag HTMLOpenTagtrHTMLCloseTag HTMLOpenTagth class=&quot;border border-b-2 dark:border-dark-5 whitespace-nowrap&quot;HTMLCloseTag#HTMLOpenTag/thHTMLCloseTag HTMLOpenTagth class=&quot;border border-b-2 dark:border-dark-5 whitespace-nowrap&quot;HTMLCloseTagFirst NameHTMLOpenTag/thHTMLCloseTag HTMLOpenTagth class=&quot;border border-b-2 dark:border-dark-5 whitespace-nowrap&quot;HTMLCloseTagLast NameHTMLOpenTag/thHTMLCloseTag HTMLOpenTagth class=&quot;border border-b-2 dark:border-dark-5 whitespace-nowrap&quot;HTMLCloseTagUsernameHTMLOpenTag/thHTMLCloseTag HTMLOpenTag/trHTMLCloseTag HTMLOpenTag/theadHTMLCloseTag HTMLOpenTagtbodyHTMLCloseTag HTMLOpenTagtr class=&quot;hover:bg-gray-200&quot;HTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTag1HTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTagAngelinaHTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTagJolieHTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTag@angelinajolieHTMLOpenTag/tdHTMLCloseTag HTMLOpenTag/trHTMLCloseTag HTMLOpenTagtr class=&quot;hover:bg-gray-200&quot;HTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTag2HTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTagBradHTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTagPittHTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTag@bradpittHTMLOpenTag/tdHTMLCloseTag HTMLOpenTag/trHTMLCloseTag HTMLOpenTagtr class=&quot;hover:bg-gray-200&quot;HTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTag3HTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTagCharlieHTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTagHunnamHTMLOpenTag/tdHTMLCloseTag HTMLOpenTagtd class=&quot;border&quot;HTMLCloseTag@charliehunnamHTMLOpenTag/tdHTMLCloseTag HTMLOpenTag/trHTMLCloseTag HTMLOpenTag/tbodyHTMLCloseTag HTMLOpenTag/tableHTMLCloseTag HTMLOpenTag/divHTMLCloseTag </code> </pre>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <!-- END: Hoverable Table -->
