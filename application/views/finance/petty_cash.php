@@ -116,27 +116,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($petty as $v): ?>
                                 <tr class="hover:bg-gray-200">
                                     <td class="border">1</td>
-                                    <td class="border">Beli Kopi</td>
-                                    <td class="border">xxxxxxxx</td>
-                                    <td class="border">xxxxxxxx</td>
-                                    <td class="border">xxxxxxxx</td>
+                                    <td class="border"><?= $v['nama_pc'] ?></td>
+                                    <td class="border"><?= $v['keluar_pc'] ?></td>
+                                    <td class="border"><?= $v['masuk_pc'] ?></td>
+                                    <td class="border"><?= '0' // $v['nama_pc'] ?></td>
                                 </tr>
-                                <tr class="hover:bg-gray-200">
-                                    <td class="border">2</td>
-                                    <td class="border">Makan Malam</td>
-                                    <td class="border">xxxxxxxx</td>
-                                    <td class="border">xxxxxxxx</td>
-                                    <td class="border">xxxxxxxx</td>
-                                </tr>
-                                <tr class="hover:bg-gray-200">
-                                    <td class="border">3</td>
-                                    <td class="border">Rapat Internal</td>
-                                    <td class="border">xxxxxxxx</td>
-                                    <td class="border">xxxxxxxx</td>
-                                    <td class="border">xxxxxxxx</td>
-                                </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
