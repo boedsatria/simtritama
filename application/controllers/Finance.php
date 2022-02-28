@@ -44,7 +44,7 @@ class Finance extends CI_Controller
 	public function petty_cash()
 	{
 		$data = array(
-			'area'	=> $this->FinanceModel->get_area_coa()->result_array(),
+			'area'	=> $this->FinanceModel->get_coa()->result_array(),
 			'petty'		=> $this->FinanceModel->get()->result_array(),
 			'user'	=> $this->FinanceModel->get_user()->result_array()
 		);
@@ -77,7 +77,7 @@ class Finance extends CI_Controller
 		);
 
 		if ($_FILES['file']['name'] != "") {
-			$photo = upload_files($nama, 'pettycash');
+			$photo = upload_files('pettycash', 'pettycash');
 			$data['file_pc'] = $photo;
 		}
 

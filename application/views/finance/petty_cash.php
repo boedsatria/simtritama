@@ -50,10 +50,10 @@
                                                 <option value="keluar"> Keluar</option>
 
                                             </select> &ensp;
-                                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
-                                            <select id="tabulator-html-filter-field" class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto" name="wilayah">
+                                            <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">COA</label>
+                                            <select id="tabulator-html-filter-field" class="form-select w-full mt-2" name="wilayah">
                                                 <?php foreach($area as $a): ?>
-                                                <option value="<?= $a['no_coa'] ?>"><?= $a['nama_coa'] ?></option>
+                                                <option value="<?= $a['no_coa'] ?>"><?= $a['no_coa']." - ".$a['nama_coa'] ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div></br>
@@ -120,8 +120,8 @@
                                 <tr class="hover:bg-gray-200">
                                     <td class="border">1</td>
                                     <td class="border"><?= $v['nama_pc'] ?></td>
-                                    <td class="border"><?= $v['keluar_pc'] ?></td>
-                                    <td class="border"><?= $v['masuk_pc'] ?></td>
+                                    <td class="border text-right"><?= number_format($v['keluar_pc'], 0) ?></td>
+                                    <td class="border text-right"><?= number_format($v['masuk_pc'], 0) ?></td>
                                     <td class="border"><?= '0' // $v['nama_pc'] ?></td>
                                 </tr>
                                 <?php endforeach; ?>

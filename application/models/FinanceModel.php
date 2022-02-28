@@ -42,6 +42,11 @@ class FinanceModel extends CI_Model
     $this->db->where('area_coa', 1);
     return $this->db->get();
   }
+  function get_coa()
+  {
+    $this->db->from('coa_akun');
+    return $this->db->get();
+  }
 
   function get_user()
   {
