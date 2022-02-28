@@ -45,6 +45,7 @@ class Finance extends CI_Controller
 	{
 		$data = array(
 			'area'	=> $this->FinanceModel->get_area_coa()->result_array(),
+			'v'		=> $this->FinanceModel->get()->result_array(),
 			'user'	=> $this->FinanceModel->get_user()->result_array()
 		);
 

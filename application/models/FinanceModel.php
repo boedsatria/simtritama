@@ -6,7 +6,7 @@ class FinanceModel extends CI_Model
 
   function get($jenis = false, $search = false, $limit = false, $offset = false)
   {
-    $this->db->from('project');
+    $this->db->from('petty_cash');
     if ($search) $this->db->like('nama_project', $search, 'both');
     if ($limit) $this->db->limit($limit, $offset);
     if($jenis == 1):
@@ -52,7 +52,7 @@ class FinanceModel extends CI_Model
 
   function insert($data)
   {
-    print_r($data);die;
+    // print_r($data);die;
     $this->db->insert('petty_cash', $data);
     return $this->db->insert_id();
   }
