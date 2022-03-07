@@ -43,13 +43,26 @@ class Finance extends CI_Controller
 
 	public function petty_cash()
 	{
+		$wilayah = (isset($_GET['wilayah_filter']) ? $_GET['wilayah_filter'] : "0");
+
+		if(isset($_GET['tgl_filter'])){
+			$date_range = explode("-", $_GET['tgl_filter']);
+			$mulai  = date('Y-m-d', strtotime($date_range[0]));
+			$selesai  = date('Y-m-d', strtotime($date_range[1]));
+		}else{
+			$mulai  = date('Y-m-d');
+			$selesai  = date('Y-m-d');
+		}
+		
+		// print_r($mulai . " - " . $selesai);die;
+
 		$data = array(
-			'area'	=> $this->FinanceModel->get_coa()->result_array(),
-			'petty'		=> $this->FinanceModel->get()->result_array(),
-			'user'	=> $this->FinanceModel->get_user()->result_array()
+			'area'		=> $this->FinanceModel->get_area_coa()->result_array(),
+			'coa'		=> $this->FinanceModel->get_coa()->result_array(),
+			'petty'		=> $this->FinanceModel->get($wilayah, $mulai, $selesai)->result_array(),
+			'user'		=> $this->FinanceModel->get_user()->result_array(),
+			// 'saldo'		=> saldo_akhir()
 		);
-
-
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('finance/petty_cash', $data);
@@ -59,20 +72,22 @@ class Finance extends CI_Controller
 	public function petty_cash_action()
 	{
 		if($_POST['jenis'] == 'masuk'):
-			$masuk = $_POST['transaksi'];
+			$masuk = str_replace('.', '', $_POST['transaksi']);
 			$keluar = 0;
 		else:
 			$masuk = 0;
-			$keluar = $_POST['transaksi'];
+			$keluar = str_replace('.', '', $_POST['transaksi']);
 		endif;
 		
 		$data = array(
 			'nama_pc'			=> $_POST['nama'],
 			'masuk_pc'			=> $masuk,
 			'keluar_pc'			=> $keluar,
+			'saldo_pc'			=> saldo_akhir($_POST['wilayah'])+$masuk-$keluar,
 			'pa_pc'				=> $_POST['pa'],
 			'wilayah_pc'		=> $_POST['wilayah'],
-			'creator_pc'		=> $this->session->userdata('userlogin')['nama_user'],
+			'coa_pc'			=> $_POST['coa'],
+			'creator_pc'		=> $this->session->userdata('userlogin')['id_user'],
 			'tanggal_pc'		=> date('Y-m-d', strtotime($_POST['tgl_trans']))
 		);
 
@@ -83,6 +98,21 @@ class Finance extends CI_Controller
 
 		$this->FinanceModel->insert($data);
 
+		if($_POST['wilayah'] == "1101" && cek_area($_POST['coa']) == 1):
+			$data2 = array(
+				'nama_pc'			=> $_POST['nama'],
+				'masuk_pc'			=> $keluar,
+				'keluar_pc'			=> 0,
+				'saldo_pc'			=> saldo_akhir($_POST['coa'])+$keluar,
+				'pa_pc'				=> $_POST['pa'],
+				'wilayah_pc'		=> $_POST['coa'],
+				'coa_pc'			=> $_POST['coa'],
+				'creator_pc'		=> $this->session->userdata('userlogin')['id_user'],
+				'tanggal_pc'		=> date('Y-m-d', strtotime($_POST['tgl_trans']))
+			);
+			$this->FinanceModel->insert($data2);
+		endif;
+		// print_r($data2);die;
 		redirect(base_url() . 'finance/petty_cash/');
 
 	}

@@ -1,6 +1,38 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+  function saldo_akhir($area)
+  {
+    $ci = &get_instance();
+    $ci->db->from("petty_cash");
+    $ci->db->where("wilayah_pc", $area);
+    $ci->db->order_by('id_pc', 'DESC');
+    $ci->db->limit(1);
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = $data['saldo_pc'];
+    else:
+      $v = 0;
+    endif;
+    return $v;
+  }
+  function cek_area($coa)
+  {
+    $ci = &get_instance();
+    $ci->db->from("coa_akun");
+    $ci->db->where("no_coa", $coa);
+    $ci->db->where("area_coa", 1);
+    $data = $ci->db->get();
+    if($data->num_rows() > 0):
+      $data = $data->row_array();
+      $v = 1;
+    else:
+      $v = 0;
+    endif;
+    return $v;
+  }
+
   function get_menu_parent()
   {
     $ci = &get_instance();

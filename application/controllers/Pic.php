@@ -175,7 +175,7 @@ class Pic extends CI_Controller
 		//MULAI PROJECT
 		$date_range = explode("-", $_POST['mulai_selesai']);
 		$mulai  = date('Y-m-d', strtotime($date_range[0]));
-		$selesai  = date('Y-m-d', strtotime($date_range[1]));;
+		$selesai  = date('Y-m-d', strtotime($date_range[1]));
 
 		$data['durasi_project'] 		= $_POST['durasi_project'];
 		$data['mulai_project'] 			= $mulai;
