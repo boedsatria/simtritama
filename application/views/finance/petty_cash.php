@@ -148,7 +148,7 @@
                                     <td class=""></td>
                                     <td class=" text-right"></td>
                                     <td class=" text-right"></td>
-                                    <td class=" text-right"><?= number_format($petty[0]['saldo_pc']-$petty[0]['masuk_pc']+$petty[0]['keluar_pc'], 0); ?></td>
+                                    <td class=" text-right"><?= (count($petty) > 0 ? number_format($petty[0]['saldo_pc']-$petty[0]['masuk_pc']+$petty[0]['keluar_pc'], 0) : 0); ?></td>
                                 </tr>
                                 <?php 
                                 $x = 1;
