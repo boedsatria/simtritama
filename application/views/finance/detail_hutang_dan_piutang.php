@@ -60,44 +60,16 @@
                     </tbody>
                 </table>
             </div>
+        </div> <br>   
+        <div>
+            <a href="<?= base_url('finance/hutang_dan_piutang') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
+        Back </a>
         </div>
     </div>
 </div>
 
-<div class="intro-y box mt-5">
-    <div class="p-5" id="responsive-table">
-        <div class="preview">
-            <div class="overflow-x-auto">
-                <table class="table">
-                    <thead class="border-b-2 dark:border-dark-5 whitespace-nowrap">
-                        <tr>
-                            <th>Status saat ini</th>
-                            <th>Update</th>
-                        </tr>
-                    </thead>
-                    <tbody class="border-b whitespace-nowrap">
-                        <tr>
-                            <td>HUTANG</td>
-                            <td>LUNAS</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <form data-single="true" action="/file-upload" class="dropzone">
-                        <div class="fallback">
-                            <input name="file" type="file" />
-                        </div>
-                        <div class="dz-message" data-dz-message>
-                            <div class="text-lg font-medium">Seret file disini atau click untuk membuka file explorer</div>
-                            <div class="text-gray-600"> Unggah bukti Transaksi <span class="font-medium">dalam</span> Format PDF atau JPG </div>
-                        </div>
-                    </form>
-        </div>
-    </div>
-    <a href="<?= base_url('finance/hutang_dan_piutang') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
-        Back </a>
-        <a href="<?= base_url('finance/hutang_dan_piutang') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
-        Simpan Update Status </a>
+
+
 </div>
 
 
