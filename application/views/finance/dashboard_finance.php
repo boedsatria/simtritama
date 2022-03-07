@@ -1,4 +1,5 @@
-<!-- BEGIN: Responsive Table -->
+<!-- BEGIN: Responsive Table
+
 <div class="intro-y box mt-5">
     <div class="p-5" id="responsive-table">
         <h2 class="font-medium text-base mr-auto">
@@ -77,7 +78,8 @@
         </div>
     </div>
 </div>
-<!-- END: Responsive Table -->
+
+END: Responsive Table -->
 
 <div class="grid grid-cols-12 gap-6">
     <div class="col-span-12 2xl:col-span-9">
@@ -100,7 +102,7 @@
                                         <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month"> 33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">4.000.000.000</div>
                                 <div class="text-base text-gray-600 mt-1">Total Pendapatan</div>
                             </div>
                         </div>
@@ -114,7 +116,7 @@
                                         <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="2% Lower than last month"> 2% <i data-feather="chevron-down" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">3.721</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">2.000.000.000</div>
                                 <div class="text-base text-gray-600 mt-1">Total Pengeluaran</div>
                             </div>
                         </div>
@@ -128,7 +130,7 @@
                                         <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="12% Higher than last month"> 12% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">1.000.000.000</div>
                                 <div class="text-base text-gray-600 mt-1">Total Hutang</div>
                             </div>
                         </div>
@@ -142,14 +144,140 @@
                                         <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">152.040</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">3.000.000.000</div>
                                 <div class="text-base text-gray-600 mt-1">Total Piutang</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="file-plus" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">2</div>
+                                <div class="text-base text-gray-600 mt-1">B/C Ratio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="file-plus" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">2.334</div>
+                                <div class="text-base text-gray-600 mt-1">R/C Ratio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="file-plus" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">4.000.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">Balance</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="file-plus" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">2.000.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">Recent Profit</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- END: General Report -->
+
+            <!-- BEGIN: Media Achievement -->
+            <div class="col-span-12 mt-8">
+                <div class="intro-y flex items-center h-10">
+                    <h2 class="text-lg font-medium truncate mr-5">
+                        Media Achievement
+                    </h2>
+                    <a href="" class="ml-auto flex items-center text-theme-1 dark:text-theme-10"> <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data </a>
+                </div>
+                <div class="grid grid-cols-12 gap-6 mt-5">
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="folder-plus" class="report-box__icon text-theme-10"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="Target Minus"> 15% / 20%<i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">150</div>
+                                <div class="text-base text-gray-600 mt-1">Media Televisi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="folder-minus" class="report-box__icon text-theme-11"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="Over Target"> 45% / 40%<i data-feather="chevron-down" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">450</div>
+                                <div class="text-base text-gray-600 mt-1">Media Digital</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="file-minus" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Target Tercapai"> 40% / 40%<i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">400</div>
+                                <div class="text-base text-gray-600 mt-1">Media Luar Ruang</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="file-plus" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 100% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">1000</div>
+                                <div class="text-base text-gray-600 mt-1">Total Media</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Media Achievement -->
+
             <!-- BEGIN: Sales Report -->
             <div class="col-span-12 lg:col-span-6 mt-8">
                 <div class="intro-y block sm:flex items-center h-10">

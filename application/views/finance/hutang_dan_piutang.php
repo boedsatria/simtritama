@@ -52,6 +52,7 @@
                                 <th class="border border-b-2 dark:border-dark-5">No Ringkos - No Invoice</th>
                                 <th class="border border-b-2 dark:border-dark-5">Nama Transaksi</th> <!--Judul Project + Jenis Pekerjaan ( produksi or placement) + Nama Transaksi : contoh : Advetorial Keselamatan Kerja + Placement + Media Trans TV-->
                                 <th class="border border-b-2 dark:border-dark-5">Tanggal Transaksi</th>
+                                <th class="border border-b-2 dark:border-dark-5">Nilai Hutang</th>
                                 <th class="border border-b-2 dark:border-dark-5">Aksi</th>
                                 <th class="border border-b-2 dark:border-dark-5"></th>
                             </tr>
@@ -62,6 +63,7 @@
                                 <td class="border">DEPSOS 001/01/02/2022 - TransTV 001/01/03/2022</td>
                                 <td class="border">Advetorial Keselamatan Kerja - Placement - Trans TV</td>
                                 <td class="border">01/03/2022</td>
+                                <td class="border">100.000.000</td>
                                 <td class="border text-center">
                                     <a href="<?= base_url('finance/detail_hutang_dan_piutang') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a>
                                 </td>
@@ -82,8 +84,7 @@
                                                             <div>
                                                                 <label for="regular-form-1" class="form-label">Status</label>
                                                                 <select data-placeholder="Select your favorite actors" name="kategori" class="tom-select w-full">
-                                                                    <option value="Kategori1">HUTANG (quary dari invoice media dan invoice produksi)</option>
-                                                                    <option value="Kategori2">PIUTANG (quary dari SP2D Project)</option>
+                                                                    <option value="Kategori1">LUNAS</option>
                                                                 </select></br>
                                                                 <div>
                                                                     <label for="regular-form-3" class="form-label">Tanggal Transaksi</label>
@@ -129,6 +130,7 @@
                                 <td class="border">DEPSOS 001/01/02/2022 - Trans7 001/01/03/2022</td>
                                 <td class="border">Advetorial Keselamatan Kerja - Placement - Trans 7</td>
                                 <td class="border">01/03/2022</td>
+                                <td class="border">100.000.000</td>
                                 <td class="border text-center">
                                 <a href="<?= base_url('finance/detail_hutang_dan_piutang') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a>
                                 </td>
@@ -149,8 +151,7 @@
                                                             <div>
                                                                 <label for="regular-form-1" class="form-label">Status</label>
                                                                 <select data-placeholder="Select your favorite actors" name="kategori" class="tom-select w-full">
-                                                                    <option value="Kategori1">HUTANG (quary dari invoice media dan invoice produksi)</option>
-                                                                    <option value="Kategori2">PIUTANG (quary dari SP2D Project)</option>
+                                                                    <option value="Kategori1">LUNAS</option>
                                                                 </select></br>
                                                                 <div>
                                                                     <label for="regular-form-3" class="form-label">Tanggal Transaksi</label>
@@ -196,6 +197,7 @@
                                 <td class="border">DEPSOS 001/01/02/2022 - iNews 001/01/03/2022</td>
                                 <td class="border">Advetorial Keselamatan Kerja - Placement - iNews</td>
                                 <td class="border">01/03/2022</td>
+                                <td class="border">100.000.000</td>
                                 <td class="border text-center">
                                 <a href="<?= base_url('finance/detail_hutang_dan_piutang') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a>
                                 </td>
@@ -216,8 +218,7 @@
                                                             <div>
                                                                 <label for="regular-form-1" class="form-label">Status</label>
                                                                 <select data-placeholder="Select your favorite actors" name="kategori" class="tom-select w-full">
-                                                                    <option value="Kategori1">HUTANG (quary dari invoice media dan invoice produksi)</option>
-                                                                    <option value="Kategori2">PIUTANG (quary dari SP2D Project)</option>
+                                                                    <option value="Kategori1">LUNAS</option>
                                                                 </select></br>
                                                                 <div>
                                                                     <label for="regular-form-3" class="form-label">Tanggal Transaksi</label>
@@ -340,9 +341,10 @@
                         <thead>
                             <tr class="text-center">
                                 <th class="border border-b-2 dark:border-dark-5 w-1">No.</th>
-                                <th class="border border-b-2 dark:border-dark-5">No Ringkos - No Invoice</th>
-                                <th class="border border-b-2 dark:border-dark-5">Nama Transaksi</th> <!--Judul Project + Jenis Pekerjaan ( produksi or placement) + Nama Transaksi : contoh : Advetorial Keselamatan Kerja + Placement + Media Trans TV-->
+                                <th class="border border-b-2 dark:border-dark-5">No Ringkos - No SP2D</th>
+                                <th class="border border-b-2 dark:border-dark-5">Judul Kegiatan</th>
                                 <th class="border border-b-2 dark:border-dark-5">Tanggal Transaksi</th>
+                                <th class="border border-b-2 dark:border-dark-5">Nilai Piutang</th>
                                 <th class="border border-b-2 dark:border-dark-5">Aksi</th>
                                 <th class="border border-b-2 dark:border-dark-5"></th>
                             </tr>
@@ -350,9 +352,10 @@
                         <tbody>
                             <tr class="hover:bg-gray-200">
                                 <td class="border">1</td>
-                                <td class="border">DEPSOS 001/01/02/2022 - TransTV 001/01/03/2022</td>
-                                <td class="border">Advetorial Keselamatan Kerja - Placement - Trans TV</td>
+                                <td class="border">DEPSOS 001/01/02/2022 - SOS001.KN.01.02.22</td>
+                                <td class="border">Advetorial Keselamatan Kerja</td>
                                 <td class="border">01/03/2022</td>
+                                <td class="border">200.000.000</td>
                                 <td class="border text-center">
                                     <a href="<?= base_url('finance/detail_hutang_dan_piutang') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a>
                                 </td>
@@ -373,8 +376,7 @@
                                                             <div>
                                                                 <label for="regular-form-1" class="form-label">Status</label>
                                                                 <select data-placeholder="Select your favorite actors" name="kategori" class="tom-select w-full">
-                                                                    <option value="Kategori1">HUTANG (quary dari invoice media dan invoice produksi)</option>
-                                                                    <option value="Kategori2">PIUTANG (quary dari SP2D Project)</option>
+                                                                    <option value="Kategori1">LUNAS</option>
                                                                 </select></br>
                                                                 <div>
                                                                     <label for="regular-form-3" class="form-label">Tanggal Transaksi</label>
@@ -415,140 +417,7 @@
                                 <!--end modal-->
                                 </td>
                             </tr>
-                            <tr class="hover:bg-gray-200">
-                                <td class="border">2</td>
-                                <td class="border">DEPSOS 001/01/02/2022 - Trans7 001/01/03/2022</td>
-                                <td class="border">Advetorial Keselamatan Kerja - Placement - Trans 7</td>
-                                <td class="border">01/03/2022</td>
-                                <td class="border text-center">
-                                <a href="<?= base_url('finance/detail_hutang_dan_piutang') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a>
-                                </td>
-                                <td class="border text-center">
-                                <!--begin modal-->
-                                <div id="button-modal" class="p-5">
-                                    <div class="preview">
-                                        <!-- BEGIN: Modal Toggle -->
-                                        <div class="text-center"> <a href="javascript:;" data-toggle="modal" data-target="#button-modal-5" class="btn btn-primary">Update Status</a> </div>
-                                        <!-- END: Modal Toggle -->
-                                        <!-- BEGIN: Modal Content -->
-                                        <div id="button-modal-5" class="modal" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
-                                                    <div class="modal-body p-0">
-                                                        <div class="p-5 text-left">
-                                                            <div>
-                                                                <label for="regular-form-1" class="form-label">Status</label>
-                                                                <select data-placeholder="Select your favorite actors" name="kategori" class="tom-select w-full">
-                                                                    <option value="Kategori1">HUTANG (quary dari invoice media dan invoice produksi)</option>
-                                                                    <option value="Kategori2">PIUTANG (quary dari SP2D Project)</option>
-                                                                </select></br>
-                                                                <div>
-                                                                    <label for="regular-form-3" class="form-label">Tanggal Transaksi</label>
-                                                                        <div class="grid grid-cols-12 gap-2">
-                                                                            <div class="relative w-72 mx-auto">
-                                                                                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4">
-                                                                                    <i data-feather="calendar" class="w-4 h-4"></i>
-                                                                                </div>
-                                                                                <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
-                                                                            </div>
-                                                                        </div></br>
-                                                                    </div>
-                                                                </div>
-                                                                <div>    
-                                                                    <label for="regular-form-1" class="form-label">Bukti Transaksi</label>
-                                                                    <form data-single="true" action="/file-upload" class="dropzone">
-                                                                        <div class="fallback">
-                                                                            <input name="file" type="file" />
-                                                                        </div>
-                                                                        <div class="dz-message" data-dz-message>
-                                                                            <div class="text-lg font-medium">Seret file disini atau click untuk membuka file explorer</div>
-                                                                            <div class="text-gray-600"> Unggah berkas transaksi <span class="font-medium">format PDF</span> atau image (jpg,png,bmp) </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="px-5 pb-8 text-center">
-                                                            <button type="button" data-dismiss="modal" class="btn btn-primary w-24">Ok</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end modal konten-->
-                                    </div>
-                                </div>
-                                <!--end modal-->
-                                </td>
-                                </tr>
-                            <tr class="hover:bg-gray-200">
-                                <td class="border">2</td>
-                                <td class="border">DEPSOS 001/01/02/2022 - iNews 001/01/03/2022</td>
-                                <td class="border">Advetorial Keselamatan Kerja - Placement - iNews</td>
-                                <td class="border">01/03/2022</td>
-                                <td class="border text-center">
-                                <a href="<?= base_url('finance/detail_hutang_dan_piutang') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a>
-                                </td>
-                                <td class="border text-center">
-                                <!--begin modal-->
-                                <div id="button-modal" class="p-5">
-                                    <div class="preview">
-                                        <!-- BEGIN: Modal Toggle -->
-                                        <div class="text-center"> <a href="javascript:;" data-toggle="modal" data-target="#button-modal-6" class="btn btn-primary">Update Status</a> </div>
-                                        <!-- END: Modal Toggle -->
-                                        <!-- BEGIN: Modal Content -->
-                                        <div id="button-modal-6" class="modal" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
-                                                    <div class="modal-body p-0">
-                                                        <div class="p-5 text-left">
-                                                            <div>
-                                                                <label for="regular-form-1" class="form-label">Status</label>
-                                                                <select data-placeholder="Select your favorite actors" name="kategori" class="tom-select w-full">
-                                                                    <option value="Kategori1">HUTANG (quary dari invoice media dan invoice produksi)</option>
-                                                                    <option value="Kategori2">PIUTANG (quary dari SP2D Project)</option>
-                                                                </select></br>
-                                                                <div>
-                                                                    <label for="regular-form-3" class="form-label">Tanggal Transaksi</label>
-                                                                        <div class="grid grid-cols-12 gap-2">
-                                                                            <div class="relative w-72 mx-auto">
-                                                                                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 border text-gray-600 dark:bg-dark-1 dark:border-dark-4">
-                                                                                    <i data-feather="calendar" class="w-4 h-4"></i>
-                                                                                </div>
-                                                                                <input type="text" class="datepicker form-control pl-12" data-single-mode="true">
-                                                                            </div>
-                                                                        </div></br>
-                                                                    </div>
-                                                                </div>
-                                                                <div>    
-                                                                    <label for="regular-form-1" class="form-label">Bukti Transaksi</label>
-                                                                    <form data-single="true" action="/file-upload" class="dropzone">
-                                                                        <div class="fallback">
-                                                                            <input name="file" type="file" />
-                                                                        </div>
-                                                                        <div class="dz-message" data-dz-message>
-                                                                            <div class="text-lg font-medium">Seret file disini atau click untuk membuka file explorer</div>
-                                                                            <div class="text-gray-600"> Unggah berkas transaksi <span class="font-medium">format PDF</span> atau image (jpg,png,bmp) </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="px-5 pb-8 text-center">
-                                                            <button type="button" data-dismiss="modal" class="btn btn-primary w-24">Ok</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end modal konten-->
-                                    </div>
-                                </div>
-                                <!--end modal-->
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
