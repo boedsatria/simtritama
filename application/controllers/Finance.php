@@ -98,6 +98,21 @@ class Finance extends CI_Controller
 
 		$this->FinanceModel->insert($data);
 
+		if($_POST['wilayah'] == "1101" && cek_area($_POST['coa']) == 1):
+			$data2 = array(
+				'nama_pc'			=> $_POST['nama'],
+				'masuk_pc'			=> $keluar,
+				'keluar_pc'			=> 0,
+				'saldo_pc'			=> saldo_akhir($_POST['coa'])+$keluar,
+				'pa_pc'				=> $_POST['pa'],
+				'wilayah_pc'		=> $_POST['coa'],
+				'coa_pc'			=> $_POST['coa'],
+				'creator_pc'		=> $this->session->userdata('userlogin')['id_user'],
+				'tanggal_pc'		=> date('Y-m-d', strtotime($_POST['tgl_trans']))
+			);
+			$this->FinanceModel->insert($data2);
+		endif;
+		// print_r($data2);die;
 		redirect(base_url() . 'finance/petty_cash/');
 
 	}
