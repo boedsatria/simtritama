@@ -99,6 +99,13 @@ class Finance extends CI_Controller
 		$this->load->view('finance/aset_dan_penyusutan');
 		$this->load->view('footer');
 	}
+	public function detail_penyusutan()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/detail_penyusutan');
+		$this->load->view('footer');
+	}
 	public function hutang_dan_piutang()
 	{
 		$this->load->view('header');
@@ -106,11 +113,11 @@ class Finance extends CI_Controller
 		$this->load->view('finance/hutang_dan_piutang');
 		$this->load->view('footer');
 	}
-	public function detail_penyusutan()
+	public function detail_hutang_dan_piutang()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/detail_penyusutan');
+		$this->load->view('finance/detail_hutang_dan_piutang');
 		$this->load->view('footer');
 	}
 	public function general_ledger()
