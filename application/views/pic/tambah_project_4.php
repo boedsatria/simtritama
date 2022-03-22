@@ -4,6 +4,7 @@
                 <label for="input-wizard-2" class="form-label">Judul Kegiatan</label>
                 <input id="input-wizard-2" type="text" value="<?= $v['nama_project']; ?>" class="form-control" placeholder="Judul Kegiatan" name="nama_project" readonly>
                 <input type="hidden" name="id_project" value="<?= $v['id_project']; ?>">
+                <input type="hidden" name="jenis_project" value="<?= $v['jenis_project']; ?>">
             </div>
             <div class="col-span-6 sm:col-span-12">
                 <label for="input-wizard-3" class="form-label">Nomer Kegiatan</label>

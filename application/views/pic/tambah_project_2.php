@@ -32,11 +32,11 @@
 
             <div class="col-span-6 sm:col-span-12">
                 <label class="form-label">Nilai Project</label>
-                <input id="nilai_project" type="text" value="<?= ($v['nilai_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['nilai_project']))); ?>" class="form-control" placeholder="Nilai Project" name="nilai_project">
+                <input id="nilai_project" type="text" value="<?= ($v['nilai_project'] == 0.00 ? "" : number_format(floatval(preg_replace('/[^\d. ]/', '', $v['nilai_project'])), 2, ",", ".")); ?>" class="form-control" placeholder="Nilai Project" name="nilai_project">
             </div>
             <div class="col-span-6 sm:col-span-12">
                 <label class="form-label">Nilai SP2D</label>
-                <input id="nilai_sppd" type="text" value="<?= ($v['sp2d_project'] == 0.00 ? "" : floatval(preg_replace('/[^\d. ]/', '', $v['sp2d_project']))); ?>" class="form-control" placeholder="Nilai SP2D" name="sp2d_project">
+                <input id="nilai_sppd" type="text" value="<?= ($v['sp2d_project'] == 0.00 ? "" : number_format(floatval(preg_replace('/[^\d. ]/', '', $v['sp2d_project'])), 2, ",", ".")); ?>" class="form-control" placeholder="Nilai SP2D" name="sp2d_project">
             </div>
             
 

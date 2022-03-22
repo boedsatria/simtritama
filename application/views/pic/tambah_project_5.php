@@ -81,11 +81,13 @@
                         <form method="POST" enctype="multipart/form-data" action="<?= base_url(); ?>pic/tambah_project_produksi_action">
                             <div class="modal-body p-0">
                                 <div class="p-5 text-left grid grid-cols-12 gap-6">
-                                    <div class="col-span-6 sm:col-span-12">
+                                    <div class="col-span-12">
                                         <label class="form-label">Judul Versi</label>
                                         <input type="text" class="form-control" name="judul_pp" required>
                                         <input type="hidden" name="parent_pp" value="<?= $v['id_project']; ?>">
-                                        <input type="hidden" name="jenis_pp" value="<?= $v['jenis_project']; ?>">
+                                        <input type="hidden" name="nama_project" value="<?= $v['nama_project']; ?>">
+                                        <input type="hidden" name="no_project" value="<?= $v['no_project']; ?>">
+                                        <input type="hidden" name="jenis_project" value="<?= $v['jenis_project']; ?>">
                                     </div>
                                     <div class="col-span-6 sm:col-span-12">
                                         <label class="form-label">Tanggal Deadline</label>
@@ -95,6 +97,18 @@
                                             </div>
                                             <input type="text" value="" class="datepicker form-control pl-12" name="deadline_pp" data-single-mode="true">
                                         </div>
+                                    </div>
+                                    <div class="col-span-6 sm:col-span-12">
+                                        <label class="form-label">Biaya Produksi</label>
+                                        <input id="nilai_project" type="text" class="form-control" name="harga_pp" required>
+                                    </div>
+                                    <div class="col-span-12">
+                                        <label class="form-label">Vendor</label>
+                                        <select class="form-select" name="vendor_pp">
+                                            <?php foreach($vendor as $vp): ?>
+                                            <option value="<?= $vp['id_vendor'] ?>"><?= $vp['nama_vendor'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                     <div class="col-span-12">
                                         <label class="form-label">Jenis Produksi</label>

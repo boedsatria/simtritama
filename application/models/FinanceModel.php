@@ -16,6 +16,62 @@ class FinanceModel extends CI_Model
     // print_r($this->db->last_query());die;
   }
 
+
+  function get_hp($hp = false, $client= false, $media = false, $vendor = false, $mulai = false, $selesai = false)
+  {
+    $this->db->from('hutang_piutang');
+    if ($hp == 1) :
+      $this->db->where('piutang_hp', 0);
+      $this->db->where('hutang_hp >', 0);
+    elseif($hp == 2):
+      $this->db->where('piutang_hp >', 0);
+      $this->db->where('hutang_hp', 0);
+    else:
+      $this->db->where('piutang_hp >=', 0);
+      $this->db->where('hutang_hp >=', 0);
+    endif;
+
+    $this->db->where('created_hp >=', $mulai. " 00:00:00");
+    $this->db->where('created_hp <=', $selesai. " 00:00:00");
+
+    $query = $this->db->get();
+    // print_r($this->db->last_query());die;
+    $data[] = array();
+
+    foreach ($query->result_array() as $kk => $vv):
+      foreach($vv as $k => $v):
+        if($k == 'type_hp'):
+          $data[$kk]['detail_hp'] = $this->get_nama_pihak_ketiga($v, $vv['parent_hp']);
+        endif;
+        $data[$kk][$k] = $v;
+      endforeach;
+    endforeach;
+
+    return $data;
+  }
+
+  function get_nama_pihak_ketiga($type, $id)
+  {
+    if($type == 1):
+      $this->db->from('project_produksi');
+      $this->db->join('project', 'parent_pp = id_project');
+      $this->db->join('client', 'id_client = client_project', 'LEFT');
+      $this->db->join('vendor', 'vendor_pp = id_vendor');
+      $this->db->where('id_pp', $id);
+    elseif($type == 2):
+      $this->db->from('project_placement');
+      $this->db->join('project', 'parent_pm = id_project');
+      $this->db->join('client', 'id_client = client_project', 'LEFT');
+      $this->db->join('media', 'id_media = wilayah_pm', 'LEFT');
+      $this->db->where('id_pm', $id);
+    else:
+      $this->db->from('project');
+      $this->db->join('client', 'id_client = client_project', 'LEFT');
+      $this->db->where('id_project', $id);
+    endif;
+
+    return $this->db->get()->row_array();
+  }
   function get_placement_data($jenis = false, $search = false, $limit = false, $offset = false)
   {
     $this->db->from('project');
@@ -48,11 +104,42 @@ class FinanceModel extends CI_Model
     return $this->db->get();
   }
 
-  function insert($data)
+  function insert_pc($data)
   {
     // print_r($data);die;
     $this->db->insert('petty_cash', $data);
     return $this->db->insert_id();
   }
+
+  function insert_piutang($data)
+  {
+    // Cek piutang eksis
+    $this->db->from("piutang");
+    $this->db->where("project_piutang", $data['project_piutang']);
+    $id = $this->db->get();
+    $id = $id->row_array();
+    $id = $id['id_piutang'];
+
+    if($id > 0):
+      $this->db->where('id_piutang', $id);
+      $this->db->update('piutang', $data);
+    else:
+      $this->db->insert('piutang', $data);
+    endif;
+  }
+
+  function insert_hp($data)
+  {
+    // Cek utang eksis
+    $this->db->insert('hutang_piutang', $data);
+  }
+  function update_hp($data, $id)
+  {
+    $this->db->where('id_hp', $id);
+    $this->db->update('hutang_piutang', $data);
+  }
+
+
+
 
 }

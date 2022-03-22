@@ -142,7 +142,7 @@
                                         $selesai  = date('Y-m-d', strtotime('-1 day', date('Y-m-d')));
                                     }
                                 ?>
-                                <tr style="background-color: #1C2130;color:#FFF;">
+                                <tr style="background-color: #1C2130;color:#FFF;" hidden>
                                     <td class=""></td>
                                     <td class="">Saldo Awal</td>
                                     <td class=""></td>
@@ -167,7 +167,7 @@
                                 
                                 <tr style="background-color: #1C2130;color:#FFF;">
                                     <td class=""></td>
-                                    <td class="">Saldo Terakhir</td>
+                                    <td class="">Saldo</td>
                                     <td class=""></td>
                                     <td class=" text-right"></td>
                                     <td class=" text-right"></td>

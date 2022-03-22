@@ -63,6 +63,7 @@ class ProjectModel extends CI_Model
   {
     $this->db->from('project_produksi');
     $this->db->join('produksi_category', 'id_pc = kategori_pp', 'LEFT');
+    $this->db->join('vendor', 'id_vendor = vendor_pp', 'LEFT');
     $this->db->where('parent_pp', $id);
     $data = $this->db->get()->result_array();
     return $data;
@@ -92,6 +93,12 @@ class ProjectModel extends CI_Model
     $data = $this->db->get()->result_array();
     return $data;
   }
+  function get_vendor_pro()
+  {
+    $this->db->from('vendor');
+    $data = $this->db->get()->result_array();
+    return $data;
+  }
 
   function get_detail_pp($id)
   {
@@ -99,6 +106,15 @@ class ProjectModel extends CI_Model
     $this->db->where('id_pp', $id);
     $data = $this->db->get()->row_array();
     return $data;
+  }
+
+  function check_piutang_eksis($type, $id)
+  {
+    $this->db->from('hutang_piutang');
+    $this->db->where('type_hp', $type);
+    $this->db->where('parent_hp', $id);
+    $data = $this->db->get()->row_array();
+    return $data['id_hp'];
   }
 
   function get_files($id, $field)

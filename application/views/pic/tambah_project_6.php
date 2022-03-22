@@ -33,7 +33,7 @@
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_category']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_type']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media']; ?></td>
-                            <td class="border-b dark:border-dark-5"><?= $p['cost_pm']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= number_format($p['cost_pm'], 0); ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['desc_pm']; ?></td>
                             <td class="border-b dark:border-dark-5">
                                 <a href="<?= base_url('pic/edit_pm/'.$p['id_pm']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Edit </a>
@@ -88,7 +88,9 @@
                                         <label class="form-label">Judul Versi</label>
                                         <input type="text" class="form-control" name="judul_pm" required>
                                         <input type="hidden" name="parent_pm" value="<?= $v['id_project']; ?>">
-                                        <input type="hidden" name="jenis_pm" value="<?= $v['jenis_project']; ?>">
+                                        <input type="hidden" name="nama_project" value="<?= $v['nama_project']; ?>">
+                                        <input type="hidden" name="no_project" value="<?= $v['no_project']; ?>">
+                                        <input type="hidden" name="jenis_project" value="<?= $v['jenis_project']; ?>">
                                     </div>
                                     <div class="col-span-6">
                                         <label class="form-label">Kategori</label>
@@ -114,9 +116,16 @@
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <div class="col-span-12">
+                                    <div class="col-span-6">
                                         <label class="form-label">Cost</label>
                                         <input type="text" class="form-control" name="cost_pm" id="nilai_project">
+                                    </div>
+                                    <div class="col-span-3">
+                                        <label class="form-label">Diskon</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="discount_pm">
+                                            <div id="input-group-price" class="input-group-text">%</div>
+                                        </div>
                                     </div>
                                     <div class="col-span-12 sm:col-span-12">
                                         <label class="form-label">Deskripsi</label>

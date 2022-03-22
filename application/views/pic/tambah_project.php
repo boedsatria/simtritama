@@ -3,9 +3,9 @@
             <div class="col-span-12 sm:col-span-6">
                 <label for="input-wizard-1" class="form-label">Jenis Kegiatan</label>
                 <div class="flex flex-col sm:flex-row mt-2">
-                    <div class="form-check mr-2"> <input id="radio-switch-4" class="form-check-input" type="radio" name="jenis_project" value="1" <?= ($v['jenis_project'] == 1 ? "checked" : "") ?>> <label class="form-check-label" for="radio-switch-4">Produksi</label> </div>
-                    <div class="form-check mr-2 mt-2 sm:mt-0"> <input id="radio-switch-5" class="form-check-input" type="radio" name="jenis_project" value="2" <?= ($v['jenis_project'] == 2 ? "checked" : "") ?>> <label class="form-check-label" for="radio-switch-5">Placement</label> </div>
-                    <div class="form-check mr-2 mt-2 sm:mt-0"> <input id="radio-switch-6" class="form-check-input" type="radio" name="jenis_project" value="3" <?= ($v['jenis_project'] == 3 ? "checked" : "") ?>> <label class="form-check-label" for="radio-switch-6" >Produksi dan Placement</label> </div>
+                    <div class="form-check mr-2"> <input id="radio-switch-4" class="form-check-input" type="radio" name="jenis_project" value="1" <?= ($v['jenis_project'] == 1 ? "checked" : "") ?> required> <label class="form-check-label" for="radio-switch-4">Produksi</label> </div>
+                    <div class="form-check mr-2 mt-2 sm:mt-0"> <input id="radio-switch-5" class="form-check-input" type="radio" name="jenis_project" value="2" <?= ($v['jenis_project'] == 2 ? "checked" : "") ?> required> <label class="form-check-label" for="radio-switch-5">Placement</label> </div>
+                    <div class="form-check mr-2 mt-2 sm:mt-0"> <input id="radio-switch-6" class="form-check-input" type="radio" name="jenis_project" value="3" <?= ($v['jenis_project'] == 3 ? "checked" : "") ?> required> <label class="form-check-label" for="radio-switch-6" >Produksi dan Placement</label> </div>
                 </div>
             </div>
             <div class="col-span-12 sm:col-span-12">

@@ -7,6 +7,9 @@ class Finance extends CI_Controller
 	{
 		parent::__construct();
 		  $this->load->model('FinanceModel');
+		  $this->load->model('ClientModel');
+		  $this->load->model('ProjectModel');
+		  $this->load->model('MediaModel');
 	}
 
 	public function index()
@@ -37,6 +40,8 @@ class Finance extends CI_Controller
 		$this->load->view('finance/buku_besar');
 		$this->load->view('footer');
 	}
+
+
 
 
 
@@ -78,11 +83,14 @@ class Finance extends CI_Controller
 			$masuk = 0;
 			$keluar = str_replace('.', '', $_POST['transaksi']);
 		endif;
+
+		$kode_hutang = $_POST['coa'][0];
 		
 		$data = array(
 			'nama_pc'			=> $_POST['nama'],
 			'masuk_pc'			=> $masuk,
 			'keluar_pc'			=> $keluar,
+			// 'saldo_pc'			=> ($kode_hutang == 2 ? saldo_akhir($_POST['wilayah']) : saldo_akhir($_POST['wilayah'])+$masuk-$keluar),
 			'saldo_pc'			=> saldo_akhir($_POST['wilayah'])+$masuk-$keluar,
 			'pa_pc'				=> $_POST['pa'],
 			'wilayah_pc'		=> $_POST['wilayah'],
@@ -96,7 +104,33 @@ class Finance extends CI_Controller
 			$data['file_pc'] = $photo;
 		}
 
-		$this->FinanceModel->insert($data);
+		// print_r($data);die;
+
+		$parent = $this->FinanceModel->insert_pc($data);
+
+
+		//JIKA KODE BEBAN MASUK HUTANG
+		if($kode_hutang == 2){
+			$data_hutang = array(
+				// 'project_hutang'	=> $id,
+				'tipe_hutang'		=> 2103,
+				'parent_hutang'		=> $parent,
+				'nominal_hutang'	=> $data['keluar_pc']
+			);
+			$this->FinanceModel->insert_hutang($data_hutang);
+		}
+
+		//JIKA KODE BEBAN MASUK HUTANG
+		if($_POST['coa'] == '6102' || $_POST['coa'] == '6102'){
+			$data_hutang = array(
+				// 'project_hutang'	=> $id,
+				'tipe_hutang'		=> 2103,
+				'parent_hutang'		=> $parent,
+				'nominal_hutang'	=> $data['keluar_pc']
+			);
+			$this->FinanceModel->insert_hutang($data_hutang);
+		}
+		
 
 		if($_POST['wilayah'] == "1101" && cek_area($_POST['coa']) == 1):
 			$data2 = array(
@@ -110,12 +144,70 @@ class Finance extends CI_Controller
 				'creator_pc'		=> $this->session->userdata('userlogin')['id_user'],
 				'tanggal_pc'		=> date('Y-m-d', strtotime($_POST['tgl_trans']))
 			);
-			$this->FinanceModel->insert($data2);
+			$this->FinanceModel->insert_pc($data2);
 		endif;
 		// print_r($data2);die;
 		redirect(base_url() . 'finance/petty_cash/');
 
 	}
+
+
+
+
+
+
+
+	public function hutang_dan_piutang()
+	{
+		$hp = (isset($_GET['hp']) ? $_GET['hp'] : "0");
+		$client = (isset($_GET['client']) ? $_GET['client'] : "0");
+		$media = (isset($_GET['media']) ? $_GET['media'] : "0");
+		$vendor = (isset($_GET['vendor']) ? $_GET['vendor'] : "0");
+
+		if(isset($_GET['tgl_filter'])){
+			$date_range = explode("-", $_GET['tgl_filter']);
+			$mulai  = date('Y-m-d', strtotime($date_range[0]));
+			$selesai  = date('Y-m-d', strtotime($date_range[1]));
+		}else{
+			$mulai  = date('Y-m-d');
+			$selesai  = date('Y-m-d');
+		}
+		
+		// print_r($mulai . " - " . $selesai);die;
+
+		$data = array(
+			'client'		=> $this->ClientModel->get()->result_array(),
+			'media'			=> $this->MediaModel->get()->result_array(),
+			'vendor'		=> $this->ProjectModel->get_vendor_pro(),
+			'hp'			=> $this->FinanceModel->get_hp($hp, $client, $media, $vendor, $mulai, $selesai),
+			// 'saldo'		=> saldo_akhir()
+		);
+		
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/hutang_dan_piutang', $data);
+		$this->load->view('footer');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,13 +226,6 @@ class Finance extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('finance/detail_penyusutan');
-		$this->load->view('footer');
-	}
-	public function hutang_dan_piutang()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('finance/hutang_dan_piutang');
 		$this->load->view('footer');
 	}
 	public function detail_hutang_dan_piutang()
