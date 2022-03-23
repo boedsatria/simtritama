@@ -73,6 +73,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            if(count($hp[0]) < 1): ?>
+                            <tr>
+                                <td colspan="6">No Data</td>
+                            </tr>
+                            <?php else: ?>
                             <?php foreach($hp as $kp => $vp): ?>
                             <tr>
                                 <td class="border"><?= $kp+1 ?></td>
@@ -86,6 +92,7 @@
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
