@@ -15,6 +15,17 @@ class FinanceModel extends CI_Model
     return $this->db->get();
     // print_r($this->db->last_query());die;
   }
+  function get_bb($wilayah = false, $mulai = false, $selesai = false)
+  {
+    $this->db->from('buku_besar');
+    if ($wilayah > 0) $this->db->where('wilayah_bb', $wilayah);
+
+    $this->db->where('tanggal_bb >=', $mulai);
+    $this->db->where('tanggal_bb <=', $selesai);
+
+    return $this->db->get();
+    // print_r($this->db->last_query());die;
+  }
 
 
   function get_hp($hp = false, $client= false, $media = false, $vendor = false, $mulai = false, $selesai = false)
@@ -111,6 +122,13 @@ class FinanceModel extends CI_Model
     return $this->db->insert_id();
   }
 
+  function insert_bb($data)
+  {
+    // print_r($data);die;
+    $this->db->insert('buku_besar', $data);
+    return $this->db->insert_id();
+  }
+
   function insert_piutang($data)
   {
     // Cek piutang eksis
@@ -140,6 +158,26 @@ class FinanceModel extends CI_Model
   }
 
 
+  function get_cat_assets()
+  {
+    $this->db->from('assets_category');
+    return $this->db->get();
+  }
+
+  function get_assets($cat = false, $id = false)
+  {
+    $this->db->from('assets');
+    $this->db->join('assets_category', 'id_ac = kategori_as', 'LEFT');
+    if($cat) $this->db->where('kategori_as', $cat);
+    if($id) $this->db->where('id_as', $id);
+    return $this->db->get();
+  }
+  function insert_aset($data)
+  {
+    // Cek utang eksis
+    $this->db->insert('assets', $data);
+  }
+  
 
 
 }

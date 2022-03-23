@@ -1,11 +1,12 @@
-<div class="intro-y flex items-center mt-8">
+<div class="flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
         Detail Aset Dan Penyusutan
         <!--JUDUL PAGE-->
     </h2>
 </div>
+
 <!-- BEGIN: Responsive Table -->
-<div class="intro-y box mt-5">
+<div class="box mt-5">
     <div class="p-5" id="responsive-table">
         <div class="preview">
             <div class="overflow-x-auto">
@@ -21,37 +22,37 @@
                         <tr>
                             <td>1</td>
                             <td>Nama Item</td>
-                            <td>Komputer</td>
+                            <td><?= $v['nama_as'] ?></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Kategori</td>
-                            <td>Elektronik</td>
+                            <td><?= $v['nama_ac'] ?></td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Tanggal Beli</td>
-                            <td>24/08/2021</td>
+                            <td><?= tgl_indo($v['tanggal_beli_as']) ?></td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td>Nilai Beli</td>
-                            <td>Rp.17.000,-</td>
+                            <td>Rp. <?= number_format($v['harga_beli_as'],0) ?>,-</td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td>Nilai Penyusutan</td>
-                            <td>Rp.1000,-</td>
+                            <td><?= $v['penyusutan_as'] ?></td>
                         </tr>
                         <tr>
                             <td>6</td>
                             <td>Nilai Saat ini</td>
-                            <td>Rp.17.000,-</td>
+                            <td>Rp. <?= number_format($v['harga_beli_as'],0) ?>,-</td>
                         </tr>
                         <tr>
                             <td>7</td>
                             <td>Tanggal Zero</td>
-                            <td>24/08/2038</td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
