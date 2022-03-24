@@ -69,6 +69,74 @@
             </div>
             <!-- END: PROJECT POPULATION -->
 
+            <!-- BEGIN: PROJECT TYPE -->
+            <div class="col-span-12 mt-8">
+                <div class="intro-y flex items-center h-10">
+                    <h2 class="text-lg font-medium truncate mr-5">
+                        PROJECT TYPE
+                    </h2>
+                </div>
+                <div class="grid grid-cols-12 gap-6 mt-5">
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="folder-plus" class="report-box__icon text-theme-10"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="Jumlah Project Produksi + Produksi dan Placement">  <i data-feather="help-circle" class="w-6 h-6"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">20 + 50</div>
+                                <div class="text-base text-gray-600 mt-1">Produksi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="briefcase" class="report-box__icon text-theme-11"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="Jumlah Project Placement + Produksi dan Placement">  <i data-feather="help-circle" class="w-6 h-6"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">30 + 50</div>
+                                <div class="text-base text-gray-600 mt-1">Placement</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="Jumlah Project Produksi dan Placements">  <i data-feather="help-circle" class="w-6 h-6"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">50</div>
+                                <div class="text-base text-gray-600 mt-1">Produksi dan Placement</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="database" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="Total seluruh project">  <i data-feather="help-circle" class="w-6 h-6"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">100</div>
+                                <div class="text-base text-gray-600 mt-1">Total Project</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: PROJECT TYPE -->
+
             <!-- BEGIN: MEDIA DISTRIBUTION -->
             <div class="col-span-12 mt-8">
                 <div class="intro-y flex items-center h-10">
