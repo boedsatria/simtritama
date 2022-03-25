@@ -144,3 +144,91 @@
     </div>
     <!-- END: Pagination -->
 </div>
+
+<!--begin STOCKIES-->
+<div class="flex flex-col sm:flex-row items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        STOCKIES
+    </h2>
+    <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
+        <!-- form tambah data -->
+    </div>
+</div>
+<!-- BEGIN: HTML Table Data -->
+<!-- BEGIN: filter -->
+<div class="box p-5 mt-5">
+<div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
+        <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto" action="">
+            <div class="sm:flex items-center sm:mr-4">
+                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Item stock</label>
+                <select data-placeholder="Select Kategori" name="cat" class="form-control w-full">
+                    <?php foreach($cat as $c): ?>
+                    <option value="<?= $c['id_ac'] ?>"><?= $c['nama_ac'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="box p-5 mt-1">
+        <!-- BEGIN: Hoverable Table -->
+        <div class="p-5" id="hoverable-table">
+            <div class="preview">
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr class="text-center">
+                                <th class="border border-b-2 dark:border-dark-5 w-1">Tanggal</th>
+                                <th class="border border-b-2 dark:border-dark-5">User</th>
+                                <th class="border border-b-2 dark:border-dark-5">Stock In</th>
+                                <th class="border border-b-2 dark:border-dark-5">Stock Out</th>
+                                <th class="border border-b-2 dark:border-dark-5">Stock Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($assets as $k => $v): ?>
+                            <tr>
+                                <td class="border"><?= $k+1 ?></td>
+                                <td class="border"><?= $v['nama_ac'] ?></td>
+                                <td class="border"><?= $v['nama_as'] ?></td>
+                                <td class="border"><?= tgl_indo($v['tanggal_beli_as']) ?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END: Hoverable Table -->
+    </div>
+</div>
+<!-- BEGIN: Pagination -->
+<div class="p-5">
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+        <ul class="pagination">
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
+            </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li> <a class="pagination__link" href="">1</a> </li>
+            <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
+            <li> <a class="pagination__link" href="">3</a> </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
+            </li>
+        </ul>
+        <select class="w-20 form-select box mt-3 sm:mt-0">
+            <option>10</option>
+            <option>25</option>
+            <option>35</option>
+            <option>50</option>
+        </select>
+    </div>
+    <!-- END: Pagination -->
+</div>
