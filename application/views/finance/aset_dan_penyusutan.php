@@ -157,18 +157,7 @@
 <!-- BEGIN: HTML Table Data -->
 <!-- BEGIN: filter -->
 <div class="box p-5 mt-5">
-<div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
-        <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto" action="">
-            <div class="sm:flex items-center sm:mr-4">
-                <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Item stock</label>
-                <select data-placeholder="Select Kategori" name="cat" class="form-control w-full">
-                    <?php foreach($cat as $c): ?>
-                    <option value="<?= $c['id_ac'] ?>"><?= $c['nama_ac'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-        </form>
-    </div>
+
     <div class="box p-5 mt-1">
         <!-- BEGIN: Hoverable Table -->
         <div class="p-5" id="hoverable-table">
@@ -178,21 +167,24 @@
                         <thead>
                             <tr class="text-center">
                                 <th class="border border-b-2 dark:border-dark-5 w-1">Tanggal</th>
-                                <th class="border border-b-2 dark:border-dark-5">User</th>
+                                <th class="border border-b-2 dark:border-dark-5">Item</th>
                                 <th class="border border-b-2 dark:border-dark-5">Stock In</th>
                                 <th class="border border-b-2 dark:border-dark-5">Stock Out</th>
                                 <th class="border border-b-2 dark:border-dark-5">Stock Qty</th>
+                                <th class="border border-b-2 dark:border-dark-5">Reorder Level</th>
+                                <th class="border border-b-2 dark:border-dark-5">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($assets as $k => $v): ?>
-                            <tr>
-                                <td class="border"><?= $k+1 ?></td>
-                                <td class="border"><?= $v['nama_ac'] ?></td>
-                                <td class="border"><?= $v['nama_as'] ?></td>
-                                <td class="border"><?= tgl_indo($v['tanggal_beli_as']) ?></td>
+                            <tr class="text-center">
+                                <td>2022/okt/19</td>
+                                <td>Kertas HVS A4 80G</td>
+                                <td>30</td>
+                                <td>5</td>
+                                <td>25</td>
+                                <td>5</td>
+                                <td><a href="<?= base_url('finance/detail_stock') ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a></td>
                             </tr>
-                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

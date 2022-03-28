@@ -324,6 +324,15 @@ class Finance extends CI_Controller
 	}
 
 
+	public function detail_stock()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/detail_stock');
+		$this->load->view('footer');
+	}
+
+
 
 
 
