@@ -69,6 +69,7 @@
                                 <th class="border border-b-2 dark:border-dark-5">Hutang</th> <!--Judul Project + Jenis Pekerjaan ( produksi or placement) + Nama Transaksi : contoh : Advetorial Keselamatan Kerja + Placement + Media Trans TV-->
                                 <th class="border border-b-2 dark:border-dark-5">Piutang</th> <!--Judul Project + Jenis Pekerjaan ( produksi or placement) + Nama Transaksi : contoh : Advetorial Keselamatan Kerja + Placement + Media Trans TV-->
                                 <th class="border border-b-2 dark:border-dark-5">Tanggal Transaksi</th>
+                                <th class="border border-b-2 dark:border-dark-5">Tanggal Pencairan</th>
                                 <th class="border border-b-2 dark:border-dark-5">Aksi</th>
                             </tr>
                         </thead>
@@ -86,6 +87,7 @@
                                 <td class="border text-right"><?= number_format($vp['hutang_hp'], 0) ?></td>
                                 <td class="border text-right"><?= number_format($vp['piutang_hp'], 0) ?></td>
                                 <td class="border"><?= tgl_indo($vp['created_hp']) ?></td>
+                                <td class="border"><?= ($vp['piutang_hp'] > 0 ? tgl_indo($vp['detail_hp']['tgl_pencairan_project']) : "") ?></td>
                                 <td class="border text-center">
                                     <a href="<?= base_url('finance/detail_hutang_dan_piutang') ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
                                         Detail </a>

@@ -427,26 +427,26 @@ class Pic extends CI_Controller
 		$parent = $this->ProjectModel->insert_pro($data);
 
 
-		//INPUT TABEL HUTANG
-		$data_piutang = array(
-			'nama_hp'			=> "Hutang ".$data['judul_pp'],
-			'type_hp'			=> 1,
-			'parent_hp'			=> $parent,
-			'hutang_hp'			=> $data['harga_pp'],
-			'piutang_hp'		=> 0,
-			'creator_hp'		=> $this->session->userdata('userlogin')['id_user'],
-			'created_hp'		=> date('Y-m-d'),
-			'updated_hp'		=> date('Y-m-d'),
-			'desc_hp'			=> 'Auto Generate dari project '.$_POST['nama_project']. ' No. Ringkos '.$_POST['no_project'],
-		);
+		// //INPUT TABEL HUTANG
+		// $data_piutang = array(
+		// 	'nama_hp'			=> "Hutang ".$data['judul_pp'],
+		// 	'type_hp'			=> 1,
+		// 	'parent_hp'			=> $parent,
+		// 	'hutang_hp'			=> $data['harga_pp'],
+		// 	'piutang_hp'		=> 0,
+		// 	'creator_hp'		=> $this->session->userdata('userlogin')['id_user'],
+		// 	'created_hp'		=> date('Y-m-d'),
+		// 	'updated_hp'		=> date('Y-m-d'),
+		// 	'desc_hp'			=> 'Auto Generate dari project '.$_POST['nama_project']. ' No. Ringkos '.$_POST['no_project'],
+		// );
 
-		$check_eksis = $this->ProjectModel->check_piutang_eksis(1, $parent);
+		// $check_eksis = $this->ProjectModel->check_piutang_eksis(1, $parent);
 
-		if($check_eksis > 0):
-			$this->FinanceModel->update_hp($data_piutang, $check_eksis);
-		else:
-			$this->FinanceModel->insert_hp($data_piutang);
-		endif;
+		// if($check_eksis > 0):
+		// 	$this->FinanceModel->update_hp($data_piutang, $check_eksis);
+		// else:
+		// 	$this->FinanceModel->insert_hp($data_piutang);
+		// endif;
 		
 
 		if($_POST['jenis_project'] == 3):
@@ -543,26 +543,26 @@ class Pic extends CI_Controller
 
 		$parent = $this->ProjectModel->insert_pla($data);
 
-		//INPUT TABEL HUTANG
-		$data_piutang = array(
-			'nama_hp'			=> "Hutang ".$data['judul_pm'],
-			'type_hp'			=> 2,
-			'parent_hp'			=> $parent,
-			'hutang_hp'			=> $data['nominal_pm'],
-			'piutang_hp'		=> 0,
-			'creator_hp'		=> $this->session->userdata('userlogin')['id_user'],
-			'created_hp'		=> date('Y-m-d'),
-			'updated_hp'		=> date('Y-m-d'),
-			'desc_hp'			=> 'Auto Generate dari project '.$_POST['nama_project']. ' No. Ringkos '.$_POST['no_project'],
-		);
+		// //INPUT TABEL HUTANG
+		// $data_piutang = array(
+		// 	'nama_hp'			=> "Hutang ".$data['judul_pm'],
+		// 	'type_hp'			=> 2,
+		// 	'parent_hp'			=> $parent,
+		// 	'hutang_hp'			=> $data['nominal_pm'],
+		// 	'piutang_hp'		=> 0,
+		// 	'creator_hp'		=> $this->session->userdata('userlogin')['id_user'],
+		// 	'created_hp'		=> date('Y-m-d'),
+		// 	'updated_hp'		=> date('Y-m-d'),
+		// 	'desc_hp'			=> 'Auto Generate dari project '.$_POST['nama_project']. ' No. Ringkos '.$_POST['no_project'],
+		// );
 
-		$check_eksis = $this->ProjectModel->check_piutang_eksis(2, $parent);
+		// $check_eksis = $this->ProjectModel->check_piutang_eksis(2, $parent);
 
-		if($check_eksis > 0):
-			$this->FinanceModel->update_hp($data_piutang, $check_eksis);
-		else:
-			$this->FinanceModel->insert_hp($data_piutang);
-		endif;
+		// if($check_eksis > 0):
+		// 	$this->FinanceModel->update_hp($data_piutang, $check_eksis);
+		// else:
+		// 	$this->FinanceModel->insert_hp($data_piutang);
+		// endif;
 
 		redirect(base_url() . 'pic/list_project/');
 
