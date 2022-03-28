@@ -79,16 +79,48 @@
 </div>
 <!-- END: Responsive Table -->
 
+
+
+
+
 <div class="grid grid-cols-12 gap-6">
     <div class="col-span-12 2xl:col-span-9">
         <div class="grid grid-cols-12 gap-6">
-            <!-- BEGIN: General Report -->
+
+            <!-- BEGIN: PROJECT TRACKING -->
+            <div class="col-span-6 xl:col-span-12 mt-6">
+                <div class="intro-y block sm:flex items-center h-10">
+                    <h2 class="text-lg font-medium truncate mr-5">
+                        FINANCIAL TRACKING
+                    </h2>
+                    <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
+                        <i data-feather="map-pin" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
+                        <input type="text" class="form-control sm:w-40 box pl-10" placeholder="Filter by COA">
+                    </div>
+                    <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
+                        <i data-feather="map-pin" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
+                        <input type="text" class="form-control sm:w-40 box pl-10" placeholder="Filter by USER">
+                    </div>
+                    <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
+                        <i data-feather="map-pin" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
+                        <input type="text" class="form-control sm:w-40 box pl-10" placeholder="Filter by DATE">
+                    </div>
+                </div>
+                <div class="intro-y box p-5 mt-12 sm:mt-5">
+                    <div>List Transaksi berdasarkan COA , Pengguna anggaran , Tanggal Transaksi</div>
+                    <div class="mt-5 bg-gray-200 rounded-md"></div>
+                </div>
+            </div>
+            <!-- END: PROJECT TRACKING -->
+
+
+
+            <!-- BEGIN: b/c -->
             <div class="col-span-12 mt-8">
                 <div class="intro-y flex items-center h-10">
                     <h2 class="text-lg font-medium truncate mr-5">
-                        General Report
+                        BENEFIT AND COST RATIO
                     </h2>
-                    <a href="" class="ml-auto flex items-center text-theme-1 dark:text-theme-10"> <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data </a>
                 </div>
                 <div class="grid grid-cols-12 gap-6 mt-5">
                     <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
@@ -97,11 +129,11 @@
                                 <div class="flex">
                                     <i data-feather="folder-plus" class="report-box__icon text-theme-10"></i>
                                     <div class="ml-auto">
-                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month"> 33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project Berkontrak belum berjalan"> 20% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
-                                <div class="text-base text-gray-600 mt-1">Total Pendapatan</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">2.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL BIAYA PRODUKSI</div>
                             </div>
                         </div>
                     </div>
@@ -109,13 +141,13 @@
                         <div class="report-box zoom-in">
                             <div class="box p-5">
                                 <div class="flex">
-                                    <i data-feather="folder-minus" class="report-box__icon text-theme-11"></i>
+                                    <i data-feather="briefcase" class="report-box__icon text-theme-11"></i>
                                     <div class="ml-auto">
-                                        <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer" title="2% Lower than last month"> 2% <i data-feather="chevron-down" class="w-4 h-4 ml-0.5"></i> </div>
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project dalam proses pengerjaan"> 50% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">3.721</div>
-                                <div class="text-base text-gray-600 mt-1">Total Pengeluaran</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">4.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL BIAYA PLACEMENT</div>
                             </div>
                         </div>
                     </div>
@@ -123,13 +155,13 @@
                         <div class="report-box zoom-in">
                             <div class="box p-5">
                                 <div class="flex">
-                                    <i data-feather="file-minus" class="report-box__icon text-theme-12"></i>
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
                                     <div class="ml-auto">
-                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="12% Higher than last month"> 12% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project selesai sampai dengan pembayaran"> 30% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
-                                <div class="text-base text-gray-600 mt-1">Total Hutang</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">10.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL PENDAPATAN</div>
                             </div>
                         </div>
                     </div>
@@ -137,140 +169,352 @@
                         <div class="report-box zoom-in">
                             <div class="box p-5">
                                 <div class="flex">
-                                    <i data-feather="file-plus" class="report-box__icon text-theme-9"></i>
+                                    <i data-feather="database" class="report-box__icon text-theme-9"></i>
                                     <div class="ml-auto">
-                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="(Biaya Produksi + Biaya Placement) / Pendapatan"> 100% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                     </div>
                                 </div>
-                                <div class="text-3xl font-medium leading-8 mt-6">152.040</div>
-                                <div class="text-base text-gray-600 mt-1">Total Piutang</div>
+                                <div class="text-3xl font-medium leading-8 mt-6">1.667</div>
+                                <div class="text-base text-gray-600 mt-1">B/C RASIO</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END: General Report -->
-            <!-- BEGIN: Sales Report -->
-            <div class="col-span-12 lg:col-span-6 mt-8">
-                <div class="intro-y block sm:flex items-center h-10">
-                    <h2 class="text-lg font-medium truncate mr-5">
-                        Prestasi Finansial
-                    </h2>
-                    <div class="sm:ml-auto mt-3 sm:mt-0 relative text-gray-700 dark:text-gray-300">
-                        <i data-feather="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
-                        <input type="text" class="datepicker form-control sm:w-56 box pl-10">
-                    </div>
-                </div>
-                <div class="intro-y box p-5 mt-12 sm:mt-5">
-                    <div class="flex flex-col xl:flex-row xl:items-center">
-                        <div class="flex">
-                            <div>
-                                <div class="text-theme-19 dark:text-gray-300 text-lg xl:text-xl font-medium">15,000</div>
-                                <div class="mt-0.5 text-gray-600 dark:text-gray-600">Bulan ini</div>
-                            </div>
-                            <div class="w-px h-12 border border-r border-dashed border-gray-300 dark:border-dark-5 mx-4 xl:mx-5"></div>
-                            <div>
-                                <div class="text-gray-600 dark:text-gray-600 text-lg xl:text-xl font-medium">10,000</div>
-                                <div class="mt-0.5 text-gray-600 dark:text-gray-600">BUlan lalu</div>
-                            </div>
-                        </div>
-                        <div class="dropdown xl:ml-auto mt-5 xl:mt-0">
-                            <button class="dropdown-toggle btn btn-outline-secondary font-normal" aria-expanded="false"> Pilih Jenis Finansial <i data-feather="chevron-down" class="w-4 h-4 ml-2"></i> </button>
-                            <div class="dropdown-menu w-40">
-                                <div class="dropdown-menu__content box dark:bg-dark-1 p-2 overflow-y-auto h-32">
-                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Pendapatan</a>
-                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Pengeluaran</a>
-                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Hutang</a>
-                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">Piutang</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="report-chart">
-                        <canvas id="report-line-chart" height="169" class="mt-6"></canvas>
-                    </div>
-                </div>
-            </div>
-            <!-- END: Sales Report -->
-            <!-- BEGIN: Weekly Top Seller -->
-            <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+            <!-- END: b/c -->
+
+            
+
+            <!-- BEGIN: r/c -->
+            <div class="col-span-12 mt-8">
                 <div class="intro-y flex items-center h-10">
                     <h2 class="text-lg font-medium truncate mr-5">
-                        Persentase Mingguan
+                        REVENUE AND COST RATIO
                     </h2>
-                    <a href="" class="ml-auto text-theme-1 dark:text-theme-10 truncate">Show More</a>
                 </div>
-                <div class="intro-y box p-5 mt-5">
-                    <canvas class="mt-3" id="report-pie-chart" height="300"></canvas>
-                    <div class="mt-8">
-                        <div class="flex items-center">
-                            <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
-                            <span class="truncate">Pendapatan</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">35%</span>
+                <div class="grid grid-cols-12 gap-6 mt-5">
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="folder-plus" class="report-box__icon text-theme-10"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Seluruh biaya tetap"> 20% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">2.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL BIAYA TETAP</div>
+                            </div>
                         </div>
-                        <div class="flex items-center mt-4">
-                            <div class="w-2 h-2 bg-theme-1 rounded-full mr-3"></div>
-                            <span class="truncate">Pengeluaran</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">15%</span>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="briefcase" class="report-box__icon text-theme-11"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Seluruh biaya tidak tetap"> 50% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">4.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL BIAYA VARIABEL</div>
+                            </div>
                         </div>
-                        <div class="flex items-center mt-4">
-                            <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                            <span class="truncate">Hutang</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">10%</span>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project selesai sampai dengan pembayaran"> 30% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">10.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL PENERIMAAN</div>
+                            </div>
                         </div>
-                        <div class="flex items-center mt-4">
-                            <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                            <span class="truncate">Piutang</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">40%</span>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="database" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Total Penerimaan/Biaya (tetap + Variabel)"> Critical Value = 1 <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">1.667</div>
+                                <div class="text-base text-gray-600 mt-1">R/C RASIO</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END: Weekly Top Seller -->
-            <!-- BEGIN: Sales Report -->
-            <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+            <!-- END: r/c -->
+
+
+            <!-- BEGIN: r/c -->
+            <div class="col-span-12 mt-8">
                 <div class="intro-y flex items-center h-10">
                     <h2 class="text-lg font-medium truncate mr-5">
-                        Persentase Bulanan
+                        PROFITABILITY
                     </h2>
-                    <a href="" class="ml-auto text-theme-1 dark:text-theme-10 truncate">Show More</a>
                 </div>
-                <div class="intro-y box p-5 mt-5">
-                    <canvas class="mt-3" id="report-donut-chart" height="300"></canvas>
-                    <div class="mt-8">
-                        <div class="flex items-center">
-                            <div class="w-2 h-2 bg-theme-11 rounded-full mr-3"></div>
-                            <span class="truncate">Pendapatan</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">62%</span>
+                <div class="grid grid-cols-12 gap-6 mt-5">
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="folder-plus" class="report-box__icon text-theme-10"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Seluruh biaya tetap"> 20% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">2.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL HUTANG</div>
+                            </div>
                         </div>
-                        <div class="flex items-center mt-4">
-                            <div class="w-2 h-2 bg-theme-1 rounded-full mr-3"></div>
-                            <span class="truncate">Pengeluaran</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">33%</span>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="briefcase" class="report-box__icon text-theme-11"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Seluruh biaya tidak tetap"> 50% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">4.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL PIUTANG</div>
+                            </div>
                         </div>
-                        <div class="flex items-center mt-4">
-                            <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                            <span class="truncate">Hutang</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">10%</span>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project selesai sampai dengan pembayaran"> 30% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">10.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL PENGELUARAN</div>
+                            </div>
                         </div>
-                        <div class="flex items-center mt-4">
-                            <div class="w-2 h-2 bg-theme-12 rounded-full mr-3"></div>
-                            <span class="truncate">Piutang</span>
-                            <div class="h-px flex-1 border border-r border-dashed border-gray-300 mx-3 xl:hidden"></div>
-                            <span class="font-medium xl:ml-auto">10%</span>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project selesai sampai dengan pembayaran"> 30% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">10.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL PENERIMAAN</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project selesai sampai dengan pembayaran"> 30% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">10.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">TOTAL PENDAPATAN</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project selesai sampai dengan pembayaran"> 30% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">10.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">SALDO SAAT INI</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="archive" class="report-box__icon text-theme-12"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Project selesai sampai dengan pembayaran"> 30% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">10.000.000</div>
+                                <div class="text-base text-gray-600 mt-1">KEUNTUNGAN SAAT INI</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="report-box zoom-in">
+                            <div class="box p-5">
+                                <div class="flex">
+                                    <i data-feather="database" class="report-box__icon text-theme-9"></i>
+                                    <div class="ml-auto">
+                                        <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="Total Penerimaan/Biaya (tetap + Variabel)"> Critical Value = 1 <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-medium leading-8 mt-6">1.667</div>
+                                <div class="text-base text-gray-600 mt-1">KEUNTUNGAN ESTIMATE</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END: Sales Report -->
+            <!-- END: r/c -->
+            
+            
+
+                        
+
         </div>
     </div>
+    <div class="col-span-12 2xl:col-span-3">
+        <div class="2xl:border-l border-theme-5 -mb-10 pb-10">
+            <div class="2xl:pl-6 grid grid-cols-12 gap-6">
+                
+            <!-- BEGIN: PAID PROJECT -->
+                <div class="col-span-12 md:col-span-6 xl:col-span-4 2xl:col-span-12 mt-3 2xl:mt-8">
+                    <div class="intro-x flex items-center h-10">
+                        <h2 class="text-lg font-medium truncate mr-5">
+                            PIUTANG TERBAYAR
+                        </h2>
+                    </div>
+                    <div class="mt-5">
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Clients - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">Tanggal pembayaran</div>
+                                    <div class="text-theme-9">Rp jumlah bayar</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Clients - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">24 June 2022</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Clients - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">21 November 2020</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Clients - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">26 September 2020</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Clients - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">9 March 2021</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <a href="" class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">View More</a>
+                    </div>
+                </div>
+                <!-- END: PAID PROJECT -->
+
+                <!-- BEGIN: PAID PROJECT -->
+                <div class="col-span-12 md:col-span-6 xl:col-span-4 2xl:col-span-12 mt-3 2xl:mt-8">
+                    <div class="intro-x flex items-center h-10">
+                        <h2 class="text-lg font-medium truncate mr-5">
+                            HUTANG TERBAYAR
+                        </h2>
+                    </div>
+                    <div class="mt-5">
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Vendor/Media - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">Tanggal pembayaran</div>
+                                    <div class="text-theme-9">Rp jumlah bayar</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Vendor/Media - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">24 June 2022</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Vendor/Media - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">21 November 2020</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Vendor/Media - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">26 September 2020</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="intro-x">
+                            <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                <div class="ml-4 mr-auto">
+                                    <div class="font-medium">Nama Vendor/Media - Nomer Ringkos</div>
+                                    <div class="text-gray-600 text-xs mt-0.5">9 March 2021</div>
+                                    <div class="text-theme-6">Rp jumlah bayar</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <a href="" class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-theme-15 dark:border-dark-5 text-theme-16 dark:text-gray-600">View More</a>
+                    </div>
+                </div>
+                <!-- END: PAID PROJECT -->
+
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <!-- END: Content -->

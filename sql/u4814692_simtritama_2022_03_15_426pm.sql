@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Mar 07, 2022 at 12:51 PM
--- Server version: 10.5.13-MariaDB-cll-lve
--- PHP Version: 7.3.33
+-- Host: 127.0.0.1
+-- Generation Time: Mar 25, 2022 at 10:26 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,8 +18,84 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u4814692_simtritama`
+-- Database: `simtritama`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assets`
+--
+
+CREATE TABLE `assets` (
+  `id_as` int(11) NOT NULL,
+  `nama_as` varchar(128) NOT NULL,
+  `kategori_as` int(11) NOT NULL,
+  `tanggal_beli_as` datetime NOT NULL,
+  `harga_beli_as` decimal(11,2) NOT NULL,
+  `penyusutan_as` decimal(11,2) NOT NULL,
+  `desc_as` text NOT NULL,
+  `status_as` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `assets`
+--
+
+INSERT INTO `assets` (`id_as`, `nama_as`, `kategori_as`, `tanggal_beli_as`, `harga_beli_as`, `penyusutan_as`, `desc_as`, `status_as`) VALUES
+(1, 'Laptop', 2, '2022-03-23 00:00:00', '10000000.00', '20.00', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assets_category`
+--
+
+CREATE TABLE `assets_category` (
+  `id_ac` int(11) NOT NULL,
+  `nama_ac` varchar(128) NOT NULL,
+  `value_ac` decimal(11,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `assets_category`
+--
+
+INSERT INTO `assets_category` (`id_ac`, `nama_ac`, `value_ac`) VALUES
+(1, 'Non Bangunan 4 Tahun', '1.00'),
+(2, 'Non Bangunan 8 Tahun', '1.00'),
+(3, 'Non Bangunan 16 Tahun', '1.00'),
+(4, 'Non Bangunan 20 Tahun', '1.00'),
+(5, 'Bangunan Permanen 20 Tahun', '1.00'),
+(6, 'Bangunan Non Permanen 10 Tahun', '1.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buku_besar`
+--
+
+CREATE TABLE `buku_besar` (
+  `id_bb` int(11) NOT NULL,
+  `nama_bb` varchar(128) NOT NULL,
+  `masuk_bb` decimal(11,2) NOT NULL,
+  `keluar_bb` decimal(11,2) NOT NULL,
+  `saldo_bb` decimal(11,2) NOT NULL,
+  `pa_bb` int(11) NOT NULL,
+  `file_bb` varchar(128) NOT NULL,
+  `wilayah_bb` int(11) NOT NULL,
+  `coa_bb` varchar(16) NOT NULL,
+  `creator_bb` int(11) NOT NULL,
+  `tanggal_bb` datetime NOT NULL,
+  `date_create_bb` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `buku_besar`
+--
+
+INSERT INTO `buku_besar` (`id_bb`, `nama_bb`, `masuk_bb`, `keluar_bb`, `saldo_bb`, `pa_bb`, `file_bb`, `wilayah_bb`, `coa_bb`, `creator_bb`, `tanggal_bb`, `date_create_bb`) VALUES
+(1, 'coba', '190000000.00', '0.00', '0.00', 1, '', 1101, '1000', 2, '2022-03-23 00:00:00', '2022-03-23 09:39:09');
 
 -- --------------------------------------------------------
 
@@ -209,6 +284,59 @@ INSERT INTO `golongan_akun` (`id_gol_akun`, `nama_gol_akun`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `hutang`
+--
+
+CREATE TABLE `hutang` (
+  `id_hutang` int(11) NOT NULL,
+  `tipe_hutang` varchar(8) NOT NULL COMMENT 'NOMOR COA',
+  `parent_hutang` int(11) NOT NULL,
+  `nominal_hutang` decimal(11,2) NOT NULL,
+  `bukti_hutang` varchar(128) NOT NULL,
+  `tanggal_bayar_hutang` datetime NOT NULL,
+  `desc_hutang` text NOT NULL,
+  `status_hutang` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `hutang`
+--
+
+INSERT INTO `hutang` (`id_hutang`, `tipe_hutang`, `parent_hutang`, `nominal_hutang`, `bukti_hutang`, `tanggal_bayar_hutang`, `desc_hutang`, `status_hutang`) VALUES
+(4, '6111', 21, '20000000.00', '', '0000-00-00 00:00:00', '', 0),
+(5, '6111', 22, '10000000.00', '', '0000-00-00 00:00:00', '', 0),
+(6, '2103', 10, '20000000.00', '', '0000-00-00 00:00:00', '', 0),
+(7, '2103', 1, '0.00', '', '0000-00-00 00:00:00', '', 0),
+(8, '2103', 2, '3000000.00', '', '0000-00-00 00:00:00', '', 0),
+(9, '2103', 3, '3000000.00', '', '0000-00-00 00:00:00', '', 0),
+(10, '2103', 4, '0.00', '', '0000-00-00 00:00:00', '', 0),
+(11, '2103', 8, '20000000.00', '', '0000-00-00 00:00:00', '', 0),
+(12, '2103', 9, '0.00', '', '0000-00-00 00:00:00', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hutang_piutang`
+--
+
+CREATE TABLE `hutang_piutang` (
+  `id_hp` int(11) NOT NULL,
+  `nama_hp` varchar(128) NOT NULL,
+  `type_hp` int(11) NOT NULL COMMENT '1 = Produksi,\r\n2 = Placement,\r\n3 = Hutang Project',
+  `parent_hp` int(11) NOT NULL,
+  `hutang_hp` decimal(11,2) NOT NULL,
+  `piutang_hp` decimal(11,2) NOT NULL,
+  `creator_hp` int(11) NOT NULL,
+  `bukti_hp` varchar(64) NOT NULL,
+  `created_hp` datetime NOT NULL,
+  `updated_hp` datetime NOT NULL,
+  `desc_hp` text NOT NULL,
+  `status_hp` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kbli`
 --
 
@@ -351,27 +479,27 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `slug_menu`, `icon_menu`, `parent_me
 (13, 'Buku Besar', 'buku_besar', 'activity', 11, 2, 3, 1),
 (14, 'Petty Cash', 'petty_cash', 'activity', 11, 3, 3, 1),
 (15, 'Aset dan Penyusutan', 'aset_dan_penyusutan', 'activity', 11, 4, 3, 1),
-(16, 'Aset dan Penyusutan', 'aset_dan_penyusutan', 'activity', 11, 5, 3, 1),
-(17, 'General Ledger', 'general_ledger', 'activity', 11, 6, 3, 1),
-(18, 'Cetak Laporan Keuangan', 'cetak_laporan_keuangan', 'activity', 11, 7, 3, 1),
-(19, 'Produksi', 'produksi', 'truck', 0, 9, 4, 1),
-(20, 'Job Order', 'job_order', 'activity', 18, 1, 4, 1),
-(21, 'Pengajuan', 'pengajuan', 'activity', 18, 2, 4, 1),
-(22, 'Pembayaran / Tagihan', 'pembayaran_tagihan', 'activity', 18, 3, 4, 1),
-(23, 'Placement', 'placement', 'video', 0, 11, 5, 1),
-(24, 'Job Order', 'job_order', 'activity', 22, 1, 5, 1),
-(25, 'Pengajuan dan LogProof', 'pengajuan_dan_logproof', 'activity', 22, 2, 5, 1),
-(26, 'Pembayaran / Tagihan', 'pembayaran_tagihan', 'activity', 22, 3, 5, 1),
-(27, 'divider', 'divider', '', 0, 4, 0, 1),
-(28, 'divider', 'divider', '', 0, 6, 0, 1),
-(29, 'divider', 'divider', '', 0, 8, 0, 1),
-(30, 'divider', 'divider', '', 0, 10, 0, 1),
-(31, 'Data User', 'list_user', 'activity', 3, 2, 1, 1),
-(32, 'Data Media', 'list_media', 'activity', 3, 3, 1, 1),
-(33, 'Data Perusahaan Penyelenggara', 'list_penyelenggara', 'activity', 3, 4, 1, 1),
-(34, 'Media Televisi', 'media_televisi', 'zap', 31, 1, 1, 1),
-(35, 'Media Digital', 'media_digital', 'zap', 31, 2, 1, 1),
-(36, 'Media Luar Ruang', 'media_luar_ruang', 'zap', 31, 3, 1, 1);
+(16, 'General Ledger', 'general_ledger', 'activity', 11, 5, 3, 1),
+(17, 'Cetak Laporan Keuangan', 'cetak_laporan_keuangan', 'activity', 11, 6, 3, 1),
+(18, 'Produksi', 'produksi', 'truck', 0, 9, 4, 1),
+(19, 'Job Order', 'job_order', 'activity', 18, 1, 4, 1),
+(20, 'Pengajuan', 'pengajuan', 'activity', 18, 2, 4, 1),
+(21, 'Pembayaran / Tagihan', 'pembayaran_tagihan', 'activity', 18, 3, 4, 1),
+(22, 'Placement', 'placement', 'video', 0, 11, 5, 1),
+(23, 'Job Order', 'job_order', 'activity', 22, 1, 5, 1),
+(24, 'Pengajuan dan LogProof', 'pengajuan_dan_logproof', 'activity', 22, 2, 5, 1),
+(25, 'Pembayaran / Tagihan', 'pembayaran_tagihan', 'activity', 22, 3, 5, 1),
+(26, 'divider', 'divider', '', 0, 4, 0, 1),
+(27, 'divider', 'divider', '', 0, 6, 0, 1),
+(28, 'divider', 'divider', '', 0, 8, 0, 1),
+(29, 'divider', 'divider', '', 0, 10, 0, 1),
+(30, 'Data User', 'list_user', 'activity', 3, 2, 1, 1),
+(31, 'Data Media', 'list_media', 'activity', 3, 3, 1, 1),
+(32, 'Data Perusahaan Penyelenggara', 'list_penyelenggara', 'activity', 3, 4, 1, 1),
+(33, 'Media Televisi', 'media_televisi', 'zap', 31, 1, 1, 1),
+(34, 'Media Digital', 'media_digital', 'zap', 31, 2, 1, 1),
+(35, 'Media Luar Ruang', 'media_luar_ruang', 'zap', 31, 3, 1, 1),
+(36, 'Hutang Dan Piutang', 'hutang_dan_piutang', 'activity', 11, 5, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -412,9 +540,11 @@ CREATE TABLE `petty_cash` (
   `nama_pc` varchar(128) NOT NULL,
   `masuk_pc` decimal(11,2) NOT NULL,
   `keluar_pc` decimal(11,2) NOT NULL,
+  `saldo_pc` decimal(11,2) NOT NULL,
   `pa_pc` int(11) NOT NULL,
   `file_pc` varchar(128) NOT NULL,
   `wilayah_pc` int(11) NOT NULL,
+  `coa_pc` varchar(16) NOT NULL,
   `creator_pc` int(11) NOT NULL,
   `tanggal_pc` datetime NOT NULL,
   `date_create_pc` datetime NOT NULL DEFAULT current_timestamp()
@@ -424,11 +554,35 @@ CREATE TABLE `petty_cash` (
 -- Dumping data for table `petty_cash`
 --
 
-INSERT INTO `petty_cash` (`id_pc`, `nama_pc`, `masuk_pc`, `keluar_pc`, `pa_pc`, `file_pc`, `wilayah_pc`, `creator_pc`, `tanggal_pc`, `date_create_pc`) VALUES
-(1, 'Beli bensin', 200000.00, 0.00, 2, 'pettycash_16460498597121.png', 1101, 0, '2022-02-28 00:00:00', '2022-02-28 19:04:20'),
-(2, 'test heru', 1000.00, 0.00, 2, 'pettycash_16460506622747.png', 1110, 0, '2022-02-28 00:00:00', '2022-02-28 19:17:42'),
-(3, 'test heru', 1000.00, 0.00, 2, 'pettycash_16460554306498.jpg', 5000, 0, '2022-02-28 00:00:00', '2022-02-28 20:37:10'),
-(4, 'test heru', 1000.00, 0.00, 4, 'pettycash_16460555971267.png', 1101, 0, '2022-02-28 00:00:00', '2022-02-28 20:39:57');
+INSERT INTO `petty_cash` (`id_pc`, `nama_pc`, `masuk_pc`, `keluar_pc`, `saldo_pc`, `pa_pc`, `file_pc`, `wilayah_pc`, `coa_pc`, `creator_pc`, `tanggal_pc`, `date_create_pc`) VALUES
+(6, 'Top Up Saldo', '25000000.00', '0.00', '25000000.00', 1, '', 1101, '1101', 1, '2022-03-14 00:00:00', '2022-03-14 18:15:24'),
+(11, 'Kas Bon Jacob', '0.00', '2000000.00', '23000000.00', 8, '', 1101, '1104', 1, '2022-03-14 00:00:00', '2022-03-14 18:34:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `piutang`
+--
+
+CREATE TABLE `piutang` (
+  `id_piutang` int(11) NOT NULL,
+  `project_piutang` int(11) NOT NULL,
+  `user_piutang` int(11) NOT NULL,
+  `creator_piutang` int(11) NOT NULL,
+  `nominal_piutang` decimal(11,2) NOT NULL,
+  `bukti_piutang` varchar(128) NOT NULL,
+  `tanggal_piutang` datetime NOT NULL,
+  `desc_piutang` text NOT NULL,
+  `status_piutang` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `piutang`
+--
+
+INSERT INTO `piutang` (`id_piutang`, `project_piutang`, `user_piutang`, `creator_piutang`, `nominal_piutang`, `bukti_piutang`, `tanggal_piutang`, `desc_piutang`, `status_piutang`) VALUES
+(5, 19, 1, 1, '176400000.00', '', '0000-00-00 00:00:00', 'Auto Generate dari project Contoh Kegiatan Produksi Saja No. Ringkos PRO1914032022', 0),
+(6, 20, 2, 2, '175509090.91', '', '0000-00-00 00:00:00', 'Auto Generate dari project Coba Project No. Ringkos GLO2022032022', 0);
 
 -- --------------------------------------------------------
 
@@ -495,17 +649,7 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id_project`, `no_project`, `nama_project`, `desc_project`, `client_project`, `pelaksana_project`, `jenis_project`, `no_spk_project`, `tgl_spk_project`, `file_spk_project`, `no_spmk_project`, `tgl_spmk_project`, `file_spmk_project`, `no_bast_project`, `tgl_bast_project`, `file_bast_project`, `no_bap_project`, `tgl_bap_project`, `file_bap_project`, `durasi_project`, `mulai_project`, `selesai_project`, `nilai_project`, `anggaran_produksi_project`, `anggaran_placement_project`, `sp2d_project`, `tgl_pencairan_project`, `created_project`, `status_project`) VALUES
-(2, 'GLO207122021', 'Contoh Kegiatan 1x', 'Deskripsi kegiatan 1x', 0, 0, 3, '', '2021-12-01', '', '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', 0.00, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0.00, 0.00, 0.00, 0.00, '0000-00-00', '2021-12-07 18:53:01', 1),
-(3, 'GLO307122021', 'Placement', 'apakek', 0, 0, 2, '', '2021-12-03', '', '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', 0.00, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0.00, 0.00, 0.00, 0.00, '0000-00-00', '2021-12-07 19:02:07', 1),
-(4, 'GLO427012022', 'pro an pla xxxs', 'asasdsdad dgfdgfdgs', 6, 5, 3, '1122331', '2022-12-01', 'pro_an_pla_xxxs_16393091518336.pdf', '1231', '2022-12-12', 'pro_an_pla_xxxs_16393091518396.pdf', '56781', '2022-12-12', 'pro_an_pla_xxxs_16393091518443.pdf', '9081', '0000-00-00', 'pro_an_pla_xxxs_16393091518492.pdf', 30.00, '2022-12-01 00:00:00', '2022-01-31 00:00:00', 500000000.00, 0.00, 0.00, 490000000.00, '2022-12-25', '2021-12-07 20:30:13', 1),
-(5, 'GLO503022022', 'Advertorial Keselamatan Kerja', 'video publikasi prosedur keselamatan kerja ketinggian', 1, 6, 3, '001/depag/12/2021', '2022-12-01', 'advertorial_keselamatan_kerja_16395682906677.pdf', '001b/depag/12/2021', '2022-12-03', 'advertorial_keselamatan_kerja_16395682906767.pdf', '001/bast/depag/12/2021', '2022-12-15', 'advertorial_keselamatan_kerja_16395682906886.pdf', '001/bap/depag/12/2021', '0000-00-00', 'advertorial_keselamatan_kerja_16395682906998.pdf', 12.00, '2022-12-01 00:00:00', '2022-12-12 00:00:00', 178000000.00, 0.00, 0.00, 15858181818.00, '2022-12-26', '2021-12-15 18:00:53', 1),
-(6, 'GLO628122021', 'Coba Kegiatan baru', 'Ya kegiatan baru di input', 0, 0, 3, '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', 0.00, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0.00, 0.00, 0.00, 0.00, '0000-00-00', '2021-12-28 11:38:06', 1),
-(7, 'GLO727012022', 'test', 'coba desc test', 4, 5, 3, '123', '2022-01-27', '', '123', '2022-01-27', '', '123', '2022-01-27', '', '123', '0000-00-00', '', 0.00, '2022-01-27 00:00:00', '2022-01-27 00:00:00', 200.00, 0.00, 0.00, 17818.00, '2022-01-27', '2022-01-27 13:46:55', 1),
-(9, 'GLO927012022', 'Coba', 'Ger', 0, 0, 3, '111', '2022-01-27', '', '2', '2022-01-27', '', '3', '2022-01-27', '', '4', '0000-00-00', '', 0.00, '2022-01-27 00:00:00', '2022-01-27 00:00:00', 200000000.00, 0.00, 0.00, 178181818.18, '2022-01-27', '2022-01-27 19:49:16', 1),
-(10, 'GLO1003022022', 'honda', 'dfvdfvd', 1, 6, 3, '001', '2022-02-03', '', '001', '2022-02-03', '', '111', '2022-02-03', '', '111', '0000-00-00', '', 0.00, '2022-02-03 00:00:00', '2022-02-03 00:00:00', 0.00, 0.00, 0.00, 0.00, '2022-02-03', '2022-02-03 14:09:31', 1),
-(11, 'GLO1103022022', 'coba project 3 feb 22', 'coba by her', 7, 1, 3, '001', '2022-02-03', '', '001', '2022-02-04', '', '001', '2022-03-30', '', '001', '0000-00-00', '', 0.00, '2022-02-03 00:00:00', '2022-03-30 00:00:00', 300000000.00, 0.00, 0.00, 267272727.27, '2022-04-10', '2022-02-03 14:28:30', 1),
-(12, 'GLO1203022022', 'percobaan 1', 'dzgnsfgndfhndh', 0, 0, 3, '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', 0.00, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0.00, 0.00, 0.00, 0.00, '0000-00-00', '2022-02-03 14:35:58', 1),
-(13, 'GLO1303022022', 'Produksi dan penayangan ILM KSKK', 'Produksi dan Penayangan Iklan Layanan Masyarakat KSKK di TV Nasional Inews TV', 1, 1, 3, '720.B/DJ.I/Dt.I.IV/Ks.01.7/05/2021', '2022-02-03', '', '720.B/DJ.I/Dt.I.IV/Ks.01.7/05/2021', '2022-02-03', '', '720.B/DJ.I/Dt.I.IV/Ks.01.7/05/2021', '2022-02-10', '', '720.B/DJ.I/Dt.I.IV/Ks.01.7/05/2021', '0000-00-00', '', 0.00, '2022-02-03 00:00:00', '2022-02-10 00:00:00', 199000000.00, 0.00, 0.00, 177290909.09, '2022-02-10', '2022-02-03 14:37:32', 1);
+(23, 'GLO2323032022', 'sample 1', 'Contoh project 1', 0, 0, 3, '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', '', '0000-00-00', '', '0.00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0.00', '0.00', '0.00', '0.00', '0000-00-00', '2022-03-23 15:25:07', 1);
 
 -- --------------------------------------------------------
 
@@ -523,20 +667,11 @@ CREATE TABLE `project_placement` (
   `spot_pm` varchar(128) NOT NULL,
   `cost_pm` decimal(16,2) NOT NULL,
   `discount_pm` decimal(16,2) NOT NULL,
+  `nominal_pm` decimal(16,2) NOT NULL,
   `desc_pm` text NOT NULL,
   `materi_pm` varchar(128) NOT NULL,
   `status_pm` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `project_placement`
---
-
-INSERT INTO `project_placement` (`id_pm`, `parent_pm`, `judul_pm`, `kategory_pm`, `jenis_pm`, `wilayah_pm`, `spot_pm`, `cost_pm`, `discount_pm`, `desc_pm`, `materi_pm`, `status_pm`) VALUES
-(3, 5, 'VERSI 1', 1, 1, 2, '', 0.00, 0.00, '', '', 1),
-(4, 10, '111', 1, 1, 2, '', 0.00, 0.00, '', '', 1),
-(5, 11, '111', 1, 1, 1, '', 0.00, 0.00, '', '', 1),
-(6, 13, 'Penayangan ILM KSKK di TV Nasional Inews TV', 1, 1, 3, '', 0.00, 0.00, 'Penayangan ILM KSKK Versi 1 di TV Nasional Inews TV', '', 1);
 
 -- --------------------------------------------------------
 
@@ -549,22 +684,12 @@ CREATE TABLE `project_produksi` (
   `parent_pp` int(11) NOT NULL,
   `judul_pp` varchar(255) NOT NULL,
   `kategori_pp` int(11) NOT NULL,
+  `vendor_pp` int(11) NOT NULL,
+  `harga_pp` decimal(11,2) NOT NULL,
   `deadline_pp` datetime NOT NULL,
   `desc_pp` text NOT NULL,
   `status_pp` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `project_produksi`
---
-
-INSERT INTO `project_produksi` (`id_pp`, `parent_pp`, `judul_pp`, `kategori_pp`, `deadline_pp`, `desc_pp`, `status_pp`) VALUES
-(6, 7, 'Keselamatan Kerja dalam ruang', 0, '2022-02-02 14:49:50', 'Video Shooting Taleng Lucky Bayu Purnomo di Ruang Assembly PT Astra', 1),
-(13, 7, 'Video Versi Dua', 1, '2022-02-28 00:00:00', 'Shoting pepeng vs helmi', 1),
-(14, 5, 'Pembuatan Video ILM', 1, '2022-02-10 00:00:00', 'Shooting di Westin', 1),
-(15, 10, '1', 3, '2022-02-23 00:00:00', 'ddd', 1),
-(16, 11, '1', 1, '2022-02-03 00:00:00', 'ccc', 1),
-(17, 13, 'KSKK Versi 1', 1, '2022-02-03 00:00:00', 'Pembuatan Iklan Layanan Masyarakat KSKK Versi 1 durasi 1 menit', 1);
 
 -- --------------------------------------------------------
 
@@ -591,6 +716,26 @@ INSERT INTO `role` (`id_role`, `nama_role`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `stock_item`
+--
+
+CREATE TABLE `stock_item` (
+  `id_si` int(11) NOT NULL,
+  `nama_si` varchar(128) NOT NULL,
+  `value_si` decimal(11,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stock_item`
+--
+
+INSERT INTO `stock_item` (`id_si`, `nama_si`, `value_si`) VALUES
+(1, 'HVS A4 80 Gram', '10.00'),
+(2, 'HVS A4 100 Gram', '10.00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -613,13 +758,38 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `nip_user`, `password_user`, `photo_user`, `telepon_user`, `role_user`, `created_user`, `status_user`) VALUES
 (1, 'Budi Satria', 'admin@simtritama.id', 'SUP1112021', '$2y$10$S1StlDAZ5vbEYa7jINEeJubwhT22KpJwOtRzYqV7rtmYWK7yd5Mdi', 'boed.jpg', '081289489911', 1, '2021-10-26 11:50:19', 2),
-(2, 'Heru Purwanto', 'admin2@simtritama.id', '5678', '$2y$10$S1StlDAZ5vbEYa7jINEeJubwhT22KpJwOtRzYqV7rtmYWK7yd5Mdi', 'heru.jpg', '082117474055', 1, '2021-10-26 11:50:19', 1),
+(2, 'Heru Purwanto', 'admin2@simtritama.id', '5678', '$2y$10$S1StlDAZ5vbEYa7jINEeJubwhT22KpJwOtRzYqV7rtmYWK7yd5Mdi', 'heru.jpg', '082117474055', 1, '2021-10-26 11:50:19', 2),
 (3, 'Helmi HC Rizky', 'admin3@simtritama.id', '3456', '$2y$10$S1StlDAZ5vbEYa7jINEeJubwhT22KpJwOtRzYqV7rtmYWK7yd5Mdi', 'helmi.jpg', '081283252877', 3, '2021-10-26 11:50:19', 1),
 (4, 'Mahfudz', 'mahfudz@btm.com', '41111', '$2y$10$4U55a6GApZZUUEifisYX9eQgGOtQDyakP6DIR.VIKQwDzBKo9TWoW', 'mahmudz_16366065222760.jpeg', '081288334455', 2, '2021-11-11 04:55:22', 1),
 (5, 'Putri', 'putri@bmt.com', 'ANCE51111', '$2y$10$h./weqIHAfBHV/wiM7A8AOqPRC0yFM3rHX1P8bzJ97WYzumgYdIpi', 'putri_16366494254633.jpg', '08123322112233', 3, '2021-11-11 16:50:25', 1),
 (6, 'Arik Pepeng', 'peps@gmail.com', 'ROD6112021', '$2y$10$Q9V7oKWhgHbWyXk/hdqS0eC/z2cTI5e6GI8uYflYx32YWPzIHzRYK', 'arikpepeng_16366997831032.png', '0819223344', 4, '2021-11-12 06:49:43', 1),
 (7, 'Akbars', 'akbar2@gmail.com', 'PLA7112021', '$2y$10$SPa15NjI2Tu9ZLSTTG.DmO6mXoq2DqP473wREOYG98YjF3A2y0gNO', 'akbars_16367266656731.jpeg', '08179966557', 5, '2021-11-12 06:52:58', 1),
 (8, 'trial', 'trial@satriacorp.id', 'PIC8022022', '$2y$10$sZ86aM4iH1re35Pzty4TO.bq/cfGBZ76woSSl6lGxeZbQl5rXEZgm', NULL, '', 2, '2022-02-03 07:20:20', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vendor`
+--
+
+CREATE TABLE `vendor` (
+  `id_vendor` int(11) NOT NULL,
+  `nama_vendor` varchar(64) NOT NULL,
+  `alamat_vendor` text NOT NULL,
+  `pic_vendor` varchar(128) NOT NULL,
+  `jabatan_vendor` varchar(64) NOT NULL,
+  `telepon_vendor` varchar(64) NOT NULL,
+  `bank_vendor` varchar(64) NOT NULL,
+  `rekening_vendor` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vendor`
+--
+
+INSERT INTO `vendor` (`id_vendor`, `nama_vendor`, `alamat_vendor`, `pic_vendor`, `jabatan_vendor`, `telepon_vendor`, `bank_vendor`, `rekening_vendor`) VALUES
+(1, 'Satria', 'Jl. Pasar kecapi No. 34', 'Heru Purwanto', 'Direktur', '0821 5353 3535', 'BCA', '12345667'),
+(2, 'Arik Pepeng', 'Komp. Bulog No. 156', 'Pepeng', 'Direktur', '0877 8559 1984', 'BNI', '22334466');
 
 -- --------------------------------------------------------
 
@@ -650,6 +820,24 @@ INSERT INTO `wilayah` (`id_wilayah`, `nama_wilayah`, `desc_wilayah`, `parent_wil
 --
 
 --
+-- Indexes for table `assets`
+--
+ALTER TABLE `assets`
+  ADD PRIMARY KEY (`id_as`);
+
+--
+-- Indexes for table `assets_category`
+--
+ALTER TABLE `assets_category`
+  ADD PRIMARY KEY (`id_ac`);
+
+--
+-- Indexes for table `buku_besar`
+--
+ALTER TABLE `buku_besar`
+  ADD PRIMARY KEY (`id_bb`);
+
+--
 -- Indexes for table `client`
 --
 ALTER TABLE `client`
@@ -672,6 +860,18 @@ ALTER TABLE `coa_akun`
 --
 ALTER TABLE `golongan_akun`
   ADD PRIMARY KEY (`id_gol_akun`);
+
+--
+-- Indexes for table `hutang`
+--
+ALTER TABLE `hutang`
+  ADD PRIMARY KEY (`id_hutang`);
+
+--
+-- Indexes for table `hutang_piutang`
+--
+ALTER TABLE `hutang_piutang`
+  ADD PRIMARY KEY (`id_hp`);
 
 --
 -- Indexes for table `kbli`
@@ -716,6 +916,12 @@ ALTER TABLE `petty_cash`
   ADD PRIMARY KEY (`id_pc`);
 
 --
+-- Indexes for table `piutang`
+--
+ALTER TABLE `piutang`
+  ADD PRIMARY KEY (`id_piutang`);
+
+--
 -- Indexes for table `produksi_category`
 --
 ALTER TABLE `produksi_category`
@@ -746,10 +952,22 @@ ALTER TABLE `role`
   ADD PRIMARY KEY (`id_role`);
 
 --
+-- Indexes for table `stock_item`
+--
+ALTER TABLE `stock_item`
+  ADD PRIMARY KEY (`id_si`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
+
+--
+-- Indexes for table `vendor`
+--
+ALTER TABLE `vendor`
+  ADD PRIMARY KEY (`id_vendor`);
 
 --
 -- Indexes for table `wilayah`
@@ -760,6 +978,24 @@ ALTER TABLE `wilayah`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `assets`
+--
+ALTER TABLE `assets`
+  MODIFY `id_as` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `assets_category`
+--
+ALTER TABLE `assets_category`
+  MODIFY `id_ac` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `buku_besar`
+--
+ALTER TABLE `buku_besar`
+  MODIFY `id_bb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `client`
@@ -784,6 +1020,18 @@ ALTER TABLE `coa_akun`
 --
 ALTER TABLE `golongan_akun`
   MODIFY `id_gol_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `hutang`
+--
+ALTER TABLE `hutang`
+  MODIFY `id_hutang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `hutang_piutang`
+--
+ALTER TABLE `hutang_piutang`
+  MODIFY `id_hp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kbli`
@@ -813,7 +1061,7 @@ ALTER TABLE `media_type`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `penyelenggara`
@@ -825,7 +1073,13 @@ ALTER TABLE `penyelenggara`
 -- AUTO_INCREMENT for table `petty_cash`
 --
 ALTER TABLE `petty_cash`
-  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `piutang`
+--
+ALTER TABLE `piutang`
+  MODIFY `id_piutang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `produksi_category`
@@ -837,19 +1091,19 @@ ALTER TABLE `produksi_category`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `project_placement`
 --
 ALTER TABLE `project_placement`
-  MODIFY `id_pm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `project_produksi`
 --
 ALTER TABLE `project_produksi`
-  MODIFY `id_pp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_pp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -858,10 +1112,22 @@ ALTER TABLE `role`
   MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `stock_item`
+--
+ALTER TABLE `stock_item`
+  MODIFY `id_si` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `vendor`
+--
+ALTER TABLE `vendor`
+  MODIFY `id_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `wilayah`
