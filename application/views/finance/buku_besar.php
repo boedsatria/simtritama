@@ -1,6 +1,6 @@
 <div class="flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        PETTY CASH
+        BUKU BESAR
     </h2>
 </div>
 <form action="">

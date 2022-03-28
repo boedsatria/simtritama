@@ -11,14 +11,18 @@
                 </div>
             </div>
 
-            <div class="col-span-12 py-5">
+            <div class="col-span-12 py-5 overflow-x-auto">
                 <table class="table">
                     <thead>
                         <tr class="bg-gray-700 dark:bg-dark-1 text-white">
                             <th class="whitespace-nowrap">Judul</th>
+                            <th class="whitespace-nowrap">Vendor</th>
                             <th class="whitespace-nowrap">Kategori</th>
                             <th class="whitespace-nowrap">Deadline</th>
+                            <th class="whitespace-nowrap">Harga</th>
+                            <th class="whitespace-nowrap">Koreksi Harga</th>
                             <th class="whitespace-nowrap">Deskripsi</th>
+                            <th class="whitespace-nowrap">Status</th>
                             <th class="">Aksi</th>
                         </tr>
                     </thead>
@@ -28,11 +32,25 @@
                         foreach($v['produksi'] as $p): 
                         ?>
                         <tr class="intro-x">
-                            <td class="border-b dark:border-dark-5"><?= $p['judul_pp']; ?></td>
-                            <td class="border-b dark:border-dark-5"><?= $p['nama_pc']; ?></td>
-                            <td class="border-b dark:border-dark-5"><?= tgl_indo($p['deadline_pp']); ?></td>
+                            <td class="border-b dark:border-dark-5 whitespace-nowrap"><?= $p['judul_pp']; ?></td>
+                            <td class="border-b dark:border-dark-5 whitespace-nowrap"><?= $p['nama_vendor']; ?></td>
+                            <td class="border-b dark:border-dark-5 whitespace-nowrap"><?= $p['nama_pc']; ?></td>
+                            <td class="border-b dark:border-dark-5 whitespace-nowrap"><?= tgl_indo($p['deadline_pp']); ?></td>
+                            <td class="border-b dark:border-dark-5 text-right"><?= number_format($p['harga_pp']); ?></td>
+                            <td class="border-b dark:border-dark-5 text-right"><?= number_format($p['koreksi_harga_pp']); ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['desc_pp']; ?></td>
                             <td class="border-b dark:border-dark-5">
+                                <?php
+                                    if($p['status_pp'] == 1):
+                                        echo '<div class="py-2 px-2 rounded-full text-xs bg-theme-1 text-white cursor-pointer font-medium">Diajukan</div>';
+                                    elseif($p['status_pp'] == 2):
+                                        echo '<div class="py-2 px-2 rounded-full text-xs bg-theme-6 text-white cursor-pointer font-medium">Dikoreksi</div>';
+                                    else:
+                                        echo '<div class="py-2 px-2 rounded-full text-xs bg-theme-9 text-white cursor-pointer font-medium">Disetujui</div>';
+                                    endif;
+                                ?>
+                            </td>
+                            <td class="border-b dark:border-dark-5 whitespace-nowrap">
                                 <a href="<?= base_url('pic/edit_pp/'.$p['id_pp']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Edit </a>
                                 <a data-toggle="modal" data-target="#delete-modal-<?= $p['id_pp'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                                 <!-- BEGIN: Modal DELETE -->
@@ -61,7 +79,7 @@
             
             </div>
                 
-            <div class="col-span-12 sm:col-span-12">
+            <div class="col-span-12 sm:col-span-12 mt-4">
                 <a class="btn btn-success" data-toggle="modal" data-target="#button-modal-preview">Tambah</a>
             </div>
 
