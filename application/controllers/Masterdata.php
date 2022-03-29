@@ -563,5 +563,21 @@ class Masterdata extends CI_Controller
 	//--------USER MENU END--------//
 
 
+	public function list_vendor()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('vendor/list_vendor');
+		$this->load->view('footer');
+	}
+	public function detail_vendor()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('vendor/detail_vendor');
+		$this->load->view('footer');
+	}
+
+
 	
 }
