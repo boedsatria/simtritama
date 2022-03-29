@@ -87,9 +87,9 @@
             </div>
                 
             <div class="col-span-12 sm:col-span-12 mt-4">
-                <a class="btn btn-success" data-toggle="modal" data-target="#button-modal-preview">Tambah</a>
+                <a class="btn btn-success w-36 mr-2 mb-2" data-toggle="modal" data-target="#button-modal-preview">Tambah</a>
+                <button class="btn btn-primary w-36 mr-2 mb-2"> Print </button>
             </div>
-
 
             <div class="col-span-12 flex items-center justify-center sm:justify-end mt-5">
                 <a href="<?= base_url().'pic/tambah_project_4/'.$v['id_project'] ?>" class="btn btn-secondary w-24">Previous</a>
