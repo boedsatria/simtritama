@@ -73,8 +73,9 @@
                     </table>
 
                     <br>
+                    <a class="btn btn-secondary w-48 mr-2 mb-2" href="<?= base_url(); ?>finance/aset_dan_penyusutan"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i> Back </a>
                     <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
-                    <button class="btn btn-primary w-48 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Tambah Data </button>
+                    <button class="btn btn-warning w-48 mr-2 mb-2"> <i data-feather="plus" class="w-4 h-4 mr-2"></i> Tambah Data </button>
                 </div>
             </div>
         </div>
