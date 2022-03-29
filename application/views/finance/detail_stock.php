@@ -34,8 +34,8 @@
                             $qty_out = 0;
                             $qty = 0;
                             foreach($detail as $v): 
-                            $qty_in = $qty_in++;
-                            $qty_out = $qty_out++;
+                            $qty_in += $v['in_ds'];
+                            $qty_out += $v['out_ds'];
                             $qty = $qty_in - $qty_out;
                             ?>
                             <tr>
