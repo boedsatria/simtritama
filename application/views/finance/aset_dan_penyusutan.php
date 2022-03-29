@@ -38,12 +38,7 @@
                                             </div></br>
                                             <label for="nilai_project" class="form-label">Harga Beli</label>
                                             <input id="nilai_project" type="text" name="harga_beli_as" class="form-control w-full" placeholder="Input text"></br></br>
-                                            <label for="nilai_peny" class="form-label">Nilai Penyusutan</label>
-                                            <div class="input-group w-24">
-                                                <input type="text" class="form-control" name="penyusutan_as">
-                                                <div id="input-group-price" class="input-group-text">%</div>
-                                            </div>
-                                            </br>
+                                            
                                             <label for="nilai_project" class="form-label">Deskripsi</label>
                                             <textarea name="desc_as" class="form-control w-full"></textarea>
                                         </div>
@@ -86,21 +81,36 @@
                         <thead>
                             <tr class="text-center">
                                 <th class="border border-b-2 dark:border-dark-5 w-1">No.</th>
-                                <th class="border border-b-2 dark:border-dark-5">Kategori</th>
                                 <th class="border border-b-2 dark:border-dark-5">Nama Item</th>
+                                <th class="border border-b-2 dark:border-dark-5">Kategori</th>
                                 <th class="border border-b-2 dark:border-dark-5">Tanggal Beli</th>
+                                <th class="border border-b-2 dark:border-dark-5">Usia Barang</th>
                                 <th class="border border-b-2 dark:border-dark-5">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($assets as $k => $v): ?>
+                            <?php foreach($assets as $k => $v): 
+                                $buy = new DateTime($v['tanggal_beli_as']);
+                                $diff = $buy->diff(new DateTime());
+                                $months = $diff->format('%m') + 12 * $diff->format('%y');
+
+                                $pertahun = (($v['harga_beli_as']-($v['harga_beli_as']/$v['usia_ac']))/$v['usia_ac']);
+                                $perbulan = $pertahun/12;
+
+                                $penyusutan = $v['harga_beli_as']-($months*$perbulan);
+
+                                $tgl_beli = strtotime($v['tanggal_beli_as']); 
+                                $tgl_susut = date('Y-m-d', strtotime('+'.number_format($v['usia_ac'], 0).' year', $tgl_beli ));
+                                $tgl_susut_date = strtotime($tgl_susut);
+                            ?>
                             <tr>
                                 <td class="border"><?= $k+1 ?></td>
-                                <td class="border"><?= $v['nama_ac'] ?></td>
                                 <td class="border"><?= $v['nama_as'] ?></td>
+                                <td class="border"><?= $v['nama_ac'] ?></td>
                                 <td class="border"><?= tgl_indo($v['tanggal_beli_as']) ?></td>
+                                <td class="border"><?= ($penyusutan < 0 ? '<span class="px-2 py-1 rounded-full bg-theme-6 text-white mr-1 ">Expired</span>' : tgl_indo($tgl_susut)) ?></td>
                                 <td class="border text-center">
-                                    <a href="<?= base_url().'finance/detail_penyusutan/'.$v['id_as'] ?>" class="btn btn-primary w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
+                                    <a href="<?= base_url().'finance/detail_penyusutan/'.$v['id_as'] ?>" class="btn btn-primary btn-sm w-24 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
                                     Detail </a>
                                 </td>
                             </tr>
@@ -121,7 +131,39 @@
         STOCKIES
     </h2>
     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-        <!-- form tambah data -->
+        <!--begin modal-->
+        <div id="button-modal" class="p-5">
+            <div class="preview">
+                <!-- BEGIN: Modal Toggle -->
+                <div class="text-center"> <a href="javascript:;" data-toggle="modal" data-target="#tambah-stok" class="btn btn-primary">Tambah Barang</a> </div>
+                <!-- END: Modal Toggle -->
+                <!-- BEGIN: Modal Content -->
+                <div id="tambah-stok" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
+                            <form action="<?= base_url(); ?>finance/stok_action" method="POST">
+                                <div class="modal-body p-0">
+                                    <div class="p-5 text-left">
+                                        <div>
+                                            <label for="nama_stock" class="form-label">Nama Barang</label>
+                                            <input id="nama_stock" type="text" name="nama_stock" class="form-control w-full" placeholder="Input text"></br></br>
+                                            <label for="level_stock" class="form-label">Level Reorder</label>
+                                            <input id="level_stock" type="text" name="level_stock" class="form-control w-full" placeholder="Level reorder">
+                                        </div>
+                                    </div>
+                                    <div class="px-5 pb-8 text-center">
+                                        <button type="submit" data-dismiss="modal" class="btn btn-primary w-24">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end modal konten-->
+            </div>
+        </div>
+        <!--end modal-->
     </div>
 </div>
 <!-- BEGIN: HTML Table Data -->
@@ -136,7 +178,6 @@
                     <table class="table">
                         <thead>
                             <tr class="text-center">
-                                <th class="border border-b-2 dark:border-dark-5 w-1">Tanggal</th>
                                 <th class="border border-b-2 dark:border-dark-5">Item</th>
                                 <th class="border border-b-2 dark:border-dark-5">Stock In</th>
                                 <th class="border border-b-2 dark:border-dark-5">Stock Out</th>
@@ -146,15 +187,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($stock as $ks => $vs): ?>
                             <tr class="text-center">
-                                <td>2022/okt/19</td>
-                                <td>Kertas HVS A4 80G</td>
-                                <td>30</td>
-                                <td>5</td>
-                                <td>25</td>
-                                <td>5</td>
-                                <td><a href="<?= base_url('finance/detail_stock') ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a></td>
+                                <td><?= $vs['nama_stock'] ?></td>
+                                <td><?= $vs['in_stock'] ?></td>
+                                <td><?= $vs['out_stock'] ?></td>
+                                <td><?= $vs['in_stock']-$vs['out_stock'] ?></td>
+                                <td><?= $vs['level_stock'] ?></td>
+                                <td><a href="<?= base_url().'finance/detail_stock/'.$vs['id_stock'] ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>Detail </a></td>
                             </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

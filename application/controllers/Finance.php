@@ -10,6 +10,7 @@ class Finance extends CI_Controller
 		  $this->load->model('ClientModel');
 		  $this->load->model('ProjectModel');
 		  $this->load->model('MediaModel');
+		  $this->load->model('UserModel');
 	}
 
 	public function index()
@@ -292,9 +293,10 @@ class Finance extends CI_Controller
 		$data = array(
 			'cat'			=> $this->FinanceModel->get_cat_assets()->result_array(),
 			'assets'		=> $this->FinanceModel->get_assets($cat)->result_array(),
+			'stock'			=> $this->FinanceModel->get_stock()->result_array(),
 			// 'saldo'		=> saldo_akhir()
 		);
-
+// print_r($data['stock']);die;
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('finance/aset_dan_penyusutan', $data);
@@ -307,6 +309,14 @@ class Finance extends CI_Controller
 		$_POST['tanggal_beli_as'] = date('Y-m-d', strtotime($_POST['tanggal_beli_as']));
 
 		$parent = $this->FinanceModel->insert_aset($_POST);
+
+		redirect(base_url() . 'finance/aset_dan_penyusutan/');
+
+	}
+	public function stok_action()
+	{
+
+		$this->FinanceModel->insert_stock($_POST);
 
 		redirect(base_url() . 'finance/aset_dan_penyusutan/');
 
@@ -324,12 +334,25 @@ class Finance extends CI_Controller
 	}
 
 
-	public function detail_stock()
+	public function detail_stock($id)
 	{
+		$data = array(
+			'data'				=> $this->FinanceModel->get_stock($id)->row_array(),
+			'detail'			=> $this->FinanceModel->get_stock_detail($id)->result_array(),
+			'user'				=> $this->UserModel->get()->result_array(),
+		);
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('finance/detail_stock');
+		$this->load->view('finance/detail_stock', $data);
 		$this->load->view('footer');
+	}
+	public function tambah_stock_action($id)
+	{
+		$_POST['date_ds'] = date('Y-m-d', strtotime($_POST['date_ds']));
+		$this->FinanceModel->insert_stock($_POST);
+
+		redirect(base_url() . 'finance/detail_stock/'.$id);
+
 	}
 
 
