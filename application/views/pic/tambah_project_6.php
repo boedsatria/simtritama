@@ -14,10 +14,11 @@
                 <table class="table">
                     <thead>
                         <tr class="bg-gray-700 dark:bg-dark-1 text-white">
-                            <th class="whitespace-nowrap">Judul</th>
-                            <th class="whitespace-nowrap">Kategori</th>
-                            <th class="whitespace-nowrap">Jenis</th>
-                            <th class="whitespace-nowrap">Media</th>
+                            <th class="whitespace-nowrap">Judul Versi</th>
+                            <th class="whitespace-nowrap">Kategori Media</th>
+                            <th class="whitespace-nowrap">Jenis Media</th>
+                            <th class="whitespace-nowrap">Nama Media</th>
+                            <th class="whitespace-nowrap">Tanggal Tayang (mulai - selesai)</th>
                             <th class="whitespace-nowrap">Harga Tayang</th>
                             <th class="whitespace-nowrap">Deskripsi</th>
                             <th class="">Aksi</th>
@@ -33,6 +34,7 @@
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_category']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_type']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['nama_media']; ?></td> <!-- Tanggal mulai sd selesai tayang -->
                             <td class="border-b dark:border-dark-5"><?= number_format($p['cost_pm'], 0); ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['desc_pm']; ?></td>
                             <td class="border-b dark:border-dark-5">
@@ -93,7 +95,7 @@
                                         <input type="hidden" name="jenis_project" value="<?= $v['jenis_project']; ?>">
                                     </div>
                                     <div class="col-span-6">
-                                        <label class="form-label">Kategori</label>
+                                        <label class="form-label">Kategori Media</label>
                                         <select class="form-select" name="kategori_pm">
                                             <?php foreach($cat as $cp): ?>
                                             <option value="<?= $cp['id_media_category'] ?>"><?= $cp['nama_media_category'] ?></option>
@@ -101,7 +103,7 @@
                                         </select>
                                     </div>
                                     <div class="col-span-6">
-                                        <label class="form-label">Type</label>
+                                        <label class="form-label">Jenis Media</label>
                                         <select class="form-select" name="jenis_pm">
                                             <?php foreach($type as $tp): ?>
                                             <option value="<?= $tp['id_media_type'] ?>"><?= $tp['nama_media_type'] ?></option>
@@ -109,7 +111,7 @@
                                         </select>
                                     </div>
                                     <div class="col-span-12">
-                                        <label class="form-label">Media</label>
+                                        <label class="form-label">Nama Media</label>
                                         <select class="form-select" name="media_pm">
                                             <?php foreach($media as $mp): ?>
                                             <option value="<?= $mp['id_media'] ?>"><?= $mp['nama_media'] ?></option>
@@ -117,7 +119,7 @@
                                         </select>
                                     </div>
                                     <div class="col-span-6">
-                                        <label class="form-label">Cost</label>
+                                        <label class="form-label">Harga</label>
                                         <input type="text" class="form-control" name="cost_pm" id="nilai_project">
                                     </div>
                                     <div class="col-span-3">
@@ -128,9 +130,18 @@
                                         </div>
                                     </div>
                                     <div class="col-span-12 sm:col-span-12">
+                                        <label class="form-label">Tanggal Mulai / selesai Tayang</label>
+                                        <input id="durasi_pro" name="mulai_selesai" data-daterange="true" class="datepicker form-control" value="<?= ($v['mulai_project'] == "0000-00-00 00:00:00" ? date("Y-m-d") : date('Y-m-d', strtotime($v['mulai_project']))).' - '. ($v['mulai_project'] == "0000-00-00 00:00:00" ? date("Y-m-d") : date('Y-m-d', strtotime($v['selesai_project']))); ?>">
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-12">
+                                        <label class="form-label">Link Materi Tayang</label>
+                                        <textarea type="text" class="form-control" name="desc_pm"></textarea>
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-12">
                                         <label class="form-label">Deskripsi</label>
                                         <textarea type="text" class="form-control" name="desc_pm"></textarea>
                                     </div>
+                                    
                                 </div>
                                 <div class="px-5 pb-8 text-center">
                                     <button type="submit" class="btn btn-primary w-24">Submit</button>

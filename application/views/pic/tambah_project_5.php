@@ -9,18 +9,27 @@
                     <label for="input-wizard-3" class="form-label">Nomer RINGKOS Kegiatan</label>
                     <input id="input-wizard-3" type="text" value="<?= $v['no_project']; ?>" class="form-control" readonly>
                 </div>
+                <div class="col-span-6 sm:col-span-12">
+                                        <label class="form-label">Total Biaya Produksi</label>
+                                        <input id="nilai_project" type="text" class="form-control" name="harga_pp" required>
+                                    </div>
+                <div class="col-span-6">
+                                        <label class="form-label">Vendor Produksi</label>
+                                        <select class="form-select" name="vendor_pp">
+                                            <?php foreach($vendor as $vp): ?>
+                                            <option value="<?= $vp['id_vendor'] ?>"><?= $vp['nama_vendor'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
             </div>
 
             <div class="col-span-12 py-5 overflow-x-auto">
                 <table class="table">
                     <thead>
                         <tr class="bg-gray-700 dark:bg-dark-1 text-white">
-                            <th class="whitespace-nowrap">Judul</th>
-                            <th class="whitespace-nowrap">Vendor</th>
+                            <th class="whitespace-nowrap">Judul Versi</th>
                             <th class="whitespace-nowrap">Kategori</th>
                             <th class="whitespace-nowrap">Deadline</th>
-                            <th class="whitespace-nowrap">Harga</th>
-                            <th class="whitespace-nowrap">Koreksi Harga</th>
                             <th class="whitespace-nowrap">Deskripsi</th>
                             <th class="whitespace-nowrap">Status</th>
                             <th class="">Aksi</th>
@@ -36,8 +45,6 @@
                             <td class="border-b dark:border-dark-5 whitespace-nowrap"><?= $p['nama_vendor']; ?></td>
                             <td class="border-b dark:border-dark-5 whitespace-nowrap"><?= $p['nama_pc']; ?></td>
                             <td class="border-b dark:border-dark-5 whitespace-nowrap"><?= tgl_indo($p['deadline_pp']); ?></td>
-                            <td class="border-b dark:border-dark-5 text-right"><?= number_format($p['harga_pp']); ?></td>
-                            <td class="border-b dark:border-dark-5 text-right"><?= number_format($p['koreksi_harga_pp']); ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['desc_pp']; ?></td>
                             <td class="border-b dark:border-dark-5">
                                 <?php
@@ -116,18 +123,6 @@
                                             <input type="text" value="" class="datepicker form-control pl-12" name="deadline_pp" data-single-mode="true">
                                         </div>
                                     </div>
-                                    <div class="col-span-6 sm:col-span-12">
-                                        <label class="form-label">Biaya Produksi</label>
-                                        <input id="nilai_project" type="text" class="form-control" name="harga_pp" required>
-                                    </div>
-                                    <div class="col-span-12">
-                                        <label class="form-label">Vendor</label>
-                                        <select class="form-select" name="vendor_pp">
-                                            <?php foreach($vendor as $vp): ?>
-                                            <option value="<?= $vp['id_vendor'] ?>"><?= $vp['nama_vendor'] ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
                                     <div class="col-span-12">
                                         <label class="form-label">Jenis Produksi</label>
                                         <select class="form-select" name="kategori_pp">
@@ -137,7 +132,7 @@
                                         </select>
                                     </div>
                                     <div class="col-span-12 sm:col-span-12">
-                                        <label class="form-label">Deskripsi</label>
+                                        <label class="form-label">Deskripsi (Durasi, Format, Link Sample jika ada)</label>
                                         <textarea type="text" class="form-control" name="desc_pp"></textarea>
                                     </div>
                                 </div>
