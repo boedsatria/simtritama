@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 29, 2022 at 11:29 PM
+-- Generation Time: Mar 30, 2022 at 05:28 AM
 -- Server version: 10.5.13-MariaDB-cll-lve
 -- PHP Version: 7.3.33
 
@@ -55,14 +55,14 @@ INSERT INTO `assets` (`id_as`, `nama_as`, `kategori_as`, `tanggal_beli_as`, `har
 CREATE TABLE `assets_category` (
   `id_ac` int(11) NOT NULL,
   `nama_ac` varchar(128) NOT NULL,
-  `value_ac` decimal(11,2) NOT NULL
+  `usia_ac` decimal(11,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `assets_category`
 --
 
-INSERT INTO `assets_category` (`id_ac`, `nama_ac`, `value_ac`) VALUES
+INSERT INTO `assets_category` (`id_ac`, `nama_ac`, `usia_ac`) VALUES
 (1, 'Non Bangunan 4 Tahun', 1.00),
 (2, 'Non Bangunan 8 Tahun', 1.00),
 (3, 'Non Bangunan 16 Tahun', 1.00),
