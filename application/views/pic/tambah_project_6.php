@@ -68,6 +68,7 @@
                 
             <div class="col-span-12 sm:col-span-12">
                 <a class="btn btn-success" data-toggle="modal" data-target="#button-modal-preview">Tambah</a>
+                <button class="btn btn-primary w-36 mr-2 mb-2"> Print </button>
             </div>
 
 
