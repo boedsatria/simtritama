@@ -178,6 +178,33 @@ class FinanceModel extends CI_Model
     $this->db->insert('assets', $data);
   }
   
+  function get_stock($id = false)
+  {
+    $this->db->select('*, SUM(detail_stock.in_ds) as in_stock, SUM(detail_stock.out_ds) as out_stock');
+    $this->db->from('stock');
+    $this->db->join('detail_stock', 'item_ds = id_stock', 'LEFT');
+    $this->db->group_by('id_stock');
+    if($id) $this->db->where('id_stock', $id);
+    return $this->db->get();
+    // print_r($this->db->last_query());die;
+  }
+  function get_stock_detail($id = false)
+  {
+    // $this->db->select('*, SUM(detail_stock.in_ds) as in_stock, SUM(detail_stock.out_ds) as out_stock');
+    $this->db->from('detail_stock');
+    $this->db->join('stock', 'item_ds = id_stock', 'LEFT');
+    $this->db->join('user', 'user_ds = id_user', 'LEFT');
+    $this->db->join('role', 'role_user = id_role', 'LEFT');
+    // $this->db->group_by('id_stock');
+    if($id) $this->db->where('id_stock', $id);
+    return $this->db->get();
+  }
+  function insert_stock($data)
+  {
+    // Cek utang eksis
+    $this->db->insert('detail_stock', $data);
+  }
+  
 
 
 }

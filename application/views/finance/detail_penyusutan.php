@@ -35,32 +35,43 @@
                             <td>Rp. <?= number_format($v['harga_beli_as'],0) ?>,-</td>
                         </tr>
                         <tr>
-                            <td>Nilai Saat ini</td>
-                            <td>Rp. <?= number_format($v['harga_beli_as'],0) ?>,-</td>
-                        </tr>
-                        <tr>
-                            <td>Tanggal Akhir Masa Ekonomis <?= number_format($v['usia_ac'], 0) ?></td>
+                            <td>Usia </td>
                             <td>
                                 <?php 
-                                    $tgl_beli = strtotime($v['tanggal_beli_as']); 
-                                    $tgl_susut = date('Y-m-d', strtotime('+'.number_format($v['usia_ac'], 0).' year', $tgl_beli ));
-                                    $tgl_susut_date = strtotime($tgl_susut);
-                                    echo tgl_indo($tgl_susut);
+                                $buy = new DateTime($v['tanggal_beli_as']);
+                                $diff = $buy->diff(new DateTime());
+                                $months = $diff->format('%m') + 12 * $diff->format('%y');
 
-                                    // $timeleft = $tgl_susut_date-$tgl_beli;
-                                    // $daysleft = round((($timeleft/24)/60)/60); 
-                                    // echo $daysleft;
+                                $pertahun = (($v['harga_beli_as']-($v['harga_beli_as']/$v['usia_ac']))/$v['usia_ac']);
+                                $perbulan = $pertahun/12;
 
+                                $penyusutan = $v['harga_beli_as']-($months*$perbulan);
+
+                                $tgl_beli = strtotime($v['tanggal_beli_as']); 
+                                $tgl_susut = date('Y-m-d', strtotime('+'.number_format($v['usia_ac'], 0).' year', $tgl_beli ));
+                                $tgl_susut_date = strtotime($tgl_susut);
+
+                                echo $months .' bulan';
                                 ?>
+                                
                             </td>
+                        </tr>
+                        <tr>
+                            <td>Nilai Saat ini</td>
+                            <td><?= ($penyusutan < 0 ? '<span class="px-2 py-1 rounded-full bg-theme-6 text-white mr-1 ">Expired</span>' : 'Rp. '.number_format($penyusutan,2)) ?></td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Akhir Masa Ekonomis</td>
+                            <td><?= tgl_indo($tgl_susut); ?></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+        <div class="py-5">
+            <a href="<?= base_url('finance/aset_dan_penyusutan') ?>" class="btn btn-warning"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>Back </a>
+        </div>
     </div>
-    <a href="<?= base_url('finance/aset_dan_penyusutan') ?>" class="btn btn-dark w-48 mr-2 mb-2"> <i data-feather="skip-back" class="w-4 h-4 mr-2"></i>
-        Back </a>
 </div>
 
 <!-- END: Responsive Table -->
