@@ -13,46 +13,46 @@
                 <table class="table">
                     <thead class="border-b-2 dark:border-dark-5 whitespace-nowrap">
                         <tr>
-                            <th>No.</th>
                             <th>Informasi</th>
                             <th>Data</th>
                         </tr>
                     </thead>
                     <tbody class="border-b whitespace-nowrap">
                         <tr>
-                            <td>1</td>
                             <td>Nama Item</td>
                             <td><?= $v['nama_as'] ?></td>
                         </tr>
                         <tr>
-                            <td>2</td>
                             <td>Kategori</td>
                             <td><?= $v['nama_ac'] ?></td>
                         </tr>
                         <tr>
-                            <td>3</td>
                             <td>Tanggal Beli</td>
                             <td><?= tgl_indo($v['tanggal_beli_as']) ?></td>
                         </tr>
                         <tr>
-                            <td>4</td>
                             <td>Nilai Beli</td>
                             <td>Rp. <?= number_format($v['harga_beli_as'],0) ?>,-</td>
                         </tr>
                         <tr>
-                            <td>5</td>
-                            <td>Nilai Penyusutan</td>
-                            <td><?= $v['penyusutan_as'] ?></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
                             <td>Nilai Saat ini</td>
                             <td>Rp. <?= number_format($v['harga_beli_as'],0) ?>,-</td>
                         </tr>
                         <tr>
-                            <td>7</td>
-                            <td>Tanggal Zero</td>
-                            <td></td>
+                            <td>Tanggal Akhir Masa Ekonomis <?= number_format($v['usia_ac'], 0) ?></td>
+                            <td>
+                                <?php 
+                                    $tgl_beli = strtotime($v['tanggal_beli_as']); 
+                                    $tgl_susut = date('Y-m-d', strtotime('+'.number_format($v['usia_ac'], 0).' year', $tgl_beli ));
+                                    $tgl_susut_date = strtotime($tgl_susut);
+                                    echo tgl_indo($tgl_susut);
+
+                                    // $timeleft = $tgl_susut_date-$tgl_beli;
+                                    // $daysleft = round((($timeleft/24)/60)/60); 
+                                    // echo $daysleft;
+
+                                ?>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
