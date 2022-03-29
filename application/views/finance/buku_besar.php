@@ -5,7 +5,24 @@
 </div>
 <form action="">
     <div class="sm:flex items-center sm:mr-4">
-        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
+        <label class="w-12 flex-none xl:w-auto xl:flex-initial ml-2 mr-2">Tanggal Transaksi</label>
+            <div class="relative w-64">
+                <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 text-gray-600 dark:bg-dark-1 dark:border-dark-4">
+                    <i data-feather="calendar" class="w-4 h-4"></i>
+                </div>
+                <?php
+                if(isset($_GET['tgl_filter'])){
+                    $date_range = explode("-", $_GET['tgl_filter']);
+                    $mulai  = date('Y-m-d', strtotime($date_range[0]));
+                    $selesai  = date('Y-m-d', strtotime($date_range[1]));
+                }else{
+                    $mulai  = date('Y-m-d');
+                    $selesai  = date('Y-m-d');
+                }         
+                ?>
+                <input name="tgl_filter" data-daterange="true" class="datepicker form-control pl-12" value="<?= $mulai.' - '.$selesai; ?>">
+            </div>
+        <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Pilih COA</label>
         <select class="form-select w-56 mt-2" name="wilayah_filter">
             <?php foreach($area as $a): 
                 $selected = "";
@@ -14,25 +31,7 @@
             <option value="<?= $a['no_coa'] ?>" <?= $selected ?>><?= $a['no_coa']." - ".$a['nama_coa']; ?></option>
             <?php endforeach; ?>
         </select>
-        
-        <label class="w-12 flex-none xl:w-auto xl:flex-initial ml-2 mr-2">Tanggal Transaksi</label>
-        <div class="relative w-64">
-            <div class="absolute rounded-l w-10 h-full flex items-center justify-center bg-gray-100 text-gray-600 dark:bg-dark-1 dark:border-dark-4">
-                <i data-feather="calendar" class="w-4 h-4"></i>
-            </div>
-            <?php
-            if(isset($_GET['tgl_filter'])){
-                $date_range = explode("-", $_GET['tgl_filter']);
-                $mulai  = date('Y-m-d', strtotime($date_range[0]));
-                $selesai  = date('Y-m-d', strtotime($date_range[1]));
-            }else{
-                $mulai  = date('Y-m-d');
-                $selesai  = date('Y-m-d');
-            }         
-            ?>
-            <input name="tgl_filter" data-daterange="true" class="datepicker form-control pl-12" value="<?= $mulai.' - '.$selesai; ?>">
-        </div>
-                                        
+        <div class="w-36 ml-5 mr-5"> <button class="btn btn-sm btn-warning">Tampilkan semua</button></div>                                
         <div class="w-12 ml-5 mr-5"> <button type="submit" class="btn btn-sm btn-danger">Search</button> </div>
         <div class="w-24 mr-2"> <a href="javascript:;" data-toggle="modal" data-target="#button-modal-preview" class="btn btn-sm btn-primary">Tambah Data</a> </div>
     </div>
@@ -66,7 +65,7 @@
                                         </select>
                                     </div></br>
 
-                                    <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Wilayah</label>
+                                    <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Kategori COA</label>
                                     <select id="tabulator-html-filter-field" class="form-select w-full mt-2" name="wilayah">
                                         <?php foreach($area as $a): ?>
                                         <option value="<?= $a['no_coa'] ?>"><?= $a['no_coa']." - ".$a['nama_coa']; ?></option>
@@ -92,6 +91,9 @@
                                             <input type="text" class="datepicker form-control pl-12" name="tgl_trans" data-single-mode="true">
                                         </div>
                                     </div>
+
+                                    <label for="alamat_media" class="form-label mt-2">Nomor Referensi/Bukti Transaksi</label>
+                                    <input id="regular-form-1" type="text" class="form-control" placeholder="Input text">
 
                                     <label for="alamat_media" class="form-label mt-2">Upload Bukti</label>
                                     <input id="alamat_media" type="file" class="form-control w-full" placeholder="Input text" name="file">
@@ -164,7 +166,7 @@
                             </tbody>
                         </table>
                         <?php else: ?>
-                            <h4>Pilih Wilayah</h4>
+                            <h4>Pilih filter COA dan Periode Transaksi</h4>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -174,4 +176,10 @@
         <!-- END: Hoverable Table -->
         
     </div>
+
+    <div id="horizontal-form" class="p-2">
+            <div class="preview">
+                <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
+            </div>
+        </div>
 </div>

@@ -102,4 +102,9 @@
         </div>
         <!-- END: Hoverable Table -->
     </div>
+    <div id="horizontal-form" class="p-2">
+            <div class="preview">
+                <button class="btn btn-success w-32 mr-2 mb-2"> <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </button>
+            </div>
+        </div>
 </div>
