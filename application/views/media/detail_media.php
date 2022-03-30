@@ -44,6 +44,36 @@
                         RATE CARD 
                     </h2>
                 </div>
+                <div class="overflow-x-auto">
+                <table class="table">
+                    <thead class="border-b-2 dark:border-dark-5 whitespace-nowrap">
+                        <tr>
+                            <th>No.</th>
+                            <th>Program</th>
+                            <th>Jam Tayang</th>
+                            <th>Durasi</th>
+                            <th>Harga</th>
+                            <th>Discount</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border-b whitespace-nowrap">
+                        <tr>
+                            <td>1</td>
+                            <td>Apakabar</td>
+                            <td>17:30</td>
+                            <td> - </td>
+                            <td>15.000.000</td>
+                            <td>10%</td>
+                            <td>Paid Before Broadcast</td>
+                            <td>
+                                <a href="<?= base_url('placement/detail_order_placement') ?>" class="btn btn-primary w-32 mr-2 mb-2"> <i data-feather="search" class="w-4 h-4 mr-2"></i>
+                                    Detail </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             </div>
 
             
