@@ -1,6 +1,6 @@
 <div class="intro-y flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">
-        PENGAJUAN PLACEMENT DAN LOGPROOF
+        BUKTI TAYANG DAN LOGPROOF
     </h2>
 </div></br>
 
