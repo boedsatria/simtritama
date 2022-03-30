@@ -407,6 +407,14 @@ class Finance extends CI_Controller
 
 
 
+	
+	public function neraca_keuangan()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/neraca_keuangan');
+		$this->load->view('footer');
+	}
 
 
 
@@ -428,13 +436,6 @@ class Finance extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('finance/akun_transaksi');
-		$this->load->view('footer');
-	}
-	public function cetak_laporan_keuangan()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('finance/cetak_laporan_keuangan');
 		$this->load->view('footer');
 	}
 	public function plafon_coa()
