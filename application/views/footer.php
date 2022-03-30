@@ -12,6 +12,7 @@
         <script type="text/javascript">
             var element = document.getElementById("htmls");
             var kat_pm = document.getElementById("kat_pm");
+            var coa_pm = document.getElementById("coa_pm");
             var nilai_project = document.getElementById("nilai_project");
             var nilai_pro = document.getElementById("nilai_pro");
             var durasi_pro = document.getElementById("durasi_pro");
@@ -33,13 +34,18 @@
             }
 
             function kategori_pm() {
-                console.log(kat_pm.value);
 
-                var urls = `<?= base_url(); ?>user/themes_user/${themes}/<?= $this->session->userdata('userlogin')['id_user'] ?>`;
+                var urls = `<?= base_url(); ?>finance/get_coa/`+kat_pm.value;
                 const xhttp = new XMLHttpRequest();
                 xhttp.open("GET", urls);
                 xhttp.send(); 
-                
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var regexStatus = /(\w+ state:.*?)</g
+                        var response = xhttp.responseText;
+                        coa_pm.innerHTML = response;
+                    };
+                }
             }
 
 
