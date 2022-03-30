@@ -99,6 +99,13 @@ class Placement extends CI_Controller
 		$this->load->view('placement/media_order');
 		$this->load->view('footer');
 	}
+	public function detail_mediaorder_placement()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('placement/detail_mediaorder_placement');
+		$this->load->view('footer');
+	}
 	public function pembayaran_tagihan()
 	{
 		$this->load->view('header');
@@ -121,7 +128,7 @@ class Placement extends CI_Controller
 		);
 		$this->load->view('header');
 		$this->load->view('sidebar');
-		$this->load->view('placement/detail_order_placement', $data);
+		$this->load->view('placement/detail_hps_placement', $data);
 		$this->load->view('footer');
 	}
 }

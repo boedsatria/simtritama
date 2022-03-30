@@ -8,6 +8,10 @@
                     <label for="input-wizard-3" class="form-label">Nomer RINGKOS Kegiatan</label>
                     <input id="input-wizard-3" type="text" value="<?= $v['no_project']; ?>" class="form-control" readonly>
                 </div>
+                <div class="col-span-12 sm:col-span-12">
+                    <label for="input-wizard-3" class="form-label">CATATAN KHUSUS</label>
+                    <input id="input-wizard-3" type="text" value="<?= $v['no_project']; ?>" class="form-control" readonly>
+                </div>
             </div>
 
             <div class="col-span-12 py-5">
@@ -18,7 +22,8 @@
                             <th class="whitespace-nowrap">Kategori Media</th>
                             <th class="whitespace-nowrap">Jenis Media</th>
                             <th class="whitespace-nowrap">Nama Media</th>
-                            <th class="whitespace-nowrap">Tanggal Tayang (mulai - selesai)</th>
+                            <th class="whitespace-nowrap">Program</th>
+                            <th class="whitespace-nowrap">Jam Tayang (Longdate)</th>
                             <th class="whitespace-nowrap">Harga Tayang</th>
                             <th class="whitespace-nowrap">Deskripsi</th>
                             <th class="">Aksi</th>
@@ -34,11 +39,13 @@
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_category']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media_type']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media']; ?></td>
+                            <td class="border-b dark:border-dark-5"><?= $p['nama_media']; ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['nama_media']; ?></td> <!-- Tanggal mulai sd selesai tayang -->
                             <td class="border-b dark:border-dark-5"><?= number_format($p['cost_pm'], 0); ?></td>
                             <td class="border-b dark:border-dark-5"><?= $p['desc_pm']; ?></td>
                             <td class="border-b dark:border-dark-5">
-                                <a href="<?= base_url('pic/edit_pm/'.$p['id_pm']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Edit </a>
+                                <a href="<?= base_url('pic/edit_pm/'.$p['id_pm']) ?>" class="btn btn-sm btn-success py-1 px-2 mr-2">Approve </a>
+                                <a href="<?= base_url('pic/edit_pm/'.$p['id_pm']) ?>" class="btn btn-sm btn-primary py-1 px-2 mr-2">Reject </a>
                                 <a data-toggle="modal" data-target="#delete-modal-<?= $p['id_pm'] ?>" class="btn btn-sm btn-danger py-1 px-2">Delete</a>
                                 <!-- BEGIN: Modal DELETE -->
                                 <div id="delete-modal-<?= $p['id_pm'] ?>" class="modal" tabindex="-1" aria-hidden="true">
@@ -131,7 +138,7 @@
                                         </div>
                                     </div>
                                     <div class="col-span-12 sm:col-span-12">
-                                        <label class="form-label">Tanggal Mulai / selesai Tayang</label>
+                                        <label class="form-label">Jam Tayang</label>
                                         <input id="durasi_pro" name="mulai_selesai" data-daterange="true" class="datepicker form-control" value="<?= ($v['mulai_project'] == "0000-00-00 00:00:00" ? date("Y-m-d") : date('Y-m-d', strtotime($v['mulai_project']))).' - '. ($v['mulai_project'] == "0000-00-00 00:00:00" ? date("Y-m-d") : date('Y-m-d', strtotime($v['selesai_project']))); ?>">
                                     </div>
                                     <div class="col-span-12 sm:col-span-12">
