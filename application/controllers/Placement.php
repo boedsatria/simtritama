@@ -106,6 +106,13 @@ class Placement extends CI_Controller
 		$this->load->view('placement/pembayaran_tagihan');
 		$this->load->view('footer');
 	}
+	public function ratecard()
+	{
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('placement/ratecard');
+		$this->load->view('footer');
+	}
 	public function detail_order_placement($id = false)
 	{
 		$query = ($id == false ? array('id_project' => 0, 'jenis_project' => "", 'nama_project' => "", 'desc_project' => "") : $this->ProjectModel->get_detail($id));
