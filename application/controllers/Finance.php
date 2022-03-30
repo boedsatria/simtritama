@@ -57,6 +57,7 @@ class Finance extends CI_Controller
 
 		$data = array(
 			'area'		=> $this->FinanceModel->get_area_coa()->result_array(),
+			'non_area'	=> $this->FinanceModel->get_non_area_coa()->result_array(),
 			'coa'		=> $this->FinanceModel->get_coa()->result_array(),
 			'bb'		=> $this->FinanceModel->get_bb($wilayah, $mulai, $selesai)->result_array(),
 			'user'		=> $this->FinanceModel->get_user()->result_array(),
@@ -87,7 +88,7 @@ class Finance extends CI_Controller
 			// 'saldo_pc'			=> ($kode_hutang == 2 ? saldo_akhir($_POST['wilayah']) : saldo_akhir($_POST['wilayah'])+$masuk-$keluar),
 			'saldo_bb'			=> 0,
 			'pa_bb'				=> $_POST['pa'],
-			'wilayah_bb'		=> $_POST['wilayah'],
+			'referensi_bb'		=> $_POST['referensi_bb'],
 			'coa_bb'			=> $_POST['coa'],
 			'creator_bb'		=> $this->session->userdata('userlogin')['id_user'],
 			'tanggal_bb'		=> date('Y-m-d', strtotime($_POST['tgl_trans']))
@@ -102,7 +103,7 @@ class Finance extends CI_Controller
 
 		$parent = $this->FinanceModel->insert_bb($data);
 
-		redirect(base_url() . 'finance/petty_cash/');
+		redirect(base_url() . 'finance/buku_besar/');
 
 	}
 
@@ -360,19 +361,66 @@ class Finance extends CI_Controller
 
 
 
+	public function general_ledger()
+	{
+		$cat = (isset($_GET['cat']) ? $_GET['cat'] : "1000");
+		$akun = (isset($_GET['akun']) ? $_GET['akun'] : "0000");
+
+		if(isset($_GET['tgl_filter'])){
+			$date_range = explode("-", $_GET['tgl_filter']);
+			$mulai  = date('Y-m-d', strtotime($date_range[0]));
+			$selesai  = date('Y-m-d', strtotime($date_range[1]));
+		}else{
+			$mulai  = date('Y-m-d');
+			$selesai  = date('Y-m-d');
+		}
+
+		$data = array(
+			'cat_coa'	=> $this->FinanceModel->get_cat_coa()->result_array(),
+			'gl'		=> $this->FinanceModel->get_gl($akun, $mulai, $selesai)->result_array()
+		);
+
+		$this->load->view('header');
+		$this->load->view('sidebar');
+		$this->load->view('finance/general_ledger', $data);
+		$this->load->view('footer');
+	}
+
+	public function get_coa($id)
+	{
+		$data = $this->FinanceModel->get_coa($id)->result_array();
+		if(count($data) > 1):
+			echo '<option value="'.$id.'">'.$id.' - Pilih Semua</option>';
+			foreach($data as $v):
+				echo '<option value="'.$v['no_coa'].'">'.$v['no_coa'].' - '.$v['nama_coa'].'</option>';
+			endforeach;
+		else:
+			echo '<option>No Data</option>';
+		endif;
+		
+		
+	}
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public function detail_hutang_dan_piutang()
 	{
 		$this->load->view('header');
 		$this->load->view('sidebar');
 		$this->load->view('finance/detail_hutang_dan_piutang');
-		$this->load->view('footer');
-	}
-	public function general_ledger()
-	{
-		$this->load->view('header');
-		$this->load->view('sidebar');
-		$this->load->view('finance/general_ledger');
 		$this->load->view('footer');
 	}
 	public function akun_transaksi()

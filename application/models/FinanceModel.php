@@ -18,7 +18,29 @@ class FinanceModel extends CI_Model
   function get_bb($wilayah = false, $mulai = false, $selesai = false)
   {
     $this->db->from('buku_besar');
-    if ($wilayah > 0) $this->db->where('wilayah_bb', $wilayah);
+    if ($wilayah > 0) :
+      if($wilayah[1] == 0 && $wilayah[2] == 0 && $wilayah[3] == 0):
+        $this->db->like('coa_bb', $wilayah[0], 'after');
+      else:
+        $this->db->where('coa_bb', $wilayah);
+      endif;
+    endif;
+
+    $this->db->where('tanggal_bb >=', $mulai);
+    $this->db->where('tanggal_bb <=', $selesai);
+
+    return $this->db->get();
+    // print_r($this->db->last_query());die;
+  }
+  function get_gl($akun = false, $mulai = false, $selesai = false)
+  {
+    $this->db->from('buku_besar');
+
+    if($akun[1] == 0 && $akun[2] == 0 && $akun[3] == 0):
+      $this->db->like('coa_bb', $akun[0], 'after');
+    else:
+      $this->db->where('coa_bb', $akun);
+    endif;
 
     $this->db->where('tanggal_bb >=', $mulai);
     $this->db->where('tanggal_bb <=', $selesai);
@@ -102,9 +124,25 @@ class FinanceModel extends CI_Model
     $this->db->where('area_coa', 1);
     return $this->db->get();
   }
-  function get_coa()
+  function get_non_area_coa()
   {
     $this->db->from('coa_akun');
+    $this->db->where('area_coa <', 1);
+    return $this->db->get();
+  }
+  function get_coa($parent = false)
+  {
+    $this->db->from('coa_akun');
+    if ($parent) :
+      $this->db->like('no_coa', $parent[0], 'after');
+      $this->db->not_like('no_coa', 0, 'before');
+    endif;
+    return $this->db->get();
+  }
+  function get_cat_coa()
+  {
+    $this->db->from('coa_akun');
+    $this->db->like('no_coa', "000", 'before');
     return $this->db->get();
   }
 
